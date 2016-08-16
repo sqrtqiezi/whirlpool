@@ -1,0 +1,92 @@
+@import "node_modules/normalize.css/normalize";
+
+$zindex-video-background: -200;
+$zindex-background: -100;
+
+$grid-border: 1px solid rgba(255, 255, 255, 0.2);
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+div#big-video-wrap {
+  overflow: hidden;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: $zindex-video-background;
+  video#bgvid {
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+    background: url(/images/bg.png) no-repeat;
+    background-size: cover;
+  }
+}
+
+div#video-raster {
+  background-image: url(/images/video_raster.png);
+  height: 100%;
+  width: 100%;
+  z-index: $zindex-background;
+  position: absolute;
+}
+
+.main {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  article {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    .grid, .content {
+      height: 95%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      border: $grid-border;
+    }
+    .content {
+      padding: 0 20%;
+    }
+  }
+
+  .grid-cell {
+    float: left;
+    border-right: $grid-border;
+    border-bottom: $grid-border;
+    width: 20%;
+    height: 25%;
+    position: relative;
+  }
+
+  .content > .grid-cell {
+    border: none;
+    width: 100%;
+  }
+
+  .logo {
+    position: absolute;
+    bottom: 6px;
+    left: 4px;
+  }
+
+  .footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 5%;
+    background: white;
+
+    .container {
+      height: 100%;
+    }
+  }
+}
