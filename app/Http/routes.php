@@ -11,6 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('/about', 'HomeController@about')->name('about');
+Route::get('/products', 'HomeController@products')->name('products');
+Route::get('/product/category/{id}', 'HomeController@productCategory')->name('category');
+Route::get('/product/{id}', 'HomeController@product')->name('product');
+
+Route::get('/news', 'HomeController@news')->name('news');

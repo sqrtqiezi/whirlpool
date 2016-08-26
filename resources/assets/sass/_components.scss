@@ -1,0 +1,372 @@
+.title {
+  position: absolute;
+  left:0;
+  bottom: 0;
+  color: white;
+  padding: 2em 1em;
+  &.is-main-page {
+    width: 50%;
+  }
+
+  span {
+    display: block;
+  }
+  .main-title {
+    font-size: 3.5vh;
+    font-weight: bold;
+    line-height: 4vh;
+  }
+  .sub-title {
+    font-size: 3vh;
+    margin-top: .5em;
+  }
+}
+
+.widget-navbar {
+  display: inline-block;
+  width: 33.333%;
+  position: absolute;
+  right: 0;
+  bottom: 1.5em;
+}
+
+.widget-nav {
+  display: block;
+  float: right;
+  margin-left: .5em;
+  width: 3em;
+  height: .3em;
+  background-color: white;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &.active {
+    background-color: $brand-primary;
+  }
+}
+
+.widget {
+  position: relative;
+  width: 33.33333%;
+  height: 100%;
+  float: right;
+  background-color: white;
+  padding: 1em 1em;
+
+  .widget-heading {
+    position: relative;
+    .widget-title {
+      font-weight: bold;
+      font-size: 1.2em;
+      font-family: "Arial Black";
+      display: inline-block;
+    }
+    .widget-link {
+      display: inline-block;
+      font-size: .5em;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      border-bottom: 1px solid silver;
+    }
+  }
+  .widget-body {
+    width: 100%;
+    height: auto;
+    font-size: .5em;
+    line-height: 1.2em;
+    padding-top: 1.5em;
+  }
+}
+
+#responsive-menu-button {
+  display: none;
+}
+
+@media only screen and (max-width: $mobile-width) {
+  .title,
+  .widget {
+    width: auto;
+    height: auto;
+    float: none;
+    margin: 0 2em;
+  }
+
+  .title {
+    margin-top: 5em;
+  }
+
+  #responsive-menu-button {
+    display: block;
+    color: white;
+    font-size: 1.5em;
+    position: absolute;
+    top: 1em;
+    left: 1em;
+  }
+}
+
+.only-mobile {
+  .widget-navbar {
+    width: auto;
+    position: absolute;
+    left: 50%;
+    right: auto;
+    margin-left: -6em;
+    bottom: 3em;
+  }
+}
+
+//region 首页新闻列表
+ul.news-list {
+  list-style-type: none;
+  padding-left: 0;
+  li.news-item {
+    font-weight: lighter;
+    padding: .6em 0;
+    border-bottom: 1px dotted silver;
+    &:before {
+      content: "";
+      border-bottom: 1px dotted silver;
+      margin-right: 1em;
+      display: inline-block;
+      width: .5em;
+      height: .5em;
+      background-color: $brand-primary;
+    }
+  }
+}
+
+//endregion
+
+//region 底部导航
+nav.nav-list {
+  height: $footer-height;
+  width: 60%;
+  padding-left: 1em;
+  float: left;
+
+  ul, li {
+    list-style-type: none;
+  }
+
+  a {
+    position: relative;
+    display: inline-block;
+    font-size: 1em;
+    width: 100%;
+    height: $footer-height;
+    line-height: $footer-height;
+    outline: none;
+    text-decoration: none;
+    color: black;
+    overflow: hidden;
+
+    span {
+      display: inline-block;
+      height: $footer-height;
+      width: 100%;
+      line-height: $footer-height;
+      text-align: center;
+      padding: 0 .5em;
+    }
+  }
+
+  ul.nav-top-list {
+    display: inline-block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    
+    li {
+      position: relative;
+      width: 6em;
+      display: inline-block;
+      zoom: 1;
+      *display: inline;
+      &:hover {
+        ul.nav-sub-list {
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+  ul.nav-sub-list {
+    display: none;
+    position: absolute;
+    left: 6em;
+    top: 0;
+    margin-top: 0;
+    padding-left: 0;
+    background-color: silver;
+    height: $footer-height;
+    z-index: $zindex-popover;
+
+    li {
+      display: inline-block;
+      zoom: 1;
+      *display: inline;
+    }
+  }
+
+  // animated
+  .nav-top-list > li > a {
+
+    & > span {
+      background: white;
+      -webkit-transition: -webkit-transform .5s;
+      -moz-transition: -moz-transform .5s;
+      -o-transition: -o-transform .5s;
+      transition: transform .5s;
+    }
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: inline-block;
+      width: 100%;
+      height: $footer-height;
+      line-height: $footer-height;
+      padding: 0 .5em;
+      background-color: $brand-primary;
+      color: white;
+      content: attr(data-hover);
+      -webkit-transition: -webkit-transform .5s;
+      -moz-transition: -moz-transform .5s;
+      transition: transform .5s;
+      -webkit-transform: translateX(-100%);
+    }
+
+    &:hover > span,
+    &:focus > span {
+      -webkit-transform: translateX(100%);
+      -moz-transform: translateX(100%);
+      transform: translateX(100%);
+    }
+
+    &:hover::before,
+    &:focus::before {
+      -webkit-transform: translateX(0%);
+      -moz-transform: translateX(0%);
+      transform: translateX(0%);
+    }
+  }
+}
+
+.footer-info {
+  width: 40%;
+  height: $footer-height;
+
+  .content-info {
+    width: 70%;
+    padding-top: .6em;
+
+    span {
+      display: block;
+      font-size: .5em;
+      text-align: right;
+    }
+
+    span.company-name {
+      font-family: SimHei, STHeiti;
+      font-weight: bold;
+    }
+    span.company-right {
+      margin-top: .3em;
+      color: silver;
+      line-height: 1em;
+    }
+  }
+
+  .contact-info {
+    width: 30%;
+    padding: .8em 1em;
+
+    .contact-wechat,
+    .contact-weibo,
+    .contact-email {
+      float: left;
+      width: 1.5em;
+      height: 1.5em;
+      background-size: cover;
+      margin-left: .5em;
+    }
+    .contact-wechat {
+      background-image: url(/images/wechat.png);
+    }
+    .contact-weibo {
+      background-image: url(/images/weibo.png);
+    }
+    .contact-email {
+      background-image: url(/images/email.png);
+    }
+  }
+}
+
+@media only screen and (max-width: $desktop-small-width) {
+  nav.nav-list {
+    font-size: .5em;
+  }
+  .footer-info .content-info span.company-right {
+    font-size: .3em;
+  }
+
+  .footer-info .contact-info {
+    .contact-wechat,
+    .contact-weibo,
+    .contact-email {
+      width: 1.2em;
+      height: 1.2em;
+    }
+  }
+}
+
+//endregion
+
+//region 侧边导航
+.nav-close {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -1.5em;
+  margin-top: -1.5em;
+  width: 2em;
+  height: 2em;
+  background-size: cover;
+  background-image: url(/images/close.png);
+}
+
+
+.nav-page-next {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -1.5em;
+  margin-top: -1.5em;
+  width: 1.5em;
+  height: 3em;
+  background-size: cover;
+  background-image: url(/images/page-next.png);
+}
+
+.nav-page-prev {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -1.5em;
+  margin-top: -1.5em;
+  width: 1.5em;
+  height: 3em;
+  background-size: cover;
+  background-image: url(/images/page-prev.png);
+}
+
+
+//endregion
+
+@import "component_detail";
+

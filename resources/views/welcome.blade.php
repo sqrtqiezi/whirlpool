@@ -1,56 +1,85 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Whirlpool</title>
-    <link rel="stylesheet" href="css/app.css">
-</head>
-<body>
-<div id="big-video-wrap">
-    <video autoplay muted loop id="bgvid">
-        <source src="http://obz9qz3z4.bkt.clouddn.com/whirlpool" type="video/mp4">
-    </video>
-</div>
-<div class="main wrapper clearfix">
-    <div id="video-raster"></div>
-    <article>
-        <div class="content">
-            <section class="grid-cell">
-                <div class="logo">
-                    <img src="/images/logo.png" alt="">
+@extends('layouts.base')
+
+@section('content')
+    <div class="content">
+        <section class="grid-cell">
+            <a href="#sidr-main" id="responsive-menu-button">
+                <i class="fa fa-bars"></i>
+            </a>
+            <div class="logo">
+                <img src="/images/logo.png" alt="">
+            </div>
+        </section>
+        <section class="grid-cell only-desktop">
+            <div class="widget-navbar">
+                <div data-slider="2" class="widget-nav"></div>
+                <div data-slider="1" class="widget-nav"></div>
+                <div data-slider="0" class="widget-nav active"></div>
+            </div>
+        </section>
+        <section class="grid-cell">
+            <div class="title is-main-page">
+                <span class="main-title">100 Years Heritage Taste The World</span>
+                <span class="sub-title">百年品质 ‧ 烹饪全球美食</span>
+            </div>
+            <div class="widget">
+                <div class="widget-heading clearfix">
+                    <div class="widget-title">NEWS</div>
+                    <div class="widget-link">MORE</div>
                 </div>
-            </section>
-            <section class="grid-cell"></section>
-            <section class="grid-cell"></section>
-        </div>
-        <div class="grid">
-            <section class="grid-cell grid-cell-no-1"></section>
-            <section class="grid-cell grid-cell-no-2"></section>
-            <section class="grid-cell grid-cell-no-3"></section>
-            <section class="grid-cell grid-cell-no-4"></section>
-            <section class="grid-cell grid-cell-no-5"></section>
-            <section class="grid-cell grid-cell-no-6"></section>
-            <section class="grid-cell grid-cell-no-7"></section>
-            <section class="grid-cell grid-cell-no-8"></section>
-            <section class="grid-cell grid-cell-no-9"></section>
-            <section class="grid-cell grid-cell-no-10"></section>
-            <section class="grid-cell grid-cell-no-11"></section>
-            <section class="grid-cell grid-cell-no-12"></section>
-            <section class="grid-cell grid-cell-no-13"></section>
-            <section class="grid-cell grid-cell-no-14"></section>
-            <section class="grid-cell grid-cell-no-15"></section>
-            <section class="grid-cell grid-cell-no-16"></section>
-            <section class="grid-cell grid-cell-no-17"></section>
-            <section class="grid-cell grid-cell-no-18"></section>
-            <section class="grid-cell grid-cell-no-19"></section>
-            <section class="grid-cell grid-cell-no-20"></section>
-        </div>
-    </article>
-
-    <div class="footer">
-
+                <div class="widget-body">
+                    <div class="news-slider">
+                        <ul>
+                            <li>
+                                <ul class="news-list">
+                                    <li class="news-item">
+                                        领导赴一线慰问员工
+                                    </li>
+                                    <li class="news-item">
+                                        公司冠名书法报海选活动 文化营销助理品牌
+                                    </li>
+                                    <li class="news-item">
+                                        中共惠而浦(中国)公司第二次代表大会召开
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <ul class="news-list">
+                                    <li class="news-item">
+                                        领导赴一线慰问员工
+                                    </li>
+                                    <li class="news-item">
+                                        公司冠名书法报海选活动 文化营销助理品牌
+                                    </li>
+                                    <li class="news-item">
+                                        中共惠而浦(中国)公司第二次代表大会召开
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <ul class="news-list">
+                                    <li class="news-item">
+                                        领导赴一线慰问员工
+                                    </li>
+                                    <li class="news-item">
+                                        公司冠名书法报海选活动 文化营销助理品牌
+                                    </li>
+                                    <li class="news-item">
+                                        中共惠而浦(中国)公司第二次代表大会召开
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="grid-cell only-mobile">
+            <div class="widget-navbar">
+                <div data-slider="2" class="widget-nav"></div>
+                <div data-slider="1" class="widget-nav"></div>
+                <div data-slider="0" class="widget-nav active"></div>
+            </div>
+        </section>
     </div>
-</div>
-
-</body>
-<script src="js/app.js"></script>
-</html>
+@endsection
