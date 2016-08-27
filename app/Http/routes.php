@@ -19,3 +19,8 @@ Route::get('/product/{id}', 'HomeController@product')->name('product');
 
 Route::get('/news', 'HomeController@news')->name('news');
 Route::get('/news/{id}', 'HomeController@newsDetail')->name('newsDetail');
+
+Route::get('/life', 'HomeController@life')->name('life');
+Route::get('/life/{id}', 'HomeController@lifeDetail')->name('lifeDetail');
+
+Route::get('/contact', 'HomeController@contact')->name('contact');

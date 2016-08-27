@@ -7,6 +7,7 @@ window._ = require('lodash');
 window.$ = window.jQuery = require('jquery');
 require('./thirdparts/jquery.sidr');
 require('./thirdparts/unslider-min');
+require('./thirdparts/jquery.scrollbar');
 
 // window.Vue = require('vue');
 // require('vue-resource');

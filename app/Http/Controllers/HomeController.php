@@ -39,4 +39,14 @@ class HomeController extends Controller
     {
         return view('news_detail');
     }
+
+    public function life()
+    {
+        return view('life');
+    }
+
+    public function lifeDetail($id)
+    {
+        return view('life_detail');
+    }
 }

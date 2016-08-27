@@ -89,12 +89,12 @@
                     <a href="#" data-hover="终端形象"><span>终端形象</span></a>
                 </li>
                 <li>
-                    <a href="#" data-hover="“会”生活"><span>“会”生活</span></a>
+                    <a href="{{ route('life') }}" data-hover="“会”生活"><span>“会”生活</span></a>
                     <ul class="nav-sub-list flipInX animated">
-                        <li><a href="#"><span>厨电创想人</span></a></li>
-                        <li><a href="#"><span>"懂"厨电</span></a></li>
-                        <li><a href="#"><span>"品"美味</span></a></li>
-                        <li><a href="#"><span>"绘"厨房</span></a></li>
+                        <li><a href="{{ route('life') }}"><span>厨电创想人</span></a></li>
+                        <li><a href="{{ route('life') }}"><span>"懂"厨电</span></a></li>
+                        <li><a href="{{ route('life') }}"><span>"品"美味</span></a></li>
+                        <li><a href="{{ route('life') }}"><span>"绘"厨房</span></a></li>
                     </ul>
                 </li>
                 <li>
@@ -125,7 +125,7 @@
             <li><a href="{{ route('news') }}">新闻中心</a></li>
             <li><a href="#">工程案例</a></li>
             <li><a href="#">终端形象</a></li>
-            <li><a href="#">“会” 生活</a></li>
+            <li><a href='{{ route('life') }}'>“会” 生活</a></li>
             <li><a href="#">联系我们</a></li>
         </ul>
     </nav>

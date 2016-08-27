@@ -15,6 +15,7 @@
     font-size: 3.5vh;
     font-weight: bold;
     line-height: 4vh;
+    text-transform: uppercase;
   }
   .sub-title {
     font-size: 3vh;
@@ -370,4 +371,4 @@ nav.nav-list {
 
 @import "component_detail";
 @import "component_news";
-
+@import "component_scrollbar";

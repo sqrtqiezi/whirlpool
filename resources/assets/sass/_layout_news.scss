@@ -87,12 +87,16 @@
     width: 20%;
   }
 
-  .grid-cell.grid-cell-no-3 {
+  .grid-cell.grid-cell-no-5 {
     position: absolute;
-    left: 40%;
+    left: 20%;
+    top: 25%;
+  }
+
+  .grid-cell.grid-cell-no-3 {
     width: 40%;
     height: 100%;
-    padding-bottom: $footer-height + 3;
+    padding-bottom: 3px;
   }
 
   .news-detail {
@@ -114,7 +118,7 @@
         font-size: 1.5em;
         font-weight: 500;
         display: inline-block;
-        width: 40%;
+        width: 70%;
       }
 
       span {
@@ -129,11 +133,15 @@
     }
 
     .news-detail-body {
-      padding: 0 1em;
       font-size: .8em;
 
       img {
         max-width: 100% !important;
+      }
+
+      & > div {
+        max-height: 60em;
+        overflow: auto;
       }
     }
   }
