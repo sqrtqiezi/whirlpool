@@ -34,4 +34,9 @@ class HomeController extends Controller
     {
         return view('news');
     }
+
+    public function newsDetail($id)
+    {
+        return view('news_detail');
+    }
 }

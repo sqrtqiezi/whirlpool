@@ -18,3 +18,4 @@ Route::get('/product/category/{id}', 'HomeController@productCategory')->name('ca
 Route::get('/product/{id}', 'HomeController@product')->name('product');
 
 Route::get('/news', 'HomeController@news')->name('news');
+Route::get('/news/{id}', 'HomeController@newsDetail')->name('newsDetail');
