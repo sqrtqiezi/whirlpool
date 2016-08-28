@@ -1,0 +1,23 @@
+.contact-content {
+  position: absolute;
+  display: inline-block;
+  width: 300%;
+  bottom: 1em;
+  left: 1em;
+  color: white;
+  font-size: .85em;
+
+  i.fa {
+    margin-right: .8em;
+  }
+
+  .contact-type {
+    display: inline-block;
+    width: 5em;
+    text-align: justify;
+  }
+
+  .contact-info {
+    color: #A8A8A8;
+  }
+}

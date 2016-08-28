@@ -49,4 +49,19 @@ class HomeController extends Controller
     {
         return view('life_detail');
     }
+
+    public function stores()
+    {
+        return view('stores');
+    }
+
+    public function contact()
+    {
+        return view('contact');
+    }
+
+    public function projects()
+    {
+        return view('projects');
+    }
 }

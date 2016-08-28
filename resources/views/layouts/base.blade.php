@@ -83,10 +83,10 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="#" data-hover="工程案例"><span>工程案例</span></a>
+                    <a href="{{ route('projects') }}" data-hover="工程案例"><span>工程案例</span></a>
                 </li>
                 <li>
-                    <a href="#" data-hover="终端形象"><span>终端形象</span></a>
+                    <a href="{{ route('stores') }}" data-hover="终端形象"><span>终端形象</span></a>
                 </li>
                 <li>
                     <a href="{{ route('life') }}" data-hover="“会”生活"><span>“会”生活</span></a>
@@ -98,7 +98,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="#" data-hover="联系我们"><span>联系我们</span></a>
+                    <a href="{{ route('contact') }}" data-hover="联系我们"><span>联系我们</span></a>
                 </li>
             </ul>
         </nav>
@@ -123,10 +123,10 @@
             <li><a href="{{ route('about') }}">关于我们</a></li>
             <li><a href="{{ route('products') }}">厨房电器</a></li>
             <li><a href="{{ route('news') }}">新闻中心</a></li>
-            <li><a href="#">工程案例</a></li>
-            <li><a href="#">终端形象</a></li>
+            <li><a href="{{ route('projects') }}">工程案例</a></li>
+            <li><a href="{{ route('stores') }}">终端形象</a></li>
             <li><a href='{{ route('life') }}'>“会” 生活</a></li>
-            <li><a href="#">联系我们</a></li>
+            <li><a href="{{ route('contact') }}">联系我们</a></li>
         </ul>
     </nav>
 </div>

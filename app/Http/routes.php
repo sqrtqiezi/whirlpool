@@ -23,4 +23,8 @@ Route::get('/news/{id}', 'HomeController@newsDetail')->name('newsDetail');
 Route::get('/life', 'HomeController@life')->name('life');
 Route::get('/life/{id}', 'HomeController@lifeDetail')->name('lifeDetail');
 
+Route::get('/stores', 'HomeController@stores')->name('stores');
+
+Route::get('/projects', 'HomeController@projects')->name('projects');
+
 Route::get('/contact', 'HomeController@contact')->name('contact');
