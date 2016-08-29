@@ -20,19 +20,19 @@
             </div>
         </div>
         <div class="grid-cell grid-cell-no-8">
-            <a href="{{ route('product', 1) }}" class="product-item flipInY animated" data-product-name="AKF808">
+            <a href="{{ route('product', 1) }}" class="product-item fadeIn animated" data-product-name="AKF808">
                 <img src="/images/product-akf808.png" alt="">
                 <i class="fa fa-search" aria-hidden="true"></i>
             </a>
         </div>
         <div class="grid-cell grid-cell-no-9">
-            <a href="{{ route('product', 1) }}" class="product-item flipInY animated" data-product-name="AKF808">
+            <a href="{{ route('product', 1) }}" class="product-item fadeIn animated" data-product-name="AKF808">
                 <img src="/images/product-akf808.png" alt="">
                 <i class="fa fa-search" aria-hidden="true"></i>
             </a>
         </div>
         <div class="grid-cell grid-cell-no-10">
-            <a href="{{ route('product', 1) }}" class="product-item flipInY animated" data-product-name="AKF808">
+            <a href="{{ route('product', 1) }}" class="product-item fadeIn animated" data-product-name="AKF808">
                 <img src="/images/product-akf808.png" alt="">
                 <i class="fa fa-search" aria-hidden="true"></i>
             </a>
@@ -41,19 +41,19 @@
             <a href="{{ route('category', 1) }}" class="nav-page-prev"></a>
         </div>
         <div class="grid-cell grid-cell-no-12">
-            <a href="{{ route('product', 1) }}" class="product-item flipInY animated" data-product-name="AKF808">
+            <a href="{{ route('product', 1) }}" class="product-item fadeIn animated" data-product-name="AKF808">
                 <img src="/images/product-akf808.png" alt="">
                 <i class="fa fa-search" aria-hidden="true"></i>
             </a>
         </div>
         <div class="grid-cell grid-cell-no-13">
-            <a href="{{ route('product', 1) }}" class="product-item flipInY animated" data-product-name="AKF808">
+            <a href="{{ route('product', 1) }}" class="product-item fadeIn animated" data-product-name="AKF808">
                 <img src="/images/product-akf808.png" alt="">
                 <i class="fa fa-search" aria-hidden="true"></i>
             </a>
         </div>
         <div class="grid-cell grid-cell-no-14">
-            <a href="{{ route('product', 1) }}" class="product-item flipInY animated" data-product-name="AKF808">
+            <a href="{{ route('product', 1) }}" class="product-item fadeIn animated" data-product-name="AKF808">
                 <img src="/images/product-akf808.png" alt="">
                 <i class="fa fa-search" aria-hidden="true"></i>
             </a>

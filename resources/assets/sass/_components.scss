@@ -4,9 +4,6 @@
   bottom: 0;
   color: white;
   padding: 2em 1em;
-  &.is-main-page {
-    width: 50%;
-  }
 
   span {
     display: block;
@@ -14,12 +11,20 @@
   .main-title {
     font-size: 3.5vh;
     font-weight: bold;
-    line-height: 4vh;
+    line-height: 3.5vh;
     text-transform: uppercase;
   }
   .sub-title {
     font-size: 3vh;
     margin-top: .5em;
+    font-family: 'source-han-sans-cn';
+  }
+
+  &.is-main-page {
+    width: 35%;
+    .main-title {
+      text-transform: capitalize;
+    }
   }
 }
 
@@ -166,6 +171,7 @@ nav.nav-list {
     overflow: hidden;
 
     span {
+      font-family: 'source-han-sans-cn';
       display: inline-block;
       height: $footer-height;
       width: 100%;
@@ -236,6 +242,7 @@ nav.nav-list {
       background-color: $brand-primary;
       color: white;
       content: attr(data-hover);
+      font-family: 'source-han-sans-cn';
       -webkit-transition: -webkit-transform .5s;
       -moz-transition: -moz-transform .5s;
       transition: transform .5s;
