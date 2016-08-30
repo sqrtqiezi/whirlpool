@@ -31,3 +31,15 @@ i.fa {
     display: none;
   }
 }
+
+@font-face {
+  font-family: 'source-han-sans-cn';
+  src: url('../fonts/KaiGenGothicSC-Normal.eot');
+  src:
+        url('../fonts/KaiGenGothicSC-Normal.eot?#font-spider') format('embedded-opentype'),
+        url('../fonts/KaiGenGothicSC-Normal.woff') format('woff'),
+        url('../fonts/KaiGenGothicSC-Normal.ttf') format('truetype'),
+        url('../fonts/KaiGenGothicSC-Normal.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

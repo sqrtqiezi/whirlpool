@@ -20,57 +20,43 @@
         <section class="grid-cell">
             <div class="title is-main-page">
                 <span class="main-title">100 Years Heritage Taste The World</span>
-                <span class="sub-title">百年品质 ‧ 烹饪全球美食</span>
+                <span class="sub-title">百年品质‧烹饪全球美食</span>
             </div>
             <div class="widget">
-                <div class="widget-heading clearfix">
-                    <div class="widget-title">NEWS</div>
-                    <div class="widget-link">MORE</div>
-                </div>
-                <div class="widget-body">
-                    <div class="news-slider">
-                        <ul>
-                            <li>
+                <div class="news-slider">
+                    <ul>
+                        <li>
+                            <div class="widget-heading clearfix">
+                                <div class="widget-title">
+                                    NEWS
+                                    <a href="{{ route('news') }}" class="news-more">more</a>
+                                </div>
+                            </div>
+                            <div class="widget-body">
                                 <ul class="news-list">
                                     <li class="news-item">
-                                        领导赴一线慰问员工
+                                        <a href="#">领导赴一线慰问员工</a>
                                     </li>
                                     <li class="news-item">
-                                        公司冠名书法报海选活动 文化营销助理品牌
+                                        <a href="">公司冠名书法报海选活动 文化营销助理品牌</a>
                                     </li>
                                     <li class="news-item">
-                                        中共惠而浦(中国)公司第二次代表大会召开
+                                        <a href="">中共惠而浦(中国)公司第二次代表大会召开</a>
                                     </li>
                                 </ul>
-                            </li>
-                            <li>
-                                <ul class="news-list">
-                                    <li class="news-item">
-                                        领导赴一线慰问员工
-                                    </li>
-                                    <li class="news-item">
-                                        公司冠名书法报海选活动 文化营销助理品牌
-                                    </li>
-                                    <li class="news-item">
-                                        中共惠而浦(中国)公司第二次代表大会召开
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <ul class="news-list">
-                                    <li class="news-item">
-                                        领导赴一线慰问员工
-                                    </li>
-                                    <li class="news-item">
-                                        公司冠名书法报海选活动 文化营销助理品牌
-                                    </li>
-                                    <li class="news-item">
-                                        中共惠而浦(中国)公司第二次代表大会召开
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div data-image="/images/news-item-1.png" class="news-image">
+                                <a href="{{ route('newsDetail', 1) }}">惠而浦中国携手安徽绿地 打造品质生活新标杆</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div data-image="/images/news-item-2.png" class="news-image">
+                                <a href="{{ route('newsDetail', 1) }}">惠而浦中国携手安徽绿地 打造品质生活新标杆</a>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </section>
