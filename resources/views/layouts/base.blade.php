@@ -108,9 +108,10 @@
                 <span class="company-right">沪ICP备13004331号 © 2016 Whirlpool .All Right Reserved</span>
             </div>
             <div class="contact-info pull-right">
-                <div class="contact-weibo"></div>
-                <div class="contact-wechat"></div>
-                <div class="contact-email"></div>
+                <a href="http://weibo.com/u/5889505040" class="contact-weibo"></a>
+                <a href="javascript:;" class="contact-wechat"></a>
+                <a href="javascript:;" class="contact-email"></a>
+                <span class="design-info">Design by wisnovo</span>
             </div>
         </div>
     </div>

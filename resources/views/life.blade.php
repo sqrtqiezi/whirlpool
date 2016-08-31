@@ -10,7 +10,7 @@
         </div>
         <div class="grid-cell grid-cell-no-3"></div>
         <div class="grid-cell grid-cell-no-4">
-            <a href="{{ route('lifeDetail', 1) }}" class="life-item flipInY animated" data-title="浓情布朗尼-爱的礼物">
+            <a href="{{ route('lifeDetail', 1) }}" class="life-item" data-title="浓情布朗尼-爱的礼物">
                 <img src="/images/life-item-1.png" alt="">
                 <i class="fa fa-search" aria-hidden="true"></i>
             </a>
@@ -27,7 +27,7 @@ life</span>
             </div>
         </div>
         <div class="grid-cell grid-cell-no-8">
-            <a href="{{ route('lifeDetail', 1) }}" class="life-item flipInY animated" data-title="浓情布朗尼-爱的礼物">
+            <a href="{{ route('lifeDetail', 1) }}" class="life-item" data-title="浓情布朗尼-爱的礼物">
                 <img src="/images/life-item-2.png" alt="">
                 <i class="fa fa-search" aria-hidden="true"></i>
             </a>
@@ -40,7 +40,7 @@ life</span>
         <div class="grid-cell grid-cell-no-12"></div>
         <div class="grid-cell grid-cell-no-13"></div>
         <div class="grid-cell grid-cell-no-14">
-            <a href="{{ route('lifeDetail', 1) }}" class="life-item flipInY animated" data-title="浓情布朗尼-爱的礼物">
+            <a href="{{ route('lifeDetail', 1) }}" class="life-item" data-title="浓情布朗尼-爱的礼物">
                 <img src="/images/life-item-3.png" alt="">
                 <i class="fa fa-search" aria-hidden="true"></i>
             </a>
@@ -51,7 +51,7 @@ life</span>
         <div class="grid-cell grid-cell-no-16"></div>
         <div class="grid-cell grid-cell-no-17"></div>
         <div class="grid-cell grid-cell-no-18">
-            <a href="{{ route('lifeDetail', 1) }}" class="life-item flipInY animated" data-title="浓情布朗尼-爱的礼物">
+            <a href="{{ route('lifeDetail', 1) }}" class="life-item" data-title="浓情布朗尼-爱的礼物">
                 <img src="/images/life-item-4.png" alt="">
                 <i class="fa fa-search" aria-hidden="true"></i>
             </a>

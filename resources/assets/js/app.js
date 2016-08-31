@@ -111,3 +111,16 @@ $(function () {
     $(subNav).width(liWidth * cnt + 30);
   })
 })
+
+//产品详情页样式处理
+$(function() {
+  function setProductDetailSize() {
+    var height = $($(".detail.product-detail")[0]).height()
+    $(".detail.product-detail .product-detail-item").each(function () {
+      $(this).height(height);
+    })
+  }
+
+  setProductDetailSize();
+  $(window).resize(setProductDetailSize);
+})

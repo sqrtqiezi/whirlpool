@@ -339,12 +339,16 @@ nav.nav-list {
   }
 
   .contact-info {
+    position: relative;
     width: 30%;
-    padding: .8em 1em;
+    height: 90%;
+    padding-top: .3em;
+    padding-left: .5em;
 
     .contact-wechat,
     .contact-weibo,
     .contact-email {
+      position: relative;
       float: left;
       width: 1.5em;
       height: 1.5em;
@@ -353,12 +357,35 @@ nav.nav-list {
     }
     .contact-wechat {
       background-image: url(/images/wechat.png);
+
+      &:hover {
+        &:before {
+          content: '';
+          position: absolute;
+          display: inline-block;
+          width: 6em;
+          height: 6em;
+          left: -2em;
+          top: -6.8em;
+          background-image: url(/images/brcode.png);
+          background-size: cover;
+        }
+      }
     }
     .contact-weibo {
       background-image: url(/images/weibo.png);
     }
     .contact-email {
       background-image: url(/images/email.png);
+    }
+
+    .design-info {
+      position: absolute;
+      font-size: .5em;
+      bottom: 0;
+      left: .5em;
+      width: 100%;
+      color: silver;
     }
   }
 }
