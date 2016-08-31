@@ -19,7 +19,7 @@
         </section>
         <section class="grid-cell">
             <div class="title is-main-page">
-                <span class="main-title">100 Years Heritage Taste The World</span>
+                <span class="main-title">100 Years Heritage<br/> Taste The World</span>
                 <span class="sub-title">百年品质‧烹饪全球美食</span>
             </div>
             <div class="widget">
