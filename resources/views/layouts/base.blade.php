@@ -132,6 +132,11 @@
 </div>
 
 </body>
+<script src="https://dn-bts.qbox.me/sdk/bugtags-1.0.3.js"></script>
+<script>
+    // VERSION_NAME 替换为项目的版本，VERSION_CODE 替换为项目的子版本
+    new Bugtags('bc4e9de0b3d5aa9fabb1cd0d59e35600','VERSION_NAME','VERSION_CODE');
+</script>
 <script src="/js/app.js"></script>
 @yield('custom-js')
 </html>

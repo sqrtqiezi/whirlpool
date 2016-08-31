@@ -2771,8 +2771,8 @@ i.fa {
     min-width: 100%;
     min-height: 100%; }
   div#video-raster {
-    background-image: url(/images/video_raster.png);
-    opacity: .7;
+    background-color: black;
+    opacity: .6;
     height: 100%;
     width: 100%;
     z-index: -200;
@@ -3471,10 +3471,12 @@ nav.nav-list {
   top: 50%;
   margin-left: -1.5em;
   margin-top: -1.5em;
-  width: 2em;
-  height: 2em;
+  width: 2.5em;
+  height: 2.5em;
   background-size: cover;
   background-image: url(/images/close.png); }
+  .nav-close:hover {
+    background-image: url(/images/close-hover.png); }
 
 .nav-page-next {
   position: absolute;
@@ -3486,6 +3488,8 @@ nav.nav-list {
   height: 3em;
   background-size: cover;
   background-image: url(/images/page-next.png); }
+  .nav-page-next:hover {
+    background-image: url(/images/page-next-hover.png); }
 
 .nav-page-prev {
   position: absolute;
@@ -3497,6 +3501,8 @@ nav.nav-list {
   height: 3em;
   background-size: cover;
   background-image: url(/images/page-prev.png); }
+  .nav-page-prev:hover {
+    background-image: url(/images/page-prev-hover.png); }
 
 .details-nav {
   position: absolute;
@@ -3552,7 +3558,7 @@ nav.nav-list {
   height: 70%;
   background-size: cover;
   margin-bottom: 0;
-  background-image: url(/images/brand_info.png); }
+  background-image: url(/images/brand_info.jpg); }
 
 .detail.brand-info .detail-body {
   margin-top: 0;
@@ -3571,13 +3577,13 @@ nav.nav-list {
   background-size: cover;
   padding-top: 25%; }
   .detail.brand-course .detail-item.item-01 {
-    background-image: url(/images/item-01.png); }
+    background-image: url(/images/item-01.jpg); }
   .detail.brand-course .detail-item.item-02 {
-    background-image: url(/images/item-02.png); }
+    background-image: url(/images/item-02.jpg); }
   .detail.brand-course .detail-item.item-03 {
-    background-image: url(/images/item-03.png); }
+    background-image: url(/images/item-03.jpg); }
   .detail.brand-course .detail-item.item-04 {
-    background-image: url(/images/item-04.png); }
+    background-image: url(/images/item-04.jpg); }
   .detail.brand-course .detail-item .item-heading {
     display: inline-block;
     width: 100%;
@@ -3641,7 +3647,7 @@ nav.nav-list {
       width: 90em;
       height: 40em; }
   .detail.brand-honour .line-wrapper {
-    width: 100em; }
+    width: 90em; }
   .detail.brand-honour .detail-line {
     position: relative;
     display: inline-block;
@@ -3683,7 +3689,7 @@ nav.nav-list {
       text-align: center;
       font-weight: bold; }
     .detail.brand-honour .detail-item .item-body {
-      padding: 1em 1em; }
+      padding: .5em 1em; }
       .detail.brand-honour .detail-item .item-body .item {
         display: inline-block;
         margin-bottom: 1.5em; }
@@ -3751,6 +3757,36 @@ nav.nav-list {
     display: inline-block; }
     .detail.brand-honour .line-2 .detail-item {
       vertical-align: text-top; }
+
+@media only screen and (max-width: 1600px) {
+  .detail.brand-honour .detail-body > div {
+    width: 75em; }
+  .detail.brand-honour .detail-body .line-wrapper {
+    width: 80em; } }
+
+@media only screen and (max-width: 1440px) {
+  .detail.brand-honour .detail-body > div {
+    width: 70em; }
+  .detail.brand-honour .detail-body .line-wrapper {
+    width: 80em; } }
+
+@media only screen and (max-width: 1366px) {
+  .detail.brand-honour .detail-body > div {
+    width: 65em; }
+  .detail.brand-honour .detail-body .line-wrapper {
+    width: 80em; } }
+
+@media only screen and (max-width: 1280px) {
+  .detail.brand-honour .detail-body > div {
+    width: 60em; }
+  .detail.brand-honour .detail-body .line-wrapper {
+    width: 80em; } }
+
+@media only screen and (max-width: 1024px) {
+  .detail.brand-honour .detail-body > div {
+    width: 48em; }
+  .detail.brand-honour .detail-body .line-wrapper {
+    width: 70em; } }
 
 .detail.brand-responsibility {
   padding-top: 2em; }

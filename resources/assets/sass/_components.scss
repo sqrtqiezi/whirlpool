@@ -390,10 +390,13 @@ nav.nav-list {
   top: 50%;
   margin-left: -1.5em;
   margin-top: -1.5em;
-  width: 2em;
-  height: 2em;
+  width: 2.5em;
+  height: 2.5em;
   background-size: cover;
   background-image: url(/images/close.png);
+  &:hover {
+    background-image: url(/images/close-hover.png);
+  }
 }
 
 .nav-page-next {
@@ -406,6 +409,9 @@ nav.nav-list {
   height: 3em;
   background-size: cover;
   background-image: url(/images/page-next.png);
+  &:hover {
+    background-image: url(/images/page-next-hover.png);
+  }
 }
 
 .nav-page-prev {
@@ -418,6 +424,9 @@ nav.nav-list {
   height: 3em;
   background-size: cover;
   background-image: url(/images/page-prev.png);
+  &:hover {
+    background-image: url(/images/page-prev-hover.png);
+  }
 }
 
 //endregion

@@ -8,9 +8,9 @@
   }
 
   div#video-raster {
-    background-image: url(/images/video_raster.png);
-    //background-color: black;
-    opacity: .7;
+    //background-image: url(/images/video_raster.png);
+    background-color: black;
+    opacity: .6;
     height: 100%;
     width: 100%;
     z-index: $zindex-background;

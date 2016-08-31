@@ -61,7 +61,7 @@
     height: 70%;
     background-size: cover;
     margin-bottom: 0;
-    background-image: url(/images/brand_info.png);
+    background-image: url(/images/brand_info.jpg);
 
   }
   .detail-body {
@@ -87,16 +87,16 @@
     padding-top: 25%;
 
     &.item-01 {
-      background-image: url(/images/item-01.png);
+      background-image: url(/images/item-01.jpg);
     }
     &.item-02 {
-      background-image: url(/images/item-02.png);
+      background-image: url(/images/item-02.jpg);
     }
     &.item-03 {
-      background-image: url(/images/item-03.png);
+      background-image: url(/images/item-03.jpg);
     }
     &.item-04 {
-      background-image: url(/images/item-04.png);
+      background-image: url(/images/item-04.jpg);
     }
 
     .item-heading {
@@ -188,7 +188,7 @@
   }
 
   .line-wrapper {
-    width: 100em;
+    width: 90em;
   }
 
   .detail-line {
@@ -248,7 +248,7 @@
       font-weight: bold;
     }
     .item-body {
-      padding: 1em 1em;
+      padding: .5em 1em;
 
       .item {
         display: inline-block;
@@ -340,6 +340,74 @@
     }
   }
 }
+
+
+@media only screen and ( max-width: 1600px ) {
+  .detail.brand-honour {
+    .detail-body {
+      & > div {
+        width: 75em;
+      }
+      .line-wrapper {
+        width: 80em;
+      }
+    }
+  }
+}
+
+@media only screen and ( max-width: 1440px ) {
+  .detail.brand-honour {
+    .detail-body {
+      & > div {
+        width: 70em;
+      }
+      .line-wrapper {
+        width: 80em;
+      }
+    }
+  }
+}
+
+@media only screen and ( max-width: 1366px ) {
+  .detail.brand-honour {
+    .detail-body {
+      & > div {
+        width: 65em;
+      }
+      .line-wrapper {
+        width: 80em;
+      }
+    }
+  }
+}
+
+@media only screen and ( max-width: 1280px ) {
+  .detail.brand-honour {
+    .detail-body {
+      & > div {
+        width: 60em;
+      }
+      .line-wrapper {
+        width: 80em;
+      }
+    }
+  }
+}
+
+@media only screen and ( max-width: 1024px ) {
+  .detail.brand-honour {
+    .detail-body {
+      & > div {
+        width: 48em;
+      }
+      .line-wrapper {
+        width: 70em;
+      }
+    }
+  }
+}
+
+
 
 .detail.brand-responsibility {
   padding-top: 2em;
