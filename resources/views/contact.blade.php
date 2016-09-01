@@ -11,7 +11,7 @@
         <div class="grid-cell grid-cell-no-3"></div>
         <div class="grid-cell grid-cell-no-4"></div>
         <div class="grid-cell grid-cell-no-5">
-            <a href="{{ route('home') }}" class="nav-close"></a>
+            <a data-pjax href="{{ route('home') }}" class="nav-close"></a>
         </div>
         <div class="grid-cell grid-cell-no-6"></div>
         <div class="grid-cell grid-cell-no-7">

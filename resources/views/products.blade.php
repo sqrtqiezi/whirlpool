@@ -24,7 +24,7 @@
             </a>
         </section>
         <section class="grid-cell grid-cell-no-4">
-            <a href="{{ route('home') }}" class="nav-close"></a>
+            <a data-pjax data-close="true" href="{{ route('home') }}" class="nav-close"></a>
         </section>
         <section class="grid-cell grid-cell-no-5">
             <div class="title">

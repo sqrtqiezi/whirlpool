@@ -1,7 +1,42 @@
 require('./bootstrap');
 var NewsWidget = require('./NewsWidget');
 
-$(document).pjax('a', '#pjax-container');
+if ($.support.pjax) {
+  $(document).on('click', 'a[data-pjax]', function (event) {
+    if ((isInContent('content-product') || isInContent('content-category')) && $(this).data('close')) {
+      hideItemsAndPjax(event);
+    }
+    else {
+      $.pjax.click(event, {container: '#pjax-container'})
+    }
+  })
+}
+
+
+function hideItemsAndPjax(event) {
+  var i = 1;
+  $(".product-item").each(function () {
+    $(this).removeClass('fadeIn')
+      .addClass('fadeOut')
+      .addClass('animated-' + i++)
+      .css('opacity', '0')
+  })
+
+  var duration = 200 * i + 1000;
+
+  var aEvent = _.cloneDeep(event);
+  event.preventDefault();
+  setTimeout(function () {
+    $.pjax.click(aEvent, {container: '#pjax-container'})
+  }, duration);
+}
+
+function isInContent(className) {
+  if ($(".content." + className)[0] !== undefined)
+    return true;
+  return false;
+}
+
 $(document).on("pjax:timeout", function (event) {
   // 阻止超时导致链接跳转事件发生
   event.preventDefault()
@@ -90,7 +125,6 @@ function refreshAll() {
   if ($(".content.content-projects")[0] !== undefined) {
     function bindSize() {
       var height = $($(".grid-cell.grid-cell-no-6")[0]).height();
-      console.log('height:' + height);
       $(".project-item > img").each(function () {
         $(this).height(height - 2);
       })
@@ -131,7 +165,6 @@ function refreshAll() {
   if ($(".content-about")[0] !== undefined) {
     var url = window.location.hash
     var id = url.split("#")[1];
-    console.log(id);
     if (id === undefined)
       id = 'brand-info';
     godetail(id);

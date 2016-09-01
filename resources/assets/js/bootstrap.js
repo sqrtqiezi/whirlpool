@@ -2,7 +2,7 @@
  * I pledge that this program represents my own
  * program code.
  */
-//window._ = require('lodash');
+window._ = require('lodash');
 
 window.$ = window.jQuery = require('jquery');
 require('./thirdparts/jquery.sidr');

@@ -441,6 +441,106 @@ i.fa {
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both; }
 
+.animated-1 {
+  -webkit-animation-delay: 0.3s;
+  /* Chrome, Safari, Opera */
+  animation-delay: 0.3s; }
+
+.animated-2 {
+  -webkit-animation-delay: 0.6s;
+  /* Chrome, Safari, Opera */
+  animation-delay: 0.6s; }
+
+.animated-3 {
+  -webkit-animation-delay: 0.9s;
+  /* Chrome, Safari, Opera */
+  animation-delay: 0.9s; }
+
+.animated-4 {
+  -webkit-animation-delay: 1.2s;
+  /* Chrome, Safari, Opera */
+  animation-delay: 1.2s; }
+
+.animated-5 {
+  -webkit-animation-delay: 1.5s;
+  /* Chrome, Safari, Opera */
+  animation-delay: 1.5s; }
+
+.animated-6 {
+  -webkit-animation-delay: 1.8s;
+  /* Chrome, Safari, Opera */
+  animation-delay: 1.8s; }
+
+.animated-7 {
+  -webkit-animation-delay: 2.1s;
+  /* Chrome, Safari, Opera */
+  animation-delay: 2.1s; }
+
+.animated-8 {
+  -webkit-animation-delay: 2.4s;
+  /* Chrome, Safari, Opera */
+  animation-delay: 2.4s; }
+
+.animated-9 {
+  -webkit-animation-delay: 2.7s;
+  /* Chrome, Safari, Opera */
+  animation-delay: 2.7s; }
+
+.animated-10 {
+  -webkit-animation-delay: 3s;
+  /* Chrome, Safari, Opera */
+  animation-delay: 3s; }
+
+.animated-11 {
+  -webkit-animation-delay: 3.3s;
+  /* Chrome, Safari, Opera */
+  animation-delay: 3.3s; }
+
+.animated-12 {
+  -webkit-animation-delay: 3.6s;
+  /* Chrome, Safari, Opera */
+  animation-delay: 3.6s; }
+
+.animated-13 {
+  -webkit-animation-delay: 3.9s;
+  /* Chrome, Safari, Opera */
+  animation-delay: 3.9s; }
+
+.animated-14 {
+  -webkit-animation-delay: 4.2s;
+  /* Chrome, Safari, Opera */
+  animation-delay: 4.2s; }
+
+.animated-15 {
+  -webkit-animation-delay: 4.5s;
+  /* Chrome, Safari, Opera */
+  animation-delay: 4.5s; }
+
+.animated-16 {
+  -webkit-animation-delay: 4.8s;
+  /* Chrome, Safari, Opera */
+  animation-delay: 4.8s; }
+
+.animated-17 {
+  -webkit-animation-delay: 5.1s;
+  /* Chrome, Safari, Opera */
+  animation-delay: 5.1s; }
+
+.animated-18 {
+  -webkit-animation-delay: 5.4s;
+  /* Chrome, Safari, Opera */
+  animation-delay: 5.4s; }
+
+.animated-19 {
+  -webkit-animation-delay: 5.7s;
+  /* Chrome, Safari, Opera */
+  animation-delay: 5.7s; }
+
+.animated-20 {
+  -webkit-animation-delay: 6s;
+  /* Chrome, Safari, Opera */
+  animation-delay: 6s; }
+
 .animated.infinite {
   -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite; }
@@ -3190,7 +3290,7 @@ a.life-item {
     margin-top: .5em;
     font-family: "source-han-sans-cn", "Microsoft yahei", 微软雅黑, "HanHei SC", "PingFang SC", sans-serif; }
   .title.is-main-page {
-    width: 35%; }
+    width: 200%; }
     .title.is-main-page .main-title {
       text-transform: capitalize; }
 

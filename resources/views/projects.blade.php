@@ -12,7 +12,7 @@
         <div class="grid-cell grid-cell-no-4">
         </div>
         <div class="grid-cell grid-cell-no-5">
-            <a href="{{ route('home') }}" class="nav-close"></a>
+            <a data-pjax href="{{ route('home') }}" class="nav-close"></a>
         </div>
         <div class="grid-cell grid-cell-no-6">
             <div class="scrollbar-macosx">
@@ -45,13 +45,13 @@
             </div>
         </div>
         <div class="grid-cell grid-cell-no-16">
-            <a href="{{ route('projects') }}" class="nav-page-prev"></a>
+            <a data-pjax href="{{ route('projects') }}" class="nav-page-prev"></a>
         </div>
         <div class="grid-cell grid-cell-no-17"></div>
         <div class="grid-cell grid-cell-no-18"></div>
         <div class="grid-cell grid-cell-no-19"></div>
         <div class="grid-cell grid-cell-no-20">
-            <a href="{{ route('projects') }}" class="nav-page-next"></a>
+            <a data-pjax href="{{ route('projects') }}" class="nav-page-next"></a>
         </div>
     </div>
 @endsection

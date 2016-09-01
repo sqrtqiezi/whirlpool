@@ -15,6 +15,14 @@
   animation-fill-mode: both;
 }
 
+@for $i from 1 through 20 {
+  .animated-#{$i} {
+    -webkit-animation-delay: .3s * $i; /* Chrome, Safari, Opera */
+    animation-delay: .3s * $i;
+  }
+}
+
+
 .animated.infinite {
   -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;

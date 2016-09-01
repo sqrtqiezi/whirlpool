@@ -156,7 +156,7 @@
     </div>
 
     <div class="grid-cell">
-        <a href="{{ route('home') }}" class="nav-close"></a>
+        <a data-pjax href="{{ route('home') }}" class="nav-close"></a>
     </div>
 
     <div class="grid-cell"></div>

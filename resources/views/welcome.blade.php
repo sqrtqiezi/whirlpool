@@ -23,7 +23,7 @@
                 <span class="sub-title">百年品质‧烹饪全球美食</span>
             </div>
             <div class="widget">
-                <div class="news-slider">
+                <div class="news-slider fadeIn animated">
                     <ul>
                         <li>
                             <div class="widget-heading clearfix">

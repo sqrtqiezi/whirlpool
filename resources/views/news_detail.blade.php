@@ -34,7 +34,7 @@
             </div>
         </div>
         <div class="grid-cell grid-cell-no-4">
-            <a href="{{ route('news') }}" class="nav-close"></a>
+            <a data-pjax href="{{ route('news') }}" class="nav-close"></a>
         </div>
         <div class="grid-cell grid-cell-no-5">
             <div class="title">
@@ -43,12 +43,4 @@
             </div>
         </div>
     </div>
-@endsection
-
-@section('custom-js')
-    <script>
-        jQuery(document).ready(function () {
-            jQuery('.scrollbar-macosx').scrollbar();
-        });
-    </script>
 @endsection
