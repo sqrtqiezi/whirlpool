@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
     <title>惠而浦中国 | 官方网站—世界万千家庭信任的家用电器品牌</title>
+    <meta charset="utf-8" />
     <meta name="keywords" content="进口家电,家用电器,惠而浦洗衣机,惠而浦冰箱,惠而浦微波炉"/>
     <meta name="description" content="进口家电,家用电器,惠而浦洗衣机,惠而浦冰箱,惠而浦微波炉"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,6 +10,7 @@
     <link rel="stylesheet" href="/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/jquery.sidr.dark.min.css">
     <link rel="stylesheet" href="/css/unslider.css">
+    <link rel="stylesheet" href="/css/progressjs.css">
     <link rel="stylesheet" href="/css/app.css">
 </head>
 <body>
@@ -20,7 +22,9 @@
 <div class="main wrapper clearfix">
     <div id="video-raster"></div>
     <article>
-        @yield('content')
+        <div id="pjax-container" >
+            @yield('content')
+        </div>
         <div class="grid">
             <section class="grid-cell grid-cell-no-1"></section>
             <section class="grid-cell grid-cell-no-2"></section>
@@ -48,10 +52,10 @@
         <nav class="nav-list pull-left">
             <ul class="nav-top-list">
                 <li>
-                    <a href="{{ route('about') }}" data-hover="关于我们">
+                    <a href="javascript:;" class="js-top-nav" data-sub-nav="about-sub-nav" data-hover="关于我们">
                         <span>关于我们</span>
                     </a>
-                    <ul class="nav-sub-list flipInX animated">
+                    <ul id="about-sub-nav" class="nav-sub-list bounceInDown animated">
                         <li><a href="{{ route('about') }}#brand-info"><span>品牌简介</span></a></li>
                         <li><a href="{{ route('about') }}#brand-course"><span>发展历程</span></a></li>
                         <li><a href="{{ route('about') }}#brand-worth"><span>品牌价值观</span></a></li>
@@ -60,8 +64,9 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="{{ route('products') }}" data-hover="厨房电器"><span>厨房电器</span></a>
-                    <ul class="nav-sub-list flipInX animated">
+                    <a href="javascript:;" class="js-top-nav" data-sub-nav="product-sub-nav" data-hover="厨房电器"><span>厨房电器</span></a>
+                    <ul id="product-sub-nav" class="nav-sub-list bounceInDown animated">
+                        <li><a href="{{ route('products') }}"><span>全部</span></a></li>
                         <li><a href="{{ route('category', 1) }}"><span>吸油烟机</span></a></li>
                         <li><a href="{{ route('category', 1) }}"><span>灶具</span></a></li>
                         <li><a href="{{ route('category', 1) }}"><span>微波炉</span></a></li>
@@ -75,8 +80,9 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="{{ route('news') }}" data-hover="新闻中心"><span>新闻中心</span></a>
-                    <ul class="nav-sub-list flipInX animated">
+                    <a href="javascript:;" class="js-top-nav" data-sub-nav="news-sub-nav" data-hover="新闻中心"><span>新闻中心</span></a>
+                    <ul id="news-sub-nav" class="nav-sub-list bounceInDown animated">
+                        <li><a href="{{ route('news') }}"><span>全部</span></a></li>
                         <li><a href="#"><span>企业内讯</span></a></li>
                         <li><a href="#"><span>媒体报道</span></a></li>
                         <li><a href="#"><span>促销活动</span></a></li>
@@ -89,8 +95,9 @@
                     <a href="{{ route('stores') }}" data-hover="终端形象"><span>终端形象</span></a>
                 </li>
                 <li>
-                    <a href="{{ route('life') }}" data-hover="“会”生活"><span>“会”生活</span></a>
-                    <ul class="nav-sub-list flipInX animated">
+                    <a href="javascript:;" class="js-top-nav" data-sub-nav="life-sub-nav" data-hover="“会”生活"><span>“会”生活</span></a>
+                    <ul id="life-sub-nav" class="nav-sub-list bounceInDown animated">
+                        <li><a href="{{ route('life') }}"><span>全部</span></a></li>
                         <li><a href="{{ route('life') }}"><span>厨电创想人</span></a></li>
                         <li><a href="{{ route('life') }}"><span>"懂"厨电</span></a></li>
                         <li><a href="{{ route('life') }}"><span>"品"美味</span></a></li>
@@ -139,5 +146,6 @@
     new Bugtags('bc4e9de0b3d5aa9fabb1cd0d59e35600','VERSION_NAME','VERSION_CODE');
 </script>
 <script src="/js/app.js"></script>
+<script src="/js/progress.js"></script>
 @yield('custom-js')
 </html>

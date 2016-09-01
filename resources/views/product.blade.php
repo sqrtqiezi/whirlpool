@@ -175,12 +175,3 @@
         </div>
     </div>
 @endsection
-
-@section('custom-js')
-    <script>
-        jQuery(document).ready(function () {
-            jQuery('.scrollbar-macosx').scrollbar();
-
-        });
-    </script>
-@endsection

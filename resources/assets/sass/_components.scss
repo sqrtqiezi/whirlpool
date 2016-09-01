@@ -236,35 +236,46 @@ nav.nav-list {
     margin: 0;
     padding: 0;
 
-    li {
+    & > li {
       position: relative;
       width: 6em;
       display: inline-block;
       zoom: 1;
       *display: inline;
-      &:hover {
-        ul.nav-sub-list {
-          display: inline-block;
-        }
-      }
     }
   }
 
   ul.nav-sub-list {
     display: none;
-    position: absolute;
-    left: 6em;
+    position: fixed;
+    left: 0;
     top: 0;
-    margin-top: 0;
-    padding-left: 0;
-    background-color: silver;
-    height: $footer-height;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: .8;
     z-index: $zindex-popover;
+    padding-top: 10%;
 
     li {
       display: inline-block;
-      zoom: 1;
-      *display: inline;
+      width: 100%;
+      position: relative;
+      text-align: center;
+      z-index: $zindex-popover2;
+
+      a, span {
+        display: inline-block;
+        width: auto;
+      }
+      span {
+        font-size: 1.5em;
+        color: white;
+
+        &:hover {
+          color: $brand-primary;
+        }
+      }
     }
   }
 
@@ -287,11 +298,11 @@ nav.nav-list {
       width: 100%;
       height: $footer-height;
       line-height: $footer-height;
-      padding: 0 .5em;
+      text-align: center;
       background-color: $brand-primary;
       color: white;
       content: attr(data-hover);
-      font-family: 'source-han-sans-cn';
+      font-family: $brand-fonts;
       -webkit-transition: -webkit-transform .5s;
       -moz-transition: -moz-transform .5s;
       transition: transform .5s;

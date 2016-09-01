@@ -20,6 +20,17 @@ i.fa {
   width: 1em;
 }
 
+#pjax-container {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+.progressjs-inner {
+  height: 3px !important;
+  background-color: $brand-primary !important;
+}
+
 @media only screen and (max-width: $mobile-width) {
   .only-desktop {
     display: none;

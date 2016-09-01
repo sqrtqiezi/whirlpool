@@ -187,9 +187,6 @@
             </ul>
         </div>
     </div>
-@endsection
-
-@section('custom-js')
     <script>
         $(function () {
             var url = window.location.hash
@@ -198,6 +195,5 @@
                 id = 'brand-info';
             $.godetail(id);
         })
-        jQuery('.scrollbar-macosx').scrollbar();
     </script>
 @endsection

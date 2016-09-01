@@ -2,18 +2,11 @@
  * I pledge that this program represents my own
  * program code.
  */
-window._ = require('lodash');
+//window._ = require('lodash');
 
 window.$ = window.jQuery = require('jquery');
 require('./thirdparts/jquery.sidr');
 require('./thirdparts/unslider-min');
 require('./thirdparts/jquery.scrollbar');
-
-// window.Vue = require('vue');
-// require('vue-resource');
-//
-// Vue.http.interceptors.push(function (request, next) {
-//   request.headers['X-CSRF-TOKEN'] = Laravel.csrfToken;
-//
-//   next();
-// });
+require('./thirdparts/jquery.pjax');
+//window.progressJs = require('./thirdparts/progress');

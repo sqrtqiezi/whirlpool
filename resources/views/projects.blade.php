@@ -55,25 +55,3 @@
         </div>
     </div>
 @endsection
-
-
-@section('custom-js')
-    <script>
-        $(function () {
-            function bindSize() {
-                var height = $($(".grid-cell.grid-cell-no-6")[0]).height();
-                $(".project-item > img").each(function() {
-                    $(this).height(height-2);
-                })
-                var width = $($(".grid-cell.grid-cell-no-6 .project-item")[0]).width();
-                $($(".grid-cell.grid-cell-no-6 .project-wrapper")[0]).width(width * 3);
-            }
-
-            $(window).resize(bindSize);
-
-            bindSize();
-            jQuery('.scrollbar-macosx').scrollbar();
-        });
-
-    </script>
-@endsection
