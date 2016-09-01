@@ -83,9 +83,9 @@
                     <a href="javascript:;" class="js-top-nav" data-sub-nav="news-sub-nav" data-hover="新闻中心"><span>新闻中心</span></a>
                     <ul id="news-sub-nav" class="nav-sub-list bounceInDown animated">
                         <li><a href="{{ route('news') }}"><span>全部</span></a></li>
-                        <li><a href="#"><span>企业内讯</span></a></li>
-                        <li><a href="#"><span>媒体报道</span></a></li>
-                        <li><a href="#"><span>促销活动</span></a></li>
+                        <li><a href="{{ route('news') }}"><span>企业内讯</span></a></li>
+                        <li><a href="{{ route('news') }}"><span>媒体报道</span></a></li>
+                        <li><a href="{{ route('news') }}"><span>促销活动</span></a></li>
                     </ul>
                 </li>
                 <li>
