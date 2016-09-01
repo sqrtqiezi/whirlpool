@@ -1,7 +1,7 @@
 @extends('layouts.base')
 
 @section('content')
-    <div class="details-content">
+    <div class="details-content content-about">
         <div class="detail brand-info pull-left bounceInLeft animated" style="display: none">
             <div class="detail-hero"></div>
             <div class="detail-body">
@@ -187,13 +187,4 @@
             </ul>
         </div>
     </div>
-    <script>
-        $(function () {
-            var url = window.location.hash
-            var id = url.split("#")[1];
-            if (id === undefined)
-                id = 'brand-info';
-            $.godetail(id);
-        })
-    </script>
 @endsection

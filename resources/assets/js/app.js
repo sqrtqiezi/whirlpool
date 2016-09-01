@@ -54,28 +54,6 @@ function refreshAll() {
   //endreigon
 
 
-  jQuery.godetail = function (id) {
-    $('.details-content .detail').each(function () {
-      $(this).hide()
-    })
-    $($('.detail.' + id)[0]).show()
-
-    var activeLi = $('.details-nav li.active')[0];
-
-    if (activeLi !== undefined) {
-      $(activeLi).removeClass('active');
-    }
-
-    activeLi = $('.details-nav a[data-detail-name="' + id + '"] > li')[0];
-    if (activeLi !== undefined)
-      $(activeLi).addClass('active');
-  }
-
-  $('.js-details').click(function () {
-    var id = $(this).data('detail-name');
-    $.godetail(id);
-  })
-
   //子菜单处理
   // $(".footer > nav.nav-list > ul > li").hover(function () {
   //   var liWidth = $(this).width();
@@ -127,6 +105,37 @@ function refreshAll() {
     bindSize();
   }
 
+  //关于我们页面处理
+  function godetail(id) {
+    $('.details-content .detail').each(function () {
+      $(this).hide()
+    })
+    $($('.detail.' + id)[0]).show()
+
+    var activeLi = $('.details-nav li.active')[0];
+
+    if (activeLi !== undefined) {
+      $(activeLi).removeClass('active');
+    }
+
+    activeLi = $('.details-nav a[data-detail-name="' + id + '"] > li')[0];
+    if (activeLi !== undefined)
+      $(activeLi).addClass('active');
+  }
+
+  $('.js-details').click(function () {
+    var id = $(this).data('detail-name');
+    godetail(id);
+  })
+
+  if ($(".content-about")[0] !== undefined) {
+    var url = window.location.hash
+    var id = url.split("#")[1];
+    console.log(id);
+    if (id === undefined)
+      id = 'brand-info';
+    godetail(id);
+  }
 
   //滚动条设置
   jQuery('.scrollbar-macosx').scrollbar();

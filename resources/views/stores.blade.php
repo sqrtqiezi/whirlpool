@@ -67,7 +67,7 @@
         </div>
         <div class="grid-cell grid-cell-no-10"></div>
         <div class="grid-cell grid-cell-no-11">
-            <div class="store-item ">
+            <div class="store-item fadeIn animated">
                 <img src="/images/store-item-1.png" alt="">
                 <div class="store-content">
                     <span class="store-title">合肥市蜀山区网点</span>
@@ -81,7 +81,7 @@
             </div>
         </div>
         <div class="grid-cell grid-cell-no-12">
-            <div class="store-item ">
+            <div class="store-item fadeIn animated">
                 <img src="/images/store-item-2.png" alt="">
                 <div class="store-content">
                     <span class="store-title">合肥市蜀山区网点</span>
@@ -95,7 +95,7 @@
             </div>
         </div>
         <div class="grid-cell grid-cell-no-13">
-            <div class="store-item ">
+            <div class="store-item fadeIn animated">
                 <img src="/images/store-item-3.png" alt="">
                 <div class="store-content">
                     <span class="store-title">合肥市蜀山区网点</span>
@@ -109,7 +109,7 @@
             </div>
         </div>
         <div class="grid-cell grid-cell-no-14">
-            <div class="store-item ">
+            <div class="store-item fadeIn animated">
                 <img src="/images/store-item-4.png" alt="">
                 <div class="store-content">
                     <span class="store-title">合肥市蜀山区网点</span>
@@ -123,7 +123,7 @@
             </div>
         </div>
         <div class="grid-cell grid-cell-no-15">
-            <div class="store-item ">
+            <div class="store-item fadeIn animated">
                 <img src="/images/store-item-5.png" alt="">
                 <div class="store-content">
                     <span class="store-title">合肥市蜀山区网点</span>
