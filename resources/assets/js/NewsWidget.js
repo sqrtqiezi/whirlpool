@@ -55,6 +55,18 @@
       setTimeout(this.autoChangeSlider.bind(this), this.interval)
     },
 
+    setNewsItemWidth: function () {
+      var wordWidth = $('#news-item-test').width();
+      var widgetWidth = $($(".widget-body")[0]).width();
+      var maxLength = Math.floor(widgetWidth/wordWidth);
+
+      $(".news-item a").each(function () {
+        var words = $(this).html();
+        if(words.length > maxLength)
+          $(this).html(words.substr(0, maxLength - 4) + "......")
+      })
+    },
+
     refresh: function () {
       var widget = this;
 
@@ -68,6 +80,8 @@
       })
 
       this.setNewsImageSize();
+
+      this.setNewsItemWidth();
     }
   }
 

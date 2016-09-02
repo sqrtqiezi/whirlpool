@@ -72,7 +72,9 @@ function refreshAll() {
     }
   });
 
-  newsWidget.refresh();
+  if(isInContent('content-home')) {
+    newsWidget.refresh();
+  }
 
 
   //region 新闻中心业务代码

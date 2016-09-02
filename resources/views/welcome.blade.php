@@ -1,7 +1,7 @@
 @extends('layouts.base')
 
 @section('content')
-    <div class="content">
+    <div class="content content-home">
         <section class="grid-cell">
             <a href="#sidr-main" id="responsive-menu-button">
                 <i class="fa fa-bars"></i>
@@ -35,26 +35,34 @@
                             <div class="widget-body">
                                 <ul class="news-list">
                                     <li class="news-item">
-                                        <a href="#">领导赴一线慰问员工</a>
+                                        <a href="{{ route('newsDetail', 1) }}">领导赴一线慰问员工</a>
                                     </li>
                                     <li class="news-item">
-                                        <a href="">公司冠名书法报海选活动 文化营销助理品牌</a>
+                                        <a href="{{ route('newsDetail', 1) }}">公司冠名书法报海选活动 文化营销助理品牌</a>
                                     </li>
                                     <li class="news-item">
-                                        <a href="">中共惠而浦(中国)公司第二次代表大会召开</a>
+                                        <a href="{{ route('newsDetail', 1) }}">中共惠而浦(中国)公司第二次代表大会召开</a>
+                                    </li>
+                                    <li class="news-item">
+                                        <a href="{{ route('newsDetail', 1) }}">中共惠而浦(中国)公司第二次代表大会召开</a>
                                     </li>
                                 </ul>
+                                <div id="news-item-test">测</div>
                             </div>
                         </li>
                         <li>
-                            <div data-image="/images/news-item-1.png" class="news-image">
-                                <a href="{{ route('newsDetail', 1) }}">惠而浦中国携手安徽绿地 打造品质生活新标杆</a>
-                            </div>
+                            <a href="{{ route('newsDetail', 1) }}">
+                                <div data-image="/images/news-item-1.png" class="news-image">
+                                    <span>惠而浦中国携手安徽绿地 打造品质生活新标杆</span>
+                                </div>
+                            </a>
                         </li>
                         <li>
-                            <div data-image="/images/news-item-2.png" class="news-image">
-                                <a href="{{ route('newsDetail', 1) }}">惠而浦中国携手安徽绿地 打造品质生活新标杆</a>
-                            </div>
+                            <a href="{{ route('newsDetail', 1) }}">
+                                <div data-image="/images/news-item-2.png" class="news-image">
+                                    <span>惠而浦中国携手安徽绿地 打造品质生活新标杆</span>
+                                </div>
+                            </a>
                         </li>
                     </ul>
                 </div>
