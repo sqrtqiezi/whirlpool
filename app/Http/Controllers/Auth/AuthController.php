@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
@@ -22,6 +23,13 @@ class AuthController extends Controller
     */
 
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
+
+    /**
+     * 登录模版位置
+     *
+     * @var string
+     */
+    protected $loginView = 'admin.auth.login';
 
     /**
      * Where to redirect users after login / registration.
@@ -69,4 +77,27 @@ class AuthController extends Controller
             'password' => bcrypt($data['password']),
         ]);
     }
+
+    /**
+     * 禁用注册
+     */
+    public function showRegistrationForm()
+    {
+        throw new NotFoundHttpException();
+    }
+
+    /**
+     * 禁用注册
+     */
+    public function postRegister()
+    {
+        throw new NotFoundHttpException();
+    }
+
+    public function register()
+    {
+        throw new NotFoundHttpException();
+    }
+
+
 }
