@@ -1,6 +1,8 @@
 require('./bootstrap');
 var NewsWidget = require('./NewsWidget');
 
+
+//region pjax 相关逻辑
 if ($.support.pjax) {
   $(document).on('click', 'a[data-pjax]', function (event) {
     if ((isInContent('content-product') || isInContent('content-category')) && $(this).data('close')) {
@@ -51,7 +53,12 @@ $(document).on("pjax:complete", function (event) {
   progressJs().end();
   refreshAll();
 })
+//endregion
 
+
+if ($.browser.mobile) {
+  require('./inMobile')
+}
 
 var newsWidget = new NewsWidget();
 $(window).resize(newsWidget.setNewsImageSize);
@@ -61,24 +68,20 @@ newsWidget.refresh();
 refreshAll();
 
 function refreshAll() {
-  $('#responsive-menu-button').sidr({
-    name: 'sidr-main',
-    source: '#navigation',
-    onOpen: function () {
-      $($("#responsive-menu-button > i.fa")[0]).removeClass('fa-bars').addClass('fa-times');
-    },
-    onClose: function () {
-      $($("#responsive-menu-button > i.fa")[0]).removeClass('fa-times').addClass('fa-bars');
-    }
-  });
 
-  if(isInContent('content-home')) {
+  if (isInContent('content-home')) {
     newsWidget.refresh();
   }
 
 
   //region 新闻中心业务代码
-  var height = $($('.grid-cell.grid-cell-no-1')[0]).height();
+  var height;
+  if ($.browser.mobile) {
+    height = $($('.widget')[0]).height();
+  }
+  else {
+    height = $($('.grid-cell.grid-cell-no-1')[0]).height();
+  }
   $('.content-news .news-item').each(function () {
     var v = 'url(' + $(this).data('image') + ')';
     var item = $(this);
@@ -103,7 +106,6 @@ function refreshAll() {
 
   $(".js-top-nav").click(function () {
     var subNavName = $(this).data('sub-nav');
-
     $('#' + subNavName).show();
   })
 

@@ -8,7 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link type="text/css" href="/images/icon.ico" rel="shortcut icon"/>
     <link rel="stylesheet" href="/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/css/jquery.sidr.dark.min.css">
     <link rel="stylesheet" href="/css/unslider.css">
     <link rel="stylesheet" href="/css/progressjs.css">
     <link rel="stylesheet" href="/css/app.css">
@@ -124,19 +123,20 @@
     </div>
 </div>
 
-<div id="navigation" style="display: none">
+<div id="mobile-navigation" >
     <nav class="nav">
         <ul>
-            <li><a data-pjax href="{{ route('home') }}">首页</a></li>
-            <li><a data-pjax href="{{ route('about') }}">关于我们</a></li>
-            <li><a data-pjax href="{{ route('products') }}">厨房电器</a></li>
-            <li><a data-pjax href="{{ route('news') }}">新闻中心</a></li>
-            <li><a data-pjax href="{{ route('projects') }}">工程案例</a></li>
-            <li><a data-pjax href="{{ route('stores') }}">终端形象</a></li>
-            <li><a data-pjax href='{{ route('life') }}'>“会” 生活</a></li>
-            <li><a data-pjax href="{{ route('contact') }}">联系我们</a></li>
+            <li><a href="{{ route('home') }}">首页</a></li>
+            <li><a href="{{ route('about') }}">关于我们</a></li>
+            <li><a href="{{ route('products') }}">厨房电器</a></li>
+            <li><a href="{{ route('news') }}">新闻中心</a></li>
+            <li><a href="{{ route('projects') }}">工程案例</a></li>
+            <li><a href="{{ route('stores') }}">终端形象</a></li>
+            <li><a href='{{ route('life') }}'>“会” 生活</a></li>
+            <li><a href="{{ route('contact') }}">联系我们</a></li>
         </ul>
     </nav>
+    <div id="responsive-menu-close" class="nav-close"></div>
 </div>
 
 </body>

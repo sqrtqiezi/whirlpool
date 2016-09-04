@@ -7,7 +7,7 @@
             <div class="logo">
                 <img src="/images/logo.png" alt="">
             </div>
-        </div>56
+        </div>
         <div class="grid-cell grid-cell-no-3"></div>
         <div class="grid-cell grid-cell-no-4"></div>
         <div class="grid-cell grid-cell-no-5">
