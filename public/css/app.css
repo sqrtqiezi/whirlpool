@@ -4098,10 +4098,14 @@ nav.nav-list {
   .detail.brand-honour .detail-body {
     padding: 0 0;
     width: 100vh;
-    font-size: .2em; }
+    font-size: .8em; }
     .detail.brand-honour .detail-body .line-wrapper {
       width: 85em;
       padding-right: 15em; }
+    .detail.brand-honour .detail-body .detail-item .item-body .item span {
+      font-size: .8em; }
+      .detail.brand-honour .detail-body .detail-item .item-body .item span.title {
+        font-size: 1em; }
   .detail.brand-responsibility {
     padding: 0 0; }
     .detail.brand-responsibility .detail-heading .sub-titles {

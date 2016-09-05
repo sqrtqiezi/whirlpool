@@ -556,11 +556,18 @@
     .detail-body {
       padding: 0 0;
       width: 100vh;
-      font-size: .2em;
+      font-size: .8em;
 
       .line-wrapper {
         width: 85em;
         padding-right: 15em;
+      }
+      .detail-item .item-body .item span {
+        font-size: .8em;
+        &.title {
+          font-size: 1em;
+        }
+      ;
       }
     }
   }
