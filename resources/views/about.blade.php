@@ -2,14 +2,7 @@
 
 @section('content')
     <div class="details-content content-about">
-        <div class="mobile-top only-mobile">
-            <a href="#sidr-main" id="responsive-menu-button">
-                <i class="fa fa-bars"></i>
-            </a>
-            <div class="logo">
-                <img src="/images/logo.png" alt="">
-            </div>
-        </div>
+        @include('layouts/mobile_top')
         <div class="mobile-detail only-mobile">
             <section class="title">
                 <span class="main-title">100 YEARS<br/> WHIRLPOOL</span>

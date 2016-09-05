@@ -1,27 +1,34 @@
 @extends('layouts.base')
 
 @section('content')
-    <div class="content content-life">
-        <div class="grid-cell grid-cell-no-1"></div>
-        <div class="grid-cell grid-cell-no-2">
+    <div class="content content-stores">
+        @include('layouts/mobile_top')
+        <div class="mobile-detail only-mobile">
+            <section class="title">
+                <span class="main-title">Terminal</span>
+                <span class="sub-title">终端形象</span>
+            </section>
+        </div>
+        <div class="grid-cell grid-cell-no-1 only-desktop"></div>
+        <div class="grid-cell grid-cell-no-2 only-desktop">
             <div class="logo">
                 <img src="/images/logo.png" alt="">
             </div>
         </div>
-        <div class="grid-cell grid-cell-no-3"></div>
-        <div class="grid-cell grid-cell-no-4">
+        <div class="grid-cell grid-cell-no-3 only-desktop"></div>
+        <div class="grid-cell grid-cell-no-4 only-desktop">
         </div>
-        <div class="grid-cell grid-cell-no-5">
+        <div class="grid-cell grid-cell-no-5 only-desktop">
             <a data-pjax href="{{ route('home') }}" class="nav-close"></a>
         </div>
-        <div class="grid-cell grid-cell-no-6"></div>
-        <div class="grid-cell grid-cell-no-7">
+        <div class="grid-cell grid-cell-no-6 only-desktop"></div>
+        <div class="grid-cell grid-cell-no-7 only-desktop">
             <div class="title">
                 <span class="main-title">Terminal</span>
                 <span class="sub-title">终端形象</span>
             </div>
         </div>
-        <div class="grid-cell grid-cell-no-8">
+        <div class="grid-cell grid-cell-no-8 only-desktop">
             <select class="stores-select" >
                 <option value="137">安徽</option>
                 <option value="138">北京</option>
@@ -59,13 +66,13 @@
                 <option value="170">黑龙江</option>
             </select>
         </div>
-        <div class="grid-cell grid-cell-no-9">
+        <div class="grid-cell grid-cell-no-9 only-desktop">
             <div class="search-input">
                 <input type="text" placeholder="输入专卖店网点关键词">
                 <i class="fa fa-search" aria-hidden="true"></i>
             </div>
         </div>
-        <div class="grid-cell grid-cell-no-10"></div>
+        <div class="grid-cell grid-cell-no-10 only-desktop"></div>
         <div class="grid-cell grid-cell-no-11">
             <div class="store-item fadeIn animated">
                 <img src="/images/store-item-1.png" alt="">
@@ -136,13 +143,13 @@
                 </div>
             </div>
         </div>
-        <div class="grid-cell grid-cell-no-16">
+        <div class="grid-cell grid-cell-no-16 only-desktop">
             <a data-pjax href="{{ route('stores') }}" class="nav-page-prev"></a>
         </div>
-        <div class="grid-cell grid-cell-no-17"></div>
-        <div class="grid-cell grid-cell-no-18"></div>
-        <div class="grid-cell grid-cell-no-19"></div>
-        <div class="grid-cell grid-cell-no-20">
+        <div class="grid-cell grid-cell-no-17 only-desktop"></div>
+        <div class="grid-cell grid-cell-no-18 only-desktop"></div>
+        <div class="grid-cell grid-cell-no-19 only-desktop"></div>
+        <div class="grid-cell grid-cell-no-20 only-desktop">
             <a data-pjax href="{{ route('stores') }}" class="nav-page-next"></a>
         </div>
     </div>

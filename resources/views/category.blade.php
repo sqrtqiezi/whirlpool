@@ -2,6 +2,13 @@
 
 @section('content')
     <div class="content content-category">
+        @include('layouts/mobile_top')
+        <div class="mobile-detail only-mobile">
+            <section class="title">
+                <span class="main-title">PRODUCT LIST</span>
+                <span class="sub-title">吸油烟机</span>
+            </section>
+        </div>
         <div class="grid-cell grid-cell-no-1"></div>
         <div class="grid-cell grid-cell-no-2">
             <div class="logo">

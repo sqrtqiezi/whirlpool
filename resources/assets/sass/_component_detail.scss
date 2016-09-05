@@ -666,8 +666,6 @@
       }
     }
 
-    $table-border: 1px solid #C2C2C2;
-    $table-row-height: 2.5em;
     table.product-tech-details {
       font-size: .6em;
       width: 100%;
@@ -885,6 +883,86 @@
               border: 3px solid $brand-primary;
             }
           }
+        }
+      }
+    }
+  }
+  
+  @media only screen and ( max-width: $mobile-width ) {
+    .product-show {
+      position: relative;
+      height: 50vh;
+
+      .hero-image {
+        width: 100%;
+      }
+
+      .description {
+        position: relative;
+        width: 100%;
+        right: 0;
+
+        .title {
+          padding: 2em 0;
+        }
+      }
+    }
+
+    .product-tech {
+      .pull-left,
+      .pull-right {
+        width: 100%;
+      }
+
+      .title {
+        padding: 2em 0;
+        margin-left: .6em;
+        font-size: 1.5em;
+      }
+
+      table.product-tech-details {
+        border-style: none;
+        tr,
+        tbody {
+          display: block;
+          width: 100%;
+          border-style: none;
+        }
+        tr td {
+          float: left;
+          width: 49.2% !important;
+          border: $table-border;
+          margin: 0 0;
+          box-sizing: border-box;
+        }
+
+      }
+    }
+
+    .product-core {
+      .title {
+        width: 100%;
+        margin: 0 0;
+
+        h1.main-title {
+          width: 100%;
+          font-size: 2.5em;
+        }
+      }
+    }
+
+    .product-descriptions {
+      .pull-left,
+      .pull-right {
+        width: 100%;
+        padding-right: 0;
+      }
+
+      .pull-right {
+        padding-bottom:  2em;
+
+        .main-title {
+          text-align: center;
         }
       }
     }

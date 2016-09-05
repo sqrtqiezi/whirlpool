@@ -5,7 +5,7 @@ var NewsWidget = require('./NewsWidget');
 //region pjax 相关逻辑
 if ($.support.pjax) {
   $(document).on('click', 'a[data-pjax]', function (event) {
-    if ((isInContent('content-product') || isInContent('content-category')) && $(this).data('close')) {
+    if ((isInContent('content-products') || isInContent('content-category')) && $(this).data('close')) {
       hideItemsAndPjax(event);
     }
     else {
@@ -126,6 +126,8 @@ function refreshAll() {
 
   //产品详情页样式处理
   function setProductDetailSize() {
+    if($.browser.mobile) return;
+
     var height = $($(".detail.product-detail")[0]).height()
 
     $(".detail.product-detail .product-detail-item").each(function () {
@@ -137,7 +139,7 @@ function refreshAll() {
   $(window).resize(setProductDetailSize);
 
   //工程案例页面处理
-  if ($(".content.content-projects")[0] !== undefined) {
+  if ($(".content.content-projects")[0] !== undefined && !$.browser.mobile) {
     function bindSize() {
       var height = $($(".grid-cell.grid-cell-no-6")[0]).height();
       $(".project-item > img").each(function () {

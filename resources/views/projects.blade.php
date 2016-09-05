@@ -2,16 +2,24 @@
 
 @section('content')
     <div class="content content-projects">
-        <div class="grid-cell grid-cell-no-1"></div>
-        <div class="grid-cell grid-cell-no-2">
+        @include('layouts/mobile_top')
+        <div class="mobile-detail only-mobile">
+            <section class="title">
+                <span class="main-title">engineering case</span>
+                <span class="sub-title">工程案例</span>
+            </section>
+        </div>
+
+        <div class="grid-cell grid-cell-no-1 only-desktop"></div>
+        <div class="grid-cell grid-cell-no-2 only-desktop">
             <div class="logo">
                 <img src="/images/logo.png" alt="">
             </div>
         </div>
-        <div class="grid-cell grid-cell-no-3"></div>
-        <div class="grid-cell grid-cell-no-4">
+        <div class="grid-cell grid-cell-no-3 only-desktop"></div>
+        <div class="grid-cell grid-cell-no-4 only-desktop">
         </div>
-        <div class="grid-cell grid-cell-no-5">
+        <div class="grid-cell grid-cell-no-5 only-desktop">
             <a data-pjax href="{{ route('home') }}" class="nav-close"></a>
         </div>
         <div class="grid-cell grid-cell-no-6">
@@ -44,13 +52,13 @@
                 </div>
             </div>
         </div>
-        <div class="grid-cell grid-cell-no-16">
+        <div class="grid-cell grid-cell-no-16 only-desktop">
             <a data-pjax href="{{ route('projects') }}" class="nav-page-prev"></a>
         </div>
-        <div class="grid-cell grid-cell-no-17"></div>
-        <div class="grid-cell grid-cell-no-18"></div>
-        <div class="grid-cell grid-cell-no-19"></div>
-        <div class="grid-cell grid-cell-no-20">
+        <div class="grid-cell grid-cell-no-17 only-desktop"></div>
+        <div class="grid-cell grid-cell-no-18 only-desktop"></div>
+        <div class="grid-cell grid-cell-no-19 only-desktop"></div>
+        <div class="grid-cell grid-cell-no-20 only-desktop">
             <a data-pjax href="{{ route('projects') }}" class="nav-page-next"></a>
         </div>
     </div>

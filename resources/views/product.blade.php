@@ -2,6 +2,13 @@
 
 @section('content')
     <div class="details-content">
+        @include('layouts/mobile_top')
+        <div class="mobile-detail only-mobile">
+            <section class="title">
+                <span class="main-title">PRODUCT LIST</span>
+                <span class="sub-title">厨房家电</span>
+            </section>
+        </div>
         <div class="detail product-detail bounceInLeft animated">
             <div class="scrollbar-macosx">
                 <div id="product-show" class="product-detail-item product-show">
@@ -146,17 +153,17 @@
         </div>
     </div>
 
-    <div class="grid-cell">
+    <div class="grid-cell only-desktop">
         <a href="{{ route('category', 1) }}" class="nav-close"></a>
     </div>
-    <div class="grid-cell"></div>
-    <div class="grid-cell">
+    <div class="grid-cell only-desktop"></div>
+    <div class="grid-cell only-desktop">
         <section class="title">
             <span class="main-title">AKF808</span>
             <span class="sub-title">吸油烟机</span>
         </section>
     </div>
-    <div class="grid-cell">
+    <div class="grid-cell only-desktop">
         <div class="details-nav">
             <ul>
                 <a href="#product-show">
