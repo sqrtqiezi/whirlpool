@@ -2855,7 +2855,7 @@ i.fa {
   animation-name: slideOutUp; }
 
 @media only screen and (min-width: 769px) {
-  div#big-video-wrap video#bgvid {
+  div#bg-video-wrap video#bgvid {
     position: absolute;
     min-width: 100%;
     min-height: 100%; }
@@ -2870,7 +2870,7 @@ i.fa {
 @media only screen and (max-width: 768px) {
   video#bgvid {
     display: none; }
-  div#big-video-wrap::after {
+  div#bg-video-wrap::after {
     content: '';
     display: block;
     position: absolute;
@@ -2881,7 +2881,7 @@ i.fa {
     background-color: #333;
     opacity: .6; } }
 
-div#big-video-wrap {
+div#bg-video-wrap {
   overflow: hidden;
   position: fixed;
   right: 0;

@@ -57,7 +57,10 @@ $(document).on("pjax:complete", function (event) {
 
 
 if ($.browser.mobile) {
-  require('./inMobile')
+  require('./inMobile');
+}
+else {
+  initVideoBG();
 }
 
 var newsWidget = new NewsWidget();
@@ -66,6 +69,14 @@ setTimeout(newsWidget.autoChangeSlider.bind(newsWidget), newsWidget.interval);
 newsWidget.setNewsImageSize()
 newsWidget.refresh();
 refreshAll();
+
+
+function initVideoBG() {
+  var videoUrl = 'http://obz9qz3z4.bkt.clouddn.com/whirlpool3';
+  $('#bg-video-wrap').append('<video autoplay muted loop id="bgvid"><source src="' +
+    videoUrl +
+    '" type="video/mp4"></video>');
+}
 
 function refreshAll() {
 

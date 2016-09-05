@@ -13,11 +13,7 @@
     <link rel="stylesheet" href="/css/app.css">
 </head>
 <body>
-<div id="big-video-wrap">
-    <video autoplay muted loop id="bgvid">
-        <source src="http://obz9qz3z4.bkt.clouddn.com/whirlpool3" type="video/mp4">
-    </video>
-</div>
+<div id="bg-video-wrap"></div>
 <div class="main wrapper clearfix">
     <div id="video-raster"></div>
     <article>
