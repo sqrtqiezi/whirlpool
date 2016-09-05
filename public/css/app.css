@@ -2961,6 +2961,9 @@ div#bg-video-wrap {
     .main article .content .grid-cell {
       height: auto;
       min-height: 5em; }
+  .main article .details-content {
+    width: 100%;
+    height: auto; }
   .main .logo {
     position: absolute;
     display: inline-block;
@@ -3271,6 +3274,10 @@ a.life-item {
     text-align: justify; }
   .contact-content .contact-info {
     color: #A8A8A8; }
+
+@media only screen and (max-width: 768px) {
+  .grid-cell > .nav-close {
+    display: none; } }
 
 .title {
   position: absolute;
@@ -3712,6 +3719,10 @@ nav.nav-list {
       margin-right: 1em;
       background-color: white; }
 
+@media only screen and (max-width: 768px) {
+  .details-nav {
+    display: none; } }
+
 .detail h1,
 .detail h2,
 .detail h3,
@@ -4041,6 +4052,22 @@ nav.nav-list {
       background-image: url(/images/response02.png); }
     .detail.brand-responsibility .item-logo.logo-03 {
       background-image: url(/images/response03.png); }
+
+@media only screen and (max-width: 768px) {
+  .detail.brand-info {
+    height: auto; }
+    .detail.brand-info .detail-hero {
+      width: 100%;
+      height: 30vh; }
+    .detail.brand-info .detail-body {
+      padding: 0 2em; }
+      .detail.brand-info .detail-body span {
+        text-align: left; }
+  .details-content.content-about > .detail {
+    display: inline-block !important; }
+  .detail.bounceInLeft {
+    -webkit-animation-name: none;
+    animation-name: none; } }
 
 .detail.product-detail .scroll-wrapper {
   width: 100%;

@@ -25,6 +25,12 @@
   }
 }
 
+@media only screen and ( max-width: $mobile-width ) {
+  .details-nav {
+    display: none;
+  }
+}
+
 .detail {
   h1,
   h2,
@@ -502,6 +508,34 @@
     }
   }
 }
+
+
+@media only screen and ( max-width: $mobile-width ) {
+  .detail.brand-info {
+    height: auto;
+
+    .detail-hero {
+      width: 100%;
+      height: 30vh;
+    }
+
+    .detail-body {
+      padding: 0 2em;
+      span {
+        text-align: left;
+      }
+    }
+  }
+
+  .details-content.content-about > .detail {
+    display: inline-block !important;
+  }
+
+  .detail.bounceInLeft {
+    animation-name: none;
+  }
+}
+
 
 .detail.product-detail {
   .scroll-wrapper {

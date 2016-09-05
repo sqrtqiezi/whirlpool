@@ -93,6 +93,11 @@
       }
     }
 
+    article .details-content {
+      width: 100%;
+      height: auto;
+    }
+
     .logo {
       position: absolute;
       display: inline-block;
@@ -114,3 +119,20 @@
 @import "layout_projects";
 @import "layout_life";
 @import "layout_contact";
+
+@media only screen and ( max-width: $mobile-width ) {
+  .grid-cell > .nav-close {
+    display: none;
+  }
+
+  //html,
+  //body,
+  //#pjax-container,
+  //.main,
+  //.main article
+  //{
+  //  display: block;
+  //  max-width: 100%;
+  //  height: auto;
+  //}
+}
