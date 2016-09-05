@@ -2,6 +2,20 @@
 
 @section('content')
     <div class="details-content content-about">
+        <div class="mobile-top only-mobile">
+            <a href="#sidr-main" id="responsive-menu-button">
+                <i class="fa fa-bars"></i>
+            </a>
+            <div class="logo">
+                <img src="/images/logo.png" alt="">
+            </div>
+        </div>
+        <div class="mobile-detail only-mobile">
+            <section class="title">
+                <span class="main-title">100 YEARS<br/> WHIRLPOOL</span>
+                <span class="sub-title">百年惠而浦</span>
+            </section>
+        </div>
         <div class="detail brand-info pull-left bounceInLeft animated" style="display: none">
             <div class="detail-hero"></div>
             <div class="detail-body">

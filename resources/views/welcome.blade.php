@@ -2,8 +2,8 @@
 
 @section('content')
     <div class="content content-home">
-        <section class="grid-cell">
-            <a href="javascript:;" id="responsive-menu-button">
+        <section class="grid-cell mobile-top">
+            <a href="#sidr-main" id="responsive-menu-button">
                 <i class="fa fa-bars"></i>
             </a>
             <div class="logo">
@@ -58,7 +58,7 @@
                             </a>
                         </li>
                         <li>
-                            <a class="news-image-link" href="{{ route('newsDetail', 1) }}">
+                            <a href="{{ route('newsDetail', 1) }}">
                                 <div data-image="/images/news-item-2.png" class="news-image">
                                     <span>惠而浦中国携手安徽绿地 打造品质生活新标杆</span>
                                 </div>

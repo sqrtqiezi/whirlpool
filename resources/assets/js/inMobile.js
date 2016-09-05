@@ -20,6 +20,7 @@
 }(typeof window !== "undefined" ? window : this, function( window, noGlobal ) {
 
   function expandMenu() {
+    console.log('hi')
     $('#mobile-navigation').show();
     $('#responsive-menu-button').hide();
   }

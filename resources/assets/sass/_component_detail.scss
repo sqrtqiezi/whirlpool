@@ -25,7 +25,7 @@
   }
 }
 
-@media only screen and ( max-width: $mobile-width ) {
+@media only screen and (max-width: $mobile-width) {
   .details-nav {
     display: none;
   }
@@ -509,8 +509,10 @@
   }
 }
 
-
-@media only screen and ( max-width: $mobile-width ) {
+@media only screen and (max-width: $mobile-width) {
+  .mobile-detail .title {
+    margin-left: 0;
+  }
   .detail.brand-info {
     height: auto;
 
@@ -526,6 +528,65 @@
       }
     }
   }
+  .detail.brand-course {
+    .detail-item {
+      width: 100%;
+      padding-top: 5vh;
+      padding-bottom: 5vh;
+
+      background-position: center;
+    }
+  }
+
+  .detail.brand-worth {
+    padding: 0 0;
+
+    .detail-body {
+      padding: 0 0;
+    }
+    .detail-item {
+      margin-bottom: 6vh;
+    }
+  }
+
+  .detail.brand-honour {
+    .detail-heading h5 {
+      padding: 0 5vh;
+    }
+    .detail-body {
+      padding: 0 0;
+      width: 100vh;
+      font-size: .2em;
+
+      .line-wrapper {
+        width: 85em;
+        padding-right: 15em;
+      }
+    }
+  }
+
+  .detail.brand-responsibility {
+    padding: 0 0;
+
+    .detail-heading .sub-titles {
+      margin-top: 2em;
+      .sub-title {
+        width: 32%;
+        margin: 0 0;
+        padding: 0 1em;
+        text-align: left;
+      }
+    }
+
+    .detail-body {
+      padding-top: 2em;
+
+      .detail-item{
+        width:  100%;
+        padding-bottom: 2em;
+      }
+    }
+  }
 
   .details-content.content-about > .detail {
     display: inline-block !important;
@@ -534,8 +595,11 @@
   .detail.bounceInLeft {
     animation-name: none;
   }
-}
 
+  .details-content.content-about  ~ .grid-cell {
+    display: none;
+  }
+}
 
 .detail.product-detail {
   .scroll-wrapper {
@@ -762,7 +826,6 @@
       }
     }
   }
-
 
   @media only screen and (max-width: 1600px) {
     .product-descriptions {
