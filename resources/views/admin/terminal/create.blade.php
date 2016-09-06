@@ -1,5 +1,7 @@
 @extends('admin.layout.app')
 
+@include('admin.components.alert')
+
 @include('admin.components.image-upload')
 
 @section('content')
