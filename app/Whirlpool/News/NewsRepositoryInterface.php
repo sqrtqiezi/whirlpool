@@ -6,6 +6,7 @@ use Illuminate\Support\Collection;
 
 interface NewsRepositoryInterface
 {
+
     /**
      *
      * 筛选列表结果

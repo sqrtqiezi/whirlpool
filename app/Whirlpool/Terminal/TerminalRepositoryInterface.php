@@ -3,8 +3,9 @@
 namespace Whirlpool\Terminal;
 
 use Illuminate\Support\Collection;
+use Whirlpool\Contracts\RepositoryInterface;
 
-interface TerminalRepositoryInterface
+interface TerminalRepositoryInterface extends RepositoryInterface
 {
     /**
      *
