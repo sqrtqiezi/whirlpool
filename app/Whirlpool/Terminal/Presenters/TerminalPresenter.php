@@ -61,6 +61,11 @@ class TerminalPresenter extends BasePresenter
         return isset($locations[$location]) ? $locations[$location] : $location;
     }
 
+    /**
+     * 上传文件可访问网址
+     *
+     * @return string
+     */
     public function thumbnail_url()
     {
         return $this->wrappedObject->thumbnail
