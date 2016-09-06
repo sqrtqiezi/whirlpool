@@ -71,6 +71,11 @@
 		</div>
 		{{-- /.内容 --}}
 
+		{{-- 封面图 --}}
+		@include('admin.components.image-upload-input',[
+			'itemObject' => 'news'
+		])
+		{{-- /.封面图 --}}
 	</div>
 	<!-- /.box-body -->
 	<div class="box-footer">

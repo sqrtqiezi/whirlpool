@@ -109,4 +109,16 @@ class NewsPresenter extends BasePresenter
 
         return isset(self::$typeContent[$type]) ? self::$typeContent[$type] : $type;
     }
+
+    /**
+     * 上传文件可访问网址
+     *
+     * @return string
+     */
+    public function thumbnail_url()
+    {
+        return $this->wrappedObject->thumbnail
+            ? asset($this->wrappedObject->thumbnail)
+            : '';
+    }
 }

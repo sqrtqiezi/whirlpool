@@ -2,6 +2,8 @@
 
 @include('admin.components.alert')
 
+@include('admin.components.image-upload')
+
 @section('header')
 	@include('UEditor::head')
 @endsection
@@ -16,7 +18,7 @@
 			<!-- /.box-header -->
 
 				<form class="form-horizontal" action="{!! route('panel.life.update', $life->id) !!}"
-				      method="post">
+				      method="post" enctype="multipart/form-data">
 					<input type="hidden" name="_method" value="patch">
 					@include('admin.life.form')
 				</form>

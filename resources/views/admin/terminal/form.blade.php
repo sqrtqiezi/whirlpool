@@ -68,7 +68,9 @@
 	{{-- /.联系电话 --}}
 
 	{{--封面图--}}
-		@include('admin.components.image-upload-input')
+		@include('admin.components.image-upload-input',[
+			'itemObject' => 'terminal'
+		])
 	{{--/.封面图--}}
 
 </div>  <!-- /.box-body -->

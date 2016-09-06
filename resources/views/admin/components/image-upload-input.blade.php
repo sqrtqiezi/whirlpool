@@ -1,3 +1,9 @@
+<?php
+// 表单代码片段，可能在多个栏目中使用
+// 在编辑时，其中涉及到的对象命名，需要对应各自的栏目对象
+// 在添加时，对象为空
+$item = isset(${$itemObject}) ? ${$itemObject} : null;
+?>
 <div
 		class="form-group {!! $thumbnailError = $errors->has('thumbnail') ? 'has-error' : null !!}" id="fileupload-group">
 	<label for="inputEmail3" class="col-sm-2 control-label">封面图</label>
@@ -11,7 +17,7 @@
 					<i class="glyphicon glyphicon-plus"></i>
 					<span>上传...</span>
 					<input type="file" name="file" id="fileupload">
-						<input type="hidden" name="thumbnail" value="{!! $terminal->thumbnail or old('thumbnail') !!}" id="thumbnail-input">
+						<input type="hidden" name="thumbnail" value="{!! $item->thumbnail or old('thumbnail') !!}" id="thumbnail-input">
 			</span>
 			</div>
 			<div class="col-xs-10">
@@ -25,12 +31,12 @@
 		<div class="row" style="margin-top: 10px;">
 			<div class="col-xs-12">
 				{{-- 预览 --}}
-				<div id="fileupload-preview" style="display:{!! isset($terminal->thumbnail_url) || old('preview_url') ? 'block' : 'none' !!};">
-					<a href="{!! $terminal->thumbnail_url or old('preview_url') !!}" title="">
-						<img src="{!! $terminal->thumbnail_url or old('preview_url') !!}"
+				<div id="fileupload-preview" style="display:{!! isset($item->thumbnail_url) || old('preview_url') ? 'block' : 'none' !!};">
+					<a href="{!! $item->thumbnail_url or old('preview_url') !!}" title="">
+						<img src="{!! $item->thumbnail_url or old('preview_url') !!}"
 						     style="max-width: 400px;max-height: 400px;">
 					</a>
-					<input type="hidden" name="preview_url" id="preview-url-hidden" value="{!! $terminal->thumbnail_url or old('preview_url') !!}">
+					<input type="hidden" name="preview_url" id="preview-url-hidden" value="{!! $item->thumbnail_url or old('preview_url') !!}">
 				</div>
 				{{-- /.预览 --}}
 			</div>

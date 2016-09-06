@@ -32,7 +32,7 @@ class News extends Model implements HasPresenter
      *
      * @var array
      */
-    protected $fillable = ['title', 'date', 'content', 'type'];
+    protected $fillable = ['title', 'date', 'content', 'type', 'thumbnail'];
 
     /**
      * 类型转换
