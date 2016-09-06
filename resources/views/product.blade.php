@@ -131,9 +131,6 @@
                     </section>
                 </div>
                 <div id="product-descriptions" class="product-detail-item product-descriptions">
-                    <div class="pull-left">
-                        <img src="/images/product-detail1.png" alt="">
-                    </div>
                     <div class="pull-right">
                         <section class="title">
                             <h1 class="main-title">经典T型黄金比例设计</h1>
@@ -147,6 +144,9 @@
                             <div class="product-description-item"><img src="/images/product-detail-item2.png" alt=""></div>
                             <div class="product-description-item"><img src="/images/product-detail-item1.png" alt=""></div>
                         </div>
+                    </div>
+                    <div class="pull-left">
+                        <img src="/images/product-detail1.png" alt="">
                     </div>
                 </div>
             </div>

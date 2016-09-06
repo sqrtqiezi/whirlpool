@@ -535,6 +535,11 @@
       padding-bottom: 5vh;
 
       background-position: center;
+
+      &:hover {
+        background-size: cover;
+        background-position: center;
+      }
     }
   }
 

@@ -4207,6 +4207,9 @@ nav.nav-list {
     padding-top: 5vh;
     padding-bottom: 5vh;
     background-position: center; }
+    .detail.brand-course .detail-item:hover {
+      background-size: cover;
+      background-position: center; }
   .detail.brand-worth {
     padding: 0 0; }
     .detail.brand-worth .detail-body {

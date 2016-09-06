@@ -72,6 +72,8 @@
                         <li><a data-pjax href="{{ route('category', 1) }}"><span>嵌入式冰箱</span></a></li>
                         <li><a data-pjax href="{{ route('category', 1) }}"><span>酒柜</span></a></li>
                         <li><a data-pjax href="{{ route('category', 1) }}"><span>暖碟机</span></a></li>
+                        <li><a data-pjax href="{{ route('category', 1) }}"><span>干衣机</span></a></li>
+                        <li><a data-pjax href="{{ route('category', 1) }}"><span>垃圾处理器</span></a></li>
                     </ul>
                 </li>
                 <li>
