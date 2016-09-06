@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-
 class HomeController extends Controller
 {
     public function index()
@@ -63,5 +62,15 @@ class HomeController extends Controller
     public function projects()
     {
         return view('projects');
+    }
+
+    /**
+     * 后台首页
+     *
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function panel()
+    {
+        return redirect('panel/news ');
     }
 }

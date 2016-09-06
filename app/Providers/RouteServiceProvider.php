@@ -4,6 +4,10 @@ namespace App\Providers;
 
 use Illuminate\Routing\Router;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
+use Whirlpool\Life\Entities\Life;
+use Whirlpool\News\Entities\News;
+use Whirlpool\Terminal\Entities\Terminal;
+use Whirlpool\Product\Entities\Product;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -24,7 +28,19 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot(Router $router)
     {
-        //
+        // 兼容软删除的路由模型绑定
+        $router->bind('news', function($id){
+            return News::withTrashed()->where('id', $id)->firstOrFail();
+        });
+        $router->bind('life', function($id){
+            return Life::withTrashed()->where('id', $id)->firstOrFail();
+        });
+        $router->bind('terminal', function($id){
+            return Terminal::withTrashed()->where('id', $id)->firstOrFail();
+        });
+        $router->bind('product', function($id){
+            return Product::withTrashed()->where('id', $id)->firstOrFail();
+        });
 
         parent::boot($router);
     }
