@@ -46,6 +46,8 @@
 						  $('#preview-url-hidden').val(response.thumbnail);
 						  // 填充隐藏表单
 						  $('#thumbnail-input').val(response.file);
+						  // 隐藏错误提示
+						  $('#fileupload-group').removeClass('has-error');
 					  } else {
 					  	// 错误提示
 						  $('#fileupload-group').addClass('has-error');
