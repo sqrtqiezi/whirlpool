@@ -60,4 +60,11 @@ class TerminalPresenter extends BasePresenter
 
         return isset($locations[$location]) ? $locations[$location] : $location;
     }
+
+    public function thumbnail_url()
+    {
+        return $this->wrappedObject->thumbnail
+            ? asset($this->wrappedObject->thumbnail)
+            : '';
+    }
 }

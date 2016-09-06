@@ -10,6 +10,13 @@ use Whirlpool\Terminal\TerminalRepositoryInterface;
 class TerminalController extends Controller
 {
     /**
+     * TerminalController constructor.
+     */
+    public function     __construct()
+    {
+    }
+
+    /**
      * 后台列表
      *
      * @param \Illuminate\Http\Request                        $request
