@@ -36,7 +36,7 @@
 			</div>
 		</div>
 		@if($thumbnailError)
-			<span class="help-block">{!! $errors->first('thumbnail') !!}</span>
+			<span class="help-block">封面图必须上传</span>
 		@endif
 		<span class="help-block" id="ajax-message" style="display: none"></span>
 	</div>
