@@ -20,6 +20,8 @@ class ProductPresenter extends BasePresenter
         Product::TYPE_FRIDGE       => '嵌入式冰箱',
         Product::TYPE_WINE         => '酒柜',
         Product::TYPE_WARM         => '暖碟机',
+        Product::TYPE_CLOTHES      => '干衣机',
+        Product::TYPE_DUST         => '垃圾处理器',
     ];
 
     /**

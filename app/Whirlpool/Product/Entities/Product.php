@@ -50,6 +50,15 @@ class Product extends Model implements HasPresenter
      */
     const TYPE_WARM = 10;
     /**
+     * 干衣机
+     */
+    const TYPE_CLOTHES = 11;
+    /**
+     * 垃圾处理器
+     */
+    const TYPE_DUST = 12;
+
+    /**
      * 软删除 mixin
      */
     use SoftDeletes;

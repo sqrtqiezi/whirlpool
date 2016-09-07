@@ -6,27 +6,14 @@
 		<div
 				class="form-group {!! $typeError = $errors->has('type') ? 'has-error' : null !!}">
 			<label for="inputEmail3" class="col-sm-2 control-label">分类</label>
-
+			<?php $type = isset($product->getWrappedObject->type) ? $product->getWrappedObject->type : old('type'); ?>
 			<div class="col-sm-10">
-				<?php $type = isset($life->getWrappedObject->type) ? $life->getWrappedObject->type : old('type'); ?>
-				<select name="type" class="form-control" title="选择分类">
+				<select name="type" class="form-control" title="省份">
 					<option value="">选择分类</option>
-					<option
-							value="{!! \Whirlpool\Life\Entities\Life::TYPE_PEOPLE !!}" {!! $type == \Whirlpool\Life\Entities\Life::TYPE_PEOPLE ? ' selected' : null !!}>
-						厨电创想人
-					</option>
-					<option
-							value="{!! \Whirlpool\Life\Entities\Life::TYPE_APPLIANCE !!}"  {!! $type == \Whirlpool\Life\Entities\Life::TYPE_APPLIANCE ? ' selected' : null !!}>
-						“懂”厨电
-					</option>
-					<option
-							value="{!! \Whirlpool\Life\Entities\Life::TYPE_DELICIOUS !!}"  {!! $type == \Whirlpool\Life\Entities\Life::TYPE_DELICIOUS ? ' selected' : null !!}>
-						“品”美味
-					</option>
-					<option
-							value="{!! \Whirlpool\Life\Entities\Life::TYPE_KITCHEN !!}"  {!! $type == \Whirlpool\Life\Entities\Life::TYPE_KITCHEN ? ' selected' : null !!}>
-						“绘”厨房
-					</option>
+					@foreach(Whirlpool\Product\Presenters\ProductPresenter::$typeProduct as $key => $value)
+						<option
+								value="{!! $key !!}" {!! $key == $type ? ' selected' : null !!}>{!! $value !!}</option>
+					@endforeach
 				</select>
 				@if($typeError)
 					<span class="help-block">分类必须选择</span>
