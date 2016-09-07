@@ -18,7 +18,7 @@ class TerminalRequest extends FormRequest
             'location'  => ['required', 'digits_between:1,34'],
             'address'   => 'required',
             'telephone' => 'required',
-            //'thumbnail'   => 'required',
+            'thumbnail' => ['required'],
         ];
     }
 }

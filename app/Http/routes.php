@@ -40,6 +40,8 @@ $router->group([
         $router->post('life/{life}/restore', 'LifeController@restore')->name('panel.life.restore');
         $router->post('terminal/{terminal}/restore', 'TerminalController@restore')->name('panel.terminal.restore');
         $router->post('product/{product}/restore', 'ProductController@restore')->name('panel.product.restore');
+        // 文件上传
+        $router->match(['put','patch', 'post'], 'api/upload', 'AjaxController@upload')->name('panel.api.upload');
     });
     // ./ 登录后
 });

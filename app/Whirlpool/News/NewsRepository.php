@@ -7,14 +7,6 @@ use Whirlpool\News\Entities\News;
 
 class NewsRepository implements NewsRepositoryInterface
 {
-    /**
-     * 未删除
-     */
-    const VISIBLE = 1;
-    /**
-     * 已删除
-     */
-    const INVISIBLE = 2;
 
     /**
      *

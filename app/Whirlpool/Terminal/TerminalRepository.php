@@ -9,15 +9,6 @@ use Whirlpool\Terminal\Entities\Terminal;
 class TerminalRepository implements TerminalRepositoryInterface
 {
     /**
-     * 未删除
-     */
-    const VISIBLE = 1;
-    /**
-     * 已删除
-     */
-    const INVISIBLE = 2;
-
-    /**
      *
      * 筛选列表结果
      *

@@ -10,6 +10,13 @@ use Whirlpool\Terminal\TerminalRepositoryInterface;
 class TerminalController extends Controller
 {
     /**
+     * TerminalController constructor.
+     */
+    public function     __construct()
+    {
+    }
+
+    /**
      * 后台列表
      *
      * @param \Illuminate\Http\Request                        $request
@@ -117,13 +124,5 @@ class TerminalController extends Controller
         alert()->success('', '成功设为可见！');
 
         return redirect()->back();
-    }
-
-    /**
-     * 暂存列表页 url，防止更新或新建后，回不到原来的筛选结果
-     */
-    protected function setPreviousUrl()
-    {
-        app('session')->put('url.intended', app('url')->previous());
     }
 }

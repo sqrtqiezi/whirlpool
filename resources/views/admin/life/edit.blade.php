@@ -1,5 +1,7 @@
 @extends('admin.layout.app')
 
+@include('admin.components.alert')
+
 @section('header')
 	@include('UEditor::head')
 @endsection
