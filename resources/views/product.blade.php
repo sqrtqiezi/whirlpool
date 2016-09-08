@@ -154,7 +154,7 @@
     </div>
 
     <div class="grid-cell only-desktop">
-        <a href="{{ route('category', 1) }}" class="nav-close"></a>
+        <a data-pjax href="{{ route('category', 1) }}" class="nav-close"></a>
     </div>
     <div class="grid-cell only-desktop"></div>
     <div class="grid-cell only-desktop">

@@ -18,7 +18,7 @@
         </div>
         <div class="grid-cell grid-cell-no-3">
             <a data-pjax href="{{ route('newsDetail', 1) }}">
-                <div class="news-item news-item-lg fadeIn animated" data-image="/images/news-item-1.png"></div>
+                <div class="news-item news-item-lg fadeIn animated animated-1" data-image="/images/news-item-1.png"></div>
                 <span>惠而浦中国携手安徽绿地，打造品质生活新标杆
                     <pre>time: 2016-06-27</pre>
                 </span>
