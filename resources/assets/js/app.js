@@ -20,11 +20,11 @@ function hideItemsAndPjax(event) {
   $(".product-item").each(function () {
     $(this).removeClass('fadeIn')
       .addClass('fadeOut')
-      .addClass('animated-' + i++)
+      //.addClass('animated-' + i++)
       .css('opacity', '0')
   })
 
-  var duration = 200 * i + 1000;
+  var duration = 200 * i + 2000;
 
   var aEvent = _.cloneDeep(event);
   event.preventDefault();
@@ -85,6 +85,14 @@ function refreshAll() {
   }
 
 
+  if(isInContent('content-products') || isInContent('content-category') ) {
+    $('.product-item').each(function () {
+      $(this).css('display', 'inline-block');
+    })
+  }
+
+
+
   //region 新闻中心业务代码
   var height;
   if ($.browser.mobile) {
@@ -104,16 +112,6 @@ function refreshAll() {
   })
   //endreigon
 
-
-  //子菜单处理
-  // $(".footer > nav.nav-list > ul > li").hover(function () {
-  //   var liWidth = $(this).width();
-  //
-  //   var subNav = $(this).find('ul')[0];
-  //   if (subNav === undefined) return;
-  //   var cnt = $(subNav).find('li').length;
-  //   $(subNav).width(liWidth * cnt + 30);
-  // })
 
   $(".js-top-nav").click(function () {
     var subNavName = $(this).data('sub-nav');

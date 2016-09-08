@@ -445,104 +445,104 @@ i.fa {
   animation-fill-mode: both; }
 
 .animated-1 {
-  -webkit-animation-delay: 0.3s;
+  -webkit-animation-delay: 0.2s;
   /* Chrome, Safari, Opera */
-  animation-delay: 0.3s; }
+  animation-delay: 0.2s; }
 
 .animated-2 {
+  -webkit-animation-delay: 0.4s;
+  /* Chrome, Safari, Opera */
+  animation-delay: 0.4s; }
+
+.animated-3 {
   -webkit-animation-delay: 0.6s;
   /* Chrome, Safari, Opera */
   animation-delay: 0.6s; }
 
-.animated-3 {
-  -webkit-animation-delay: 0.9s;
-  /* Chrome, Safari, Opera */
-  animation-delay: 0.9s; }
-
 .animated-4 {
+  -webkit-animation-delay: 0.8s;
+  /* Chrome, Safari, Opera */
+  animation-delay: 0.8s; }
+
+.animated-5 {
+  -webkit-animation-delay: 1s;
+  /* Chrome, Safari, Opera */
+  animation-delay: 1s; }
+
+.animated-6 {
   -webkit-animation-delay: 1.2s;
   /* Chrome, Safari, Opera */
   animation-delay: 1.2s; }
 
-.animated-5 {
-  -webkit-animation-delay: 1.5s;
+.animated-7 {
+  -webkit-animation-delay: 1.4s;
   /* Chrome, Safari, Opera */
-  animation-delay: 1.5s; }
+  animation-delay: 1.4s; }
 
-.animated-6 {
+.animated-8 {
+  -webkit-animation-delay: 1.6s;
+  /* Chrome, Safari, Opera */
+  animation-delay: 1.6s; }
+
+.animated-9 {
   -webkit-animation-delay: 1.8s;
   /* Chrome, Safari, Opera */
   animation-delay: 1.8s; }
 
-.animated-7 {
-  -webkit-animation-delay: 2.1s;
+.animated-10 {
+  -webkit-animation-delay: 2s;
   /* Chrome, Safari, Opera */
-  animation-delay: 2.1s; }
+  animation-delay: 2s; }
 
-.animated-8 {
+.animated-11 {
+  -webkit-animation-delay: 2.2s;
+  /* Chrome, Safari, Opera */
+  animation-delay: 2.2s; }
+
+.animated-12 {
   -webkit-animation-delay: 2.4s;
   /* Chrome, Safari, Opera */
   animation-delay: 2.4s; }
 
-.animated-9 {
-  -webkit-animation-delay: 2.7s;
+.animated-13 {
+  -webkit-animation-delay: 2.6s;
   /* Chrome, Safari, Opera */
-  animation-delay: 2.7s; }
+  animation-delay: 2.6s; }
 
-.animated-10 {
+.animated-14 {
+  -webkit-animation-delay: 2.8s;
+  /* Chrome, Safari, Opera */
+  animation-delay: 2.8s; }
+
+.animated-15 {
   -webkit-animation-delay: 3s;
   /* Chrome, Safari, Opera */
   animation-delay: 3s; }
 
-.animated-11 {
-  -webkit-animation-delay: 3.3s;
+.animated-16 {
+  -webkit-animation-delay: 3.2s;
   /* Chrome, Safari, Opera */
-  animation-delay: 3.3s; }
+  animation-delay: 3.2s; }
 
-.animated-12 {
+.animated-17 {
+  -webkit-animation-delay: 3.4s;
+  /* Chrome, Safari, Opera */
+  animation-delay: 3.4s; }
+
+.animated-18 {
   -webkit-animation-delay: 3.6s;
   /* Chrome, Safari, Opera */
   animation-delay: 3.6s; }
 
-.animated-13 {
-  -webkit-animation-delay: 3.9s;
-  /* Chrome, Safari, Opera */
-  animation-delay: 3.9s; }
-
-.animated-14 {
-  -webkit-animation-delay: 4.2s;
-  /* Chrome, Safari, Opera */
-  animation-delay: 4.2s; }
-
-.animated-15 {
-  -webkit-animation-delay: 4.5s;
-  /* Chrome, Safari, Opera */
-  animation-delay: 4.5s; }
-
-.animated-16 {
-  -webkit-animation-delay: 4.8s;
-  /* Chrome, Safari, Opera */
-  animation-delay: 4.8s; }
-
-.animated-17 {
-  -webkit-animation-delay: 5.1s;
-  /* Chrome, Safari, Opera */
-  animation-delay: 5.1s; }
-
-.animated-18 {
-  -webkit-animation-delay: 5.4s;
-  /* Chrome, Safari, Opera */
-  animation-delay: 5.4s; }
-
 .animated-19 {
-  -webkit-animation-delay: 5.7s;
+  -webkit-animation-delay: 3.8s;
   /* Chrome, Safari, Opera */
-  animation-delay: 5.7s; }
+  animation-delay: 3.8s; }
 
 .animated-20 {
-  -webkit-animation-delay: 6s;
+  -webkit-animation-delay: 4s;
   /* Chrome, Safari, Opera */
-  animation-delay: 6s; }
+  animation-delay: 4s; }
 
 .animated.infinite {
   -webkit-animation-iteration-count: infinite;
@@ -3007,19 +3007,16 @@ div#bg-video-wrap {
 
 a.product-item {
   position: relative;
-  display: inline-block;
+  display: none;
   box-sizing: border-box;
   background-color: white;
   width: 99.5%;
   height: 99.5%;
   text-align: center; }
   a.product-item img {
-    position: absolute;
-    left: 50%;
-    margin-left: -5em;
-    bottom: 30%;
-    width: 10em;
-    max-height: 90%; }
+    display: inline-block;
+    margin-top: 10%;
+    height: 50%; }
   a.product-item .fa.fa-search {
     display: none;
     position: absolute;

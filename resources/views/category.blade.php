@@ -27,19 +27,19 @@
             </div>
         </div>
         <div class="grid-cell grid-cell-no-8">
-            <a data-pjax href="{{ route('product', 1) }}" class="product-item fadeIn animated" data-product-name="AKF808">
+            <a data-pjax href="{{ route('product', 1) }}" class="product-item fadeIn animated animated-1" data-product-name="AKF808">
                 <img src="/images/product-akf808.png" alt="">
                 <i class="fa fa-search" aria-hidden="true"></i>
             </a>
         </div>
         <div class="grid-cell grid-cell-no-9">
-            <a data-pjax href="{{ route('product', 1) }}" class="product-item fadeIn animated" data-product-name="AKF808">
+            <a data-pjax href="{{ route('product', 1) }}" class="product-item fadeIn animated animated-2" data-product-name="AKF808">
                 <img src="/images/product-akf808.png" alt="">
                 <i class="fa fa-search" aria-hidden="true"></i>
             </a>
         </div>
         <div class="grid-cell grid-cell-no-10">
-            <a data-pjax href="{{ route('product', 1) }}" class="product-item fadeIn animated" data-product-name="AKF808">
+            <a data-pjax href="{{ route('product', 1) }}" class="product-item fadeIn animated animated-3" data-product-name="AKF808">
                 <img src="/images/product-akf808.png" alt="">
                 <i class="fa fa-search" aria-hidden="true"></i>
             </a>
@@ -48,19 +48,19 @@
             <a data-pjax href="{{ route('category', 1) }}" class="nav-page-prev"></a>
         </div>
         <div class="grid-cell grid-cell-no-12">
-            <a data-pjax href="{{ route('product', 1) }}" class="product-item fadeIn animated" data-product-name="AKF808">
+            <a data-pjax href="{{ route('product', 1) }}" class="product-item fadeIn animated animated-4" data-product-name="AKF808">
                 <img src="/images/product-akf808.png" alt="">
                 <i class="fa fa-search" aria-hidden="true"></i>
             </a>
         </div>
         <div class="grid-cell grid-cell-no-13">
-            <a data-pjax href="{{ route('product', 1) }}" class="product-item fadeIn animated" data-product-name="AKF808">
+            <a data-pjax href="{{ route('product', 1) }}" class="product-item fadeIn animated animated-5" data-product-name="AKF808">
                 <img src="/images/product-akf808.png" alt="">
                 <i class="fa fa-search" aria-hidden="true"></i>
             </a>
         </div>
         <div class="grid-cell grid-cell-no-14">
-            <a data-pjax href="{{ route('product', 1) }}" class="product-item fadeIn animated" data-product-name="AKF808">
+            <a data-pjax href="{{ route('product', 1) }}" class="product-item fadeIn animated animated-6" data-product-name="AKF808">
                 <img src="/images/product-akf808.png" alt="">
                 <i class="fa fa-search" aria-hidden="true"></i>
             </a>
