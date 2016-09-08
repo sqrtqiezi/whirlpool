@@ -10,18 +10,18 @@
 			@if(0 === $total)
 				{{-- 无信息 --}}
 				<div class="callout callout-warning">
-					<p>还没有内容，<a href="{!! route('panel.life.create') !!}">新建一个吧</a></p>
+					<p>还没有内容，<a href="{!! route('panel.product.create') !!}">新建一个吧</a></p>
 				</div>
 				{{-- ./ 无信息 --}}
 			@else
 				<div class="box">
 					<div class="box-header">
 						<a class="btn btn-sm btn-primary"
-						   href="{!! route('panel.life.create') !!}">创建文章</a>
+						   href="{!! route('panel.product.create') !!}">创建文章</a>
 
 						<div class="box-tools" style="top: 10px;">
 							{{-- 搜索 --}}
-							<form action="{!! route('panel.life.index') !!}"
+							<form action="{!! route('panel.product.index') !!}"
 							      class="form-inline" id="filter-form">
 								<div class="input-group input-group-sm">
 									<select class="form-control pull-right filter-select" title="选择分类"
@@ -68,7 +68,7 @@
 						</div>
 					</div>
 					<!-- /.box-header -->
-					<div class="box-body table-responsive">
+					<div class="box-body table-responsive no-padding">
 						<table class="table table-hover">
 							<tbody>
 							<tr>
@@ -81,20 +81,20 @@
 								<th>操作</th>
 							</tr>
 
-							@foreach($lives as $life)
+							@foreach($products as $product)
 								<tr>
-									<td>{!! $life->id !!}</td>
-									<td><span class="badge bg-gray text-navy font-light">{!! $life->type !!}</span></td>
-									<td>{!! $life->title !!}</td>
-									<td>{!! $life->description !!}</td>
-									<td>{!! $life->created_at !!}</td>
-									<td>{!! $life->updated_at !!}</td>
+									<td>{!! $product->id !!}</td>
+									<td><span class="badge bg-gray text-navy font-light">{!! $product->type !!}</span></td>
+									<td>{!! $product->title !!}</td>
+									<td>{!! $product->description !!}</td>
+									<td>{!! $product->created_at !!}</td>
+									<td>{!! $product->updated_at !!}</td>
 									<td>
 										<a class="btn btn-xs btn-primary inline"
-										   href="{!! route('panel.life.edit', $life->id) !!}">编辑</a>
-										@if($life->trashed())
+										   href="{!! route('panel.product.edit', $product->id) !!}">编辑</a>
+										@if($product->trashed())
 											<form
-													action="{!! route('panel.life.restore', $life->id) !!}"
+													action="{!! route('panel.product.restore', $product->id) !!}"
 													method="post" class="inline">
 												{!! csrf_field()!!}
 												<button class="btn btn-xs btn-success inline"
@@ -103,8 +103,8 @@
 											</form>
 										@else
 											<form
-													action="{!! route('panel.life.destroy', $life->id) !!}"
-													method="post" id="destroy{!! $life->id !!}"
+													action="{!! route('panel.product.destroy', $product->id) !!}"
+													method="post" id="destroy{!! $product->id !!}"
 													class="inline">
 												<input type="hidden" name="_method" value="delete">
 												{!! csrf_field() !!}

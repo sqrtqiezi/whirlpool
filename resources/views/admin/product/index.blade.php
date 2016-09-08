@@ -18,6 +18,8 @@
 					<div class="box-header">
 						<a class="btn btn-sm btn-primary"
 						   href="{!! route('panel.product.create') !!}">创建文章</a>
+						<a class="btn btn-sm btn-primary"
+						   href="{!! route('panel.product.create') !!}">创建文章</a>
 
 						<div class="box-tools" style="top: 10px;">
 							{{-- 搜索 --}}
@@ -68,7 +70,7 @@
 						</div>
 					</div>
 					<!-- /.box-header -->
-					<div class="box-body table-responsive no-padding">
+					<div class="box-body table-responsive">
 						<table class="table table-hover">
 							<tbody>
 							<tr>
