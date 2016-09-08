@@ -3100,9 +3100,16 @@ a.product-item {
 .main .content.content-news {
   padding-right: 0;
   padding-left: 0;
-  display: table; }
+  display: table;
+  padding-bottom: 0;
+  position: relative; }
+  .main .content.content-news .grid-row {
+    display: table-row;
+    width: 100%;
+    height: 25%; }
   .main .content.content-news .grid-cell {
     width: 20%;
+    height: 100%;
     display: table-cell;
     overflow: hidden; }
   .main .content.content-news .grid-cell.grid-cell-no-6 {
@@ -3112,7 +3119,7 @@ a.product-item {
   .main .content.content-news .grid-cell.grid-cell-no-3,
   .main .content.content-news .grid-cell.grid-cell-no-8 {
     width: 40%;
-    height: 50%; }
+    height: 200%; }
   .main .content.content-news .news-item {
     position: absolute;
     display: inline-block;
@@ -3153,24 +3160,31 @@ a.product-item {
         text-transform: uppercase; }
 
 @media only screen and (max-width: 768px) {
-  .main .content.content-news .grid-cell,
-  .main .content.content-news .grid-cell.grid-cell-no-3,
-  .main .content.content-news .grid-cell.grid-cell-no-13 {
-    position: relative;
-    left: 0;
-    top: 0;
-    margin-top: 0;
-    width: 100%;
-    height: 30vh; }
-  .main .content.content-news .news-item {
-    position: relative;
-    width: 100%;
-    height: 30vh !important; }
-    .main .content.content-news .news-item span {
-      display: inline-block; }
-  .main .content.content-news .fadeIn {
-    -webkit-animation-name: none;
-    animation-name: none; } }
+  .main .content.content-news {
+    display: block; }
+    .main .content.content-news .grid-row {
+      display: block; }
+    .main .content.content-news .grid-cell,
+    .main .content.content-news .grid-cell.grid-cell-no-3,
+    .main .content.content-news .grid-cell.grid-cell-no-8 {
+      display: inline-block;
+      position: relative;
+      left: 0;
+      top: 0;
+      margin-top: 0;
+      width: 100%;
+      height: 30vh; }
+    .main .content.content-news .grid-cell.only-desktop {
+      display: none; }
+    .main .content.content-news .news-item {
+      position: relative;
+      width: 100%;
+      height: 30vh !important; }
+      .main .content.content-news .news-item span {
+        display: inline-block; }
+    .main .content.content-news .fadeIn {
+      -webkit-animation-name: none;
+      animation-name: none; } }
 
 .main .content.content-news-detail {
   padding-right: 0;

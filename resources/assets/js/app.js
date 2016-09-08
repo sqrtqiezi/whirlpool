@@ -5,7 +5,7 @@ var NewsWidget = require('./NewsWidget');
 //region pjax 相关逻辑
 if ($.support.pjax) {
   $(document).on('click', 'a[data-pjax]', function (event) {
-    if ((isInContent('content-products') || isInContent('content-category')) ) {
+    if ((isInContent('content-products') || isInContent('content-category'))) {
       hideItemsAndPjax(event);
     }
     else {
@@ -85,15 +85,14 @@ function refreshAll() {
   }
 
 
-  if(isInContent('content-products') || isInContent('content-category') ) {
+  if (isInContent('content-products') || isInContent('content-category')) {
     $('.product-item').each(function () {
       $(this).css('display', 'inline-block');
     })
   }
 
 
-
-  //region 新闻中心业务代码
+  //region 新闻中心样式整理
   var height;
   if ($.browser.mobile) {
     height = $($('.widget')[0]).height();
@@ -124,7 +123,7 @@ function refreshAll() {
 
   //产品详情页样式处理
   function setProductDetailSize() {
-    if($.browser.mobile) return;
+    if ($.browser.mobile) return;
 
     var height = $($(".detail.product-detail")[0]).height()
 
