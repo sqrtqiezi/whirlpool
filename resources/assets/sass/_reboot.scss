@@ -22,6 +22,8 @@ i.fa {
 
 #pjax-container {
   display: inline-block;
+  position: absolute;
+  z-index: $zindex-body;
   width: 100%;
   height: 100%;
 }
