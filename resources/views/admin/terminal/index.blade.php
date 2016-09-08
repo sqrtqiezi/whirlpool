@@ -6,14 +6,6 @@
 	<div class="row">
 
 		<div class="col-md-12">
-
-			@if(0 === $total)
-				{{-- 无信息 --}}
-				<div class="callout callout-warning">
-					<p>还没有内容，<a href="{!! route('panel.terminal.create') !!}">新建一个吧</a></p>
-				</div>
-				{{-- ./ 无信息 --}}
-			@else
 				<div class="box">
 					<div class="box-header">
 						<a class="btn btn-sm btn-primary"
@@ -56,6 +48,13 @@
 					</div>
 					<!-- /.box-header -->
 					<div class="box-body table-responsive ">
+						@if(0 === $total)
+							{{-- 无信息 --}}
+							<div class="callout callout-warning">
+								<p>还没有内容，<a href="{!! route('panel.terminal.create') !!}">新建一个吧</a></p>
+							</div>
+							{{-- ./ 无信息 --}}
+						@else
 						<table class="table table-hover">
 							<tbody>
 							<tr>
@@ -108,9 +107,11 @@
 
 							</tbody>
 						</table>
+							@endif
 					</div>
 					<!-- /.box-body -->
 					{{-- box footer --}}
+					@if($total)
 					<div class="box-footer clearfix">
 						<div class="row">
 							<div class="col-md-6">
@@ -122,10 +123,10 @@
 							</div>
 						</div>
 					</div>
+					@endif
 					{{-- /.box footer--}}
 				</div>
 				<!-- /.box -->
-			@endif
 		</div>
 	</div>
 @endsection
