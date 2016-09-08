@@ -28,7 +28,8 @@
 
   NewsWidget.prototype = {
     setNewsImageSize: function () {
-      var height = $('.widget').height();
+      var height = $($('.grid .grid-cell')[0]).height();
+      $($('.widget')[0]).height(height);
       $('.news-image').each(function () {
         var v = 'url(' + $(this).data('image') + ')';
         $(this).css('background-image', v);

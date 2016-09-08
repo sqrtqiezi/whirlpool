@@ -3042,50 +3042,52 @@ a.product-item {
 
 .main .content.content-news {
   padding-right: 0;
-  padding-left: 0; }
+  padding-left: 0;
+  display: table; }
   .main .content.content-news .grid-cell {
-    width: 20%; }
-  .main .content.content-news .grid-cell.grid-cell-no-3 {
+    width: 20%;
+    display: table-cell;
+    overflow: hidden; }
+  .main .content.content-news .grid-cell.grid-cell-no-6 {
     position: absolute;
-    left: 40%;
+    top: 25%;
+    left: 20%; }
+  .main .content.content-news .grid-cell.grid-cell-no-3,
+  .main .content.content-news .grid-cell.grid-cell-no-8 {
     width: 40%;
-    height: 50%;
-    padding-bottom: 25px; }
-  .main .content.content-news .grid-cell.grid-cell-no-13 {
-    position: absolute;
-    left: 20%;
-    top: 50%;
-    margin-top: -25px;
-    width: 40%;
-    height: 50%;
-    padding-bottom: 25px; }
+    height: 50%; }
   .main .content.content-news .news-item {
     position: absolute;
     display: inline-block;
     width: 100%;
     height: 100%;
     background-size: cover;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: 1s;
+    transition: 1s;
     z-index: 100; }
     .main .content.content-news .news-item:hover {
-      background-size: 110%;
-      background-position: -1em -1em; }
+      -webkit-transform: scale(1.2);
+      transform: scale(1.2); }
     .main .content.content-news .news-item a {
       display: inline-block;
       z-index: 100; }
-    .main .content.content-news .news-item:hover span {
+    .main .content.content-news .news-item:hover + span {
       display: inline-block; }
-    .main .content.content-news .news-item span {
+    .main .content.content-news .news-item + span {
       position: absolute;
-      display: none;
       bottom: 0;
+      display: none;
       width: 100%;
       height: 3em;
       line-height: 3em;
       padding-left: 1em;
+      z-index: 200;
       color: white;
       background-color: black;
       opacity: .6; }
-      .main .content.content-news .news-item span pre {
+      .main .content.content-news .news-item + span pre {
         float: right;
         margin-right: 2em;
         display: inline-block;
@@ -3319,7 +3321,8 @@ a.life-item {
   height: 100%;
   float: right;
   background-color: white;
-  padding: 0 0; }
+  padding: 0 0;
+  overflow: hidden; }
   .widget ul, .widget li {
     display: inline-block;
     width: 100%;
@@ -3366,21 +3369,26 @@ a.life-item {
     position: relative;
     width: 100%;
     height: 100%;
-    background-size: cover; }
+    background-size: cover;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: 1s;
+    transition: 1s; }
     .widget .news-image:hover {
-      background-size: 110%;
-      background-position: -1em -1em; }
-      .widget .news-image:hover span {
-        display: inline-block; }
-    .widget .news-image span {
+      -webkit-transform: scale(1.2);
+      transform: scale(1.2); }
+    .widget .news-image:hover + span {
+      display: inline-block; }
+    .widget .news-image + span {
       display: none;
       position: absolute;
       bottom: 0;
       width: 100%;
-      height: 3em;
+      height: 3.4em;
       line-height: 3em;
       padding-left: 1em;
       background-color: black;
+      font-size: .8em;
       opacity: .6;
       color: white; }
 
