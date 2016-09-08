@@ -2,13 +2,13 @@
   div#bg-video-wrap {
     video#bgvid {
       position: absolute;
+      z-index: $zindex-video-background;
       min-width: 100%;
       min-height: 100%;
     }
   }
 
   div#video-raster {
-    //background-image: url(/images/video_raster.png);
     background-color: black;
     opacity: .6;
     height: 100%;

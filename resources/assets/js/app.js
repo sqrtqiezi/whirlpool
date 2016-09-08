@@ -72,7 +72,7 @@ refreshAll();
 
 
 function initVideoBG() {
-  var videoUrl = 'http://obz9qz3z4.bkt.clouddn.com/whirlpool3';
+  var videoUrl = 'http://obz9qz3z4.bkt.clouddn.com/whirlpool5';
   $('#bg-video-wrap').append('<video autoplay muted loop id="bgvid"><source src="' +
     videoUrl +
     '" type="video/mp4"></video>');
