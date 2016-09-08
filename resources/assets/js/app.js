@@ -5,7 +5,7 @@ var NewsWidget = require('./NewsWidget');
 //region pjax 相关逻辑
 if ($.support.pjax) {
   $(document).on('click', 'a[data-pjax]', function (event) {
-    if ((isInContent('content-products') || isInContent('content-category')) && $(this).data('close')) {
+    if ((isInContent('content-products') || isInContent('content-category')) ) {
       hideItemsAndPjax(event);
     }
     else {
