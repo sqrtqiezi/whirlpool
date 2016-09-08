@@ -47,8 +47,8 @@
         <nav class="nav-list pull-left">
             <ul class="nav-top-list">
                 <li>
-                    <a data-pjax href="javascript:;" class="js-top-nav" data-sub-nav="about-sub-nav" data-hover="关于我们">
-                        <span>关于我们</span>
+                    <a data-pjax href="javascript:;" class="js-top-nav" data-sub-nav="about-sub-nav">
+                        <span data-hover="关于我们">关于我们</span>
                     </a>
                     <ul id="about-sub-nav" class="nav-sub-list bounceInDown animated">
                         <li><a data-pjax href="{{ route('about') }}#brand-info"><span>品牌简介</span></a></li>
@@ -59,7 +59,9 @@
                     </ul>
                 </li>
                 <li>
-                    <a data-pjax href="javascript:;" class="js-top-nav" data-sub-nav="product-sub-nav" data-hover="厨房电器"><span>厨房电器</span></a>
+                    <a data-pjax href="javascript:;" class="js-top-nav" data-sub-nav="product-sub-nav">
+                        <span data-hover="厨房电器">厨房电器</span>
+                    </a>
                     <ul id="product-sub-nav" class="nav-sub-list bounceInDown animated">
                         <li><a data-pjax href="{{ route('products') }}"><span>全部</span></a></li>
                         <li><a data-pjax href="{{ route('category', 1) }}"><span>吸油烟机</span></a></li>
@@ -77,7 +79,9 @@
                     </ul>
                 </li>
                 <li>
-                    <a data-pjax href="javascript:;" class="js-top-nav" data-sub-nav="news-sub-nav" data-hover="新闻中心"><span>新闻中心</span></a>
+                    <a data-pjax href="javascript:;" class="js-top-nav" data-sub-nav="news-sub-nav">
+                        <span data-hover="新闻中心">新闻中心</span>
+                    </a>
                     <ul id="news-sub-nav" class="nav-sub-list bounceInDown animated">
                         <li><a data-pjax href="{{ route('news') }}"><span>全部</span></a></li>
                         <li><a data-pjax href="{{ route('news') }}"><span>企业内讯</span></a></li>
@@ -86,13 +90,19 @@
                     </ul>
                 </li>
                 <li>
-                    <a data-pjax href="{{ route('projects') }}" data-hover="工程案例"><span>工程案例</span></a>
+                    <a data-pjax href="{{ route('projects') }}">
+                        <span data-hover="工程案例">工程案例</span>
+                    </a>
                 </li>
                 <li>
-                    <a data-pjax href="{{ route('stores') }}" data-hover="终端形象"><span>终端形象</span></a>
+                    <a data-pjax href="{{ route('stores') }}">
+                        <span data-hover="终端形象">终端形象</span>
+                    </a>
                 </li>
                 <li>
-                    <a data-pjax href="javascript:;" class="js-top-nav" data-sub-nav="life-sub-nav" data-hover="“会”生活"><span>“会”生活</span></a>
+                    <a data-pjax href="javascript:;" class="js-top-nav" data-sub-nav="life-sub-nav">
+                        <span data-hover="“会”生活">“会”生活</span>
+                    </a>
                     <ul id="life-sub-nav" class="nav-sub-list bounceInDown animated">
                         <li><a data-pjax href="{{ route('life') }}"><span>全部</span></a></li>
                         <li><a data-pjax href="{{ route('life') }}"><span>厨电创想人</span></a></li>
@@ -102,7 +112,9 @@
                     </ul>
                 </li>
                 <li>
-                    <a data-pjax href="{{ route('contact') }}" data-hover="联系我们"><span>联系我们</span></a>
+                    <a data-pjax href="{{ route('contact') }}">
+                        <span data-hover="联系我们">联系我们</span>
+                    </a>
                 </li>
             </ul>
         </nav>

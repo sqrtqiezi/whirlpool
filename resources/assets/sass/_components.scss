@@ -314,7 +314,7 @@ nav.nav-list {
 
     & > li {
       position: relative;
-      width: 6em;
+      width: 6.5em;
       display: inline-block;
       zoom: 1;
       *display: inline;
@@ -338,8 +338,8 @@ nav.nav-list {
       position: absolute;
       right: 11em;
       top: 5em;
-      width: 2.5em;
-      height: 2.5em;
+      width: 3em;
+      height: 3em;
       background-size: cover;
       background-image: url("/images/close.png");
       cursor: pointer;
@@ -372,46 +372,33 @@ nav.nav-list {
 
   // animated
   .nav-top-list > li > a {
-
+    overflow: hidden;
+    padding: 0 4px;
     & > span {
-      background: white;
-      -webkit-transition: -webkit-transform .5s;
-      -moz-transition: -moz-transform .5s;
-      -o-transition: -o-transform .5s;
-      transition: transform .5s;
-    }
-
-    &::before {
-      position: absolute;
-      top: 0;
-      left: 0;
+      position: relative;
       display: inline-block;
-      width: 100%;
-      height: $footer-height;
-      line-height: $footer-height;
-      text-align: center;
-      background-color: $brand-primary;
-      color: white;
+      white-space: nowrap;
+      -webkit-transition: -webkit-transform 0.3s;
+      -moz-transition: -moz-transform 0.3s ;
+      transition: transform 0.3s ;
+    }
+
+    & > span::before {
+      position: absolute;
+      color: $brand-primary;
+      top: -100%;
       content: attr(data-hover);
-      font-family: $brand-fonts;
-      -webkit-transition: -webkit-transform .5s;
-      -moz-transition: -moz-transform .5s;
-      transition: transform .5s;
-      -webkit-transform: translateX(-100%);
+      font-weight: 700;
+      -webkit-transform: translate3d(0,0,0);
+      -moz-transform: translate3d(0,0,0);
+      transform: translate3d(0,0,0);
     }
 
-    &:hover > span,
-    &:focus > span {
-      -webkit-transform: translateX(100%);
-      -moz-transform: translateX(100%);
-      transform: translateX(100%);
-    }
-
-    &:hover::before,
-    &:focus::before {
-      -webkit-transform: translateX(0%);
-      -moz-transform: translateX(0%);
-      transform: translateX(0%);
+    &:hover span,
+    &:focus span {
+      -webkit-transform: translateY(100%);
+      -moz-transform: translateY(100%);
+      transform: translateY(100%);
     }
   }
 }
