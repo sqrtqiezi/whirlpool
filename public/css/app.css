@@ -2960,7 +2960,6 @@ div#bg-video-wrap {
 @media screen and (max-width: 768px) {
   .main {
     overflow-y: visible; }
-    .main .footer,
     .main .grid {
       display: none; }
     .main article .content {
@@ -2973,6 +2972,32 @@ div#bg-video-wrap {
       height: auto; }
     .main .logo {
       display: none; }
+    .main .footer {
+      display: block;
+      position: fixed;
+      height: auto;
+      padding-bottom: .5em;
+      box-shadow: 0 1em 1em rgba(0, 0, 0, 0.5);
+      border-top: 1px solid rgba(255, 255, 255, 0.2); }
+      .main .footer .footer-info {
+        width: 100%;
+        height: auto; }
+        .main .footer .footer-info > .contact-info {
+          width: 100%;
+          display: inline-block;
+          text-align: center; }
+          .main .footer .footer-info > .contact-info > a {
+            display: inline-block;
+            width: 1.5em;
+            height: 1.5em;
+            float: none; }
+        .main .footer .footer-info > .content-info {
+          width: 100%;
+          padding-top: 0; }
+          .main .footer .footer-info > .content-info > span {
+            width: 80%;
+            padding-left: 2em;
+            text-align: left; }
   .mobile-top {
     display: inline-block;
     width: 100%;

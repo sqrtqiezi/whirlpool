@@ -31,7 +31,11 @@ i.fa {
 
 
 @media only screen and ( max-width: $mobile-width ) {
-
+  //#pjax-container,
+  //.main article{
+  //  position: relative;
+  //  height: auto;
+  //}
 }
 
 .progressjs-inner {
