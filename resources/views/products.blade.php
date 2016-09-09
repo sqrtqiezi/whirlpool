@@ -18,7 +18,7 @@
         </section>
         <section class="grid-cell grid-cell-no-3">
             <a data-pjax href="{{ route('category', 1) }}" class="product-item fadeIn animated animated-1" data-product-name="吸油烟机">
-                <img src="/images/product-xyyj.png" alt="">
+                <img src="/images/product-akf808.png" alt="">
                 <i class="fa fa-search" aria-hidden="true"></i>
             </a>
         </section>

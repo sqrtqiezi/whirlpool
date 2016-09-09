@@ -56,9 +56,9 @@
                 <a data-pjax href="{{ route('newsDetail', 1) }}">
                     <div class="news-item news-item-lg fadeIn animated" data-image="/images/news-item-3.png"></div>
                     <span>
-                    惠而浦 “厨电创想人”将亮相AWE，智能厨房大势所趋
-                    <pre>time: 2016-06-27</pre>
-                </span>
+                        惠而浦 “厨电创想人”将亮相AWE，智能厨房大势所趋
+                        <pre>time: 2016-06-27</pre>
+                    </span>
                 </a>
             </div>
             <div class="grid-cell only-desktop">
