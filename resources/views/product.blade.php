@@ -167,16 +167,16 @@
         <div class="details-nav">
             <ul>
                 <a href="#product-show">
-                    <li>品牌简介</li>
+                    <li class="product-show active">品牌简介</li>
                 </a>
                 <a href="#product-tech">
-                    <li>技术参数</li>
+                    <li class="product-tech">技术参数</li>
                 </a>
                 <a href="#product-core">
-                    <li>核心技术</li>
+                    <li class="product-core">核心技术</li>
                 </a>
                 <a href="#product-descriptions">
-                    <li>细节展示</li>
+                    <li class="product-descriptions">细节展示</li>
                 </a>
             </ul>
         </div>

@@ -79,6 +79,8 @@ function initVideoBG() {
 }
 
 function refreshAll() {
+  //滚动条设置
+  jQuery('.scrollbar-macosx').scrollbar();
 
   if (isInContent('content-home')) {
     newsWidget.refresh();
@@ -132,8 +134,41 @@ function refreshAll() {
     })
   }
 
-  setProductDetailSize();
-  $(window).resize(setProductDetailSize);
+  if ($('.details-content')[0] !== undefined) {
+    setProductDetailSize();
+    $(window).resize(setProductDetailSize);
+
+    var oldActive = 'product-show';
+    function changeActive(className) {
+      if(oldActive === className) {
+        return
+      }
+      $('.details-nav .active').removeClass('active');
+      $('.details-nav .' + className).addClass('active');
+      oldActive = className;
+    }
+
+    var height1 = $('.scrollbar-macosx .product-show').height();
+    var height2 = $('.scrollbar-macosx .product-tech').height() + height1;
+    var height3 = $('.scrollbar-macosx .product-core').height() + height2;
+    var height4 = $('.scrollbar-macosx .product-descriptions').height() + height3;
+    $('.scrollbar-macosx').scroll(function () {
+      var current = $(this).scrollTop();
+      if (current < height1) {
+        changeActive('product-show');
+      }
+      else if(current >= height1 && current < height2){
+        changeActive('product-tech');
+      }
+      else if(current >= height2 && current < height3) {
+        changeActive('product-core');
+      }
+      else {
+        changeActive('product-descriptions');
+      }
+    })
+  }
+
 
   //工程案例页面处理
   if ($(".content.content-projects")[0] !== undefined && !$.browser.mobile) {
@@ -183,9 +218,6 @@ function refreshAll() {
       id = 'brand-info';
     godetail(id);
   }
-
-  //滚动条设置
-  jQuery('.scrollbar-macosx').scrollbar();
 }
 
 
