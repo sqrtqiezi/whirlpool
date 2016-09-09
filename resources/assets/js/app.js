@@ -21,13 +21,15 @@ function hideItemsAndPjax(event) {
   }
   else  {
 
-    var i = 1;
+    var i = 0;
     $(".product-item").each(function () {
+      i+=1;
       $(this).removeClass('fadeIn')
         .addClass('fadeOut')
         .css('opacity', '0')
     })
-    var duration = 200 * i + 2000;
+    console.log(i)
+    var duration = 150 * i + 1000;
     var aEvent = _.cloneDeep(event);
     event.preventDefault();
     setTimeout(function () {
