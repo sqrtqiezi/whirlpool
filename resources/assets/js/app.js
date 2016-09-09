@@ -16,21 +16,24 @@ if ($.support.pjax) {
 
 
 function hideItemsAndPjax(event) {
-  var i = 1;
-  $(".product-item").each(function () {
-    $(this).removeClass('fadeIn')
-      .addClass('fadeOut')
-      //.addClass('animated-' + i++)
-      .css('opacity', '0')
-  })
-
-  var duration = 200 * i + 2000;
-
-  var aEvent = _.cloneDeep(event);
-  event.preventDefault();
-  setTimeout(function () {
+  if($.browser.mobile) {
     $.pjax.click(aEvent, {container: '#pjax-container'})
-  }, duration);
+  }
+  else  {
+
+    var i = 1;
+    $(".product-item").each(function () {
+      $(this).removeClass('fadeIn')
+        .addClass('fadeOut')
+        .css('opacity', '0')
+    })
+    var duration = 200 * i + 2000;
+    var aEvent = _.cloneDeep(event);
+    event.preventDefault();
+    setTimeout(function () {
+      $.pjax.click(aEvent, {container: '#pjax-container'})
+    }, duration);
+  }
 }
 
 function isInContent(className) {
