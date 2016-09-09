@@ -103,5 +103,6 @@
             </a>
         </section>
         <section class="grid-cell grid-cell-no-20"></section>
+        @include('layouts/mobile_footer')
     </div>
 @endsection

@@ -64,5 +64,6 @@
         <div class="grid-cell grid-cell-no-18 only-desktop"></div>
         <div class="grid-cell grid-cell-no-19 only-desktop"></div>
         <div class="grid-cell grid-cell-no-20 only-desktop"></div>
+        @include('layouts/mobile_footer')
     </div>
 @endsection

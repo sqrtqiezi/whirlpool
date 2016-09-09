@@ -104,39 +104,7 @@
 
 
     .footer {
-      display: block;
-      position: fixed;
-      height: auto;
-      padding-bottom: .5em;
-      box-shadow: 0 1em 1em rgba(0, 0, 0, .5);
-      border-top: $grid-border;
-
-      .footer-info{
-        width: 100%;
-        height: auto;
-
-        & > .contact-info {
-          width: 100%;
-          display: inline-block;
-          text-align: center;
-          &> a {
-            display: inline-block;
-            width: 1.5em;
-            height: 1.5em;
-            float: none;
-          }
-        }
-
-        & > .content-info {
-          width: 100%;
-          padding-top: 0;
-          & > span {
-            width: 80%;
-            padding-left: 2em;
-            text-align: left;
-          }
-        }
-      }
+      display: none;
     }
   }
 
@@ -169,6 +137,36 @@
     vertical-align: text-bottom;
   }
 
+  .footer-info.only-mobile{
+    display: inline-block;
+
+    background-color: white;
+    width: 100%;
+    height: auto;
+
+    & > .contact-info {
+      display: inline-block;
+      width: 100%;
+      padding: .6em 0;
+      text-align: center;
+      &> a {
+        display: inline-block;
+        width: 1.5em;
+        height: 1.5em;
+        float: none;
+      }
+    }
+
+    & > .content-info {
+      width: 100%;
+      padding-top: 0;
+      & > span {
+        width: 80%;
+        padding-left: 2em;
+        text-align: left;
+      }
+    }
+  }
 }
 
 @import "layout_products";

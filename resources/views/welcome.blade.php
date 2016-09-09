@@ -73,5 +73,7 @@
                 <div data-slider="0" class="widget-nav active"></div>
             </div>
         </section>
+
+        @include('layouts/mobile_footer')
     </div>
 @endsection

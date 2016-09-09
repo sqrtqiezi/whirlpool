@@ -68,5 +68,6 @@
         <div class="grid-cell grid-cell-no-15">
             <a data-pjax href="{{ route('category', 2) }}" class="nav-page-next"></a>
         </div>
+        @include('layouts/mobile_footer')
     </div>
 @endsection

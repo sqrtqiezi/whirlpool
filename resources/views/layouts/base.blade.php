@@ -43,8 +43,8 @@
             <section class="grid-cell grid-cell-no-20"></section>
         </div>
     </article>
-    <div class="footer clearfix">
-        <nav class="nav-list pull-left only-desktop">
+    <div class="footer clearfix only-desktop">
+        <nav class="nav-list pull-left">
             <ul class="nav-top-list">
                 <li>
                     <a data-pjax href="javascript:;" class="js-top-nav" data-sub-nav="about-sub-nav">
@@ -129,7 +129,6 @@
                 <span class="company-name">惠而浦（中国）股份有限公司</span>
                 <span class="company-right">沪ICP备13004331号 © 2016 Whirlpool .All Right Reserved</span>
             </div>
-
         </div>
     </div>
 </div>

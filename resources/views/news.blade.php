@@ -83,5 +83,6 @@
             </div>
             <div class="grid-cell only-desktop"></div>
         </div>
+        @include('layouts/mobile_footer')
     </div>
 @endsection

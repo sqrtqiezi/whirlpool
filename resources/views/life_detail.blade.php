@@ -50,6 +50,8 @@
                 </div>
             </div>
         </div>
+
+        @include('layouts/mobile_footer')
         <div class="grid-cell grid-cell-no-4 only-desktop">
             <a data-pjax href="{{ route('life') }}" class="nav-close"></a>
         </div>

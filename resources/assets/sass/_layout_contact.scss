@@ -24,6 +24,12 @@
 
 @media only screen and ( max-width: $mobile-width ) {
   .main .content.content-contact {
+    display: inline-block;
+
+    .footer-info {
+      margin-top: 30vh;
+    }
+
     .grid-cell {
       width: 100%;
       position: relative;

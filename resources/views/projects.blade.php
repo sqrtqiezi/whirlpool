@@ -61,5 +61,6 @@
         <div class="grid-cell grid-cell-no-20 only-desktop">
             <a data-pjax href="{{ route('projects') }}" class="nav-page-next"></a>
         </div>
+        @include('layouts/mobile_footer')
     </div>
 @endsection

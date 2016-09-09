@@ -2973,31 +2973,7 @@ div#bg-video-wrap {
     .main .logo {
       display: none; }
     .main .footer {
-      display: block;
-      position: fixed;
-      height: auto;
-      padding-bottom: .5em;
-      box-shadow: 0 1em 1em rgba(0, 0, 0, 0.5);
-      border-top: 1px solid rgba(255, 255, 255, 0.2); }
-      .main .footer .footer-info {
-        width: 100%;
-        height: auto; }
-        .main .footer .footer-info > .contact-info {
-          width: 100%;
-          display: inline-block;
-          text-align: center; }
-          .main .footer .footer-info > .contact-info > a {
-            display: inline-block;
-            width: 1.5em;
-            height: 1.5em;
-            float: none; }
-        .main .footer .footer-info > .content-info {
-          width: 100%;
-          padding-top: 0; }
-          .main .footer .footer-info > .content-info > span {
-            width: 80%;
-            padding-left: 2em;
-            text-align: left; }
+      display: none; }
   .mobile-top {
     display: inline-block;
     width: 100%;
@@ -3019,7 +2995,29 @@ div#bg-video-wrap {
     height: 30vh;
     padding-left: 1em;
     padding-bottom: 1em;
-    vertical-align: text-bottom; } }
+    vertical-align: text-bottom; }
+  .footer-info.only-mobile {
+    display: inline-block;
+    background-color: white;
+    width: 100%;
+    height: auto; }
+    .footer-info.only-mobile > .contact-info {
+      display: inline-block;
+      width: 100%;
+      padding: .6em 0;
+      text-align: center; }
+      .footer-info.only-mobile > .contact-info > a {
+        display: inline-block;
+        width: 1.5em;
+        height: 1.5em;
+        float: none; }
+    .footer-info.only-mobile > .content-info {
+      width: 100%;
+      padding-top: 0; }
+      .footer-info.only-mobile > .content-info > span {
+        width: 80%;
+        padding-left: 2em;
+        text-align: left; } }
 
 .main .content.content-products {
   padding-right: 0;
@@ -3259,7 +3257,9 @@ a.product-item {
 
 @media only screen and (max-width: 768px) {
   .main .content.content-news-detail .grid-cell.grid-cell-no-3 {
-    width: 100%; }
+    width: 100%;
+    height: auto;
+    padding-bottom: 0; }
   .main .content.content-news-detail .news-detail {
     height: auto;
     padding-bottom: 2em; }
@@ -3436,24 +3436,28 @@ a.life-item {
     color: #A8A8A8; }
 
 @media only screen and (max-width: 768px) {
-  .main .content.content-contact .grid-cell {
-    width: 100%;
-    position: relative;
-    padding-left: 2em; }
-  .main .content.content-contact section {
-    display: inline-block;
-    float: left;
-    clear: both; }
-  .main .content.content-contact .contact-content {
-    position: relative;
-    bottom: 0;
-    left: 0; }
-  .main .content.content-contact .fa, .main .content.content-contact .contact-type {
-    display: inline-block;
-    vertical-align: top; }
-  .main .content.content-contact .contact-info {
-    display: inline-block;
-    width: 20em; } }
+  .main .content.content-contact {
+    display: inline-block; }
+    .main .content.content-contact .footer-info {
+      margin-top: 30vh; }
+    .main .content.content-contact .grid-cell {
+      width: 100%;
+      position: relative;
+      padding-left: 2em; }
+    .main .content.content-contact section {
+      display: inline-block;
+      float: left;
+      clear: both; }
+    .main .content.content-contact .contact-content {
+      position: relative;
+      bottom: 0;
+      left: 0; }
+    .main .content.content-contact .fa, .main .content.content-contact .contact-type {
+      display: inline-block;
+      vertical-align: top; }
+    .main .content.content-contact .contact-info {
+      display: inline-block;
+      width: 20em; } }
 
 @media only screen and (max-width: 768px) {
   .grid-cell > .nav-close {

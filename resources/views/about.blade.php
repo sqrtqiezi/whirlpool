@@ -160,6 +160,8 @@
                 </div>
             </div>
         </div>
+
+        @include('layouts/mobile_footer')
     </div>
 
     <div class="grid-cell">

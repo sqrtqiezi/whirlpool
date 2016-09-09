@@ -50,5 +50,6 @@
                 <span class="sub-title">新闻中心</span>
             </div>
         </div>
+        @include('layouts/mobile_footer')
     </div>
 @endsection
