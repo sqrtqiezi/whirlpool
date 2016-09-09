@@ -147,7 +147,7 @@
     & > .contact-info {
       display: inline-block;
       width: 100%;
-      padding: .6em 0;
+      padding-top: .6em;
       text-align: center;
       &> a {
         display: inline-block;
@@ -160,9 +160,10 @@
     & > .content-info {
       width: 100%;
       padding-top: 0;
+      padding-bottom: .6em;
       & > span {
-        width: 80%;
-        padding-left: 2em;
+        width: 100%;
+        padding-left: 1em;
         text-align: left;
       }
     }
@@ -181,14 +182,5 @@
     display: none;
   }
 
-  //html,
-  //body,
-  //#pjax-container,
-  //.main,
-  //.main article
-  //{
-  //  display: block;
-  //  max-width: 100%;
-  //  height: auto;
-  //}
+
 }

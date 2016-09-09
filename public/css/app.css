@@ -3004,7 +3004,7 @@ div#bg-video-wrap {
     .footer-info.only-mobile > .contact-info {
       display: inline-block;
       width: 100%;
-      padding: .6em 0;
+      padding-top: .6em;
       text-align: center; }
       .footer-info.only-mobile > .contact-info > a {
         display: inline-block;
@@ -3013,10 +3013,11 @@ div#bg-video-wrap {
         float: none; }
     .footer-info.only-mobile > .content-info {
       width: 100%;
-      padding-top: 0; }
+      padding-top: 0;
+      padding-bottom: .6em; }
       .footer-info.only-mobile > .content-info > span {
-        width: 80%;
-        padding-left: 2em;
+        width: 100%;
+        padding-left: 1em;
         text-align: left; } }
 
 .main .content.content-products {
@@ -3813,6 +3814,7 @@ nav.nav-list {
         content: '';
         position: absolute;
         display: inline-block;
+        border: 1px solid #C2C2C2;
         width: 6em;
         height: 6em;
         left: -2em;

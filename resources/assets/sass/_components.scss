@@ -461,6 +461,7 @@ nav.nav-list {
           content: '';
           position: absolute;
           display: inline-block;
+          border: $table-border;
           width: 6em;
           height: 6em;
           left: -2em;

@@ -7,6 +7,6 @@
     </div>
     <div class="content-info">
         <span class="company-name">惠而浦（中国）股份有限公司</span>
-        <span class="company-right">沪ICP备13004331号 © 2016 Whirlpool .All Right Reserved</span>
+        <span class="company-right"> © 2016 Whirlpool .All Right Reserved <br/>沪ICP备13004331号&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Design by wisnovo</span>
     </div>
 </div>
