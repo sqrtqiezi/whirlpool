@@ -6,6 +6,7 @@ use Illuminate\Routing\Router;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Whirlpool\Life\Entities\Life;
 use Whirlpool\News\Entities\News;
+use Whirlpool\Product\Entities\ProductType;
 use Whirlpool\Terminal\Entities\Terminal;
 use Whirlpool\Product\Entities\Product;
 
@@ -40,6 +41,9 @@ class RouteServiceProvider extends ServiceProvider
         });
         $router->bind('product', function($id){
             return Product::withTrashed()->where('id', $id)->firstOrFail();
+        });
+        $router->bind('product-type', function ($id) {
+            return ProductType::withTrashed()->where('id', $id)->firstOrFail();
         });
 
         parent::boot($router);

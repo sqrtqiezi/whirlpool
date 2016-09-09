@@ -6,95 +6,67 @@
 	<div class="row">
 
 		<div class="col-md-12">
+			<div class="box">
+				<div class="box-header">
+					<a class="btn btn-sm btn-primary"
+					   href="{!! route('panel.product-type.create') !!}">创建分类</a>
+					<a class="btn btn-sm btn-info"
+					   href="{!! route('panel.product.index') !!}">返回产品管理</a>
 
-			@if(0 === $total)
-				{{-- 无信息 --}}
-				<div class="callout callout-warning">
-					<p>还没有内容，<a href="{!! route('panel.product.create') !!}">新建一个吧</a></p>
-				</div>
-				{{-- ./ 无信息 --}}
-			@else
-				<div class="box">
-					<div class="box-header">
-						<a class="btn btn-sm btn-primary"
-						   href="{!! route('panel.product.create') !!}">创建文章</a>
-
-						<div class="box-tools" style="top: 10px;">
-							{{-- 搜索 --}}
-							<form action="{!! route('panel.product.index') !!}"
-							      class="form-inline" id="filter-form">
-								<div class="input-group input-group-sm">
-									<select class="form-control pull-right filter-select" title="选择分类"
-									        name="visibility">
-										<option value="0">按可见性</option>
-										<option value="1" {!! app('request')->get('visibility') == 1 ? ' selected' : null !!}>隐藏</option>
-										<option value="2" {!! app('request')->get('visibility') == 2 ? ' selected' : null !!}>可见</option>
-									</select>
-								</div>
-								<div class="input-group input-group-sm">
-									<select class="form-control pull-right filter-select" title="选择分类"
-									        name="type">
-										<option value="0">按分类</option>
-										<option
-												value="{!! \Whirlpool\Life\Entities\Life::TYPE_PEOPLE !!}" {!! app('request')->get('type') == \Whirlpool\Life\Entities\Life::TYPE_PEOPLE ? ' selected' : null !!}>
-											厨电创想人
-										</option>
-										<option
-												value="{!! \Whirlpool\Life\Entities\Life::TYPE_APPLIANCE !!}"  {!! app('request')->get('type') == \Whirlpool\Life\Entities\Life::TYPE_APPLIANCE ? ' selected' : null !!}>
-											“懂”厨电
-										</option>
-										<option
-												value="{!! \Whirlpool\Life\Entities\Life::TYPE_DELICIOUS !!}"  {!! app('request')->get('type') == \Whirlpool\Life\Entities\Life::TYPE_DELICIOUS ? ' selected' : null !!}>
-											“品”美味
-										</option>
-										<option
-												value="{!! \Whirlpool\Life\Entities\Life::TYPE_KITCHEN !!}"  {!! app('request')->get('type') == \Whirlpool\Life\Entities\Life::TYPE_KITCHEN ? ' selected' : null !!}>
-											“绘”厨房
-										</option>
-									</select>
-								</div>
-								<div class="input-group input-group-sm" style="width: 250px;">
-									<input type="text" name="q" class="form-control pull-right"
-									       placeholder="搜索标题"
-									       value="{{ app('request')->get('q') }}">
-
-									<div class="input-group-btn">
-										<button type="submit" class="btn btn-default"><i
-													class="fa fa-search"></i></button>
-									</div>
-								</div>
-							</form>
-							{{-- /.搜索 --}}
-						</div>
+					<div class="box-tools" style="top: 10px;">
+						{{-- 搜索 --}}
+						<form action="{!! route('panel.product-type.index') !!}"
+						      class="form-inline" id="filter-form">
+							<div class="input-group input-group-sm">
+								<select class="form-control pull-right filter-select"
+								        title="选择分类" name="visibility">
+									<option value="0">按可见性</option>
+									<option
+											value="1" {!! app('request')->get('visibility') == 1 ? ' selected' : null !!}>
+										隐藏
+									</option>
+									<option
+											value="2" {!! app('request')->get('visibility') == 2 ? ' selected' : null !!}>
+										可见
+									</option>
+								</select>
+							</div>
+						</form>
+						{{-- /.搜索 --}}
 					</div>
-					<!-- /.box-header -->
-					<div class="box-body table-responsive no-padding">
+				</div>
+				<!-- /.box-header -->
+				<div class="box-body table-responsive">
+					@if(0 === $total)
+						{{-- 无信息 --}}
+						<div class="callout callout-warning">
+							<p>还没有内容，<a href="{!! route('panel.product-type.create') !!}">新建一个吧</a>
+							</p>
+						</div>
+						{{-- ./ 无信息 --}}
+					@else
 						<table class="table table-hover">
 							<tbody>
 							<tr>
 								<th>ID</th>
-								<th>分类</th>
-								<th>标题</th>
-								<th>内容摘要</th>
-								<th>发布时间</th>
+								<th>分类名称</th>
+								<th>属性</th>
 								<th>最后编辑</th>
 								<th>操作</th>
 							</tr>
 
-							@foreach($products as $product)
+							@foreach($types as $type)
 								<tr>
-									<td>{!! $product->id !!}</td>
-									<td><span class="badge bg-gray text-navy font-light">{!! $product->type !!}</span></td>
-									<td>{!! $product->title !!}</td>
-									<td>{!! $product->description !!}</td>
-									<td>{!! $product->created_at !!}</td>
-									<td>{!! $product->updated_at !!}</td>
+									<td>{!! $type->id !!}</td>
+									<td>{!! $type->name !!}</td>
+									<td>{!! $type->attributesSummary !!}</td>
+									<td>{!! $type->updated_at !!}</td>
 									<td>
 										<a class="btn btn-xs btn-primary inline"
-										   href="{!! route('panel.product.edit', $product->id) !!}">编辑</a>
-										@if($product->trashed())
+										   href="{!! route('panel.product-type.edit', $type->id) !!}">编辑</a>
+										@if($type->trashed())
 											<form
-													action="{!! route('panel.product.restore', $product->id) !!}"
+													action="{!! route('panel.product-type.restore', $type->id) !!}"
 													method="post" class="inline">
 												{!! csrf_field()!!}
 												<button class="btn btn-xs btn-success inline"
@@ -103,8 +75,8 @@
 											</form>
 										@else
 											<form
-													action="{!! route('panel.product.destroy', $product->id) !!}"
-													method="post" id="destroy{!! $product->id !!}"
+													action="{!! route('panel.product-type.destroy', $type->id) !!}"
+													method="post" id="destroy{!! $type->id !!}"
 													class="inline">
 												<input type="hidden" name="_method" value="delete">
 												{!! csrf_field() !!}
@@ -119,24 +91,26 @@
 
 							</tbody>
 						</table>
-					</div>
-					<!-- /.box-body -->
-					{{-- box footer --}}
+					@endif
+				</div>
+				<!-- /.box-body -->
+				{{-- box footer --}}
+				@if($total)
 					<div class="box-footer clearfix">
 						<div class="row">
 							<div class="col-md-6">
 								<span
-										style="display:inline-block;margin: 20px 0;">总数：{!! $lives->total() !!}</span>
+										style="display:inline-block;margin: 20px 0;">总数：{!! $types->total() !!}</span>
 							</div>
 							<div class="col-md-6">
-								<div class="pull-right">{!! $lives->links() !!}</div>
+								<div class="pull-right">{!! $types->links() !!}</div>
 							</div>
 						</div>
 					</div>
-					{{-- /.box footer--}}
-				</div>
-				<!-- /.box -->
-			@endif
+				@endif
+				{{-- /.box footer--}}
+			</div>
+			<!-- /.box -->
 		</div>
 	</div>
 @endsection

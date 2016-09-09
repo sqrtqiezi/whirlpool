@@ -26,6 +26,8 @@ $router->group([
         $router->resources([
             // 厨房电器
             'product'  => 'ProductController',
+            // 电器分类
+            'product-type' => 'ProductTypeController',
             // 新闻
             'news'     => 'NewsController',
             // 终端
@@ -40,6 +42,7 @@ $router->group([
         $router->post('life/{life}/restore', 'LifeController@restore')->name('panel.life.restore');
         $router->post('terminal/{terminal}/restore', 'TerminalController@restore')->name('panel.terminal.restore');
         $router->post('product/{product}/restore', 'ProductController@restore')->name('panel.product.restore');
+        $router->post('product-type/{product_type}/restore', 'ProductTypeController@restore')->name('panel.product-type.restore');
         // 文件上传
         $router->match(['put','patch', 'post'], 'api/upload', 'AjaxController@upload')->name('panel.api.upload');
     });

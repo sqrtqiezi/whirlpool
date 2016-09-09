@@ -1,0 +1,51 @@
+<?php
+
+namespace Whirlpool\Product;
+
+use Illuminate\Support\Collection;
+use Whirlpool\Contracts\RepositoryInterface;
+use Whirlpool\Product\Entities\ProductType;
+
+class ProductTypeRepository
+{
+    /**
+     *
+     * 筛选列表结果
+     *
+     * @param array $criteria
+     *
+     * @return Collection
+     */
+    public function filter(array $criteria = [])
+    {
+
+        $type = (new ProductType())->newQuery();
+        // 可见性
+        if (isset($criteria['visibility'])) {
+            switch ($criteria['visibility']) {
+                case RepositoryInterface::VISIBLE:
+                    break;
+                case RepositoryInterface::INVISIBLE:
+                    $type->onlyTrashed();
+                    break;
+                default:
+                    goto ALL_VISIBILITY;
+            }
+        } else {
+            ALL_VISIBILITY:
+            $type->withTrashed();
+        }
+
+        return $type->orderBy('id', 'DESC')->paginate(10);
+    }
+
+    /**
+     * 信息总数
+     *
+     * @return int
+     */
+    public function total()
+    {
+        return ProductType::withTrashed()->count();
+    }
+}

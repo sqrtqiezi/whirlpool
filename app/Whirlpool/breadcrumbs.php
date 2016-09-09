@@ -95,3 +95,22 @@ $b->register('panel.product.edit', function ($breadcrumbs, $id) {
     $breadcrumbs->push('编辑', route('panel.product.edit', ['id' => $id]));
 });
 
+
+$b->register('panel.product-type.index', function ($breadcrumbs) {
+    /** @var \DaveJamesMiller\Breadcrumbs\Generator $breadcrumbs */
+    $breadcrumbs->parent('panel.product.index');
+    $breadcrumbs->push('分类管理', route('panel.product-type.index'));
+});
+
+$b->register('panel.product-type.create', function ($breadcrumbs) {
+    /** @var \DaveJamesMiller\Breadcrumbs\Generator $breadcrumbs */
+    $breadcrumbs->parent('panel.product.index');
+    $breadcrumbs->push('新建', route('panel.product-type.create'));
+});
+
+$b->register('panel.product-type.edit', function ($breadcrumbs, $id) {
+    /** @var \DaveJamesMiller\Breadcrumbs\Generator $breadcrumbs */
+    $breadcrumbs->parent('panel.product.index');
+    $breadcrumbs->push('编辑', route('panel.product-type.edit', ['id' => $id]));
+});
+

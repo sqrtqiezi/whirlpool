@@ -9,9 +9,9 @@
 				<div class="box">
 					<div class="box-header">
 						<a class="btn btn-sm btn-primary"
-						   href="{!! route('panel.product.create') !!}">创建文章</a>
-						<a class="btn btn-sm btn-primary"
-						   href="{!! route('panel.product.create') !!}">创建文章</a>
+						   href="{!! route('panel.product.create') !!}">创建产品</a>
+						<a class="btn btn-sm btn-info"
+						   href="{!! route('panel.product-type.index') !!}">产品分类管理</a>
 
 						<div class="box-tools" style="top: 10px;">
 							{{-- 搜索 --}}
