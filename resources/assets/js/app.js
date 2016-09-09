@@ -5,7 +5,9 @@ var NewsWidget = require('./NewsWidget');
 //region pjax 相关逻辑
 if ($.support.pjax) {
   $(document).on('click', 'a[data-pjax]', function (event) {
-    if ((isInContent('content-products') || isInContent('content-category'))) {
+    if ((isInContent('content-products') || isInContent('content-category'))
+      && !$.browser.mobile
+    ) {
       hideItemsAndPjax(event);
     }
     else {
@@ -14,29 +16,36 @@ if ($.support.pjax) {
   })
 }
 
-
+//隐藏列表,并跳转
 function hideItemsAndPjax(event) {
-  if($.browser.mobile) {
-    $.pjax.click(aEvent, {container: '#pjax-container'})
-  }
-  else  {
+  var i = 0;
+  $(".product-item").each(function () {
+    i += 1;
+    $(this).removeClass('fadeIn')
+      .addClass('fadeOut')
+      .css('opacity', '0')
+  })
+  var duration = 150 * i + 1000;
+  var aEvent = _.cloneDeep(event);
+  event.preventDefault();
 
-    var i = 0;
-    $(".product-item").each(function () {
-      i+=1;
-      $(this).removeClass('fadeIn')
-        .addClass('fadeOut')
-        .css('opacity', '0')
-    })
-    console.log(i)
-    var duration = 150 * i + 1000;
-    var aEvent = _.cloneDeep(event);
-    event.preventDefault();
-    setTimeout(function () {
-      $.pjax.click(aEvent, {container: '#pjax-container'})
-    }, duration);
-  }
+  setTimeout(function () {
+    $.pjax.click(aEvent, {container: '#pjax-container'})
+  }, duration);
 }
+
+//点击浏览器回退按钮,进入产品列表时,移除关闭的类
+window.onpopstate = function (event) {
+  if ((isInContent('content-products') || isInContent('content-category'))
+    && !$.browser.mobile
+  ) {
+    console.log(event)
+    $(".product-item").each(function () {
+      $(this).removeClass('fadeOut')
+        .addClass('fadeIn');
+    })
+  }
+};
 
 function isInContent(className) {
   if ($(".content." + className)[0] !== undefined)
@@ -51,7 +60,6 @@ $(document).on("pjax:timeout", function (event) {
 
 $(document).on("pjax:start", function (event) {
   progressJs().start();
-  progressJs().set(50);
 })
 
 $(document).on("pjax:complete", function (event) {
@@ -144,8 +152,9 @@ function refreshAll() {
     $(window).resize(setProductDetailSize);
 
     var oldActive = 'product-show';
+
     function changeActive(className) {
-      if(oldActive === className) {
+      if (oldActive === className) {
         return
       }
       $('.details-nav .active').removeClass('active');
@@ -162,10 +171,10 @@ function refreshAll() {
       if (current < height1) {
         changeActive('product-show');
       }
-      else if(current >= height1 && current < height2){
+      else if (current >= height1 && current < height2) {
         changeActive('product-tech');
       }
-      else if(current >= height2 && current < height3) {
+      else if (current >= height2 && current < height3) {
         changeActive('product-core');
       }
       else {
