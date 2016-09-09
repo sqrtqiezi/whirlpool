@@ -22,11 +22,11 @@
 								        title="选择分类" name="visibility">
 									<option value="0">按可见性</option>
 									<option
-											value="1" {!! app('request')->get('visibility') == 1 ? ' selected' : null !!}>
+											value="2" {!! app('request')->get('visibility') == 2 ? ' selected' : null !!}>
 										隐藏
 									</option>
 									<option
-											value="2" {!! app('request')->get('visibility') == 2 ? ' selected' : null !!}>
+											value="1" {!! app('request')->get('visibility') == 1 ? ' selected' : null !!}>
 										可见
 									</option>
 								</select>

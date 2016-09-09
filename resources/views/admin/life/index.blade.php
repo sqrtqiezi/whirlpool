@@ -19,8 +19,8 @@
 									<select class="form-control pull-right filter-select" title="选择分类"
 									        name="visibility">
 										<option value="0">按可见性</option>
-										<option value="1" {!! app('request')->get('visibility') == 1 ? ' selected' : null !!}>隐藏</option>
-										<option value="2" {!! app('request')->get('visibility') == 2 ? ' selected' : null !!}>可见</option>
+										<option value="2" {!! app('request')->get('visibility') == 2 ? ' selected' : null !!}>隐藏</option>
+										<option value="1" {!! app('request')->get('visibility') == 1 ? ' selected' : null !!}>可见</option>
 									</select>
 								</div>
 								<div class="input-group input-group-sm">
