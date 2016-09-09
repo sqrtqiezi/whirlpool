@@ -25,6 +25,7 @@ a.product-item {
     display: inline-block;
     margin-top: 10%;
     height: 50%;
+    max-width: 80%;
   }
 
   .fa.fa-search {
@@ -87,8 +88,7 @@ a.product-item {
       height: 30vh;
 
       .product-item img {
-        width: 30vh;
-        margin-left: -15vh;
+        height: 60%;
       }
       a.product-item {
         width: 100%;
