@@ -3622,19 +3622,23 @@ a.life-item {
   display: none;
   width: 100%;
   height: 100%;
-  position: fixed;
+  position: absolute;
   left: 0;
   top: 0;
   z-index: 200;
-  background-color: black;
-  opacity: .8;
   overflow-y: visible; }
   #mobile-navigation nav {
-    display: inline-block; }
+    background-color: black;
+    opacity: .8;
+    display: inline-block;
+    padding-bottom: 10em;
+    width: 100%;
+    height: auto;
+    min-height: 100%; }
   #mobile-navigation ul, #mobile-navigation li {
     list-style-type: none; }
   #mobile-navigation ul {
-    position: absolute;
+    position: relative;
     display: inline-block;
     top: 3em;
     width: 100%;
@@ -3662,11 +3666,14 @@ a.life-item {
   #mobile-navigation .nav-sub-list {
     display: none;
     position: relative;
+    margin-bottom: .5em;
     top: 0; }
     #mobile-navigation .nav-sub-list > li {
       text-align: left;
       padding-left: 42%;
-      font-size: .8em; }
+      font-size: .8em;
+      height: 1em;
+      line-height: 1.2em; }
 
 .only-mobile .widget-navbar {
   width: auto;

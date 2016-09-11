@@ -22,11 +22,19 @@
   function expandMenu() {
     $('#mobile-navigation').show();
     $('#responsive-menu-button').hide();
+
+    var $mainEl = $($('.main')[0]);
+    $mainEl.css('position', 'fixed');
+    $mainEl.css('overflow-y', 'hidden');
   }
 
   function closeMenu() {
     $('#mobile-navigation').hide();
     $('#responsive-menu-button').show();
+
+    var $mainEl = $($('.main')[0]);
+    $mainEl.css('overflow-y', 'visible');
+    $mainEl.css('position', 'relative');
   }
 
   $('#responsive-menu-button').click(expandMenu);
