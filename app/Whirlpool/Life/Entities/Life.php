@@ -35,7 +35,7 @@ class Life extends Model implements HasPresenter
      *
      * @var array
      */
-    protected $fillable = ['title', 'content', 'type', 'thumbnail'];
+    protected $fillable = ['title', 'content', 'type'];
 
     /**
      * 定义 presenter 类

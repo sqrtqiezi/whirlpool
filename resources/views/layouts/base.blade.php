@@ -13,11 +13,7 @@
     <link rel="stylesheet" href="/css/app.css">
 </head>
 <body>
-<div id="big-video-wrap">
-    <video autoplay muted loop id="bgvid">
-        <source src="http://obz9qz3z4.bkt.clouddn.com/whirlpool3" type="video/mp4">
-    </video>
-</div>
+<div id="bg-video-wrap"></div>
 <div class="main wrapper clearfix">
     <div id="video-raster"></div>
     <article>
@@ -47,12 +43,12 @@
             <section class="grid-cell grid-cell-no-20"></section>
         </div>
     </article>
-    <div class="footer clearfix">
+    <div class="footer clearfix only-desktop">
         <nav class="nav-list pull-left">
             <ul class="nav-top-list">
                 <li>
-                    <a data-pjax href="javascript:;" class="js-top-nav" data-sub-nav="about-sub-nav" data-hover="关于我们">
-                        <span>关于我们</span>
+                    <a data-pjax href="javascript:;" class="js-top-nav" data-sub-nav="about-sub-nav">
+                        <span data-hover="关于我们">关于我们</span>
                     </a>
                     <ul id="about-sub-nav" class="nav-sub-list bounceInDown animated">
                         <li><a data-pjax href="{{ route('about') }}#brand-info"><span>品牌简介</span></a></li>
@@ -63,7 +59,9 @@
                     </ul>
                 </li>
                 <li>
-                    <a data-pjax href="javascript:;" class="js-top-nav" data-sub-nav="product-sub-nav" data-hover="厨房电器"><span>厨房电器</span></a>
+                    <a data-pjax href="javascript:;" class="js-top-nav" data-sub-nav="product-sub-nav">
+                        <span data-hover="厨房电器">厨房电器</span>
+                    </a>
                     <ul id="product-sub-nav" class="nav-sub-list bounceInDown animated">
                         <li><a data-pjax href="{{ route('products') }}"><span>全部</span></a></li>
                         <li><a data-pjax href="{{ route('category', 1) }}"><span>吸油烟机</span></a></li>
@@ -76,10 +74,14 @@
                         <li><a data-pjax href="{{ route('category', 1) }}"><span>嵌入式冰箱</span></a></li>
                         <li><a data-pjax href="{{ route('category', 1) }}"><span>酒柜</span></a></li>
                         <li><a data-pjax href="{{ route('category', 1) }}"><span>暖碟机</span></a></li>
+                        <li><a data-pjax href="{{ route('category', 1) }}"><span>干衣机</span></a></li>
+                        <li><a data-pjax href="{{ route('category', 1) }}"><span>垃圾处理器</span></a></li>
                     </ul>
                 </li>
                 <li>
-                    <a data-pjax href="javascript:;" class="js-top-nav" data-sub-nav="news-sub-nav" data-hover="新闻中心"><span>新闻中心</span></a>
+                    <a data-pjax href="javascript:;" class="js-top-nav" data-sub-nav="news-sub-nav">
+                        <span data-hover="新闻中心">新闻中心</span>
+                    </a>
                     <ul id="news-sub-nav" class="nav-sub-list bounceInDown animated">
                         <li><a data-pjax href="{{ route('news') }}"><span>全部</span></a></li>
                         <li><a data-pjax href="{{ route('news') }}"><span>企业内讯</span></a></li>
@@ -88,13 +90,19 @@
                     </ul>
                 </li>
                 <li>
-                    <a data-pjax href="{{ route('projects') }}" data-hover="工程案例"><span>工程案例</span></a>
+                    <a data-pjax href="{{ route('projects') }}">
+                        <span data-hover="工程案例">工程案例</span>
+                    </a>
                 </li>
                 <li>
-                    <a data-pjax href="{{ route('stores') }}" data-hover="终端形象"><span>终端形象</span></a>
+                    <a data-pjax href="{{ route('stores') }}">
+                        <span data-hover="终端形象">终端形象</span>
+                    </a>
                 </li>
                 <li>
-                    <a data-pjax href="javascript:;" class="js-top-nav" data-sub-nav="life-sub-nav" data-hover="“会”生活"><span>“会”生活</span></a>
+                    <a data-pjax href="javascript:;" class="js-top-nav" data-sub-nav="life-sub-nav">
+                        <span data-hover="“会”生活">“会”生活</span>
+                    </a>
                     <ul id="life-sub-nav" class="nav-sub-list bounceInDown animated">
                         <li><a data-pjax href="{{ route('life') }}"><span>全部</span></a></li>
                         <li><a data-pjax href="{{ route('life') }}"><span>厨电创想人</span></a></li>
@@ -104,20 +112,22 @@
                     </ul>
                 </li>
                 <li>
-                    <a data-pjax href="{{ route('contact') }}" data-hover="联系我们"><span>联系我们</span></a>
+                    <a data-pjax href="{{ route('contact') }}">
+                        <span data-hover="联系我们">联系我们</span>
+                    </a>
                 </li>
             </ul>
         </nav>
         <div class="footer-info pull-right">
-            <div class="content-info pull-left">
-                <span class="company-name">惠而浦（中国）股份有限公司</span>
-                <span class="company-right">沪ICP备13004331号 © 2016 Whirlpool .All Right Reserved</span>
-            </div>
             <div class="contact-info pull-right">
                 <a data-pjax href="http://weibo.com/u/5889505040" class="contact-weibo"></a>
                 <a data-pjax href="javascript:;" class="contact-wechat"></a>
                 <a data-pjax href="javascript:;" class="contact-email"></a>
-                <span class="design-info">Design by wisnovo</span>
+                <span class="design-info only-desktop">Design by wisnovo</span>
+            </div>
+            <div class="content-info pull-left">
+                <span class="company-name">惠而浦（中国）股份有限公司</span>
+                <span class="company-right">沪ICP备13004331号 © 2016 Whirlpool .All Right Reserved</span>
             </div>
         </div>
     </div>
@@ -128,11 +138,48 @@
         <ul>
             <li><a href="{{ route('home') }}">首页</a></li>
             <li><a href="{{ route('about') }}">关于我们</a></li>
-            <li><a href="{{ route('products') }}">厨房电器</a></li>
-            <li><a href="{{ route('news') }}">新闻中心</a></li>
+            <li class="has-expand" data-sub-name="product-list">
+                <i class="fa fa-plus"></i>
+                <a href="javascript:;">厨房电器</a>
+                <ul id="product-sub-nav" class="nav-sub-list product-list">
+                    <li><a href="{{ route('products') }}"><span>全部</span></a></li>
+                    <li><a href="{{ route('category', 1) }}"><span>吸油烟机</span></a></li>
+                    <li><a href="{{ route('category', 1) }}"><span>灶具</span></a></li>
+                    <li><a href="{{ route('category', 1) }}"><span>微波炉</span></a></li>
+                    <li><a href="{{ route('category', 1) }}"><span>蒸箱</span></a></li>
+                    <li><a href="{{ route('category', 1) }}"><span>消毒柜</span></a></li>
+                    <li><a href="{{ route('category', 1) }}"><span>烤箱</span></a></li>
+                    <li><a href="{{ route('category', 1) }}"><span>洗碗机</span></a></li>
+                    <li><a href="{{ route('category', 1) }}"><span>嵌入式冰箱</span></a></li>
+                    <li><a href="{{ route('category', 1) }}"><span>酒柜</span></a></li>
+                    <li><a href="{{ route('category', 1) }}"><span>暖碟机</span></a></li>
+                    <li><a href="{{ route('category', 1) }}"><span>干衣机</span></a></li>
+                    <li><a href="{{ route('category', 1) }}"><span>垃圾处理器</span></a></li>
+                </ul>
+            </li>
+            <li class="has-expand" data-sub-name="news-list">
+                <i class="fa fa-plus"></i>
+                <a href="javascript:;">新闻中心</a>
+                <ul id="news-sub-nav" class="nav-sub-list news-list">
+                    <li><a href="{{ route('news') }}"><span>全部</span></a></li>
+                    <li><a href="{{ route('news') }}"><span>企业内讯</span></a></li>
+                    <li><a href="{{ route('news') }}"><span>媒体报道</span></a></li>
+                    <li><a href="{{ route('news') }}"><span>促销活动</span></a></li>
+                </ul>
+            </li>
             <li><a href="{{ route('projects') }}">工程案例</a></li>
             <li><a href="{{ route('stores') }}">终端形象</a></li>
-            <li><a href='{{ route('life') }}'>“会” 生活</a></li>
+            <li class="has-expand" data-sub-name="life-list">
+                <i class="fa fa-plus"></i>
+                <a href='javascript:;'>“会” 生活</a>
+                <ul id="life-sub-nav" class="nav-sub-list life-list">
+                    <li><a href="{{ route('life') }}"><span>全部</span></a></li>
+                    <li><a href="{{ route('life') }}"><span>厨电创想人</span></a></li>
+                    <li><a href="{{ route('life') }}"><span>"懂"厨电</span></a></li>
+                    <li><a href="{{ route('life') }}"><span>"品"美味</span></a></li>
+                    <li><a href="{{ route('life') }}"><span>"绘"厨房</span></a></li>
+                </ul>
+            </li>
             <li><a href="{{ route('contact') }}">联系我们</a></li>
         </ul>
     </nav>

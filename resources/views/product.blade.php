@@ -2,6 +2,13 @@
 
 @section('content')
     <div class="details-content">
+        @include('layouts/mobile_top')
+        <div class="mobile-detail only-mobile">
+            <section class="title">
+                <span class="main-title">PRODUCT LIST</span>
+                <span class="sub-title">厨房家电</span>
+            </section>
+        </div>
         <div class="detail product-detail bounceInLeft animated">
             <div class="scrollbar-macosx">
                 <div id="product-show" class="product-detail-item product-show">
@@ -124,9 +131,6 @@
                     </section>
                 </div>
                 <div id="product-descriptions" class="product-detail-item product-descriptions">
-                    <div class="pull-left">
-                        <img src="/images/product-detail1.png" alt="">
-                    </div>
                     <div class="pull-right">
                         <section class="title">
                             <h1 class="main-title">经典T型黄金比例设计</h1>
@@ -141,35 +145,39 @@
                             <div class="product-description-item"><img src="/images/product-detail-item1.png" alt=""></div>
                         </div>
                     </div>
+                    <div class="pull-left">
+                        <img src="/images/product-detail1.png" alt="">
+                    </div>
                 </div>
             </div>
         </div>
+        @include('layouts/mobile_footer')
     </div>
 
-    <div class="grid-cell">
-        <a href="{{ route('category', 1) }}" class="nav-close"></a>
+    <div class="grid-cell only-desktop">
+        <a data-pjax href="{{ route('category', 1) }}" class="nav-close"></a>
     </div>
-    <div class="grid-cell"></div>
-    <div class="grid-cell">
+    <div class="grid-cell only-desktop"></div>
+    <div class="grid-cell only-desktop">
         <section class="title">
             <span class="main-title">AKF808</span>
             <span class="sub-title">吸油烟机</span>
         </section>
     </div>
-    <div class="grid-cell">
+    <div class="grid-cell only-desktop">
         <div class="details-nav">
             <ul>
                 <a href="#product-show">
-                    <li>品牌简介</li>
+                    <li class="product-show active">品牌简介</li>
                 </a>
                 <a href="#product-tech">
-                    <li>技术参数</li>
+                    <li class="product-tech">技术参数</li>
                 </a>
                 <a href="#product-core">
-                    <li>核心技术</li>
+                    <li class="product-core">核心技术</li>
                 </a>
                 <a href="#product-descriptions">
-                    <li>细节展示</li>
+                    <li class="product-descriptions">细节展示</li>
                 </a>
             </ul>
         </div>

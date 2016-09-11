@@ -3,9 +3,8 @@
 namespace Whirlpool\Life;
 
 use Illuminate\Support\Collection;
-use Whirlpool\Contracts\RepositoryInterface;
 
-interface LifeRepositoryInterface extends RepositoryInterface
+interface LifeRepositoryInterface
 {
     /**
      *

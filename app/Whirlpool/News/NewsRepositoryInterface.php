@@ -3,9 +3,8 @@
 namespace Whirlpool\News;
 
 use Illuminate\Support\Collection;
-use Whirlpool\Contracts\RepositoryInterface;
 
-interface NewsRepositoryInterface extends RepositoryInterface
+interface NewsRepositoryInterface
 {
 
     /**

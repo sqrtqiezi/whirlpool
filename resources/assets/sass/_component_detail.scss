@@ -25,6 +25,12 @@
   }
 }
 
+@media only screen and (max-width: $mobile-width) {
+  .details-nav {
+    display: none;
+  }
+}
+
 .detail {
   h1,
   h2,
@@ -503,6 +509,110 @@
   }
 }
 
+@media only screen and (max-width: $mobile-width) {
+  .mobile-detail .title {
+    margin-left: 0;
+  }
+  .detail.brand-info {
+    height: auto;
+
+    .detail-hero {
+      width: 100%;
+      height: 30vh;
+    }
+
+    .detail-body {
+      padding: 0 2em;
+      span {
+        text-align: left;
+      }
+    }
+  }
+  .detail.brand-course {
+    .detail-item {
+      width: 100%;
+      padding-top: 5vh;
+      padding-bottom: 5vh;
+
+      background-position: center;
+
+      &:hover {
+        background-size: cover;
+        background-position: center;
+      }
+    }
+  }
+
+  .detail.brand-worth {
+    padding: 0 0;
+
+    .detail-body {
+      padding: 0 0;
+    }
+    .detail-item {
+      margin-bottom: 6vh;
+    }
+  }
+
+  .detail.brand-honour {
+    .detail-heading h5 {
+      padding: 0 5vh;
+    }
+    .detail-body {
+      padding: 0 0;
+      width: 100vh;
+      font-size: .8em;
+
+      .line-wrapper {
+        width: 85em;
+        padding-right: 15em;
+      }
+      .detail-item .item-body .item span {
+        font-size: .8em;
+        &.title {
+          font-size: 1em;
+        }
+      ;
+      }
+    }
+  }
+
+  .detail.brand-responsibility {
+    padding: 0 0;
+
+    .detail-heading .sub-titles {
+      margin-top: 2em;
+      .sub-title {
+        width: 32%;
+        margin: 0 0;
+        padding: 0 1em;
+        text-align: left;
+      }
+    }
+
+    .detail-body {
+      padding-top: 2em;
+
+      .detail-item{
+        width:  100%;
+        padding-bottom: 2em;
+      }
+    }
+  }
+
+  .details-content.content-about > .detail {
+    display: inline-block !important;
+  }
+
+  .detail.bounceInLeft {
+    animation-name: none;
+  }
+
+  .details-content.content-about  ~ .grid-cell {
+    display: none;
+  }
+}
+
 .detail.product-detail {
   .scroll-wrapper {
     width: 100%;
@@ -561,8 +671,6 @@
       }
     }
 
-    $table-border: 1px solid #C2C2C2;
-    $table-row-height: 2.5em;
     table.product-tech-details {
       font-size: .6em;
       width: 100%;
@@ -729,7 +837,6 @@
     }
   }
 
-
   @media only screen and (max-width: 1600px) {
     .product-descriptions {
       .pull-right {
@@ -781,6 +888,86 @@
               border: 3px solid $brand-primary;
             }
           }
+        }
+      }
+    }
+  }
+  
+  @media only screen and ( max-width: $mobile-width ) {
+    .product-show {
+      position: relative;
+      height: 50vh;
+
+      .hero-image {
+        width: 100%;
+      }
+
+      .description {
+        position: relative;
+        width: 100%;
+        right: 0;
+
+        .title {
+          padding: 2em 0;
+        }
+      }
+    }
+
+    .product-tech {
+      .pull-left,
+      .pull-right {
+        width: 100%;
+      }
+
+      .title {
+        padding: 2em 0;
+        margin-left: .6em;
+        font-size: 1.5em;
+      }
+
+      table.product-tech-details {
+        border-style: none;
+        tr,
+        tbody {
+          display: block;
+          width: 100%;
+          border-style: none;
+        }
+        tr td {
+          float: left;
+          width: 49.2% !important;
+          border: $table-border;
+          margin: 0 0;
+          box-sizing: border-box;
+        }
+
+      }
+    }
+
+    .product-core {
+      .title {
+        width: 100%;
+        margin: 0 0;
+
+        h1.main-title {
+          width: 100%;
+          font-size: 2.5em;
+        }
+      }
+    }
+
+    .product-descriptions {
+      .pull-left,
+      .pull-right {
+        width: 100%;
+        padding-right: 0;
+      }
+
+      .pull-right {
+        padding-bottom:  2em;
+
+        .main-title {
+          text-align: center;
         }
       }
     }

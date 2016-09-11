@@ -85,5 +85,33 @@
       height: 30em;
     }
   }
+  
+  @media only screen and ( max-width: $mobile-width ) {
+    .grid-cell.grid-cell-no-6 {
+      width: 100%;
+      height: auto;
+    }
 
+    .project-wrapper {
+      width: 100%;
+    }
+
+    .project-item {
+      width: 99%;
+      height: 40vh;
+      margin: 0 0;
+
+      img {
+        height: 40vh;
+      }
+
+      .project-content {
+        padding: 2em 2em;
+        span.title {
+          top: 1em;
+          margin: 0 0;
+        }
+      }
+    }
+  }
 }

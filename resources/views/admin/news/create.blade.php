@@ -2,8 +2,6 @@
 
 @include('admin.components.alert')
 
-@include('admin.components.image-upload')
-
 @section('header')
 	@include('UEditor::head')
 @endsection
@@ -18,7 +16,7 @@
 			<!-- /.box-header -->
 
 				<form class="form-horizontal" action="{!! route('panel.news.store') !!}"
-				      method="post" enctype="multipart/form-data">
+				      method="post">
 					@include('admin.news.form')
 				</form>
 

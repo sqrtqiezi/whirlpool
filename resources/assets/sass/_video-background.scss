@@ -1,14 +1,14 @@
 @media only screen and (min-width: $mobile-width + 1) {
-  div#big-video-wrap {
+  div#bg-video-wrap {
     video#bgvid {
       position: absolute;
+      z-index: $zindex-video-background;
       min-width: 100%;
       min-height: 100%;
     }
   }
 
   div#video-raster {
-    //background-image: url(/images/video_raster.png);
     background-color: black;
     opacity: .6;
     height: 100%;
@@ -23,7 +23,7 @@
     display: none;
   }
 
-  div#big-video-wrap::after {
+  div#bg-video-wrap::after {
     content: '';
     display: block;
     position: absolute;
@@ -36,7 +36,7 @@
   }
 }
 
-div#big-video-wrap {
+div#bg-video-wrap {
   overflow: hidden;
   position: fixed;
   right: 0;

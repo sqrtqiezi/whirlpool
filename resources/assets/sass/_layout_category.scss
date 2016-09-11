@@ -5,6 +5,40 @@
   .grid-cell {
     width: 20%;
   }
+}
 
 
+@media only screen and ( max-width: $mobile-width ) {
+  .main .content.content-category {
+    .fadeIn {
+      animation-name: none;
+    }
+
+    .grid-cell {
+      position: relative;
+      width: 100%;
+      height: 30vh;
+
+      a.product-item {
+        width: 100%;
+        height: 100%;
+      }
+      .product-item img {
+        height: 60%;
+        width: auto;
+      }
+
+      &.grid-cell-no-1,
+      &.grid-cell-no-2,
+      &.grid-cell-no-3,
+      &.grid-cell-no-4,
+      &.grid-cell-no-5,
+      &.grid-cell-no-6,
+      &.grid-cell-no-7,
+      &.grid-cell-no-11,
+      &.grid-cell-no-15{
+        display: none;
+      }
+    }
+  }
 }

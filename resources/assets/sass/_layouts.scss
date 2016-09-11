@@ -49,6 +49,7 @@
 
   .footer {
     position: absolute;
+    z-index: $zindex-footer;
     bottom: 0;
     width: 100%;
     height: $footer-height;
@@ -79,7 +80,7 @@
 
 @media screen and (max-width: $mobile-width) {
   .main {
-    .footer,
+    overflow-y: visible;
     .grid {
       display: none;
     }
@@ -93,6 +94,25 @@
       }
     }
 
+    article .details-content {
+      width: 100%;
+      height: auto;
+    }
+    .logo {
+      display: none;
+    }
+
+
+    .footer {
+      display: none;
+    }
+  }
+
+  .mobile-top {
+    display: inline-block;
+    width: 100%;
+    position: relative;
+    height: 4em;
     .logo {
       position: absolute;
       display: inline-block;
@@ -106,11 +126,61 @@
       }
     }
   }
+
+  .mobile-detail {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: 30vh;
+    padding-left: 1em;
+    padding-bottom: 1em;
+    vertical-align: text-bottom;
+  }
+
+  .footer-info.only-mobile{
+    display: inline-block;
+
+    background-color: white;
+    width: 100%;
+    height: auto;
+
+    & > .contact-info {
+      display: inline-block;
+      width: 100%;
+      padding-top: .6em;
+      text-align: center;
+      &> a {
+        display: inline-block;
+        width: 1.5em;
+        height: 1.5em;
+        float: none;
+      }
+    }
+
+    & > .content-info {
+      width: 100%;
+      padding-top: 0;
+      padding-bottom: .6em;
+      & > span {
+        width: 100%;
+        padding-left: 1em;
+        text-align: left;
+      }
+    }
+  }
 }
 
-@import "layout_product";
+@import "layout_products";
 @import "layout_category";
 @import "layout_news";
 @import "layout_projects";
 @import "layout_life";
 @import "layout_contact";
+
+@media only screen and ( max-width: $mobile-width ) {
+  .grid-cell > .nav-close {
+    display: none;
+  }
+
+
+}

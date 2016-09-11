@@ -1,4 +1,3 @@
-
 .store-item {
   position: relative;
   display: inline-block;
@@ -105,5 +104,16 @@ select::-ms-expand { display: none; }
     right: 2em;
     bottom: 1.5em;
     color: white;
+  }
+}
+
+@media only screen and ( max-width: $mobile-width ) {
+  .main .content.content-stores .grid-cell {
+    width: 100%;
+    height: 30vh;
+  }
+  .store-item {
+    width: 100%;
+    height: 100%;
   }
 }

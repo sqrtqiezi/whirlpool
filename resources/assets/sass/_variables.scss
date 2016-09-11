@@ -1,6 +1,8 @@
 $zindex-video-background: -300;
-$zindex-background: -200;
-$zindex-grid: -100;
+$zindex-background: 0;
+$zindex-grid: 0;
+$zindex-body: 10;
+$zindex-footer: 20;
 $zindex-title: 100;
 $zindex-popover: 200;
 $zindex-popover2: 300;
@@ -17,6 +19,8 @@ $mobile-width: 768px;
 $mobile-logo-width: 8em;
 
 $desktop-small-width: 1250px;
+$table-border: 1px solid #C2C2C2;
+$table-row-height: 2.5em;
 
 
 $brand-fonts: 'source-han-sans-cn', 'Microsoft yahei', 微软雅黑, 'HanHei SC', 'PingFang SC', sans-serif;

@@ -17,7 +17,6 @@ class LifeRequest extends FormRequest
             'type' => 'required',
             'title'   => 'required',
             'content' => 'required',
-            'thumbnail' => 'required',
         ];
     }
 }

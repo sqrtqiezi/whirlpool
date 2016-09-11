@@ -2,6 +2,13 @@
 
 @section('content')
     <div class="details-content content-about">
+        @include('layouts/mobile_top')
+        <div class="mobile-detail only-mobile">
+            <section class="title">
+                <span class="main-title">100 YEARS<br/> WHIRLPOOL</span>
+                <span class="sub-title">百年惠而浦</span>
+            </section>
+        </div>
         <div class="detail brand-info pull-left bounceInLeft animated" style="display: none">
             <div class="detail-hero"></div>
             <div class="detail-body">
@@ -153,6 +160,8 @@
                 </div>
             </div>
         </div>
+
+        @include('layouts/mobile_footer')
     </div>
 
     <div class="grid-cell">

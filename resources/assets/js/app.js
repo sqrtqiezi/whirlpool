@@ -5,7 +5,9 @@ var NewsWidget = require('./NewsWidget');
 //region pjax 相关逻辑
 if ($.support.pjax) {
   $(document).on('click', 'a[data-pjax]', function (event) {
-    if ((isInContent('content-product') || isInContent('content-category')) && $(this).data('close')) {
+    if ((isInContent('content-products') || isInContent('content-category'))
+      && !$.browser.mobile
+    ) {
       hideItemsAndPjax(event);
     }
     else {
@@ -14,24 +16,36 @@ if ($.support.pjax) {
   })
 }
 
-
+//隐藏列表,并跳转
 function hideItemsAndPjax(event) {
-  var i = 1;
+  var i = 0;
   $(".product-item").each(function () {
+    i += 1;
     $(this).removeClass('fadeIn')
       .addClass('fadeOut')
-      .addClass('animated-' + i++)
       .css('opacity', '0')
   })
-
-  var duration = 200 * i + 1000;
-
+  var duration = 150 * i + 1000;
   var aEvent = _.cloneDeep(event);
   event.preventDefault();
+
   setTimeout(function () {
     $.pjax.click(aEvent, {container: '#pjax-container'})
   }, duration);
 }
+
+//点击浏览器回退按钮,进入产品列表时,移除关闭的类
+window.onpopstate = function (event) {
+  if ((isInContent('content-products') || isInContent('content-category'))
+    && !$.browser.mobile
+  ) {
+    console.log(event)
+    $(".product-item").each(function () {
+      $(this).removeClass('fadeOut')
+        .addClass('fadeIn');
+    })
+  }
+};
 
 function isInContent(className) {
   if ($(".content." + className)[0] !== undefined)
@@ -46,7 +60,6 @@ $(document).on("pjax:timeout", function (event) {
 
 $(document).on("pjax:start", function (event) {
   progressJs().start();
-  progressJs().set(50);
 })
 
 $(document).on("pjax:complete", function (event) {
@@ -56,8 +69,12 @@ $(document).on("pjax:complete", function (event) {
 //endregion
 
 
+//手机端的逻辑代码
 if ($.browser.mobile) {
-  require('./inMobile')
+  require('./inMobile');
+}
+else {
+  initVideoBG();
 }
 
 var newsWidget = new NewsWidget();
@@ -67,14 +84,31 @@ newsWidget.setNewsImageSize()
 newsWidget.refresh();
 refreshAll();
 
+
+function initVideoBG() {
+  var videoUrl = 'http://obz9qz3z4.bkt.clouddn.com/whirlpool5';
+  $('#bg-video-wrap').append('<video autoplay muted loop id="bgvid"><source src="' +
+    videoUrl +
+    '" type="video/mp4"></video>');
+}
+
 function refreshAll() {
+  //滚动条设置
+  jQuery('.scrollbar-macosx').scrollbar();
 
   if (isInContent('content-home')) {
     newsWidget.refresh();
   }
 
 
-  //region 新闻中心业务代码
+  if (isInContent('content-products') || isInContent('content-category')) {
+    $('.product-item').each(function () {
+      $(this).css('display', 'inline-block');
+    })
+  }
+
+
+  //region 新闻中心样式整理
   var height;
   if ($.browser.mobile) {
     height = $($('.widget')[0]).height();
@@ -94,16 +128,6 @@ function refreshAll() {
   //endreigon
 
 
-  //子菜单处理
-  // $(".footer > nav.nav-list > ul > li").hover(function () {
-  //   var liWidth = $(this).width();
-  //
-  //   var subNav = $(this).find('ul')[0];
-  //   if (subNav === undefined) return;
-  //   var cnt = $(subNav).find('li').length;
-  //   $(subNav).width(liWidth * cnt + 30);
-  // })
-
   $(".js-top-nav").click(function () {
     var subNavName = $(this).data('sub-nav');
     $('#' + subNavName).show();
@@ -115,6 +139,8 @@ function refreshAll() {
 
   //产品详情页样式处理
   function setProductDetailSize() {
+    if ($.browser.mobile) return;
+
     var height = $($(".detail.product-detail")[0]).height()
 
     $(".detail.product-detail .product-detail-item").each(function () {
@@ -122,11 +148,45 @@ function refreshAll() {
     })
   }
 
-  setProductDetailSize();
-  $(window).resize(setProductDetailSize);
+  if ($('.details-content')[0] !== undefined) {
+    setProductDetailSize();
+    $(window).resize(setProductDetailSize);
+
+    var oldActive = 'product-show';
+
+    function changeActive(className) {
+      if (oldActive === className) {
+        return
+      }
+      $('.details-nav .active').removeClass('active');
+      $('.details-nav .' + className).addClass('active');
+      oldActive = className;
+    }
+
+    var height1 = $('.scrollbar-macosx .product-show').height();
+    var height2 = $('.scrollbar-macosx .product-tech').height() + height1;
+    var height3 = $('.scrollbar-macosx .product-core').height() + height2;
+    var height4 = $('.scrollbar-macosx .product-descriptions').height() + height3;
+    $('.scrollbar-macosx').scroll(function () {
+      var current = $(this).scrollTop();
+      if (current < height1) {
+        changeActive('product-show');
+      }
+      else if (current >= height1 && current < height2) {
+        changeActive('product-tech');
+      }
+      else if (current >= height2 && current < height3) {
+        changeActive('product-core');
+      }
+      else {
+        changeActive('product-descriptions');
+      }
+    })
+  }
+
 
   //工程案例页面处理
-  if ($(".content.content-projects")[0] !== undefined) {
+  if ($(".content.content-projects")[0] !== undefined && !$.browser.mobile) {
     function bindSize() {
       var height = $($(".grid-cell.grid-cell-no-6")[0]).height();
       $(".project-item > img").each(function () {
@@ -173,9 +233,6 @@ function refreshAll() {
       id = 'brand-info';
     godetail(id);
   }
-
-  //滚动条设置
-  jQuery('.scrollbar-macosx').scrollbar();
 }
 
 

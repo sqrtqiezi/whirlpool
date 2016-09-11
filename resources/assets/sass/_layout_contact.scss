@@ -21,3 +21,41 @@
     color: #A8A8A8;
   }
 }
+
+@media only screen and ( max-width: $mobile-width ) {
+  .main .content.content-contact {
+    display: inline-block;
+
+    .footer-info {
+      margin-top: 30vh;
+    }
+
+    .grid-cell {
+      width: 100%;
+      position: relative;
+      padding-left: 2em;
+    }
+
+    section {
+      display: inline-block;
+      float: left;
+      clear: both;
+    }
+
+    .contact-content {
+      position: relative;
+      bottom: 0;
+      left: 0;
+    }
+
+    .fa, .contact-type {
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    .contact-info {
+      display: inline-block;
+      width: 20em;
+    }
+  }
+}
