@@ -20,7 +20,6 @@
 }(typeof window !== "undefined" ? window : this, function (window, noGlobal) {
 
   function expandMenu() {
-    console.log('hi')
     $('#mobile-navigation').show();
     $('#responsive-menu-button').hide();
   }
@@ -41,6 +40,22 @@
   _.each(pages, function (page) {
     if($(page)[0] !== undefined) {
       $($(".scrollbar-macosx")[0]).removeClass('scrollbar-macosx');
+    }
+  })
+
+
+  $("#mobile-navigation .nav .has-expand").click(function () {
+    var subName = $(this).data('sub-name');
+    var faEl = $(this).find('.fa.fa-plus')[0];
+    var subEl = $('#mobile-navigation .nav-sub-list.' + subName)[0];
+    if(faEl === undefined) {
+      faEl = $(this).find('.fa.fa-minus')[0];
+      $(faEl).removeClass('fa-minus').addClass('fa-plus');
+      $(subEl).hide();
+    }
+    else {
+      $(faEl).removeClass('fa-plus').addClass('fa-minus');
+      $(subEl).show();
     }
   })
 

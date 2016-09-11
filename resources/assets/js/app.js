@@ -69,6 +69,7 @@ $(document).on("pjax:complete", function (event) {
 //endregion
 
 
+//手机端的逻辑代码
 if ($.browser.mobile) {
   require('./inMobile');
 }

@@ -3627,13 +3627,16 @@ a.life-item {
   top: 0;
   z-index: 200;
   background-color: black;
-  opacity: .8; }
+  opacity: .8;
+  overflow-y: visible; }
+  #mobile-navigation nav {
+    display: inline-block; }
   #mobile-navigation ul, #mobile-navigation li {
     list-style-type: none; }
   #mobile-navigation ul {
     position: absolute;
     display: inline-block;
-    top: 5em;
+    top: 3em;
     width: 100%;
     z-index: 300;
     padding: 0 0; }
@@ -3645,12 +3648,25 @@ a.life-item {
         font-size: 1.5em;
         line-height: 2em;
         color: white; }
+      #mobile-navigation ul li.has-expand {
+        margin-left: -.75em; }
+        #mobile-navigation ul li.has-expand .fa {
+          font-size: 1.5em;
+          color: white; }
   #mobile-navigation .nav-close {
     width: 1.5em;
     height: 1.5em;
     position: absolute;
     top: 3em;
     left: 3em; }
+  #mobile-navigation .nav-sub-list {
+    display: none;
+    position: relative;
+    top: 0; }
+    #mobile-navigation .nav-sub-list > li {
+      text-align: left;
+      padding-left: 42%;
+      font-size: .8em; }
 
 .only-mobile .widget-navbar {
   width: auto;

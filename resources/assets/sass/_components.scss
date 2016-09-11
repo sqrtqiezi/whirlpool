@@ -208,7 +208,11 @@
   z-index: $zindex-popover;
   background-color: black;
   opacity: .8;
+  overflow-y: visible;
 
+  nav {
+    display: inline-block;
+  }
   ul, li {
     list-style-type: none;
   }
@@ -216,7 +220,7 @@
   ul{
     position: absolute;
     display: inline-block;
-    top: 5em;
+    top: 3em;
     width: 100%;
     z-index: $zindex-popover2;
     padding: 0 0;
@@ -231,6 +235,14 @@
         line-height: 2em;
         color: white;
       }
+
+      &.has-expand {
+        margin-left: -.75em;
+        .fa {
+          font-size: 1.5em;
+          color: white;
+        }
+      }
     }
   }
 
@@ -240,6 +252,19 @@
     position: absolute;
     top: 3em;
     left: 3em;
+  }
+
+  .nav-sub-list {
+    display: none;
+    position: relative;
+    top: 0;
+
+    & > li {
+      text-align: left;
+      padding-left: 42%;
+      font-size: .8em;
+    }
+
   }
 }
 

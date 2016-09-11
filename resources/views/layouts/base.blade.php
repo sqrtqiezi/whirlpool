@@ -138,11 +138,48 @@
         <ul>
             <li><a href="{{ route('home') }}">首页</a></li>
             <li><a href="{{ route('about') }}">关于我们</a></li>
-            <li><a href="{{ route('products') }}">厨房电器</a></li>
-            <li><a href="{{ route('news') }}">新闻中心</a></li>
+            <li class="has-expand" data-sub-name="product-list">
+                <i class="fa fa-plus"></i>
+                <a href="javascript:;">厨房电器</a>
+                <ul id="product-sub-nav" class="nav-sub-list product-list">
+                    <li><a href="{{ route('products') }}"><span>全部</span></a></li>
+                    <li><a href="{{ route('category', 1) }}"><span>吸油烟机</span></a></li>
+                    <li><a href="{{ route('category', 1) }}"><span>灶具</span></a></li>
+                    <li><a href="{{ route('category', 1) }}"><span>微波炉</span></a></li>
+                    <li><a href="{{ route('category', 1) }}"><span>蒸箱</span></a></li>
+                    <li><a href="{{ route('category', 1) }}"><span>消毒柜</span></a></li>
+                    <li><a href="{{ route('category', 1) }}"><span>烤箱</span></a></li>
+                    <li><a href="{{ route('category', 1) }}"><span>洗碗机</span></a></li>
+                    <li><a href="{{ route('category', 1) }}"><span>嵌入式冰箱</span></a></li>
+                    <li><a href="{{ route('category', 1) }}"><span>酒柜</span></a></li>
+                    <li><a href="{{ route('category', 1) }}"><span>暖碟机</span></a></li>
+                    <li><a href="{{ route('category', 1) }}"><span>干衣机</span></a></li>
+                    <li><a href="{{ route('category', 1) }}"><span>垃圾处理器</span></a></li>
+                </ul>
+            </li>
+            <li class="has-expand" data-sub-name="news-list">
+                <i class="fa fa-plus"></i>
+                <a href="javascript:;">新闻中心</a>
+                <ul id="news-sub-nav" class="nav-sub-list news-list">
+                    <li><a href="{{ route('news') }}"><span>全部</span></a></li>
+                    <li><a href="{{ route('news') }}"><span>企业内讯</span></a></li>
+                    <li><a href="{{ route('news') }}"><span>媒体报道</span></a></li>
+                    <li><a href="{{ route('news') }}"><span>促销活动</span></a></li>
+                </ul>
+            </li>
             <li><a href="{{ route('projects') }}">工程案例</a></li>
             <li><a href="{{ route('stores') }}">终端形象</a></li>
-            <li><a href='{{ route('life') }}'>“会” 生活</a></li>
+            <li class="has-expand" data-sub-name="life-list">
+                <i class="fa fa-plus"></i>
+                <a href='javascript:;'>“会” 生活</a>
+                <ul id="life-sub-nav" class="nav-sub-list life-list">
+                    <li><a href="{{ route('life') }}"><span>全部</span></a></li>
+                    <li><a href="{{ route('life') }}"><span>厨电创想人</span></a></li>
+                    <li><a href="{{ route('life') }}"><span>"懂"厨电</span></a></li>
+                    <li><a href="{{ route('life') }}"><span>"品"美味</span></a></li>
+                    <li><a href="{{ route('life') }}"><span>"绘"厨房</span></a></li>
+                </ul>
+            </li>
             <li><a href="{{ route('contact') }}">联系我们</a></li>
         </ul>
     </nav>
