@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Whirlpool\Product\Entities\Product;
+use Whirlpool\Product\Entities\ProductType;
+
 class HomeController extends Controller
 {
     public function index()
@@ -16,17 +19,23 @@ class HomeController extends Controller
 
     public function products()
     {
-        return view('products');
+        $types = ProductType::all();
+
+        return view('products', compact('types'));
     }
 
     public function productCategory($id)
     {
-        return view('category');
+        $products = Product::where('type_id', $id)->paginate(5);
+
+        return view('category', compact('products'));
     }
 
     public function product($id)
     {
-        return view('product');
+        $product = Product::find($id);
+
+        return view('product', compact('product'));
     }
 
     public function news()
