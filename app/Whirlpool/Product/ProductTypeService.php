@@ -37,7 +37,7 @@ class ProductTypeService
     {
         $array = preg_split("/\\r\\n|\\r|\\n/", $attributes);
 
-        return array_unique(array_filter($array));
+        return array_fill_keys(array_unique(array_filter($array)), '');
     }
 
     public function update(ProductType $type, array $data)

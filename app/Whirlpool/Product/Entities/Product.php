@@ -5,50 +5,10 @@ namespace Whirlpool\Product\Entities;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use McCool\LaravelAutoPresenter\HasPresenter;
-use Whirlpool\News\Presenters\NewsPresenter;
+use Whirlpool\Product\Presenters\ProductPresenter;
 
 class Product extends Model implements HasPresenter
 {
-    /**
-     * 抽油烟机
-     */
-    const TYPE_SMOKE = 1;
-    /**
-     * 灶具
-     */
-    const TYPE_STOVE = 2;
-    /**
-     * 微波炉
-     */
-    const TYPE_MICROWAVE = 3;
-    /**
-     * 蒸箱
-     */
-    const TYPE_STEAM = 4;
-    /**
-     * 消毒柜
-     */
-    const TYPE_DISINFECTION = 5;
-    /**
-     * 洗碗机
-     */
-    const TYPE_DISH = 6;
-    /**
-     * 烤箱
-     */
-    const TYPE_OVEN = 7;
-    /**
-     * 冰箱
-     */
-    const TYPE_FRIDGE = 8;
-    /**
-     * 酒柜
-     */
-    const TYPE_WINE = 9;
-    /**
-     * 暖碟
-     */
-    const TYPE_WARM = 10;
     /**
      * 软删除 mixin
      */
@@ -59,7 +19,27 @@ class Product extends Model implements HasPresenter
      *
      * @var array
      */
-    protected $fillable = ['title', 'date', 'content', 'type'];
+    protected $fillable = [
+        'main_heading', 'sub_heading', 'type_id', 'background',
+        'feature', 'spec_img_one', 'spec_img_two', 'specification', 'core_tech_title',
+        'core_tech_detail', 'detail',
+    ];
+
+    protected $casts = [
+        'feature' => 'array',
+        'specification' => 'array',
+        'core_tech_detail' => 'array',
+        'detail' => 'array'
+    ];
+
+    /**
+     * 分类
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function type()
+    {
+        return $this->belongsTo(ProductType::class);
+    }
 
     /**
      * 定义 presenter 类
@@ -68,6 +48,6 @@ class Product extends Model implements HasPresenter
      */
     public function getPresenterClass()
     {
-        return NewsPresenter::class;
+        return ProductPresenter::class;
     }
 }

@@ -29,27 +29,12 @@
 									<select class="form-control pull-right filter-select" title="选择分类"
 									        name="type">
 										<option value="0">按分类</option>
-										<option
-												value="{!! \Whirlpool\Life\Entities\Life::TYPE_PEOPLE !!}" {!! app('request')->get('type') == \Whirlpool\Life\Entities\Life::TYPE_PEOPLE ? ' selected' : null !!}>
-											厨电创想人
-										</option>
-										<option
-												value="{!! \Whirlpool\Life\Entities\Life::TYPE_APPLIANCE !!}"  {!! app('request')->get('type') == \Whirlpool\Life\Entities\Life::TYPE_APPLIANCE ? ' selected' : null !!}>
-											“懂”厨电
-										</option>
-										<option
-												value="{!! \Whirlpool\Life\Entities\Life::TYPE_DELICIOUS !!}"  {!! app('request')->get('type') == \Whirlpool\Life\Entities\Life::TYPE_DELICIOUS ? ' selected' : null !!}>
-											“品”美味
-										</option>
-										<option
-												value="{!! \Whirlpool\Life\Entities\Life::TYPE_KITCHEN !!}"  {!! app('request')->get('type') == \Whirlpool\Life\Entities\Life::TYPE_KITCHEN ? ' selected' : null !!}>
-											“绘”厨房
-										</option>
+
 									</select>
 								</div>
 								<div class="input-group input-group-sm" style="width: 250px;">
 									<input type="text" name="q" class="form-control pull-right"
-									       placeholder="搜索标题"
+									       placeholder="搜索主标题"
 									       value="{{ app('request')->get('q') }}">
 
 									<div class="input-group-btn">
@@ -75,8 +60,8 @@
 							<tr>
 								<th>ID</th>
 								<th>分类</th>
-								<th>标题</th>
-								<th>内容摘要</th>
+								<th>主标题</th>
+								<th>副标题</th>
 								<th>发布时间</th>
 								<th>最后编辑</th>
 								<th>操作</th>
@@ -85,9 +70,9 @@
 							@foreach($products as $product)
 								<tr>
 									<td>{!! $product->id !!}</td>
-									<td><span class="badge bg-gray text-navy font-light">{!! $product->type !!}</span></td>
-									<td>{!! $product->title !!}</td>
-									<td>{!! $product->description !!}</td>
+									<td><span class="badge bg-gray text-navy font-light">{!! $product->type->name !!}</span></td>
+									<td>{!! $product->main_heading !!}</td>
+									<td>{!! $product->sub_heading !!}</td>
 									<td>{!! $product->created_at !!}</td>
 									<td>{!! $product->updated_at !!}</td>
 									<td>
@@ -129,10 +114,10 @@
 						<div class="row">
 							<div class="col-md-6">
 								<span
-										style="display:inline-block;margin: 20px 0;">总数：{!! $lives->total() !!}</span>
+										style="display:inline-block;margin: 20px 0;">总数：{!! $products->total() !!}</span>
 							</div>
 							<div class="col-md-6">
-								<div class="pull-right">{!! $lives->links() !!}</div>
+								<div class="pull-right">{!! $products->links() !!}</div>
 							</div>
 						</div>
 					</div>

@@ -14,6 +14,7 @@ class CreateProductTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('type_id')->comment('分类 id');
             // 品牌展示
             $table->string('background')->default('')->comment('背景大图');
             $table->string('main_heading')->default('')->comment('主标题');
@@ -21,7 +22,8 @@ class CreateProductTable extends Migration
             /**
              * [
              *    '无需提纯的海洛因加工技术',
-             *    '经典'
+             *    '将经典 RPG 反坦克火箭筒带入城市纠纷中',
+             *    '消音直升机让你的安全有备无患'
              * ]
              */
             $table->text('feature')->default('')->comment('四句话特点');
@@ -52,7 +54,7 @@ class CreateProductTable extends Migration
              *   ],
              *   [
              *     'image' => 'uploads/05/43/44/123.jpg',
-             *     'description' => '克林贡人遗落的质子轴承技术，万年无需维修',
+             *     'description' => '克林贡人早期质子轴承方案，万年无需维修',
              *   ],
              * ]
              */
@@ -68,13 +70,14 @@ class CreateProductTable extends Migration
              *   ],
              *   [
              *     'image' => 'uploads/05/43/44/45.jpg',
-             *     'title' => '独创零下无摄氏度无结冰技术',
+             *     'title' => '独创零下 5 摄氏度无结冰技术',
              *     'description' => '让您的肉从冷冻室拿出来，就可以切',
              *   ]
              * ]
              */
             $table->text('detail')->default('')->comment('细节展示');
 
+            $table->foreign('type_id')->references('id')->on('product_types');
             $table->softDeletes();
             $table->timestamps();
         });

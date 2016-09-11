@@ -9,19 +9,6 @@ use Whirlpool\Product\Entities\Product;
 
 class ProductPresenter extends BasePresenter
 {
-    public static $typeProduct = [
-        Product::TYPE_SMOKE        => '吸油烟机',
-        Product::TYPE_STOVE        => '灶具',
-        Product::TYPE_MICROWAVE    => '微波炉',
-        Product::TYPE_STEAM        => '蒸箱',
-        Product::TYPE_DISINFECTION => '消毒柜',
-        Product::TYPE_DISH         => '洗碗机',
-        Product::TYPE_OVEN         => '烤箱',
-        Product::TYPE_FRIDGE       => '嵌入式冰箱',
-        Product::TYPE_WINE         => '酒柜',
-        Product::TYPE_WARM         => '暖碟机',
-    ];
-
     /**
      * 包装对象
      *
@@ -37,26 +24,6 @@ class ProductPresenter extends BasePresenter
     public function __constructor(Product $resource)
     {
         $this->wrappedObject = $resource;
-    }
-
-    /**
-     * 标题
-     *
-     * @return string
-     */
-    public function title()
-    {
-        return $this->wrappedObject->title;
-    }
-
-    /**
-     * 新闻内容
-     *
-     * @return string
-     */
-    public function content()
-    {
-        return $this->wrappedObject->content;
     }
 
     /**
@@ -85,30 +52,31 @@ class ProductPresenter extends BasePresenter
         return $updatedAt->toDateString();
     }
 
-    /**
-     * 新闻内容截取摘要
-     *
-     * @param int $length
-     *
-     * @return string
-     */
-    public function description($length = 30)
+    public function feature()
     {
-        /** @var string $content */
-        $content = strip_tags($this->wrappedObject->content);
+        $features = $this->wrappedObject->feature;
 
-        return Str::substr($content, 0, $length);
+        return implode("\r\n", $features);
     }
 
-    /**
-     * 新闻分类
-     *
-     * @return string
-     */
-    public function type()
+    public function background_url()
     {
-        $type = $this->wrappedObject->type;
+        return isset($this->wrappedObject->background)
+            ? asset($this->wrappedObject->background)
+            : '';
+    }
 
-        return isset(self::$typeContent[$type]) ? self::$typeContent[$type] : $type;
+    public function spec_img_one_url()
+    {
+        return isset($this->wrappedObject->spec_img_one)
+            ? asset($this->wrappedObject->spec_img_one)
+            : '';
+    }
+
+    public function spec_img_two_url()
+    {
+        return isset($this->wrappedObject->spec_img_two)
+            ? asset($this->wrappedObject->spec_img_two)
+            : '';
     }
 }

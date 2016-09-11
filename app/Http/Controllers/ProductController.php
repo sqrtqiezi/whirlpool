@@ -4,7 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Whirlpool\Product\Entities\Product;
+use Whirlpool\Product\Entities\ProductType;
 use Whirlpool\Product\ProductRepositoryInterface;
+use Whirlpool\Product\ProductService;
+use Whirlpool\Product\ProductTypeRepository;
+use Whirlpool\Product\ProductTypeService;
 use Whirlpool\Product\Requests\ProductRequest;
 
 class ProductController extends Controller
@@ -24,19 +28,26 @@ class ProductController extends Controller
         $total = $repository->total();
         $products = $repository->filter($request->all());
 
-        return view('admin.product.index', compact('total', 'products'));
+        return view('admin.product.index', compact('total', 'products', 'types'));
     }
 
     /**
      * 新建
      *
+     * @param \Illuminate\Http\Request $request
+     *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function create()
+    public function create(Request $request)
     {
         $this->setPreviousUrl();
+        $types = ProductType::pluck('name', 'id')->all();
 
-        return view('admin.product.create');
+        if ($request->has('type')) {
+            $typeAttributes = ProductType::find($request->get('type'))->attributes;
+        }
+
+        return view('admin.product.create', compact('types', 'typeAttributes'));
     }
 
     /**
@@ -44,11 +55,13 @@ class ProductController extends Controller
      *
      * @param \Whirlpool\Product\Requests\ProductRequest $request
      *
+     * @param \Whirlpool\Product\ProductService          $service
+     *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function store(ProductRequest $request)
+    public function store(ProductRequest $request, ProductService $service)
     {
-        Product::create($request->all());
+        $service->create($request);
 
         alert()->success('', '成功添加产品！');
 
@@ -66,8 +79,14 @@ class ProductController extends Controller
     public function edit(Product $product)
     {
         $this->setPreviousUrl();
+        $types = ProductType::pluck('name', 'id')->all();
 
-        return view('admin.product.edit', compact('product'));
+        $typeAttributes = ProductType::find($product->type_id)->attributes;
+        // 合并用户已经配置的
+        $specifications = array_column($product->specification, 'value', 'name');
+        $typeAttributes = $specifications + $typeAttributes;
+
+        return view('admin.product.edit', compact('product', 'types', 'typeAttributes'));
     }
 
     /**
@@ -76,12 +95,13 @@ class ProductController extends Controller
      *
      * @param \Whirlpool\Product\Requests\ProductRequest $request
      * @param \Whirlpool\Product\Entities\Product        $product
+     * @param \Whirlpool\Product\ProductService          $service
      *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function update(ProductRequest $request, Product $product)
+    public function update(ProductRequest $request, Product $product, ProductService $service)
     {
-        $product->update($request->all());
+        $service->update($product, $request);
 
         alert()->success('', '成功编辑产品！');
 
