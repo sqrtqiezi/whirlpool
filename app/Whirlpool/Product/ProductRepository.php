@@ -3,6 +3,7 @@
 namespace Whirlpool\Product;
 
 use Illuminate\Support\Collection;
+use Whirlpool\Contracts\RepositoryInterface;
 use Whirlpool\Product\Entities\Product;
 
 class ProductRepository implements ProductRepositoryInterface
@@ -22,18 +23,18 @@ class ProductRepository implements ProductRepositoryInterface
 
         // 标题搜索
         if (isset($criteria['q']) && $keyword = $criteria['q']) {
-            $news->where('title', 'LIKE', "%{$keyword}%");
+            $news->where('main_heading', 'LIKE', "%{$keyword}%");
         }
         // 内容类别
         if (isset($criteria['type']) && $criteria['type']) {
-            $news->where('type', $criteria['type']);
+            $news->where('type_id', $criteria['type']);
         }
         // 可见性
         if (isset($criteria['visibility'])) {
             switch ($criteria['visibility']) {
-                case self::VISIBLE:
+                case RepositoryInterface::VISIBLE:
                     break;
-                case self::INVISIBLE:
+                case RepositoryInterface::INVISIBLE:
                     $news->onlyTrashed();
                     break;
                 default:

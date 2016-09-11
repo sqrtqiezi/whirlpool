@@ -29,7 +29,9 @@
 									<select class="form-control pull-right filter-select" title="选择分类"
 									        name="type">
 										<option value="0">按分类</option>
-										
+										@foreach($types as $typeId => $typeName)
+											<option value="{!! $typeId !!}" {!! \Request::get('type') == $typeId ? ' selected' : '' !!}>{!! $typeName !!}</option>
+											@endforeach
 									</select>
 								</div>
 								<div class="input-group input-group-sm" style="width: 250px;">

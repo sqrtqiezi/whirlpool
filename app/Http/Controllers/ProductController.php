@@ -27,6 +27,8 @@ class ProductController extends Controller
     {
         $total = $repository->total();
         $products = $repository->filter($request->all());
+        $types = ProductType::pluck('name', 'id')->all();
+
 
         return view('admin.product.index', compact('total', 'products', 'types'));
     }
