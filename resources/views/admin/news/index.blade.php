@@ -108,6 +108,28 @@
 												</button>
 											</form>
 										@endif
+										{{-- 置顶 --}}
+										@if(! $news->is_stick)
+											<form
+													action="{!! route('panel.news.stick', $news->id) !!}"
+													method="post" class="inline">
+												{!! csrf_field()!!}
+												<button class="btn btn-xs btn-warning inline"
+												        type="submit">置顶
+												</button>
+											</form>
+										@else
+											<form
+													action="{!! route('panel.news.cancel-stick', $news->id) !!}"
+													method="post" id="cancel-stick{!! $news->id !!}"
+													class="inline">
+												{!! csrf_field() !!}
+												<button class="btn btn-xs btn-danger inline"
+												        type="submit">取消置顶
+												</button>
+											</form>
+										@endif
+										{{-- /. 置顶 --}}
 									</td>
 								</tr>
 							@endforeach

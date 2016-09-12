@@ -45,7 +45,7 @@ class NewsRepository implements NewsRepositoryInterface
             $news->withTrashed();
         }
 
-        return $news->orderBy('id', 'DESC')->paginate(10);
+        return $news->orderBy('is_stick', 'DESC')->orderBy('id', 'DESC')->paginate(10);
     }
 
     /**
