@@ -3,11 +3,11 @@
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
 	<!-- Content Header (Page header) -->
-	<section class="content-header">
-		<h1>
-			Page Header
-			<small>Optional description</small>
-		</h1>
+	<section class="content-header" style="height: 45px">
+		{{--<h1>--}}
+			{{--Page Header--}}
+			{{--<small>Optional description</small>--}}
+		{{--</h1>--}}
 		 {!! \Breadcrumbs::render() !!}
 	</section>
 

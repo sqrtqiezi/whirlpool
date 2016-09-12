@@ -1,5 +1,5 @@
 @if ($breadcrumbs)
-	<ol class="breadcrumb">
+	<ol class="breadcrumb" class="pull-left">
 		<i class="fa fa-dashboard" style="margin-right: 5px"></i>
 		@foreach ($breadcrumbs as $breadcrumb)
 			@if ($breadcrumb->url && !$breadcrumb->last)
@@ -10,3 +10,4 @@
 		@endforeach
 	</ol>
 @endif
+<div class="clearfix"></div>
