@@ -17,10 +17,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 		      href="{!! asset('adminlte/bootstrap/css/bootstrap.min.css') !!}">
 		<!-- Font Awesome -->
 		<link rel="stylesheet"
-		      href="{!! asset('adminlte/bootstrap/css/font-awesome.min.css') !!}">
+		      href="{!! asset('css/font-awesome.min.css') !!}">
 		<!-- Ionicons -->
 		<link rel="stylesheet"
-		      href="{!! asset('adminlte/bootstrap/css/ionicons.min.css') !!}">
+		      href="{!! asset('css/ionicons.min.css') !!}">
 		<!-- Theme style -->
 		<link rel="stylesheet"
 		      href="{!! asset('adminlte/css/AdminLTE.min.css') !!}">
