@@ -43,18 +43,20 @@
                                 <div id="news-item-test">测</div>
                             </div>
                         </li>
+                        @foreach($stickNews as $news)
                         <li>
-                            <a data-pjax class="news-image-link" href="{{ route('newsDetail', 1) }}">
-                                <div data-image="/images/news-item-1.png" class="news-image"></div>
-                                <span>惠而浦中国携手安徽绿地 打造品质生活新标杆</span>
+                            <a data-pjax class="news-image-link" href="{{ route('newsDetail', $news->id) }}">
+                                <div data-image="{{ $news->thumbnail }}" class="news-image"></div>
+                                <span>{{ $news->title }}</span>
                             </a>
                         </li>
-                        <li>
-                            <a data-pjax class="news-image-link" href="{{ route('newsDetail', 1) }}">
-                                <div data-image="/images/news-item-2.png" class="news-image"></div>
-                                <span>惠而浦中国携手安徽绿地 打造品质生活新标杆</span>
-                            </a>
-                        </li>
+                        @endforeach
+                        {{--<li>--}}
+                            {{--<a data-pjax class="news-image-link" href="{{ route('newsDetail', 1) }}">--}}
+                                {{--<div data-image="/images/news-item-2.png" class="news-image"></div>--}}
+                                {{--<span>惠而浦中国携手安徽绿地 打造品质生活新标杆</span>--}}
+                            {{--</a>--}}
+                        {{--</li>--}}
                     </ul>
                 </div>
             </div>

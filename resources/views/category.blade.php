@@ -6,7 +6,7 @@
         <div class="mobile-detail only-mobile">
             <section class="title">
                 <span class="main-title">PRODUCT LIST</span>
-                <span class="sub-title">吸油烟机</span>
+                <span class="sub-title">{{ $productType->name }}</span>
             </section>
         </div>
         <div class="grid-cell grid-cell-no-1"></div>
@@ -23,50 +23,73 @@
         <div class="grid-cell grid-cell-no-6"></div>
         <div class="grid-cell grid-cell-no-7">
             <div class="title">
-                <span class="sub-title">吸油烟机</span>
+                <span class="main-title">PRODUCT LIST</span>
+                <span class="sub-title">{{ $productType->name }}</span>
             </div>
         </div>
         <div class="grid-cell grid-cell-no-8">
-            <a data-pjax href="{{ route('product', 1) }}" class="product-item fadeIn animated animated-1" data-product-name="AKF808">
-                <img src="/images/product-akf808.png" alt="">
-                <i class="fa fa-search" aria-hidden="true"></i>
-            </a>
+            @if($item = $products[0])
+                <a data-pjax href="{{ route('product', $item->id) }}" class="product-item fadeIn animated animated-1"
+                   data-product-name="{{ $item->main_heading }}">
+                    <img src="/{{ $item->spec_img_one }}" alt="">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </a>
+            @endif
         </div>
         <div class="grid-cell grid-cell-no-9">
-            <a data-pjax href="{{ route('product', 1) }}" class="product-item fadeIn animated animated-2" data-product-name="AKF808">
-                <img src="/images/product-akf808.png" alt="">
-                <i class="fa fa-search" aria-hidden="true"></i>
-            </a>
+            @if($item = $products[1])
+                <a data-pjax href="{{ route('product', $item->id) }}" class="product-item fadeIn animated animated-1"
+                   data-product-name="{{ $item->main_heading }}">
+                    <img src="/{{ $item->spec_img_one }}" alt="">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </a>
+            @endif
         </div>
         <div class="grid-cell grid-cell-no-10">
-            <a data-pjax href="{{ route('product', 1) }}" class="product-item fadeIn animated animated-3" data-product-name="AKF808">
-                <img src="/images/product-akf808.png" alt="">
-                <i class="fa fa-search" aria-hidden="true"></i>
-            </a>
+            @if($item = $products[2])
+                <a data-pjax href="{{ route('product', $item->id) }}" class="product-item fadeIn animated animated-1"
+                   data-product-name="{{ $item->main_heading }}">
+                    <img src="/{{ $item->spec_img_one }}" alt="">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </a>
+            @endif
         </div>
         <div class="grid-cell grid-cell-no-11">
-            <a data-pjax href="{{ route('category', 1) }}" class="nav-page-prev"></a>
+            @if($products->currentPage() > 1)
+                <a data-pjax href="{{ $products->previousPageUrl() }}" class="nav-page-prev"></a>
+            @endif
         </div>
         <div class="grid-cell grid-cell-no-12">
-            <a data-pjax href="{{ route('product', 1) }}" class="product-item fadeIn animated animated-4" data-product-name="AKF808">
-                <img src="/images/product-akf808.png" alt="">
-                <i class="fa fa-search" aria-hidden="true"></i>
-            </a>
+            @if($item = $products[3])
+                <a data-pjax href="{{ route('product', $item->id) }}" class="product-item fadeIn animated animated-1"
+                   data-product-name="{{ $item->main_heading }}">
+                    <img src="/{{ $item->spec_img_one }}" alt="">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </a>
+            @endif
         </div>
         <div class="grid-cell grid-cell-no-13">
-            <a data-pjax href="{{ route('product', 1) }}" class="product-item fadeIn animated animated-5" data-product-name="AKF808">
-                <img src="/images/product-akf808.png" alt="">
-                <i class="fa fa-search" aria-hidden="true"></i>
-            </a>
+            @if($item = $products[4])
+                <a data-pjax href="{{ route('product', $item->id) }}" class="product-item fadeIn animated animated-1"
+                   data-product-name="{{ $item->main_heading }}">
+                    <img src="/{{ $item->spec_img_one }}" alt="">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </a>
+            @endif
         </div>
         <div class="grid-cell grid-cell-no-14">
-            <a data-pjax href="{{ route('product', 1) }}" class="product-item fadeIn animated animated-6" data-product-name="AKF808">
-                <img src="/images/product-akf808.png" alt="">
-                <i class="fa fa-search" aria-hidden="true"></i>
-            </a>
+            @if($item = $products[5])
+                <a data-pjax href="{{ route('product', $item->id) }}" class="product-item fadeIn animated animated-1"
+                   data-product-name="{{ $item->main_heading }}">
+                    <img src="/{{ $item->spec_img_one }}" alt="">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </a>
+            @endif
         </div>
         <div class="grid-cell grid-cell-no-15">
-            <a data-pjax href="{{ route('category', 2) }}" class="nav-page-next"></a>
+            @if($products->hasMorePages())
+                <a data-pjax href="{{ $products->nextPageUrl() }}" class="nav-page-next"></a>
+            @endif
         </div>
         @include('layouts/mobile_footer')
     </div>

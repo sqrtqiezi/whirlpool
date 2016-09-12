@@ -8,6 +8,7 @@ use Whirlpool\Life\LifeRepository;
 use Whirlpool\Life\LifeRepositoryInterface;
 use Whirlpool\News\NewsRepository;
 use Whirlpool\News\NewsRepositoryInterface;
+use Whirlpool\Product\Entities\ProductType;
 use Whirlpool\Product\ProductRepository;
 use Whirlpool\Product\ProductRepositoryInterface;
 use Whirlpool\Terminal\TerminalRepository;
@@ -26,6 +27,10 @@ class AppServiceProvider extends ServiceProvider
             if ($config = Config::first()) {
                 $view->with('siteConfig', $config);
             }
+
+            if ($productTypes = ProductType::all()) {
+                $view->with('productTypes', $productTypes);
+            }
         });
     }
 
@@ -42,7 +47,7 @@ class AppServiceProvider extends ServiceProvider
         });
         // 会生活
         $this->app->bind(LifeRepositoryInterface::class, function () {
-           return new LifeRepository;
+            return new LifeRepository;
         });
         // 终端
         $this->app->bind(TerminalRepositoryInterface::class, function () {

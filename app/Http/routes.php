@@ -55,10 +55,14 @@ $router->group([
 
 // 前台
 Route::get('/', 'HomeController@index')->name('home');
+
 Route::get('/about', 'HomeController@about')->name('about');
+
 Route::get('/products', 'HomeController@products')->name('products');
 Route::get('/product/category/{id}', 'HomeController@productCategory')->name('category');
-Route::get('/product/{id}', 'HomeController@product')->name('product');
+Route::get('/product/{product}', 'HomeController@product')->name('product');
+
+Route::get('/projects', 'HomeController@projects')->name('projects');
 
 Route::get('/news', 'HomeController@news')->name('news');
 Route::get('/news/{id}', 'HomeController@newsDetail')->name('newsDetail');
@@ -68,6 +72,5 @@ Route::get('/life/{id}', 'HomeController@lifeDetail')->name('lifeDetail');
 
 Route::get('/stores', 'HomeController@stores')->name('stores');
 
-Route::get('/projects', 'HomeController@projects')->name('projects');
 
 Route::get('/contact', 'HomeController@contact')->name('contact');
