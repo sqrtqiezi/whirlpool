@@ -75,6 +75,10 @@
 		</div>
 		{{-- /.内容 --}}
 
+		{{-- 缩略图 --}}
+		@include('admin.components.image-upload-input', ['itemObject' => 'life'])
+		{{-- /.缩略图 --}}
+
 	</div>
 	<!-- /.box-body -->
 	<div class="box-footer">
