@@ -13,6 +13,8 @@ use Whirlpool\Product\Requests\ProductRequest;
 
 class ProductController extends Controller
 {
+
+
     /**
      * 后台列表
      *

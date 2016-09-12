@@ -110,4 +110,15 @@ class LifePresenter extends BasePresenter
 
         return isset(self::$typeContent[$type]) ? self::$typeContent[$type] : $type;
     }
+
+    /**
+     * 缩略图完整 url
+     * @return string
+     */
+    public function thumbnail_url()
+    {
+        return $this->wrappedObject->thumbnail
+            ? asset($this->wrappedObject->thumbnail)
+            : '';
+    }
 }

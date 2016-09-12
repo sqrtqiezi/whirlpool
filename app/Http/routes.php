@@ -43,6 +43,9 @@ $router->group([
         $router->post('terminal/{terminal}/restore', 'TerminalController@restore')->name('panel.terminal.restore');
         $router->post('product/{product}/restore', 'ProductController@restore')->name('panel.product.restore');
         $router->post('product-type/{product_type}/restore', 'ProductTypeController@restore')->name('panel.product-type.restore');
+        // 新闻置顶和取消
+        $router->post('news/{news}/stick', 'NewsController@stick')->name('panel.news.stick');
+        $router->post('news/{news}/cancel-stick', 'NewsController@cancelStick')->name('panel.news.cancel-stick');
         // 文件上传
         $router->match(['put','patch', 'post'], 'api/upload', 'AjaxController@upload')->name('panel.api.upload');
     });

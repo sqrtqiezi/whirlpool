@@ -116,4 +116,27 @@ class NewsController extends Controller
 
         return redirect()->back();
     }
+
+    public function stick(News $news)
+    {
+        // 最多只有两篇置顶，先获得前一篇
+        $nearestStick = News::withTrashed()->where('is_stick', 1)->orderBy('id', 'DESC')->first();
+        $news->update(['is_stick' => 1]);
+        $keepItStick = $nearestStick ? [$news->id, $nearestStick->id] : $news->id;
+        // 把其它全部取消置顶
+        News::withTrashed()->whereNotIn('id', $keepItStick)->update(['is_stick' => 0]);
+
+        alert()->success('', '成功置顶！');
+
+        return redirect()->back();
+    }
+
+    public function cancelStick(News $news)
+    {
+        $news->update(['is_stick' => 0]);
+
+        alert()->success('', '成功取消置顶！');
+
+        return redirect()->back();
+    }
 }

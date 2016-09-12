@@ -51,7 +51,7 @@ class ProductTypePresenter extends BasePresenter
     {
         $attributes = $this->wrappedObject->attributes;
 
-        return implode("\r\n", $attributes);
+        return implode("\r\n", array_keys($attributes));
     }
 
     /**

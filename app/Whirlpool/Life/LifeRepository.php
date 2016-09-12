@@ -3,11 +3,11 @@
 namespace Whirlpool\Life;
 
 use Illuminate\Support\Collection;
+use Whirlpool\Contracts\RepositoryInterface;
 use Whirlpool\Life\Entities\Life;
 
 class LifeRepository implements LifeRepositoryInterface
 {
-
     /**
      *
      * 筛选列表结果
@@ -32,9 +32,9 @@ class LifeRepository implements LifeRepositoryInterface
         // 可见性
         if (isset($criteria['visibility'])) {
             switch ($criteria['visibility']) {
-                case self::VISIBLE:
+                case RepositoryInterface::VISIBLE:
                     break;
-                case self::INVISIBLE:
+                case RepositoryInterface::INVISIBLE:
                     $news->onlyTrashed();
                     break;
                 default:
