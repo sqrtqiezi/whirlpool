@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <title>惠而浦中国 | 官方网站—世界万千家庭信任的家用电器品牌</title>
+    <title> {!! $siteConfig->title or '官方网站' !!}</title>
     <meta charset="utf-8" />
-    <meta name="keywords" content="进口家电,家用电器,惠而浦洗衣机,惠而浦冰箱,惠而浦微波炉"/>
-    <meta name="description" content="进口家电,家用电器,惠而浦洗衣机,惠而浦冰箱,惠而浦微波炉"/>
+    <meta name="keywords" content="{!! $siteConfig->keyword or '关键字' !!}"/>
+    <meta name="description" content="{!! $siteConfig->description or '网站描述' !!}"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link type="text/css" href="/images/icon.ico" rel="shortcut icon"/>
     <link rel="stylesheet" href="/css/font-awesome.min.css">
@@ -126,8 +126,8 @@
                 <span class="design-info only-desktop">Design by wisnovo</span>
             </div>
             <div class="content-info pull-left">
-                <span class="company-name">惠而浦（中国）股份有限公司</span>
-                <span class="company-right">沪ICP备13004331号 © 2016 Whirlpool .All Right Reserved</span>
+                <span class="company-name">{!! $siteConfig->brand or '某公司' !!}</span>
+                <span class="company-right">{!! $siteConfig->icp or '备案号' !!} © 2016 Whirlpool .All Right Reserved</span>
             </div>
         </div>
     </div>

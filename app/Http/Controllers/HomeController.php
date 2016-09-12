@@ -2,11 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use Whirlpool\News\NewsRepositoryInterface;
+
 class HomeController extends Controller
 {
-    public function index()
+    public function index(NewsRepositoryInterface $repository)
     {
-        return view('welcome');
+        $newsList = $repository->filter([], 4);
+        return view('welcome', compact(
+            'newsList'
+        ));
     }
 
     public function about()

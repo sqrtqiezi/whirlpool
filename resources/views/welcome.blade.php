@@ -34,18 +34,11 @@
                             </div>
                             <div class="widget-body">
                                 <ul class="news-list">
+                                    @foreach($newsList as $news)
                                     <li class="news-item">
-                                        <a data-pjax href="{{ route('newsDetail', 1) }}">领导赴一线慰问员工</a>
+                                        <a data-pjax href="{{ route('newsDetail', $news->id) }}">{{ $news->title }}</a>
                                     </li>
-                                    <li class="news-item">
-                                        <a data-pjax href="{{ route('newsDetail', 1) }}">公司冠名书法报海选活动 文化营销助理品牌</a>
-                                    </li>
-                                    <li class="news-item">
-                                        <a data-pjax href="{{ route('newsDetail', 1) }}">中共惠而浦(中国)公司第二次代表大会召开</a>
-                                    </li>
-                                    <li class="news-item">
-                                        <a data-pjax href="{{ route('newsDetail', 1) }}">中共惠而浦(中国)公司第二次代表大会召开</a>
-                                    </li>
+                                    @endforeach
                                 </ul>
                                 <div id="news-item-test">测</div>
                             </div>
