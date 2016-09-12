@@ -2,14 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
+use Whirlpool\Life\Entities\Life;
+use Whirlpool\News\Entities\News;
 use Whirlpool\Product\Entities\Product;
 use Whirlpool\Product\Entities\ProductType;
+use Whirlpool\Terminal\Entities\Terminal;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        return view('welcome');
+        $newsList = News::query()->where('is_stick', 0)->orderBy('id', 'DESC')->paginate(4);
+        $stickNews = News::query()->where('is_stick', 1)->get();
+        return view('welcome', compact(
+            'newsList', 'stickNews'
+        ));
     }
 
     public function about()
@@ -26,41 +34,58 @@ class HomeController extends Controller
 
     public function productCategory($id)
     {
-        $products = Product::where('type_id', $id)->paginate(5);
+        $productType = ProductType::findOrFail($id);
+        $products = Product::where('type_id', $id)->paginate(6);
 
-        return view('category', compact('products'));
+        return view('category', compact('productType', 'products'));
     }
 
-    public function product($id)
+    public function product(Product $product)
     {
-        $product = Product::find($id);
+        $features = $product->feature;
 
-        return view('product', compact('product'));
+        return view('product', compact('product', 'features'));
     }
 
-    public function news()
+    public function news(Request $request)
     {
-        return view('news');
+        $newsQuery =  News::query();
+        if(isset($request['type']))
+        {
+            $newsQuery->where('type', $request['type']);
+        }
+        $newsList = $newsQuery->orderBy('id', 'DESC')->paginate(5);
+        return view('news', compact('newsList'));
     }
 
     public function newsDetail($id)
     {
-        return view('news_detail');
+        $news = News::findOrFail($id);
+        return view('news_detail', compact('news'));
     }
 
-    public function life()
+    public function life(Request $request)
     {
-        return view('life');
+        $livesQuery = Life::query();
+        if(isset($request['type']))
+        {
+            $livesQuery->where('type', $request['type']);
+        }
+        $livesList = $livesQuery->orderBy('id', 'DESC')->paginate(4);
+        return view('life', compact('livesList'));
     }
 
     public function lifeDetail($id)
     {
-        return view('life_detail');
+        $life = Life::findOrFail($id);
+        return view('life_detail', compact('life'));
     }
 
     public function stores()
     {
-        return view('stores');
+        $terminalsList = Terminal::query()->paginate(5);
+
+        return view('stores', compact('terminalsList'));
     }
 
     public function contact()

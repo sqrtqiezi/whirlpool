@@ -58,12 +58,13 @@
     setNewsItemWidth: function () {
       var wordWidth = $('#news-item-test').width();
       var widgetWidth = $($(".widget-body")[0]).width();
-      var maxLength = Math.floor(widgetWidth/wordWidth);
+      var maxLength = Math.floor(widgetWidth/wordWidth) -2;
 
       $(".news-item a").each(function () {
         var words = $(this).html();
+        console.log(words);
         if(words.length > maxLength)
-          $(this).html(words.substr(0, maxLength - 4) + "......")
+          $(this).html(words.substr(0, maxLength - 2) + "......")
       })
     },
 

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <title>惠而浦中国 | 官方网站—世界万千家庭信任的家用电器品牌</title>
-    <meta charset="utf-8" />
-    <meta name="keywords" content="进口家电,家用电器,惠而浦洗衣机,惠而浦冰箱,惠而浦微波炉"/>
-    <meta name="description" content="进口家电,家用电器,惠而浦洗衣机,惠而浦冰箱,惠而浦微波炉"/>
+    <title> {!! $siteConfig->title or '官方网站' !!}</title>
+    <meta charset="utf-8"/>
+    <meta name="keywords" content="{!! $siteConfig->keyword or '关键字' !!}"/>
+    <meta name="description" content="{!! $siteConfig->description or '网站描述' !!}"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link type="text/css" href="/images/icon.ico" rel="shortcut icon"/>
     <link rel="stylesheet" href="/css/font-awesome.min.css">
@@ -17,7 +17,7 @@
 <div class="main wrapper clearfix">
     <div id="video-raster"></div>
     <article>
-        <div id="pjax-container" >
+        <div id="pjax-container">
             @yield('content')
         </div>
         <div class="grid">
@@ -64,18 +64,9 @@
                     </a>
                     <ul id="product-sub-nav" class="nav-sub-list bounceInDown animated">
                         <li><a data-pjax href="{{ route('products') }}"><span>全部</span></a></li>
-                        <li><a data-pjax href="{{ route('category', 1) }}"><span>吸油烟机</span></a></li>
-                        <li><a data-pjax href="{{ route('category', 1) }}"><span>灶具</span></a></li>
-                        <li><a data-pjax href="{{ route('category', 1) }}"><span>微波炉</span></a></li>
-                        <li><a data-pjax href="{{ route('category', 1) }}"><span>蒸箱</span></a></li>
-                        <li><a data-pjax href="{{ route('category', 1) }}"><span>消毒柜</span></a></li>
-                        <li><a data-pjax href="{{ route('category', 1) }}"><span>烤箱</span></a></li>
-                        <li><a data-pjax href="{{ route('category', 1) }}"><span>洗碗机</span></a></li>
-                        <li><a data-pjax href="{{ route('category', 1) }}"><span>嵌入式冰箱</span></a></li>
-                        <li><a data-pjax href="{{ route('category', 1) }}"><span>酒柜</span></a></li>
-                        <li><a data-pjax href="{{ route('category', 1) }}"><span>暖碟机</span></a></li>
-                        <li><a data-pjax href="{{ route('category', 1) }}"><span>干衣机</span></a></li>
-                        <li><a data-pjax href="{{ route('category', 1) }}"><span>垃圾处理器</span></a></li>
+                        @foreach($productTypes as $type)
+                        <li><a data-pjax href="{{ route('category', $type->id) }}"><span>{{ $type->name }}</span></a></li>
+                        @endforeach
                     </ul>
                 </li>
                 <li>
@@ -84,9 +75,15 @@
                     </a>
                     <ul id="news-sub-nav" class="nav-sub-list bounceInDown animated">
                         <li><a data-pjax href="{{ route('news') }}"><span>全部</span></a></li>
-                        <li><a data-pjax href="{{ route('news') }}"><span>企业内讯</span></a></li>
-                        <li><a data-pjax href="{{ route('news') }}"><span>媒体报道</span></a></li>
-                        <li><a data-pjax href="{{ route('news') }}"><span>促销活动</span></a></li>
+                        <li><a data-pjax
+                               href="{{ route('news') }}?type={{ \Whirlpool\News\Entities\News::TYPE_COMPANY }}"><span>企业内讯</span></a>
+                        </li>
+                        <li><a data-pjax
+                               href="{{ route('news') }}?type={{ \Whirlpool\News\Entities\News::TYPE_MEDIA }}"><span>媒体报道</span></a>
+                        </li>
+                        <li><a data-pjax
+                               href="{{ route('news') }}?type={{ \Whirlpool\News\Entities\News::TYPE_PROMOTION }}"><span>促销活动</span></a>
+                        </li>
                     </ul>
                 </li>
                 <li>
@@ -105,10 +102,18 @@
                     </a>
                     <ul id="life-sub-nav" class="nav-sub-list bounceInDown animated">
                         <li><a data-pjax href="{{ route('life') }}"><span>全部</span></a></li>
-                        <li><a data-pjax href="{{ route('life') }}"><span>厨电创想人</span></a></li>
-                        <li><a data-pjax href="{{ route('life') }}"><span>"懂"厨电</span></a></li>
-                        <li><a data-pjax href="{{ route('life') }}"><span>"品"美味</span></a></li>
-                        <li><a data-pjax href="{{ route('life') }}"><span>"绘"厨房</span></a></li>
+                        <li><a data-pjax
+                               href="{{ route('life') }}?type={{ \Whirlpool\Life\Entities\Life::TYPE_PEOPLE }}"><span>厨电创想人</span></a>
+                        </li>
+                        <li><a data-pjax
+                               href="{{ route('life') }}?type={{ \Whirlpool\Life\Entities\Life::TYPE_APPLIANCE }}"><span>"懂"厨电</span></a>
+                        </li>
+                        <li><a data-pjax
+                               href="{{ route('life') }}?type={{ \Whirlpool\Life\Entities\Life::TYPE_DELICIOUS }}"><span>"品"美味</span></a>
+                        </li>
+                        <li><a data-pjax
+                               href="{{ route('life') }}?type={{ \Whirlpool\Life\Entities\Life::TYPE_KITCHEN }}"><span>"绘"厨房</span></a>
+                        </li>
                     </ul>
                 </li>
                 <li>
@@ -126,14 +131,15 @@
                 <span class="design-info only-desktop">Design by wisnovo</span>
             </div>
             <div class="content-info pull-left">
-                <span class="company-name">惠而浦（中国）股份有限公司</span>
-                <span class="company-right">沪ICP备13004331号 © 2016 Whirlpool .All Right Reserved</span>
+                <span class="company-name">{!! $siteConfig->brand or '某公司' !!}</span>
+                <span class="company-right">{!! $siteConfig->icp or '备案号' !!}
+                    © 2016 Whirlpool .All Right Reserved</span>
             </div>
         </div>
     </div>
 </div>
 
-<div id="mobile-navigation" >
+<div id="mobile-navigation">
     <nav class="nav">
         <ul>
             <li><a href="{{ route('home') }}">首页</a></li>
@@ -143,18 +149,9 @@
                 <a href="javascript:;">厨房电器</a>
                 <ul id="product-sub-nav" class="nav-sub-list product-list">
                     <li><a href="{{ route('products') }}"><span>全部</span></a></li>
-                    <li><a href="{{ route('category', 1) }}"><span>吸油烟机</span></a></li>
-                    <li><a href="{{ route('category', 1) }}"><span>灶具</span></a></li>
-                    <li><a href="{{ route('category', 1) }}"><span>微波炉</span></a></li>
-                    <li><a href="{{ route('category', 1) }}"><span>蒸箱</span></a></li>
-                    <li><a href="{{ route('category', 1) }}"><span>消毒柜</span></a></li>
-                    <li><a href="{{ route('category', 1) }}"><span>烤箱</span></a></li>
-                    <li><a href="{{ route('category', 1) }}"><span>洗碗机</span></a></li>
-                    <li><a href="{{ route('category', 1) }}"><span>嵌入式冰箱</span></a></li>
-                    <li><a href="{{ route('category', 1) }}"><span>酒柜</span></a></li>
-                    <li><a href="{{ route('category', 1) }}"><span>暖碟机</span></a></li>
-                    <li><a href="{{ route('category', 1) }}"><span>干衣机</span></a></li>
-                    <li><a href="{{ route('category', 1) }}"><span>垃圾处理器</span></a></li>
+                    @foreach($productTypes as $type)
+                        <li><a href="{{ route('category', $type->id) }}"><span>{{ $type->name }}</span></a></li>
+                    @endforeach
                 </ul>
             </li>
             <li class="has-expand" data-sub-name="news-list">
@@ -162,9 +159,14 @@
                 <a href="javascript:;">新闻中心</a>
                 <ul id="news-sub-nav" class="nav-sub-list news-list">
                     <li><a href="{{ route('news') }}"><span>全部</span></a></li>
-                    <li><a href="{{ route('news') }}"><span>企业内讯</span></a></li>
-                    <li><a href="{{ route('news') }}"><span>媒体报道</span></a></li>
-                    <li><a href="{{ route('news') }}"><span>促销活动</span></a></li>
+                    <li>
+                        <a href="{{ route('news') }}?type={{ \Whirlpool\News\Entities\News::TYPE_COMPANY }}"><span>企业内讯</span></a>
+                    </li>
+                    <li>
+                        <a href="{{ route('news') }}?type={{ \Whirlpool\News\Entities\News::TYPE_MEDIA }}"><span>媒体报道</span></a>
+                    </li>
+                    <li><a href="{{ route('news') }}?type={{ \Whirlpool\News\Entities\News::TYPE_PROMOTION }}"><span>促销活动</span></a>
+                    </li>
                 </ul>
             </li>
             <li><a href="{{ route('projects') }}">工程案例</a></li>
@@ -174,10 +176,16 @@
                 <a href='javascript:;'>“会” 生活</a>
                 <ul id="life-sub-nav" class="nav-sub-list life-list">
                     <li><a href="{{ route('life') }}"><span>全部</span></a></li>
-                    <li><a href="{{ route('life') }}"><span>厨电创想人</span></a></li>
-                    <li><a href="{{ route('life') }}"><span>"懂"厨电</span></a></li>
-                    <li><a href="{{ route('life') }}"><span>"品"美味</span></a></li>
-                    <li><a href="{{ route('life') }}"><span>"绘"厨房</span></a></li>
+                    <li>
+                        <a href="{{ route('life') }}?type={{ \Whirlpool\Life\Entities\Life::TYPE_PEOPLE }}"><span>厨电创想人</span></a>
+                    </li>
+                    <li><a href="{{ route('life') }}?type={{ \Whirlpool\Life\Entities\Life::TYPE_APPLIANCE }}"><span>"懂"厨电</span></a>
+                    </li>
+                    <li><a href="{{ route('life') }}?type={{ \Whirlpool\Life\Entities\Life::TYPE_DELICIOUS }}"><span>"品"美味</span></a>
+                    </li>
+                    <li>
+                        <a href="{{ route('life') }}?type={{ \Whirlpool\Life\Entities\Life::TYPE_KITCHEN }}"><span>"绘"厨房</span></a>
+                    </li>
                 </ul>
             </li>
             <li><a href="{{ route('contact') }}">联系我们</a></li>
@@ -190,7 +198,7 @@
 <script src="https://dn-bts.qbox.me/sdk/bugtags-1.0.3.js"></script>
 <script>
     // VERSION_NAME 替换为项目的版本，VERSION_CODE 替换为项目的子版本
-    new Bugtags('bc4e9de0b3d5aa9fabb1cd0d59e35600','VERSION_NAME','VERSION_CODE');
+    new Bugtags('bc4e9de0b3d5aa9fabb1cd0d59e35600', 'VERSION_NAME', 'VERSION_CODE');
 </script>
 <script src="/js/app.js"></script>
 <script src="/js/progress.js"></script>

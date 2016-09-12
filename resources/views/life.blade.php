@@ -18,10 +18,13 @@
         </div>
         <div class="grid-cell grid-cell-no-3 only-desktop"></div>
         <div class="grid-cell grid-cell-no-4">
-            <a data-pjax href="{{ route('lifeDetail', 1) }}" class="life-item fadeIn animated" data-title="浓情布朗尼-爱的礼物">
-                <img src="/images/life-item-1.png" alt="">
-                <i class="fa fa-search" aria-hidden="true"></i>
-            </a>
+            @if($item = $livesList[0])
+                <a data-pjax href="{{ route('lifeDetail', $item->id) }}" class="life-item fadeIn animated"
+                   data-title="{{ $item->title }}">
+                    <img src="{{ $item->thumbnail }}" alt="">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </a>
+            @endif
         </div>
         <div class="grid-cell grid-cell-no-5 only-desktop">
             <a data-pjax href="{{ route('home') }}" class="nav-close"></a>
@@ -35,34 +38,47 @@ life</span>
             </div>
         </div>
         <div class="grid-cell grid-cell-no-8">
-            <a data-pjax href="{{ route('lifeDetail', 1) }}" class="life-item fadeIn animated" data-title="浓情布朗尼-爱的礼物">
-                <img src="/images/life-item-2.png" alt="">
-                <i class="fa fa-search" aria-hidden="true"></i>
-            </a>
+            @if($item = $livesList[1])
+                <a data-pjax href="{{ route('lifeDetail', $item->id) }}" class="life-item fadeIn animated"
+                   data-title="{{ $item->title }}">
+                    <img src="{{ $item->thumbnail }}" alt="">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </a>
+            @endif
         </div>
         <div class="grid-cell grid-cell-no-9 only-desktop"></div>
         <div class="grid-cell grid-cell-no-10 only-desktop"></div>
         <div class="grid-cell grid-cell-no-11 only-desktop">
-            <a data-pjax href="{{ route('life') }}" class="nav-page-prev"></a>
+            @if($livesList->currentPage() > 1)
+                <a data-pjax href="{{ $livesList->previousPageUrl() }}" class="nav-page-prev"></a>
+            @endif
         </div>
         <div class="grid-cell grid-cell-no-12 only-desktop"></div>
         <div class="grid-cell grid-cell-no-13 only-desktop"></div>
         <div class="grid-cell grid-cell-no-14">
-            <a data-pjax href="{{ route('lifeDetail', 1) }}" class="life-item fadeIn animated" data-title="浓情布朗尼-爱的礼物">
-                <img src="/images/life-item-3.png" alt="">
-                <i class="fa fa-search" aria-hidden="true"></i>
-            </a>
+            @if($item = $livesList[2])
+                <a data-pjax href="{{ route('lifeDetail', $item->id) }}" class="life-item fadeIn animated"
+                   data-title="{{ $item->title }}">
+                    <img src="{{ $item->thumbnail }}" alt="">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </a>
+            @endif
         </div>
         <div class="grid-cell grid-cell-no-15 only-desktop">
-            <a data-pjax href="{{ route('life') }}" class="nav-page-next"></a>
+            @if($livesList->hasMorePages())
+                <a data-pjax href="{{ $livesList->nextPageUrl() }}" class="nav-page-next"></a>
+            @endif
         </div>
         <div class="grid-cell grid-cell-no-16 only-desktop"></div>
         <div class="grid-cell grid-cell-no-17 only-desktop"></div>
         <div class="grid-cell grid-cell-no-18 only-desktop">
-            <a data-pjax href="{{ route('lifeDetail', 1) }}" class="life-item fadeIn animated" data-title="浓情布朗尼-爱的礼物">
-                <img src="/images/life-item-4.png" alt="">
-                <i class="fa fa-search" aria-hidden="true"></i>
-            </a>
+            @if($item = $livesList[3])
+                <a data-pjax href="{{ route('lifeDetail', $item->id) }}" class="life-item fadeIn animated"
+                   data-title="{{ $item->title }}">
+                    <img src="{{ $item->thumbnail }}" alt="">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </a>
+            @endif
         </div>
         <div class="grid-cell grid-cell-no-19 only-desktop"></div>
         <div class="grid-cell grid-cell-no-20 only-desktop"></div>

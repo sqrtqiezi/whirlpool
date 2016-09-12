@@ -17,7 +17,7 @@ class NewsRepository implements NewsRepositoryInterface
      *
      * @return Collection
      */
-    public function filter(array $criteria = [])
+    public function filter(array $criteria = [], $pageSize = 10)
     {
 
         $news = (new News())->newQuery();
@@ -46,7 +46,7 @@ class NewsRepository implements NewsRepositoryInterface
             $news->withTrashed();
         }
 
-        return $news->orderBy('is_stick', 'DESC')->orderBy('id', 'DESC')->paginate(10);
+        return $news->orderBy('is_stick', 'DESC')->orderBy('id', 'DESC')->paginate($pageSize);
     }
 
     /**
