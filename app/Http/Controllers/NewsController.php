@@ -122,7 +122,7 @@ class NewsController extends Controller
         // 最多只有两篇置顶，先获得前一篇
         $nearestStick = News::withTrashed()->where('is_stick', 1)->orderBy('id', 'DESC')->first();
         $news->update(['is_stick' => 1]);
-        $keepItStick = $nearestStick ? [$news->id, $nearestStick->id] : $news->id;
+        $keepItStick = $nearestStick ? [$news->id, $nearestStick->id] : [$news->id];
         // 把其它全部取消置顶
         News::withTrashed()->whereNotIn('id', $keepItStick)->update(['is_stick' => 0]);
 
