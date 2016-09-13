@@ -37,7 +37,7 @@
                                 <tr>
                                     <td>{{ $product->specification[$keys[$i]]['name'] }}</td>
                                     <td>{{ $product->specification[$keys[$i]]['value'] }}</td>
-                                    @if($i < $iMax)
+                                    @if($i+1 < $iMax)
                                         <td>{{ $product->specification[$keys[$i+1]]['name'] }}</td>
                                         <td>{{ $product->specification[$keys[$i+1]]['value'] }}</td>
                                     @endif
