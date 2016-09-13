@@ -32,7 +32,7 @@
 
                         <table class="product-tech-details">
                             <tbody>
-                            @for($i=1, $keys = array_keys($product->specification),
+                            @for($i=0, $keys = array_keys($product->specification),
                                     $iMax = count($keys); $i < $iMax; $i += 2)
                                 <tr>
                                     <td>{{ $product->specification[$keys[$i]]['name'] }}</td>
