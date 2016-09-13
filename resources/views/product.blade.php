@@ -40,6 +40,9 @@
                                     @if($i+1 < $iMax)
                                         <td>{{ $product->specification[$keys[$i+1]]['name'] }}</td>
                                         <td>{{ $product->specification[$keys[$i+1]]['value'] }}</td>
+                                    @else
+                                        <td></td>
+                                        <td></td>
                                     @endif
                                 </tr>
                             @endfor
