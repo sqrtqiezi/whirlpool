@@ -64,12 +64,14 @@
                     </section>
 
                     <section class="product-core-details">
-                        @foreach($product->core_tech_detail as $detail)
-                            <div class="product-core-item">
-                                <img src="/{{ $detail['image'] }}" alt="">
-                                <span>{{ $detail['description'] }}</span>
-                            </div>
-                        @endforeach
+                        @if(isset($product->core_tech_detail))
+                            @foreach($product->core_tech_detail as $detail)
+                                <div class="product-core-item">
+                                    <img src="/{{ $detail['image'] }}" alt="">
+                                    <span>{{ $detail['description'] }}</span>
+                                </div>
+                            @endforeach
+                        @endif
                     </section>
                 </div>
                 <div id="product-descriptions" class="product-detail-item product-descriptions">
@@ -80,12 +82,15 @@
                         </section>
 
                         <div class="product-description-items">
-                            @foreach($product->detail as $detail)
-                                <div data-title="{{ $detail['title'] }}"
-                                     data-description="{{ $detail['description'] }}" class="product-description-item">
-                                    <img src="{{ $detail['preview'] }}" alt="">
-                                </div>
-                            @endforeach
+                            @if(isset($product->detail))
+                                @foreach($product->detail as $detail)
+                                    <div data-title="{{ $detail['title'] }}"
+                                         data-description="{{ $detail['description'] }}"
+                                         class="product-description-item">
+                                        <img src="{{ $detail['preview'] }}" alt="">
+                                    </div>
+                                @endforeach
+                            @endif
                         </div>
                     </div>
                     <div class="pull-left">
