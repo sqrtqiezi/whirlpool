@@ -817,14 +817,20 @@
         text-align: center;
         width: 100%;
 
+        .product-description-image {
+          max-width: 45%;
+        }
+
         .product-description-item {
           display: inline-block;
           width: 6em;
-          vertical-align: text-top;
+          height: 6em;
           margin: 0 1em;
           -webkit-border-radius: 50%;
           -moz-border-radius: 50%;
           border-radius: 50%;
+          background-size: cover;
+          border: solid 1px grey;
 
           &.active {
             border: 5px solid $brand-primary;
@@ -832,10 +838,6 @@
 
           &:hover {
             cursor: pointer;
-          }
-
-          img {
-            width: 100%;
           }
         }
       }
@@ -859,6 +861,7 @@
 
           .product-description-item {
             width: 5em;
+            height: 5em;
             margin: 0 .6em;
 
             &.active {
@@ -887,6 +890,7 @@
 
           .product-description-item {
             width: 3em;
+            height: 3em;
             margin: 0 .2em;
 
             &.active {

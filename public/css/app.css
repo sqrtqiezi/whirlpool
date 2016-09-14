@@ -4555,18 +4555,20 @@ nav.nav-list {
       display: inline-block;
       text-align: center;
       width: 100%; }
+      .detail.product-detail .product-descriptions .pull-right .product-description-items .product-description-image {
+        max-width: 45%; }
       .detail.product-detail .product-descriptions .pull-right .product-description-items .product-description-item {
         display: inline-block;
         width: 6em;
-        vertical-align: text-top;
+        height: 6em;
         margin: 0 1em;
-        border-radius: 50%; }
+        border-radius: 50%;
+        background-size: cover;
+        border: solid 1px grey; }
         .detail.product-detail .product-descriptions .pull-right .product-description-items .product-description-item.active {
           border: 5px solid #ECB02E; }
         .detail.product-detail .product-descriptions .pull-right .product-description-items .product-description-item:hover {
           cursor: pointer; }
-        .detail.product-detail .product-descriptions .pull-right .product-description-items .product-description-item img {
-          width: 100%; }
 
 @media only screen and (max-width: 1600px) {
   .detail.product-detail .product-descriptions .pull-right {
@@ -4579,6 +4581,7 @@ nav.nav-list {
       margin-top: 2em; }
       .detail.product-detail .product-descriptions .pull-right .product-description-items .product-description-item {
         width: 5em;
+        height: 5em;
         margin: 0 .6em; }
         .detail.product-detail .product-descriptions .pull-right .product-description-items .product-description-item.active {
           border: 3px solid #ECB02E; } }
@@ -4594,6 +4597,7 @@ nav.nav-list {
       margin-top: 0; }
       .detail.product-detail .product-descriptions .pull-right .product-description-items .product-description-item {
         width: 3em;
+        height: 3em;
         margin: 0 .2em; }
         .detail.product-detail .product-descriptions .pull-right .product-description-items .product-description-item.active {
           border: 3px solid #ECB02E; } }

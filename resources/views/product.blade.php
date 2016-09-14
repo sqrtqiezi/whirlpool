@@ -80,24 +80,24 @@
                     <div id="product-descriptions" class="product-detail-item product-descriptions">
                         <div class="pull-right">
                             <section class="title">
-                                <h1 class="main-title">经典T型黄金比例设计</h1>
-                                <h3 class="sub-title">通过我们的高品质产品,给消费者带来轻松愉悦的生活体验 通过我们的细致周到的服务,给合作伙伴带来轻松的合作体验</h3>
+                                <h1 class="main-title">{{ $product->detail[0]['title'] }}</h1>
+                                <h3 class="sub-title">{{ $product->detail[0]['description'] }}</h3>
                             </section>
 
                             <div class="product-description-items">
                                 @if(isset($product->detail))
-                                    @foreach($product->detail as $detail)
-                                        <div data-title="{{ $detail['title'] }}"
+                                    @for($i = 0, $iMax = count($product->detail); $i < $iMax; $i++)
+                                        <div data-title="{{ $product->detail[$i]['title'] }}"
                                              data-description="{{ $detail['description'] }}"
-                                             class="product-description-item">
-                                            <img src="{{ $detail['preview'] }}" alt="">
+                                             data-image="{{ $product->detail[$i]['preview'] }}"
+                                             class="product-description-item @if($i === 0) active @endif">
                                         </div>
-                                    @endforeach
+                                    @endfor
                                 @endif
                             </div>
                         </div>
                         <div class="pull-left">
-                            <img src="/images/product-detail1.png" alt="">
+                            <img class="product-description-image" src="{{ $product->detail[0]['preview'] }}" alt="">
                         </div>
                     </div>
                 @endif
