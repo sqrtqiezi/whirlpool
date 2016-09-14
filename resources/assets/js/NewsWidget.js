@@ -62,7 +62,6 @@
 
       $(".news-item a").each(function () {
         var words = $(this).html();
-        console.log(words);
         if(words.length > maxLength)
           $(this).html(words.substr(0, maxLength - 2) + "......")
       })

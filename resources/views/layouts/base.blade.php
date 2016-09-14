@@ -50,41 +50,79 @@
                     <a data-pjax href="javascript:;" class="js-top-nav" data-sub-nav="about-sub-nav">
                         <span data-hover="关于我们">关于我们</span>
                     </a>
-                    <ul id="about-sub-nav" class="nav-sub-list bounceInDown animated">
-                        <li><a data-pjax href="{{ route('about') }}#brand-info"><span>品牌简介</span></a></li>
-                        <li><a data-pjax href="{{ route('about') }}#brand-course"><span>发展历程</span></a></li>
-                        <li><a data-pjax href="{{ route('about') }}#brand-worth"><span>品牌价值观</span></a></li>
-                        <li><a data-pjax href="{{ route('about') }}#brand-honour"><span>企业荣誉</span></a></li>
-                        <li><a data-pjax href="{{ route('about') }}#brand-responsibility"><span>社会责任</span></a></li>
-                    </ul>
+                    <div id="about-sub-nav" class="nav-sub-list bounceInDown animated">
+                        <div class="nav-sub-list-wrapper">
+                            <div class="nav-sub-list-title">关于我们</div>
+                            <div class="nav-sub-list-body">
+                                <ul>
+                                    <li><a data-pjax href="{{ route('about') }}#brand-info"
+                                           class="nav-sub-link nav-sub-text" data-title="品牌简介">B</a></li>
+                                    <li><a data-pjax href="{{ route('about') }}#brand-course"
+                                           class="nav-sub-link nav-sub-text" data-title="发展历程">D</a></li>
+                                    <li><a data-pjax href="{{ route('about') }}#brand-worth"
+                                           class="nav-sub-link nav-sub-text" data-title="品牌价值观">B</a></li>
+                                    <li><a data-pjax href="{{ route('about') }}#brand-honour"
+                                           class="nav-sub-link nav-sub-text" data-title="企业荣誉">E</a></li>
+                                    <li><a data-pjax href="{{ route('about') }}#brand-responsibility"
+                                           class="nav-sub-link nav-sub-text" data-title="社会责任">S</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </li>
                 <li>
                     <a data-pjax href="javascript:;" class="js-top-nav" data-sub-nav="product-sub-nav">
                         <span data-hover="厨房电器">厨房电器</span>
                     </a>
-                    <ul id="product-sub-nav" class="nav-sub-list bounceInDown animated">
-                        <li><a data-pjax href="{{ route('products') }}"><span>全部</span></a></li>
-                        @foreach($productTypes as $type)
-                        <li><a data-pjax href="{{ route('category', $type->id) }}"><span>{{ $type->name }}</span></a></li>
-                        @endforeach
-                    </ul>
+                    <div id="product-sub-nav" class="nav-sub-list bounceInDown animated">
+                        <div class="nav-sub-list-wrapper">
+                            <div class="nav-sub-list-title">
+                                厨房电器
+                                <a data-pjax href="{{ route('products') }}">全部</a>
+                            </div>
+                            <div class="nav-sub-list-body">
+                                <ul>
+                                    @foreach($productTypes as $type)
+                                        <li>
+                                            <a data-pjax
+                                               href="{{ route('category', $type->id) }}"
+                                               data-title="{{ $type->name }}"
+                                               class="nav-sub-link nav-sub-image">
+                                                <img src="/images/category-{{ $type->id }}.png" alt="">
+                                            </a>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </li>
                 <li>
                     <a data-pjax href="javascript:;" class="js-top-nav" data-sub-nav="news-sub-nav">
                         <span data-hover="新闻中心">新闻中心</span>
                     </a>
-                    <ul id="news-sub-nav" class="nav-sub-list bounceInDown animated">
-                        <li><a data-pjax href="{{ route('news') }}"><span>全部</span></a></li>
-                        <li><a data-pjax
-                               href="{{ route('news') }}?type={{ \Whirlpool\News\Entities\News::TYPE_COMPANY }}"><span>企业内讯</span></a>
-                        </li>
-                        <li><a data-pjax
-                               href="{{ route('news') }}?type={{ \Whirlpool\News\Entities\News::TYPE_MEDIA }}"><span>媒体报道</span></a>
-                        </li>
-                        <li><a data-pjax
-                               href="{{ route('news') }}?type={{ \Whirlpool\News\Entities\News::TYPE_PROMOTION }}"><span>促销活动</span></a>
-                        </li>
-                    </ul>
+                    <div id="news-sub-nav" class="nav-sub-list bounceInDown animated">
+                        <div class="nav-sub-list-wrapper">
+                            <div class="nav-sub-list-title">新闻中心</div>
+                            <div class="nav-sub-list-body">
+                                <ul>
+                                    <li><a data-pjax
+                                           href="{{ route('news') }}?type={{ \Whirlpool\News\Entities\News::TYPE_COMPANY }}"
+                                           class="nav-sub-link nav-sub-text" data-title="企业内讯">C</a>
+                                    </li>
+                                    <li><a data-pjax
+                                           href="{{ route('news') }}?type={{ \Whirlpool\News\Entities\News::TYPE_MEDIA }}"
+                                           class="nav-sub-link nav-sub-text" data-title="媒体报道">M</a>
+                                    </li>
+                                    <li><a data-pjax
+                                           href="{{ route('news') }}?type={{ \Whirlpool\News\Entities\News::TYPE_PROMOTION }}"
+                                           class="nav-sub-link nav-sub-text" data-title="促销活动"></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </li>
                 <li>
                     <a data-pjax href="{{ route('projects') }}">
@@ -100,21 +138,31 @@
                     <a data-pjax href="javascript:;" class="js-top-nav" data-sub-nav="life-sub-nav">
                         <span data-hover="“会”生活">“会”生活</span>
                     </a>
-                    <ul id="life-sub-nav" class="nav-sub-list bounceInDown animated">
-                        <li><a data-pjax href="{{ route('life') }}"><span>全部</span></a></li>
-                        <li><a data-pjax
-                               href="{{ route('life') }}?type={{ \Whirlpool\Life\Entities\Life::TYPE_PEOPLE }}"><span>厨电创想人</span></a>
-                        </li>
-                        <li><a data-pjax
-                               href="{{ route('life') }}?type={{ \Whirlpool\Life\Entities\Life::TYPE_APPLIANCE }}"><span>"懂"厨电</span></a>
-                        </li>
-                        <li><a data-pjax
-                               href="{{ route('life') }}?type={{ \Whirlpool\Life\Entities\Life::TYPE_DELICIOUS }}"><span>"品"美味</span></a>
-                        </li>
-                        <li><a data-pjax
-                               href="{{ route('life') }}?type={{ \Whirlpool\Life\Entities\Life::TYPE_KITCHEN }}"><span>"绘"厨房</span></a>
-                        </li>
-                    </ul>
+                    <div id="life-sub-nav" class="nav-sub-list bounceInDown animated">
+                        <div class="nav-sub-list-wrapper">
+                            <div class="nav-sub-list-title">“会”生活</div>
+                            <div class="nav-sub-list-body">
+                                <ul>
+                                    <li><a data-pjax
+                                           href="{{ route('life') }}?type={{ \Whirlpool\Life\Entities\Life::TYPE_PEOPLE }}"
+                                           class="nav-sub-link nav-sub-text" data-title="厨电创想人">P</a>
+                                    </li>
+                                    <li><a data-pjax
+                                           href="{{ route('life') }}?type={{ \Whirlpool\Life\Entities\Life::TYPE_APPLIANCE }}"
+                                           class="nav-sub-link nav-sub-text" data-title="“懂”厨电">A</a>
+                                    </li>
+                                    <li><a data-pjax
+                                           href="{{ route('life') }}?type={{ \Whirlpool\Life\Entities\Life::TYPE_DELICIOUS }}"
+                                           class="nav-sub-link nav-sub-text" data-title="“品”美味">D</a>
+                                    </li>
+                                    <li><a data-pjax
+                                           href="{{ route('life') }}?type={{ \Whirlpool\Life\Entities\Life::TYPE_KITCHEN }}"
+                                           class="nav-sub-link nav-sub-text" data-title="“绘”厨房">K</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </li>
                 <li>
                     <a data-pjax href="{{ route('contact') }}">
@@ -125,7 +173,7 @@
         </nav>
         <div class="footer-info pull-right">
             <div class="contact-info pull-right">
-                <a data-pjax href="http://weibo.com/u/5889505040" class="contact-weibo"></a>
+                <a data-pjax href="http://weibo.com/u/5874901998" class="contact-weibo"></a>
                 <a data-pjax href="javascript:;" class="contact-wechat"></a>
                 <a data-pjax href="javascript:;" class="contact-email"></a>
                 <span class="design-info only-desktop">Design by wisnovo</span>

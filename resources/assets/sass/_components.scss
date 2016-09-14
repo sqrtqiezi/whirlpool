@@ -363,7 +363,7 @@ nav.nav-list {
     }
   }
 
-  ul.nav-sub-list {
+  .nav-sub-list {
     display: none;
     position: fixed;
     left: 0;
@@ -374,6 +374,17 @@ nav.nav-list {
     opacity: .9;
     z-index: $zindex-popover;
     padding-top: 10%;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 20%;
+      top: 6em;
+      width: 10.8em;
+      height: 4.5em;
+      background-image: url("/images/logo.png");
+      background-size: cover;
+    }
 
     &:after {
       content: '';
@@ -388,6 +399,98 @@ nav.nav-list {
 
       &:hover {
         background-image: url("/images/close-hover.png");
+      }
+    }
+
+    .nav-sub-list-wrapper {
+      display: inline-block;
+      width: 100%;
+      height: auto;
+      position: relative;
+      margin-top: 6em;
+      margin-left: 20%;
+
+      .nav-sub-list-title {
+        display: block;
+        float:left;
+        position: relative;
+        z-index: $zindex-popover2;
+        color: white;
+        font-size: 2em;
+        width: 15%;
+        vertical-align: text-top;
+
+        a {
+          font-size: .8em;
+          color: $brand-primary;
+        }
+      }
+
+      .nav-sub-list-body {
+        display: inline-block;
+        position: relative;
+        z-index: $zindex-popover2;
+        color: white;
+        font-size: 3em;
+        width: 60%;
+
+        ul, li {
+          list-style-type: none;
+          display: inline-block;
+        }
+        ul {
+          padding: 0 0;
+          text-align: left;
+          width: 100%;
+        }
+
+        li {
+          width: auto;
+          margin: 0 .5em;
+          margin-bottom: 8vh;
+        }
+
+        a.nav-sub-link {
+          position: relative;
+          display: inline-block;
+          width: 1.8em;
+          height: 1.8em;
+          line-height: 1.8em;
+          border: solid 2px white;
+          border-radius: 50%;
+          font-size: 6vh;
+          font-weight: bold;
+          color: white;
+          overflow: visible;
+
+          &:hover {
+            border-color: $brand-primary;
+            color: $brand-primary;
+
+            &:after {
+              color: $brand-primary;
+            }
+          }
+
+          &.nav-sub-image > img {
+            width: 80%;
+            height: 80%;
+            margin-top: 10%;
+          }
+
+          &:after {
+            content: attr(data-title);
+            display: inline-block;
+            position: absolute;
+            text-align: center;
+            width: 100%;
+            height: 1em;
+            left: 0;
+            bottom: 0;
+            font-size: .8rem;
+            color: white;
+          }
+        }
       }
     }
 
@@ -499,7 +602,7 @@ nav.nav-list {
           height: 6em;
           left: -2em;
           top: -6.8em;
-          background-image: url(/images/brcode.png);
+          background-image: url(/images/qrcode.jpg);
           background-size: cover;
         }
       }

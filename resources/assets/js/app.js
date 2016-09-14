@@ -75,6 +75,17 @@ if ($.browser.mobile) {
 }
 else {
   initVideoBG();
+
+  //设置图片类的二级导航
+  $(".nav-sub-list>.nav-sub-list-wrapper>.nav-sub-list-body .nav-sub-image").hover(function () {
+    var el = $(this).find("img")[0];
+    var hoverImage = el.src.split('.png')[0] + "-hover.png";
+    el.src = hoverImage;
+  },function () {
+    var el = $(this).find("img")[0];
+    var image = el.src.replace("-hover", "");
+    el.src = image;
+  })
 }
 
 var newsWidget = new NewsWidget();
@@ -107,7 +118,7 @@ function refreshAll() {
     })
   }
 
-  if(isInContent('content-news-detail')) {
+  if (isInContent('content-news-detail')) {
     var height = $($('.news-detail-body')[0]).height();
     $($('.news-detail-body > div')[0]).height(height);
   }
@@ -239,6 +250,8 @@ function refreshAll() {
     godetail(id);
   }
 }
+
+
 
 
 
