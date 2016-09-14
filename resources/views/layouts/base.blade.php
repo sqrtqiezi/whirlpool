@@ -117,7 +117,7 @@
                                     </li>
                                     <li><a data-pjax
                                            href="{{ route('news') }}?type={{ \Whirlpool\News\Entities\News::TYPE_PROMOTION }}"
-                                           class="nav-sub-link nav-sub-text" data-title="促销活动"></a>
+                                           class="nav-sub-link nav-sub-text" data-title="促销活动">P</a>
                                     </li>
                                 </ul>
                             </div>
