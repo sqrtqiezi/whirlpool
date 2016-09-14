@@ -107,6 +107,11 @@ function refreshAll() {
     })
   }
 
+  if(isInContent('content-news-detail')) {
+    var height = $($('.news-detail-body')[0]).height();
+    $($('.news-detail-body > div')[0]).height(height);
+  }
+
 
   //region 新闻中心样式整理
   var height;

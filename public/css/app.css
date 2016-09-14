@@ -3249,11 +3249,14 @@ a.product-item {
         font-size: .5em;
         color: #C2C2C2; }
     .main .content.content-news-detail .news-detail .news-detail-body {
-      font-size: .8em; }
+      font-size: .8em;
+      display: inline-block;
+      overflow-y: visible;
+      max-height: 75%; }
       .main .content.content-news-detail .news-detail .news-detail-body img {
         max-width: 100% !important; }
       .main .content.content-news-detail .news-detail .news-detail-body > div {
-        max-height: 60em;
+        height: inherit;
         overflow: auto; }
 
 @media only screen and (max-width: 768px) {
@@ -3842,7 +3845,7 @@ nav.nav-list {
         height: 6em;
         left: -2em;
         top: -6.8em;
-        background-image: url(/images/brcode.png);
+        background-image: url(/images/qrcode.jpg);
         background-size: cover; }
     .footer-info .contact-info .contact-weibo {
       background-image: url(/images/weibo.png); }
