@@ -50,53 +50,57 @@
                         </table>
                     </div>
                     <div class="pull-right">
-                        <div class="product-tech-top">
+                        <div class="product-tech-image">
                             <img src="/{{ $product->spec_img_one }}" alt="">
                         </div>
-                        <div class="product-tech-bottom">
+                        <div class="product-tech-image">
                             <img src="/{{ $product->spec_img_two }}" alt="">
                         </div>
                     </div>
                 </div>
-                <div id="product-core" class="product-detail-item product-core">
-                    <section class="title">
-                        <h1 class="main-title">{{ $product->core_tech_title }}</h1>
-                    </section>
-
-                    <section class="product-core-details">
-                        @if(isset($product->core_tech_detail))
-                            @foreach($product->core_tech_detail as $detail)
-                                <div class="product-core-item">
-                                    <img src="/{{ $detail['image'] }}" alt="">
-                                    <span>{{ $detail['description'] }}</span>
-                                </div>
-                            @endforeach
-                        @endif
-                    </section>
-                </div>
-                <div id="product-descriptions" class="product-detail-item product-descriptions">
-                    <div class="pull-right">
+                @if(isset($product->core_tech_detail))
+                    <div id="product-core" class="product-detail-item product-core">
                         <section class="title">
-                            <h1 class="main-title">经典T型黄金比例设计</h1>
-                            <h3 class="sub-title">通过我们的高品质产品,给消费者带来轻松愉悦的生活体验 通过我们的细致周到的服务,给合作伙伴带来轻松的合作体验</h3>
+                            <h1 class="main-title">{{ $product->core_tech_title }}</h1>
                         </section>
 
-                        <div class="product-description-items">
-                            @if(isset($product->detail))
-                                @foreach($product->detail as $detail)
-                                    <div data-title="{{ $detail['title'] }}"
-                                         data-description="{{ $detail['description'] }}"
-                                         class="product-description-item">
-                                        <img src="{{ $detail['preview'] }}" alt="">
+                        <section class="product-core-details">
+                            @if(isset($product->core_tech_detail))
+                                @foreach($product->core_tech_detail as $detail)
+                                    <div class="product-core-item">
+                                        <img src="/{{ $detail['image'] }}" alt="">
+                                        <span>{{ $detail['description'] }}</span>
                                     </div>
                                 @endforeach
                             @endif
+                        </section>
+                    </div>
+                @endif
+                @if(isset($product->detail))
+                    <div id="product-descriptions" class="product-detail-item product-descriptions">
+                        <div class="pull-right">
+                            <section class="title">
+                                <h1 class="main-title">经典T型黄金比例设计</h1>
+                                <h3 class="sub-title">通过我们的高品质产品,给消费者带来轻松愉悦的生活体验 通过我们的细致周到的服务,给合作伙伴带来轻松的合作体验</h3>
+                            </section>
+
+                            <div class="product-description-items">
+                                @if(isset($product->detail))
+                                    @foreach($product->detail as $detail)
+                                        <div data-title="{{ $detail['title'] }}"
+                                             data-description="{{ $detail['description'] }}"
+                                             class="product-description-item">
+                                            <img src="{{ $detail['preview'] }}" alt="">
+                                        </div>
+                                    @endforeach
+                                @endif
+                            </div>
+                        </div>
+                        <div class="pull-left">
+                            <img src="/images/product-detail1.png" alt="">
                         </div>
                     </div>
-                    <div class="pull-left">
-                        <img src="/images/product-detail1.png" alt="">
-                    </div>
-                </div>
+                @endif
             </div>
         </div>
         @include('layouts/mobile_footer')
@@ -121,12 +125,16 @@
                 <a href="#product-tech">
                     <li class="product-tech">技术参数</li>
                 </a>
+                @if(isset($product->core_tech_detail))
                 <a href="#product-core">
                     <li class="product-core">核心技术</li>
                 </a>
-                <a href="#product-descriptions">
-                    <li class="product-descriptions">细节展示</li>
-                </a>
+                @endif
+                @if(isset($product->detail))
+                    <a href="#product-descriptions">
+                        <li class="product-descriptions">细节展示</li>
+                    </a>
+                @endif
             </ul>
         </div>
     </div>

@@ -654,12 +654,17 @@
 
     .pull-right {
       width: 40%;
+      height: 100%;
       position: relative;
       display: inline-block;
       text-align: center;
+      padding-top: 3em;
 
-      div {
+      .product-tech-image {
         display: inline-block;
+        &>img {
+          max-height:  40vh;
+        }
       }
     }
 
@@ -705,7 +710,7 @@
 
   @media only screen and (max-width: $desktop-small-width) {
     .product-tech {
-      padding: 5em 1em;
+      //padding: 5em 1em;
 
       table.product-tech-details {
         font-size: .5em;
@@ -914,6 +919,8 @@
     }
 
     .product-tech {
+      padding: 0 2em;
+      display: inline-block;
       .pull-left,
       .pull-right {
         width: 100%;
