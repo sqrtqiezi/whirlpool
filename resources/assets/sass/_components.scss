@@ -625,9 +625,9 @@ nav.nav-list {
   }
 }
 
-@media only screen and (max-width: $desktop-small-width) {
+@media only screen and (max-width: 1366px) {
   nav.nav-list {
-    font-size: .5em;
+    font-size: .9em;
   }
   .footer-info .content-info span.company-right {
     font-size: .3em;
