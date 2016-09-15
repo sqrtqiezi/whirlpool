@@ -67,38 +67,38 @@
             </a>
         </section>
         <section class="grid-cell grid-cell-no-14">
-            <a data-pjax href="{{ route('category', 7) }}" class="product-item fadeIn animated animated-7" data-product-name="酒柜">
-                <img src="/images/product-jg.png" alt="">
-                <i class="fa fa-search" aria-hidden="true"></i>
-            </a>
-        </section>
-        <section class="grid-cell grid-cell-no-15">
-            <a data-pjax href="{{ route('category', 8) }}" class="product-item fadeIn animated animated-8" data-product-name="暖碟机">
-                <img src="/images/product-ndj.png" alt="">
-                <i class="fa fa-search" aria-hidden="true"></i>
-            </a>
-        </section>
-        <section class="grid-cell grid-cell-no-16">
-            <a data-pjax href="{{ route('category', 9) }}" class="product-item fadeIn animated animated-9" data-product-name="洗碗机">
+            <a data-pjax href="{{ route('category', 7) }}" class="product-item fadeIn animated animated-9" data-product-name="洗碗机">
                 <img src="/images/product-xwj.png" alt="">
                 <i class="fa fa-search" aria-hidden="true"></i>
             </a>
         </section>
-        <section class="grid-cell grid-cell-no-17">
-            <a data-pjax href="{{ route('category', 10) }}" class="product-item fadeIn animated animated-10" data-product-name="嵌入式冰箱">
+        <section class="grid-cell grid-cell-no-15">
+            <a data-pjax href="{{ route('category', 8) }}" class="product-item fadeIn animated animated-10" data-product-name="嵌入式冰箱">
                 <img src="/images/product-qrsbx.png" alt="">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </a>
+        </section>
+        <section class="grid-cell grid-cell-no-16">
+            <a data-pjax href="{{ route('category', 9) }}" class="product-item fadeIn animated animated-7" data-product-name="酒柜">
+                <img src="/images/product-jg.png" alt="">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </a>
+        </section>
+        <section class="grid-cell grid-cell-no-17">
+            <a data-pjax href="{{ route('category', 10) }}" class="product-item fadeIn animated animated-8" data-product-name="暖碟机">
+                <img src="/images/product-ndj.png" alt="">
                 <i class="fa fa-search" aria-hidden="true"></i>
             </a>
         </section>
         <section class="grid-cell grid-cell-no-18">
             <a data-pjax href="{{ route('category', 11) }}" class="product-item fadeIn animated animated-11" data-product-name="干衣机">
-                <img src="/images/product-xwj.png" alt="">
+                <img src="/images/product-gyj.png" alt="">
                 <i class="fa fa-search" aria-hidden="true"></i>
             </a>
         </section>
         <section class="grid-cell grid-cell-no-19">
             <a data-pjax href="{{ route('category', 12) }}" class="product-item fadeIn animated animated-12" data-product-name="垃圾处理器">
-                <img src="/images/product-xwj.png" alt="">
+                <img src="/images/product-ljclq.png" alt="">
                 <i class="fa fa-search" aria-hidden="true"></i>
             </a>
         </section>
