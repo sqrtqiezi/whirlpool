@@ -4409,10 +4409,11 @@ nav.nav-list {
       border-bottom: 1px solid #C2C2C2; }
       .detail.product-detail .product-tech table.product-tech-details tr td {
         display: inline-block;
-        height: 2.5em;
-        line-height: 2.5em;
+        box-sizing: border-box;
         text-align: center;
-        border-right: 1px solid #C2C2C2; }
+        border-right: 1px solid #C2C2C2;
+        height: 102%;
+        line-height: 1.8em; }
         .detail.product-detail .product-tech table.product-tech-details tr td:nth-child(2n+1) {
           padding-left: 2em;
           text-align: left;
@@ -4422,6 +4423,8 @@ nav.nav-list {
           width: 20%; }
 
 @media only screen and (max-width: 1250px) {
+  .detail.product-detail .product-show {
+    display: inline-block; }
   .detail.product-detail .product-tech table.product-tech-details {
     font-size: .5em; }
     .detail.product-detail .product-tech table.product-tech-details tr > td:nth-child(2n+1) {
@@ -4565,14 +4568,14 @@ nav.nav-list {
       border-style: none; }
       .detail.product-detail .product-tech table.product-tech-details tr,
       .detail.product-detail .product-tech table.product-tech-details tbody {
-        display: block;
+        display: inline-block;
         width: 100%;
         border-style: none; }
       .detail.product-detail .product-tech table.product-tech-details tr td {
+        display: block;
         float: left;
         width: 49.2% !important;
         border: 1px solid #C2C2C2;
-        margin: 0 0;
         box-sizing: border-box; }
   .detail.product-detail .product-core .title {
     width: 100%;

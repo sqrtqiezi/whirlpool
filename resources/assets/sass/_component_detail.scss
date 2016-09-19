@@ -689,10 +689,11 @@
 
         td {
           display: inline-block;
-          height: $table-row-height;
-          line-height: $table-row-height;
+          box-sizing: border-box;
           text-align: center;
           border-right: $table-border;
+          height: 102%;
+          line-height: 1.8em;
 
           &:nth-child(2n+1) {
             padding-left: 2em;
@@ -709,6 +710,10 @@
   }
 
   @media only screen and (max-width: $desktop-small-width) {
+    .product-show {
+      display: inline-block;
+    }
+
     .product-tech {
       //padding: 5em 1em;
 
@@ -940,15 +945,15 @@
         border-style: none;
         tr,
         tbody {
-          display: block;
+          display: inline-block;
           width: 100%;
           border-style: none;
         }
         tr td {
+          display: block;
           float: left;
           width: 49.2% !important;
           border: $table-border;
-          margin: 0 0;
           box-sizing: border-box;
         }
 
