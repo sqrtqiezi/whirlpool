@@ -36,7 +36,7 @@ class ProductTypeRepository
             $type->withTrashed();
         }
 
-        return $type->orderBy('id', 'DESC')->paginate(10);
+        return $type->orderBy('id')->paginate(12);
     }
 
     /**

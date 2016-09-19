@@ -90,36 +90,4 @@ class ProductTypeController extends Controller
 
         return redirect()->intended();
     }
-
-    /**
-     * 设为隐藏
-     *
-     * @param \Whirlpool\Product\Entities\ProductType $type
-     *
-     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
-     */
-    public function destroy(ProductType $type)
-    {
-        $type->delete();
-
-        alert()->success('', '成功隐藏分类！');
-
-        return redirect()->back();
-    }
-
-    /**
-     * 设为可见
-     *
-     * @param \Whirlpool\Product\Entities\ProductType $type
-     *
-     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
-     */
-    public function restore(ProductType $type)
-    {
-        $type->restore();
-
-        alert()->success('', '成功设为可见！');
-
-        return redirect()->back();
-    }
 }
