@@ -7,6 +7,7 @@ use Whirlpool\Life\Entities\Life;
 use Whirlpool\News\Entities\News;
 use Whirlpool\Product\Entities\Product;
 use Whirlpool\Product\Entities\ProductType;
+use Whirlpool\Project\Entities\Project;
 use Whirlpool\Terminal\Entities\Terminal;
 
 class HomeController extends Controller
@@ -95,7 +96,8 @@ class HomeController extends Controller
 
     public function projects()
     {
-        return view('projects');
+        $projectsList = Project::all();
+        return view('projects', compact('projectsList'));
     }
 
     /**

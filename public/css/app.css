@@ -3287,10 +3287,6 @@ a.product-item {
     display: block; }
     .main .content.content-projects .grid-cell.grid-cell-no-6 > .scroll-wrapper {
       padding: 0 0; }
-  .main .content.content-projects .scrollbar-macosx {
-    width: 100%; }
-  .main .content.content-projects .project-wrapper {
-    width: 200%; }
   .main .content.content-projects .project-item {
     display: inline-block;
     position: relative;
