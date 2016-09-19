@@ -30,7 +30,7 @@ class AppServiceProvider extends ServiceProvider
                 $view->with('siteConfig', $config);
             }
 
-            if ($productTypes = ProductType::all()) {
+            if ($productTypes = ProductType::query()->orderBy('order')->get()) {
                 $view->with('productTypes', $productTypes);
             }
         });
