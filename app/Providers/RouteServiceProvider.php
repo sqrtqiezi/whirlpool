@@ -7,6 +7,7 @@ use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvi
 use Whirlpool\Life\Entities\Life;
 use Whirlpool\News\Entities\News;
 use Whirlpool\Product\Entities\ProductType;
+use Whirlpool\Project\Entities\Project;
 use Whirlpool\Terminal\Entities\Terminal;
 use Whirlpool\Product\Entities\Product;
 
@@ -45,6 +46,9 @@ class RouteServiceProvider extends ServiceProvider
         $router->bind('product-type', function ($id) {
             return ProductType::withTrashed()->where('id', $id)->firstOrFail();
         });
+        $router->bind('project', function($id) {
+            return Project::withTrashed()->where('id', $id)->firstOrFail();
+        });
 
         parent::boot($router);
     }
@@ -58,8 +62,6 @@ class RouteServiceProvider extends ServiceProvider
     public function map(Router $router)
     {
         $this->mapWebRoutes($router);
-
-        //
     }
 
     /**

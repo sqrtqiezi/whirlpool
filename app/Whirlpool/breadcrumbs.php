@@ -69,6 +69,26 @@ $b->register('panel.terminal.edit', function ($breadcrumbs, $id) {
 });
 
 
+$b->register('panel.project.index', function ($breadcrumbs) {
+    /** @var \DaveJamesMiller\Breadcrumbs\Generator $breadcrumbs */
+    $breadcrumbs->parent('panel.index');
+    $breadcrumbs->push('工程案例', route('panel.project.index'));
+});
+
+$b->register('panel.project.create', function ($breadcrumbs) {
+    /** @var \DaveJamesMiller\Breadcrumbs\Generator $breadcrumbs */
+    $breadcrumbs->parent('panel.project.index');
+    $breadcrumbs->push('新建', route('panel.project.create'));
+});
+
+
+$b->register('panel.project.edit', function ($breadcrumbs, $id) {
+    /** @var \DaveJamesMiller\Breadcrumbs\Generator $breadcrumbs */
+    $breadcrumbs->parent('panel.project.index');
+    $breadcrumbs->push('编辑', route('panel.project.edit', ['id' => $id]));
+});
+
+
 $b->register('panel.site-config.index', function ($breadcrumbs) {
     /** @var \DaveJamesMiller\Breadcrumbs\Generator $breadcrumbs */
     $breadcrumbs->parent('panel.index');

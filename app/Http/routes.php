@@ -34,6 +34,8 @@ $router->group([
             'terminal' => 'TerminalController',
             // '会' 生活
             'life'     => 'LifeController',
+            // 工程案例
+            'project' => 'ProjectController',
             // 基本设置
             'site-config'     => 'SiteConfigController',
         ]);
@@ -42,6 +44,7 @@ $router->group([
         $router->post('life/{life}/restore', 'LifeController@restore')->name('panel.life.restore');
         $router->post('terminal/{terminal}/restore', 'TerminalController@restore')->name('panel.terminal.restore');
         $router->post('product/{product}/restore', 'ProductController@restore')->name('panel.product.restore');
+        $router->post('project/{project}/restore', 'ProjectController@restore')->name('panel.project.restore');
         $router->post('product-type/{product_type}/restore', 'ProductTypeController@restore')->name('panel.product-type.restore');
         // 新闻置顶和取消
         $router->post('news/{news}/stick', 'NewsController@stick')->name('panel.news.stick');

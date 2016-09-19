@@ -11,6 +11,8 @@ use Whirlpool\News\NewsRepositoryInterface;
 use Whirlpool\Product\Entities\ProductType;
 use Whirlpool\Product\ProductRepository;
 use Whirlpool\Product\ProductRepositoryInterface;
+use Whirlpool\Project\ProjectRespository;
+use Whirlpool\Project\ProjectRespositoryInterface;
 use Whirlpool\Terminal\TerminalRepository;
 use Whirlpool\Terminal\TerminalRepositoryInterface;
 
@@ -56,6 +58,10 @@ class AppServiceProvider extends ServiceProvider
         // 产品
         $this->app->bind(ProductRepositoryInterface::class, function () {
             return new ProductRepository;
+        });
+        // 工程案例
+        $this->app->bind(ProjectRespositoryInterface::class, function() {
+            return new ProjectRespository;
         });
     }
 }
