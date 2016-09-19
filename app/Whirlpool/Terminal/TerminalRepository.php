@@ -43,13 +43,9 @@ class TerminalRepository implements TerminalRepositoryInterface
                     $terminal->onlyTrashed();
                     break;
                 default:
-                    goto ALL_VISIBILITY;
+                    break;
             }
-        } else {
-            ALL_VISIBILITY:
-            $terminal->withTrashed();
         }
-
         return $terminal->orderBy('id', 'DESC')->paginate(10);
     }
 

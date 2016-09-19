@@ -39,13 +39,9 @@ class NewsRepository implements NewsRepositoryInterface
                     $news->onlyTrashed();
                     break;
                 default:
-                    goto ALL_VISIBILITY;
+                    break;
             }
-        } else {
-            ALL_VISIBILITY:
-            $news->withTrashed();
         }
-
         return $news->orderBy('is_stick', 'DESC')->orderBy('id', 'DESC')->paginate($pageSize);
     }
 

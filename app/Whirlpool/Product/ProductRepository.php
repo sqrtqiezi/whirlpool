@@ -38,13 +38,9 @@ class ProductRepository implements ProductRepositoryInterface
                     $news->onlyTrashed();
                     break;
                 default:
-                    goto ALL_VISIBILITY;
+                    break;
             }
-        } else {
-            ALL_VISIBILITY:
-            $news->withTrashed();
         }
-
         return $news->orderBy('id', 'DESC')->paginate(10);
     }
 

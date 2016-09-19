@@ -37,13 +37,9 @@ class ProjectRespository implements ProjectRespositoryInterface
                     $projects->onlyTrashed();
                     break;
                 default:
-                    goto ALL_VISIBILITY;
+                    break;
             }
-        } else {
-            ALL_VISIBILITY:
-            $projects->withTrashed();
         }
-
         return $projects->orderBy('id', 'DESC')->paginate($pageSize);
     }
 
