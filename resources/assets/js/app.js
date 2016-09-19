@@ -76,16 +76,16 @@ if ($.browser.mobile) {
 else {
   initVideoBG();
 
-  //设置图片类的二级导航
-  $(".nav-sub-list>.nav-sub-list-wrapper>.nav-sub-list-body .nav-sub-image").hover(function () {
-    var el = $(this).find("img")[0];
-    var hoverImage = el.src.split('.png')[0] + "-hover.png";
-    el.src = hoverImage;
-  }, function () {
-    var el = $(this).find("img")[0];
-    var image = el.src.replace("-hover", "");
-    el.src = image;
-  })
+  // //设置图片类的二级导航
+  // $(".nav-sub-list>.nav-sub-list-wrapper>.nav-sub-list-body .nav-sub-image").hover(function () {
+  //   var el = $(this).find("img")[0];
+  //   var hoverImage = el.src.split('.png')[0] + "-hover.png";
+  //   el.src = hoverImage;
+  // }, function () {
+  //   var el = $(this).find("img")[0];
+  //   var image = el.src.replace("-hover", "");
+  //   el.src = image;
+  // })
 }
 
 var newsWidget = new NewsWidget();
@@ -161,14 +161,14 @@ function refreshAll() {
   //endreigon
 
 
-  $(".js-top-nav").click(function () {
-    var subNavName = $(this).data('sub-nav');
-    $('#' + subNavName).show();
-  })
-
-  $(".nav-sub-list").click(function () {
-    $(this).hide();
-  })
+  // $(".js-top-nav").click(function () {
+  //   var subNavName = $(this).data('sub-nav');
+  //   $('#' + subNavName).show();
+  // })
+  //
+  // $(".nav-sub-list").click(function () {
+  //   $(this).hide();
+  // })
 
   //产品详情页样式处理
   function setProductDetailSize() {

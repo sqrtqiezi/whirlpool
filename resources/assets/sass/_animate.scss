@@ -15,6 +15,11 @@
   animation-fill-mode: both;
 }
 
+.animated-slowly {
+  -webkit-animation-duration: 1.5s;
+  animation-duration: 1.5s;
+}
+
 @for $i from 1 through 20 {
   .animated-#{$i} {
     -webkit-animation-delay: .15s * $i; /* Chrome, Safari, Opera */
@@ -39,6 +44,25 @@
 .animated.bounceOut {
   -webkit-animation-duration: .75s;
   animation-duration: .75s;
+}
+
+@keyframes menuIn {
+  from {
+    bottom: -50em;
+  }
+
+  to {
+    bottom: 0;
+  }
+}
+
+.menuIn {
+  -webkit-animation-name: menuIn;
+  animation-name: menuIn;
+  -webkit-transition:bottom .3s ease-in-out;
+  -moz-transition:bottom .3s ease-in-out;
+  -o-transition:bottom .3s ease-in-out;
+  transition:bottom .3s ease-in-out;
 }
 
 @-webkit-keyframes bounce {
