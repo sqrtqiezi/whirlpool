@@ -16,7 +16,7 @@ class ProjectController extends Controller
     /**
      * 后台列表
      *
-     * @param \Illuminate\Http\Request                 $request
+     * @param \Illuminate\Http\Request $request
      *
      * @param \Whirlpool\Product\ProductTypeRepository $repository
      *
@@ -67,7 +67,6 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-
         $this->setPreviousUrl();
         return view('admin.project.edit', compact('project'));
     }
@@ -76,7 +75,7 @@ class ProjectController extends Controller
      * 修改
      *
      * @param \Whirlpool\Project\Requests\ProjectRequest $request
-     * @param \Whirlpool\Project\Entities\Project        $project
+     * @param \Whirlpool\Project\Entities\Project $project
      *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      * @internal param \App\Http\Controllers\Product $product
