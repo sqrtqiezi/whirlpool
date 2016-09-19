@@ -43,6 +43,11 @@ class ProductService
             $data['feature'] = $this->convertFeatureToArray($data['feature']);
         }
 
+        // filter specifications
+        $data['specification'] = isset($data['specification'])
+            ? array_filter($data['specification'], function($value){ return $value['value']; })
+            : [];
+
         return $product->update($data);
     }
 }
