@@ -92,6 +92,10 @@ function initVideoBG() {
     '" type="video/mp4"></video>');
 }
 
+function initScrollbar() {
+  jQuery('.scrollbar-macosx').scrollbar();
+}
+
 function refreshAll() {
   if (isInContent('content-home')) {
     newsWidget.refresh();
@@ -154,6 +158,7 @@ function refreshAll() {
     $(".detail.product-detail .product-detail-item").each(function () {
       $(this).height(height);
     })
+    initScrollbar();
     setTimeout(function () {
       elParent.show();
     }, 200)
@@ -292,6 +297,7 @@ function refreshAll() {
 
       $(window).resize(bindSize);
       bindSize();
+      initScrollbar();
 
       var target = $($('.scrollbar-macosx.scroll-content')[0]),
         duration = 1000;
@@ -317,9 +323,6 @@ function refreshAll() {
     }();
   }
 
-
-  //滚动条设置
-  jQuery('.scrollbar-macosx').scrollbar();
 }
 
 
