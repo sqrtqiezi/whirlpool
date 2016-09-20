@@ -160,28 +160,22 @@ function refreshAll() {
   })
   //endreigon
 
-
-  // $(".js-top-nav").click(function () {
-  //   var subNavName = $(this).data('sub-nav');
-  //   $('#' + subNavName).show();
-  // })
-  //
-  // $(".nav-sub-list").click(function () {
-  //   $(this).hide();
-  // })
-
-  //产品详情页样式处理
+  //产品详情页和关于我们页面设置高度
   function setProductDetailSize() {
     if ($.browser.mobile) return;
-
-    var height = $($(".detail.product-detail")[0]).height()
+    var elParent = $($(".detail.product-detail")[0]);
+    var height = elParent.height();
 
     $(".detail.product-detail .product-detail-item").each(function () {
       $(this).height(height);
     })
+    setTimeout(function () {
+      elParent.show();
+    }, 200)
   }
 
-  if ($('.details-content')[0] !== undefined) {
+  //产品详情页,为滚动条设置菜单
+  if ($('.details-content.content-product')[0] !== undefined && !$.browser.mobile) {
     setProductDetailSize();
     $(window).resize(setProductDetailSize);
 
@@ -217,6 +211,77 @@ function refreshAll() {
     })
   }
 
+  //关于我们页面,为滚动条设置菜单
+  if($('.details-content.content-about')[0] !== undefined && !$.browser.mobile) {
+    setProductDetailSize();
+    $(window).resize(setProductDetailSize);
+
+    var hash = window.location.hash,
+      oldActive;
+    if(_.isEmpty(hash)) {
+      oldActive = 'brand-info'
+    }
+    else {
+      oldActive = hash.substr(1, hash.length-1)
+    }
+
+
+    function changeActive(className) {
+      $('.details-nav .active').removeClass('active');
+      $('.details-nav .' + className).addClass('active');
+      oldActive = className;
+    }
+
+    var height1 = $('.scrollbar-macosx .brand-info').height();
+    var height2 = $('.scrollbar-macosx .brand-course').height() + height1;
+    var height3 = $('.scrollbar-macosx .brand-worth').height() + height2;
+    var height4 = $('.scrollbar-macosx .brand-honour').height() + height3;
+    var height5 = $('.scrollbar-macosx .brand-responsibility').height() + height4;
+
+    setTimeout(function () {
+      var scrollbar =  $($('.scrollbar-macosx.scroll-content')[0]);
+      if(oldActive === 'brand-info') {
+        changeActive('brand-info');
+      }
+      else if(oldActive === 'brand-course') {
+        changeActive('brand-course');
+        scrollbar.scrollTop(height1);
+      }
+      else if(oldActive === 'brand-worth') {
+        changeActive('brand-worth');
+        scrollbar.scrollTop(height2);
+      }
+      else if(oldActive === 'brand-honour') {
+        changeActive('brand-honour');
+        scrollbar.scrollTop(height3);
+      }
+      else {
+        changeActive('brand-responsibility');
+        scrollbar.scrollTop(height4);
+      }
+
+      $('.scrollbar-macosx.scroll-content').scroll(function () {
+        var current = $(this).scrollTop();
+        if (current < height1) {
+          changeActive('brand-info');
+        }
+        else if (current >= height1 && current < height2) {
+          changeActive('brand-course');
+        }
+        else if (current >= height2 && current < height3) {
+          changeActive('brand-worth');
+        }
+        else if (current >= height3 && current < height4) {
+          changeActive('brand-honour');
+        }
+        else {
+          changeActive('brand-responsibility');
+        }
+      })
+    }, 500)
+
+  }
+
 
   //工程案例页面处理
   if ($(".content.content-projects")[0] !== undefined && !$.browser.mobile) {
@@ -230,41 +295,8 @@ function refreshAll() {
         $($(".grid-cell.grid-cell-no-6 .project-wrapper")[0]).width(width * 3);
     }
 
-
     $(window).resize(bindSize);
-
     bindSize();
-  }
-
-  //关于我们页面处理
-  function godetail(id) {
-    $('.details-content .detail').each(function () {
-      $(this).hide()
-    })
-    $($('.detail.' + id)[0]).show()
-
-    var activeLi = $('.details-nav li.active')[0];
-
-    if (activeLi !== undefined) {
-      $(activeLi).removeClass('active');
-    }
-
-    activeLi = $('.details-nav a[data-detail-name="' + id + '"] > li')[0];
-    if (activeLi !== undefined)
-      $(activeLi).addClass('active');
-  }
-
-  $('.js-details').click(function () {
-    var id = $(this).data('detail-name');
-    godetail(id);
-  })
-
-  if ($(".content-about")[0] !== undefined) {
-    var url = window.location.hash
-    var id = url.split("#")[1];
-    if (id === undefined)
-      id = 'brand-info';
-    godetail(id);
   }
 }
 

@@ -1,7 +1,7 @@
 @extends('layouts.base')
 
 @section('content')
-    <div class="details-content">
+    <div class="details-content content-product">
         @include('layouts/mobile_top')
         <div class="mobile-detail only-mobile">
             <section class="title">
