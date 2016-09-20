@@ -201,17 +201,17 @@ function refreshAll() {
   }
 
   //关于我们页面,为滚动条设置菜单
-  if($('.details-content.content-about')[0] !== undefined && !$.browser.mobile) {
+  if ($('.details-content.content-about')[0] !== undefined && !$.browser.mobile) {
     setProductDetailSize();
     $(window).resize(setProductDetailSize);
 
     var hash = window.location.hash,
       oldActive;
-    if(_.isEmpty(hash)) {
+    if (_.isEmpty(hash)) {
       oldActive = 'brand-info'
     }
     else {
-      oldActive = hash.substr(1, hash.length-1)
+      oldActive = hash.substr(1, hash.length - 1)
     }
 
 
@@ -228,19 +228,19 @@ function refreshAll() {
     var height5 = $('.scrollbar-macosx .brand-responsibility').height() + height4;
 
     setTimeout(function () {
-      var scrollbar =  $($('.scrollbar-macosx.scroll-content')[0]);
-      if(oldActive === 'brand-info') {
+      var scrollbar = $($('.scrollbar-macosx.scroll-content')[0]);
+      if (oldActive === 'brand-info') {
         changeActive('brand-info');
       }
-      else if(oldActive === 'brand-course') {
+      else if (oldActive === 'brand-course') {
         changeActive('brand-course');
         scrollbar.scrollTop(height1);
       }
-      else if(oldActive === 'brand-worth') {
+      else if (oldActive === 'brand-worth') {
         changeActive('brand-worth');
         scrollbar.scrollTop(height2);
       }
-      else if(oldActive === 'brand-honour') {
+      else if (oldActive === 'brand-honour') {
         changeActive('brand-honour');
         scrollbar.scrollTop(height3);
       }
@@ -275,6 +275,9 @@ function refreshAll() {
   //工程案例页面处理
   if ($(".content.content-projects")[0] !== undefined && !$.browser.mobile) {
     +function () {
+
+      var elWidths = [];
+
       function bindSize() {
         var height = $($(".grid-cell.grid-cell-no-6")[0]).height();
         $(".project-item > img").each(function () {
@@ -283,7 +286,9 @@ function refreshAll() {
 
         var wrapperWidth = 0;
         $(".content.content-projects .grid-cell.grid-cell-no-6 .project-item").each(function () {
-          wrapperWidth += $(this).width();
+          elWidths.push(wrapperWidth);
+          var width = $(this).width();
+          wrapperWidth += width;
         })
         $($(".grid-cell.grid-cell-no-6 .project-wrapper")[0]).width(wrapperWidth);
       }
@@ -291,14 +296,26 @@ function refreshAll() {
       $(window).resize(bindSize);
       bindSize();
 
-      var target = $($('.scrollbar-macosx.scroll-content')[0]);
+      var target = $($('.scrollbar-macosx.scroll-content')[0]),
+        duration = 1000;
       $(".nav-page-next").click(function () {
-        target.animate({ scrollLeft: target.scrollLeft() + 300 }, 500 );
+        var currentLeft = target.scrollLeft();
+        for (var i = 0, iMax = elWidths.length; i < iMax; i++) {
+          if (currentLeft < elWidths[i]) {
+            target.animate({scrollLeft: elWidths[i]}, duration);
+            break;
+          }
+        }
       })
 
-
       $(".nav-page-prev").click(function () {
-        target.animate({ scrollLeft: target.scrollLeft() - 300 }, 500 );
+        var currentLeft = target.scrollLeft();
+        for (var i = elWidths.length - 1, iMin = -1; i > iMin; i--) {
+          if (currentLeft > elWidths[i]) {
+            target.animate({scrollLeft: elWidths[i]}, duration);
+            break;
+          }
+        }
       })
     }();
   }
