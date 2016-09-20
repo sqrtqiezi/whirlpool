@@ -4042,7 +4042,7 @@ nav.nav-list {
       color: white; }
 
 .detail.brand-worth {
-  padding: 20% 0; }
+  padding-top: 20%; }
   .detail.brand-worth .detail-body {
     display: inline-block;
     text-align: center;
@@ -4081,7 +4081,6 @@ nav.nav-list {
     padding: 0 20%; }
   .detail.brand-honour .detail-body {
     display: block;
-    min-width: 90em;
     padding: 0 3em; }
     .detail.brand-honour .detail-body > div {
       width: 90em;
@@ -4229,7 +4228,7 @@ nav.nav-list {
     width: 70em; } }
 
 .detail.brand-responsibility {
-  padding-top: 2em; }
+  padding-top: 6em; }
   .detail.brand-responsibility h1 {
     position: relative;
     margin-bottom: 2em; }

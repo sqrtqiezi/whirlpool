@@ -9,7 +9,7 @@
                 <span class="sub-title">百年惠而浦</span>
             </section>
         </div>
-        <div class="detail product-detail bounceInLeft animated" style="display: none">
+        <div class="detail product-detail bounceInLeft animated">
             <div class="scrollbar-macosx">
                 <div id="brand-info" class="detail product-detail-item brand-info pull-left">
                     <div class="detail-hero"></div>
