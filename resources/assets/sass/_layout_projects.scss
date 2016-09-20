@@ -32,8 +32,7 @@
       top: 0;
       width: 99%;
       height: 98%;
-      padding: 20% 2em;
-      z-index: 100;
+      z-index: $zindex-popover2;
 
       &::after {
         content: "";
@@ -52,7 +51,7 @@
 
       span.title, span.content {
         display: inline-block;
-        position: absolute;
+        position: relative;
         z-index: 100;
         padding: 0 30px;
         width: 100%;
@@ -62,13 +61,14 @@
       span.title {
         color: white;
         font-size: 2em;
-        top: 20%;
+        padding-top: 2em;
+        height: 30%;
       }
 
       span.content {
         color: white;
         font-size: .8em;
-        top: 35%;
+        height: 70%;
       }
     }
 

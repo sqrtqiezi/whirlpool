@@ -281,7 +281,7 @@ function refreshAll() {
       function bindSize() {
         var height = $($(".grid-cell.grid-cell-no-6")[0]).height();
         $(".project-item > img").each(function () {
-          $(this).height(height - 2);
+          $(this).height(height -2);
         });
 
         var wrapperWidth = 0;
@@ -291,6 +291,7 @@ function refreshAll() {
           wrapperWidth += width;
         })
         $($(".grid-cell.grid-cell-no-6 .project-wrapper")[0]).width(wrapperWidth);
+        $($(".grid-cell.grid-cell-no-6 .project-wrapper")[0]).height(height);
       }
 
       $(window).resize(bindSize);
