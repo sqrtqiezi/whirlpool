@@ -38,13 +38,13 @@
             </div>
         </div>
         <div class="grid-cell grid-cell-no-16 only-desktop">
-            <a data-pjax href="{{ route('projects') }}" class="nav-page-prev"></a>
+            <a href="javascript:;" class="nav-page-prev"></a>
         </div>
         <div class="grid-cell grid-cell-no-17 only-desktop"></div>
         <div class="grid-cell grid-cell-no-18 only-desktop"></div>
         <div class="grid-cell grid-cell-no-19 only-desktop"></div>
         <div class="grid-cell grid-cell-no-20 only-desktop">
-            <a data-pjax href="{{ route('projects') }}" class="nav-page-next"></a>
+            <a href="javascript:;" class="nav-page-next"></a>
         </div>
         @include('layouts/mobile_footer')
     </div>

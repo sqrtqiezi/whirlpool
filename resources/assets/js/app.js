@@ -75,17 +75,6 @@ if ($.browser.mobile) {
 }
 else {
   initVideoBG();
-
-  // //设置图片类的二级导航
-  // $(".nav-sub-list>.nav-sub-list-wrapper>.nav-sub-list-body .nav-sub-image").hover(function () {
-  //   var el = $(this).find("img")[0];
-  //   var hoverImage = el.src.split('.png')[0] + "-hover.png";
-  //   el.src = hoverImage;
-  // }, function () {
-  //   var el = $(this).find("img")[0];
-  //   var image = el.src.replace("-hover", "");
-  //   el.src = image;
-  // })
 }
 
 var newsWidget = new NewsWidget();
@@ -285,18 +274,33 @@ function refreshAll() {
 
   //工程案例页面处理
   if ($(".content.content-projects")[0] !== undefined && !$.browser.mobile) {
-    function bindSize() {
-      var height = $($(".grid-cell.grid-cell-no-6")[0]).height();
-      $(".project-item > img").each(function () {
-        $(this).height(height - 2);
-      })
-      var width = $($(".content.content-projects .grid-cell.grid-cell-no-6 .project-item")[0]).width();
-      if (width !== 0)
-        $($(".grid-cell.grid-cell-no-6 .project-wrapper")[0]).width(width * 3);
-    }
+    +function () {
+      function bindSize() {
+        var height = $($(".grid-cell.grid-cell-no-6")[0]).height();
+        $(".project-item > img").each(function () {
+          $(this).height(height - 2);
+        });
 
-    $(window).resize(bindSize);
-    bindSize();
+        var wrapperWidth = 0;
+        $(".content.content-projects .grid-cell.grid-cell-no-6 .project-item").each(function () {
+          wrapperWidth += $(this).width();
+        })
+        $($(".grid-cell.grid-cell-no-6 .project-wrapper")[0]).width(wrapperWidth);
+      }
+
+      $(window).resize(bindSize);
+      bindSize();
+
+      var target = $($('.scrollbar-macosx.scroll-content')[0]);
+      $(".nav-page-next").click(function () {
+        target.animate({ scrollLeft: target.scrollLeft() + 300 }, 500 );
+      })
+
+
+      $(".nav-page-prev").click(function () {
+        target.animate({ scrollLeft: target.scrollLeft() - 300 }, 500 );
+      })
+    }();
   }
 }
 
