@@ -147,12 +147,12 @@
     & > .contact-info {
       display: inline-block;
       width: 100%;
-      padding-top: .6em;
+      padding-top: 1em;
       text-align: center;
       &> a {
         display: inline-block;
-        width: 1.5em;
-        height: 1.5em;
+        width: 2em;
+        height: 2em;
         float: none;
       }
     }
@@ -164,7 +164,7 @@
       & > span {
         width: 100%;
         padding-left: 1em;
-        text-align: left;
+        text-align: center;
       }
     }
   }

@@ -151,7 +151,10 @@ function refreshAll() {
 
   //产品详情页和关于我们页面设置高度
   function setProductDetailSize() {
-    if ($.browser.mobile) return;
+    if ($.browser.mobile) {
+      initScrollbar();
+      return;
+    }
     var elParent = $($(".detail.product-detail")[0]);
     var height = elParent.height();
 
@@ -202,7 +205,7 @@ function refreshAll() {
   }
 
   //关于我们页面,为滚动条设置菜单
-  if ($('.details-content.content-about')[0] !== undefined && !$.browser.mobile) {
+  if ($('.details-content.content-about')[0] !== undefined) {
     setProductDetailSize();
     $(window).resize(setProductDetailSize);
 

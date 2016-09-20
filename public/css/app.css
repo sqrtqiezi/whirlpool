@@ -3026,12 +3026,12 @@ div#bg-video-wrap {
     .footer-info.only-mobile > .contact-info {
       display: inline-block;
       width: 100%;
-      padding-top: .6em;
+      padding-top: 1em;
       text-align: center; }
       .footer-info.only-mobile > .contact-info > a {
         display: inline-block;
-        width: 1.5em;
-        height: 1.5em;
+        width: 2em;
+        height: 2em;
         float: none; }
     .footer-info.only-mobile > .content-info {
       width: 100%;
@@ -3040,7 +3040,7 @@ div#bg-video-wrap {
       .footer-info.only-mobile > .content-info > span {
         width: 100%;
         padding-left: 1em;
-        text-align: left; } }
+        text-align: center; } }
 
 .main .content.content-products {
   padding-right: 0;
@@ -3621,10 +3621,9 @@ a.life-item {
     float: none;
     margin: 0 2em; }
   .title {
-    margin-top: 2em;
     position: relative; }
   .widget {
-    height: 40vh; }
+    height: 35vh; }
     .widget .news-image:hover {
       background-size: cover; }
     .widget .news-image span {
