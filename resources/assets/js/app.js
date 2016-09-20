@@ -93,13 +93,9 @@ function initVideoBG() {
 }
 
 function refreshAll() {
-  //滚动条设置
-  jQuery('.scrollbar-macosx').scrollbar();
-
   if (isInContent('content-home')) {
     newsWidget.refresh();
   }
-
 
   if (isInContent('content-products') || isInContent('content-category')) {
     $('.product-item').each(function () {
@@ -320,6 +316,10 @@ function refreshAll() {
       })
     }();
   }
+
+
+  //滚动条设置
+  jQuery('.scrollbar-macosx').scrollbar();
 }
 
 
