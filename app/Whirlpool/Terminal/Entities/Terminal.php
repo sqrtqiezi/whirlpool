@@ -41,14 +41,4 @@ class Terminal extends Model implements HasPresenter
     {
         return TerminalPresenter::class;
     }
-
-    /**
-     * 省份
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
-     */
-    public function location()
-    {
-        return $this->belongsToMany(Location::class);
-    }
 }

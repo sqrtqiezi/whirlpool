@@ -16,12 +16,7 @@ class Kernel extends ConsoleKernel
      *
      * @var array
      */
-    protected $commands = [
-        CreateAdminCommand::class,
-        DeleteAdminCommand::class,
-        ChangeAdminPasswordCommand::class,
-        ChangeAdminEmailCommand::class,
-    ];
+    protected $commands = [];
 
     /**
      * Define the application's command schedule.
