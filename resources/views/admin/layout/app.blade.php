@@ -8,7 +8,7 @@
 			{{--Page Header--}}
 			{{--<small>Optional description</small>--}}
 		{{--</h1>--}}
-		 {!! \Breadcrumbs::render() !!}
+		 {!! \Breadcrumbs::renderIfExists() !!}
 	</section>
 
 	<!-- Main content -->

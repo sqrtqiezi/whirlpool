@@ -2,6 +2,10 @@
 
 namespace App\Console;
 
+use App\Console\Commands\ChangeAdminEmailCommand;
+use App\Console\Commands\ChangeAdminPasswordCommand;
+use App\Console\Commands\CreateAdminCommand;
+use App\Console\Commands\DeleteAdminCommand;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -13,7 +17,10 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        // Commands\Inspire::class,
+        CreateAdminCommand::class,
+        DeleteAdminCommand::class,
+        ChangeAdminPasswordCommand::class,
+        ChangeAdminEmailCommand::class,
     ];
 
     /**

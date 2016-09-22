@@ -128,12 +128,12 @@ desired effect
 							</li>
 							<!-- Menu Footer-->
 							<li class="user-footer">
-								{{--<div class="pull-left">--}}
-								{{--<a href="#" class="btn btn-default btn-flat">Profile</a>--}}
-								{{--</div>--}}
+								<div class="pull-left">
+								<a href="{!! route('panel.reset-password') !!}" class="btn btn-default btn-flat">修改密码</a>
+								</div>
 								<div class="pull-right">
 									<a href="{!! url('panel/logout') !!}"
-									   class="btn btn-default btn-flat">Sign out</a>
+									   class="btn btn-default btn-flat">退出登录</a>
 								</div>
 							</li>
 						</ul>

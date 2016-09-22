@@ -8,6 +8,28 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class PasswordController extends Controller
 {
+    /**
+     * @var string 重设邮件标题
+     */
+    protected $subject = '您的管理后台密码重设链接';
+
+    /**
+     * @var string 重设邮件模版
+     */
+    protected $linkRequestView = 'admin.auth.email';
+
+    /**
+     * @var string 点击重设连接后，修改页面模版位置
+     */
+    protected $resetView = 'admin.auth.reset';
+
+    /**
+     * 重设成功后跳转
+     *
+     * @var string
+     */
+    protected $redirectPath = '/panel/news';
+
     /*
     |--------------------------------------------------------------------------
     | Password Reset Controller
@@ -22,36 +44,44 @@ class PasswordController extends Controller
     use ResetsPasswords;
 
     /**
-     * Create a new password controller instance.
+     * 验证回显
      *
-     * @return void
+     * @return array
      */
-    public function __construct()
+    protected function getResetValidationMessages()
     {
-        $this->middleware($this->guestMiddleware());
+        return [
+            'required'  => ':attribute必须输入',
+            'min'       => ':attribute的长度至少为 :min',
+            'confirmed' => '两次:attribute必须输入相同',
+        ];
     }
 
     /**
-     * 禁用重设密码
+     * 验证属性别名
+     *
+     * @return array
      */
-    public function showResetForm()
+    protected function getResetValidationCustomAttributes()
     {
-        throw new NotFoundHttpException();
+        return [
+            'email'    => '电子邮箱',
+            'password' => '密码',
+            'token'    => '会话串',
+        ];
     }
 
     /**
-     * 禁用重设密码
+     * Get the response for after a successful password reset.
+     *
+     * @param  string $response
+     *
+     * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function sendResetLinkEmail()
+    protected function getResetSuccessResponse($response)
     {
-        throw new NotFoundHttpException();
-    }
+        alert()->success('', '重设密码成功');
 
-    /**
-     * 禁用重设密码
-     */
-    public function reset()
-    {
-        throw new NotFoundHttpException();
+        return redirect($this->redirectPath())->with('status', trans($response));
     }
 }

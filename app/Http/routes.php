@@ -18,7 +18,19 @@ $router->group([
     'prefix' => 'panel',
 ], function () use ($router) {
     // 登录
-    $router->auth();
+    // Authentication Routes...
+    $this->get('login', 'Auth\AuthController@showLoginForm');
+    $this->post('login', 'Auth\AuthController@login');
+    $this->get('logout', 'Auth\AuthController@logout');
+
+    //// Registration Routes...
+    //$this->get('register', 'Auth\AuthController@showRegistrationForm');
+    //$this->post('register', 'Auth\AuthController@register');
+
+    // Password Reset Routes...
+    $this->get('password/reset/{token?}', 'Auth\PasswordController@showResetForm')->name('panel.reset-password');
+    $this->post('password/email', 'Auth\PasswordController@sendResetLinkEmail');
+    $this->post('password/reset', 'Auth\PasswordController@reset');
     // 登录后
     $router->group(['middleware' => 'auth'], function () use ($router) {
         // 首页

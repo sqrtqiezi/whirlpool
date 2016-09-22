@@ -134,3 +134,9 @@ $b->register('panel.product-type.edit', function ($breadcrumbs, $id) {
     $breadcrumbs->push('编辑', route('panel.product-type.edit', ['id' => $id]));
 });
 
+$b->register('panel.reset-password', function ($breadcrumbs) {
+    /** @var \DaveJamesMiller\Breadcrumbs\Generator $breadcrumbs */
+    $breadcrumbs->parent('panel.index');
+    $breadcrumbs->push('修改密码', route('panel.reset-password'));
+});
+
