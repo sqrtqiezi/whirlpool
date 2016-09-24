@@ -1,7 +1,10 @@
 @extends('admin.layout.app')
 
 @include('admin.components.alert')
+
 @include('admin.components.image-upload')
+
+@include('admin.components.datepicker')
 
 @section('header')
 	@include('UEditor::head')

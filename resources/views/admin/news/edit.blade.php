@@ -1,7 +1,11 @@
 @extends('admin.layout.app')
 
 @include('admin.components.alert')
+
 @include('admin.components.image-upload')
+
+@include('admin.components.datepicker')
+
 
 @section('header')
 	@include('UEditor::head')
@@ -16,7 +20,8 @@
 			{{--</div>--}}
 			<!-- /.box-header -->
 
-				<form class="form-horizontal" action="{!! route('panel.news.update', $news->id) !!}"
+				<form class="form-horizontal"
+				      action="{!! route('panel.news.update', $news->id) !!}"
 				      method="post">
 					<input type="hidden" name="_method" value="patch">
 					@include('admin.news.form')

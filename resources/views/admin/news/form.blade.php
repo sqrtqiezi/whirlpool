@@ -31,6 +31,17 @@
 		</div>
 		{{-- /.分类 --}}
 
+		{{-- 发布日期 --}}
+		<div
+				class="form-group">
+			<label for="inputEmail3" class="col-sm-2 control-label">发布日期</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control"
+				       placeholder="发布日期" name="created_at" value="{!! $news->created_at or old('created_at') !!}" id="created-at" style="z-index: 9999;">
+			</div>
+		</div>
+		{{-- /.发布日期 --}}
+
 		{{-- 标题 --}}
 		<div
 				class="form-group {!! $titleError = $errors->has('title') ? 'has-error' : null !!}">

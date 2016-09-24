@@ -2,10 +2,12 @@
 	@parent
 	<link rel="stylesheet" href="{!! asset('adminlte/css/jquery.fileupload.css') !!}">
 	<link rel="stylesheet" href="{!! asset('adminlte/fancybox/jquery.fancybox.css') !!}">
-@append
+@stop
 
 @section('script-in-footer')
+	5555555555555555
 	@parent
+	6666666666666
 	<script src="{!! asset('adminlte/js/jquery.ui.widget.js') !!}"></script>
 	<script src="{!! asset('adminlte/js/jquery.fileupload.js') !!}"></script>
 	<script src="{!! asset('adminlte/fancybox/jquery.fancybox.js') !!}"></script>
@@ -70,4 +72,4 @@
 			});
 		});
 	</script>
-@append
+@stop

@@ -2,6 +2,7 @@
 
 namespace Whirlpool\News\Entities;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use McCool\LaravelAutoPresenter\HasPresenter;
@@ -12,16 +13,15 @@ class News extends Model implements HasPresenter
     /**
      * 公司内讯
      */
-    const TYPE_COMPANY   = 1;
+    const TYPE_COMPANY = 1;
     /**
      * 媒体报道
      */
-    const TYPE_MEDIA     = 2;
+    const TYPE_MEDIA = 2;
     /**
      * 促销活动
      */
     const TYPE_PROMOTION = 4;
-
     /**
      * 软删除 mixin
      */
@@ -32,16 +32,19 @@ class News extends Model implements HasPresenter
      *
      * @var array
      */
-    protected $fillable = ['title', 'date', 'content', 'type', 'is_stick', 'thumbnail'];
+    protected $fillable = ['title', 'date', 'content', 'type', 'is_stick', 'thumbnail', 'created_at'];
 
     /**
-     * 类型转换
+     * 创建日期类型转换
      *
-     * @var array
+     * @param $date
+     *
+     * @return void
      */
-    protected $casts = [
-        'date' => 'date',
-    ];
+    public function setCreatedAtAttribute($date)
+    {
+        $this->attributes['created_at'] = Carbon::createFromFormat('Y-m-d', trim($date));
+    }
 
     /**
      * 定义 presenter 类
