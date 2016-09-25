@@ -30,6 +30,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
 		-->
 		<link rel="stylesheet"
 		      href="{!! asset('adminlte/css/skins/skin-blue.min.css') !!}">
+		<style rel="stylesheet" type="text/css">
+			.datepicker {
+				z-index: 999 !important;
+			}
+		</style>
 @show
 
 @section('script-in-header')
@@ -44,26 +49,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 	@yield('header')
 </head>
-<!--
-BODY TAG OPTIONS:
-=================
-Apply one or more of the following classes to get the
-desired effect
-|---------------------------------------------------------|
-| SKINS         | skin-blue                               |
-|               | skin-black                              |
-|               | skin-purple                             |
-|               | skin-yellow                             |
-|               | skin-red                                |
-|               | skin-green                              |
-|---------------------------------------------------------|
-|LAYOUT OPTIONS | fixed                                   |
-|               | layout-boxed                            |
-|               | layout-top-nav                          |
-|               | sidebar-collapse                        |
-|               | sidebar-mini                            |
-|---------------------------------------------------------|
--->
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 
@@ -71,11 +56,13 @@ desired effect
 	<header class="main-header">
 
 		<!-- Logo -->
-		<a href="index2.html" class="logo">
+		<a href="{{ route('home') }}" class="logo">
 			<!-- mini logo for sidebar mini 50x50 pixels -->
-			<span class="logo-mini"><b>A</b>LT</span>
+			<span class="logo-mini"><b>W</b></span>
 			<!-- logo for regular state and mobile devices -->
-			<span class="logo-lg"><b>Admin</b>LTE</span>
+			<span class="logo-lg">
+				<img style="width: 100px;" src="{{ asset('images/logo.png') }}" alt="">
+			</span>
 		</a>
 
 		<!-- Header Navbar -->
@@ -111,20 +98,6 @@ desired effect
 									<small>{{ app('auth')->user()->updated_at }}</small>
 								</p>
 							</li>
-							<!-- Menu Body -->
-						{{--<li class="user-body">--}}
-						{{--<div class="row">--}}
-						{{--<div class="col-xs-4 text-center">--}}
-						{{--<a href="#">Followers</a>--}}
-						{{--</div>--}}
-						{{--<div class="col-xs-4 text-center">--}}
-						{{--<a href="#">Sales</a>--}}
-						{{--</div>--}}
-						{{--<div class="col-xs-4 text-center">--}}
-						{{--<a href="#">Friends</a>--}}
-						{{--</div>--}}
-						{{--</div>--}}
-						<!-- /.row -->
 							</li>
 							<!-- Menu Footer-->
 							<li class="user-footer">
@@ -157,27 +130,9 @@ desired effect
 				</div>
 				<div class="pull-left info">
 					<p style="padding: 10px 0;">{{ app('auth')->user()->name }}</p>
-					<!-- Status -->
-					{{--<a href="#"><i class="fa fa-circle text-success"></i> Online</a>--}}
 				</div>
 			</div>
-
-			{{--<!-- search form (Optional) -->--}}
-			{{--<form action="#" method="get" class="sidebar-form">--}}
-				{{--<div class="input-group">--}}
-					{{--<input type="text" name="q" class="form-control"--}}
-					       {{--placeholder="Search...">--}}
-					{{--<span class="input-group-btn">--}}
-                {{--<button type="submit" name="search" id="search-btn"--}}
-                        {{--class="btn btn-flat"><i class="fa fa-search"></i>--}}
-                {{--</button>--}}
-              {{--</span>--}}
-				{{--</div>--}}
-			{{--</form>--}}
-			<!-- /.search form -->
-
-			<!-- Sidebar Menu -->
-		@include('admin.layout.sidebar')
+        @include('admin.layout.sidebar')
 		<!-- /.sidebar-menu -->
 		</section>
 		<!-- /.sidebar -->
