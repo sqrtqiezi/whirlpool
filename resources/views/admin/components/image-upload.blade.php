@@ -5,9 +5,7 @@
 @stop
 
 @section('script-in-footer')
-	5555555555555555
 	@parent
-	6666666666666
 	<script src="{!! asset('adminlte/js/jquery.ui.widget.js') !!}"></script>
 	<script src="{!! asset('adminlte/js/jquery.fileupload.js') !!}"></script>
 	<script src="{!! asset('adminlte/fancybox/jquery.fancybox.js') !!}"></script>
