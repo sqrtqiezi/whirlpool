@@ -1,6 +1,6 @@
 require('./bootstrap');
 var NewsWidget = require('./NewsWidget');
-
+var cloneDeep = require('lodash.clonedeep');
 
 //region pjax 相关逻辑
 if ($.support.pjax) {
@@ -26,12 +26,15 @@ function hideItemsAndPjax(event) {
       .css('opacity', '0')
   })
   var duration = 150 * i + 1000;
-  var aEvent = _.cloneDeep(event);
-  event.preventDefault();
-
-  setTimeout(function () {
-    $.pjax.click(aEvent, {container: '#pjax-container'})
-  }, duration);
+  try {
+    var aEvent = cloneDeep(event);
+    event.preventDefault();
+    setTimeout(function () {
+      $.pjax.click(aEvent, {container: '#pjax-container'})
+    }, duration);
+  }catch (e) {
+    console.log(e);
+  }
 }
 
 //点击浏览器回退按钮,进入产品列表时,移除关闭的类
@@ -211,7 +214,7 @@ function refreshAll() {
 
     var hash = window.location.hash,
       oldActive;
-    if (_.isEmpty(hash)) {
+    if (typeof hash === 'undefined' || hash === '') {
       oldActive = 'brand-info'
     }
     else {
