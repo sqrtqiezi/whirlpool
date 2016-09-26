@@ -96,7 +96,11 @@ function initVideoBG() {
 }
 
 function initScrollbar() {
-  jQuery('.scrollbar-macosx').scrollbar();
+  jQuery('.scrollbar-macosx').each(function(){
+    if($(this).hasClass('no-scrollbar-inmobile'))
+      return;
+    $(this).scrollbar();
+  });
 }
 
 function refreshAll() {
