@@ -26,7 +26,7 @@
     }
 
     .project-content {
-      display: none;
+      display: inline-block;
       position: absolute;
       left: 0;
       top: 0;
@@ -47,7 +47,6 @@
         z-index: 50;
         opacity: .6;
       }
-
 
       span.title, span.content {
         display: inline-block;
@@ -98,10 +97,13 @@
       }
 
       .project-content {
-        padding: 2em 2em;
-        span.title {
-          top: 1em;
+        padding: 1em 2em 0 2em;
+        span.title, span.content {
+          padding: 0 0;
           margin: 0 0;
+        }
+        span.content {
+          max-height: 60%;
         }
       }
     }

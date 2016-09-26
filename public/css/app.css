@@ -3316,7 +3316,7 @@ a.product-item {
     .main .content.content-projects .project-item:hover > .project-content {
       display: inline-block; }
     .main .content.content-projects .project-item .project-content {
-      display: none;
+      display: inline-block;
       position: absolute;
       left: 0;
       top: 0;
@@ -3367,10 +3367,12 @@ a.product-item {
       .main .content.content-projects .project-item img {
         height: 40vh; }
       .main .content.content-projects .project-item .project-content {
-        padding: 2em 2em; }
-        .main .content.content-projects .project-item .project-content span.title {
-          top: 1em;
-          margin: 0 0; } }
+        padding: 1em 2em 0 2em; }
+        .main .content.content-projects .project-item .project-content span.title, .main .content.content-projects .project-item .project-content span.content {
+          padding: 0 0;
+          margin: 0 0; }
+        .main .content.content-projects .project-item .project-content span.content {
+          max-height: 60%; } }
 
 .main .content.content-life,
 .main .content.content-stores,
