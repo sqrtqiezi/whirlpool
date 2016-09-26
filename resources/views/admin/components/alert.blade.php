@@ -6,7 +6,7 @@
 
 @section('script-in-header')
 	@parent
-	<script src="{!! asset('js/sweetalert.js') !!}"></script>
+	<script src="{!! asset('js/sweetalert.min.js') !!}"></script>
 @stop
 
 @section('script-in-footer')

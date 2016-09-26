@@ -19,7 +19,7 @@
 									<select class="form-control pull-right filter-select" title="选择分类"
 									        name="visibility">
 										<option value="0">按可见性</option>
-										<option value="2" {!! app('request')->get('visibility') == 2 ? ' selected' : null !!}>隐藏</option>
+										<option value="2" {!! app('request')->get('visibility') == 2 ? ' selected' : null !!}>已删除</option>
 										<option value="1" {!! app('request')->get('visibility') == 1 ? ' selected' : null !!}>可见</option>
 									</select>
 								</div>
@@ -97,7 +97,7 @@
 													method="post" class="inline">
 												{!! csrf_field()!!}
 												<button class="btn btn-xs btn-success inline"
-												        type="submit">设为可见
+												        type="submit">恢复
 												</button>
 											</form>
 										@else
@@ -108,7 +108,7 @@
 												<input type="hidden" name="_method" value="delete">
 												{!! csrf_field() !!}
 												<button class="btn btn-xs btn-danger inline"
-												        type="submit">设为隐藏
+												        type="submit">删除
 												</button>
 											</form>
 										@endif
