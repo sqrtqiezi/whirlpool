@@ -8,6 +8,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Whirlpool\Project\Entities\Project;
+use Whirlpool\Project\ProjectRepository;
 use Whirlpool\Project\ProjectRespository;
 use Whirlpool\Project\Requests\ProjectRequest;
 
@@ -16,13 +17,13 @@ class ProjectController extends Controller
     /**
      * 后台列表
      *
-     * @param \Illuminate\Http\Request $request
+     * @param \Illuminate\Http\Request             $request
      *
-     * @param \Whirlpool\Product\ProductTypeRepository $repository
+     * @param \Whirlpool\Project\ProjectRepository $repository
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function index(Request $request, ProjectRespository $repository)
+    public function index(Request $request, ProjectRepository $repository)
     {
         $projects = $repository->filter($request->all());
         $total = $repository->total();

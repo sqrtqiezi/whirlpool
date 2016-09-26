@@ -6,9 +6,10 @@
 
 namespace Whirlpool\Project;
 
+use Illuminate\Database\Eloquent\Collection;
 use Whirlpool\Project\Entities\Project;
 
-class ProjectRespository implements ProjectRespositoryInterface
+class ProjectRepository implements ProjectRepositoryInterface
 {
     /**
      *

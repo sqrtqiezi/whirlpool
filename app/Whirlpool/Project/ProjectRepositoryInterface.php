@@ -7,9 +7,10 @@
 namespace Whirlpool\Project;
 
 
+use Illuminate\Database\Eloquent\Collection;
 use Whirlpool\Contracts\RepositoryInterface;
 
-interface ProjectRespositoryInterface extends RepositoryInterface
+interface ProjectRepositoryInterface extends RepositoryInterface
 {
     /**
      *
