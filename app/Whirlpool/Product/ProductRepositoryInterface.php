@@ -3,8 +3,9 @@
 namespace Whirlpool\Product;
 
 use Illuminate\Support\Collection;
+use Whirlpool\Contracts\RepositoryInterface;
 
-interface ProductRepositoryInterface
+interface ProductRepositoryInterface extends RepositoryInterface
 {
     /**
      *

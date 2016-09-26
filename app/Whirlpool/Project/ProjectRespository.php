@@ -6,7 +6,6 @@
 
 namespace Whirlpool\Project;
 
-use Whirlpool\Contracts\RepositoryInterface;
 use Whirlpool\Project\Entities\Project;
 
 class ProjectRespository implements ProjectRespositoryInterface
@@ -31,9 +30,9 @@ class ProjectRespository implements ProjectRespositoryInterface
         // 可见性
         if (isset($criteria['visibility'])) {
             switch ($criteria['visibility']) {
-                case RepositoryInterface::VISIBLE:
+                case self::VISIBLE:
                     break;
-                case RepositoryInterface::INVISIBLE:
+                case self::INVISIBLE:
                     $projects->onlyTrashed();
                     break;
                 default:

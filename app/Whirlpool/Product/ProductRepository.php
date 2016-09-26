@@ -3,7 +3,6 @@
 namespace Whirlpool\Product;
 
 use Illuminate\Support\Collection;
-use Whirlpool\Contracts\RepositoryInterface;
 use Whirlpool\Product\Entities\Product;
 
 class ProductRepository implements ProductRepositoryInterface
@@ -32,9 +31,9 @@ class ProductRepository implements ProductRepositoryInterface
         // 可见性
         if (isset($criteria['visibility'])) {
             switch ($criteria['visibility']) {
-                case RepositoryInterface::VISIBLE:
+                case self::VISIBLE:
                     break;
-                case RepositoryInterface::INVISIBLE:
+                case self::INVISIBLE:
                     $news->onlyTrashed();
                     break;
                 default:

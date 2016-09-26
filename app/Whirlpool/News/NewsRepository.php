@@ -3,7 +3,6 @@
 namespace Whirlpool\News;
 
 use Illuminate\Support\Collection;
-use Whirlpool\Contracts\RepositoryInterface;
 use Whirlpool\News\Entities\News;
 
 class NewsRepository implements NewsRepositoryInterface
@@ -33,9 +32,9 @@ class NewsRepository implements NewsRepositoryInterface
         // 可见性
         if (isset($criteria['visibility'])) {
             switch ($criteria['visibility']) {
-                case RepositoryInterface::VISIBLE:
+                case self::VISIBLE:
                     break;
-                case RepositoryInterface::INVISIBLE:
+                case self::INVISIBLE:
                     $news->onlyTrashed();
                     break;
                 default:

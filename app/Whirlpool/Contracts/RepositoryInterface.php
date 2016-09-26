@@ -12,5 +12,4 @@ interface RepositoryInterface
      * 已删除
      */
     const INVISIBLE = 2;
-
 }

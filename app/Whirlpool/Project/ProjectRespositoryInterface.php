@@ -7,7 +7,9 @@
 namespace Whirlpool\Project;
 
 
-interface ProjectRespositoryInterface
+use Whirlpool\Contracts\RepositoryInterface;
+
+interface ProjectRespositoryInterface extends RepositoryInterface
 {
     /**
      *
