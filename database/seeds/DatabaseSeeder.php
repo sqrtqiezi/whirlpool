@@ -15,8 +15,8 @@ class DatabaseSeeder extends Seeder
 
         \App\User::create([
             'name' => 'admin',
-            'email' => '82011220@qq.com',
-            'password' => bcrypt('hahaha'),
+            'email' => 'admin@whirlpool.com.cn',
+            'password' => bcrypt('123456'),
         ]);
         $this->call('NewsTableSeeder');
         $this->call('LivesTableSeeder');

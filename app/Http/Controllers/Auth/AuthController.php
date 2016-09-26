@@ -24,6 +24,8 @@ class AuthController extends Controller
 
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
+    public $username = 'name';
+
     /**
      * 登录模版位置
      *

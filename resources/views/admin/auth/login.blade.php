@@ -34,18 +34,18 @@
 	<div class="login-box-body">
 		<form action="{!! url('panel/login') !!}" method="post">
 			{!! csrf_field() !!}
-			<div class="form-group has-feedback {!! $errors->has('email') ? ' has-error' : '' !!}">
-				<input type="email" class="form-control" placeholder="Email" name="email">
-				<span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-				@if($errors->has('email'))
-					<span class="help-block">邮箱或密码错误</span>
+			<div class="form-group has-feedback {!! $errors->has('name') ? ' has-error' : '' !!}">
+				<input type="text" class="form-control" placeholder="name" name="name">
+				<span class="glyphicon glyphicon-user form-control-feedback"></span>
+				@if($errors->has('name'))
+					<span class="help-block">用户名或密码错误</span>
 					@endif
 			</div>
 			<div class="form-group has-feedback {!! $error = $errors->has('password') ? ' has-error' : '' !!}">
 				<input type="password" class="form-control" placeholder="Password" name="password">
 				<span class="glyphicon glyphicon-lock form-control-feedback"></span>
 				@if($error)
-				<span class="help-block">邮箱或密码错误</span>
+				<span class="help-block">用户名或密码错误</span>
 					@endif
 			</div>
 			<div class="row">
