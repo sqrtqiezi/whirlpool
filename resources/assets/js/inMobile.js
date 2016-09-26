@@ -45,12 +45,11 @@
     ".detail.product-detail",
     ".content.content-news-detail"];
 
-  _.each(pages, function (page) {
+  for(let page in pages) {
     if($(page)[0] !== undefined) {
       $($(".scrollbar-macosx")[0]).removeClass('scrollbar-macosx');
     }
-  })
-
+  }
 
   $("#mobile-navigation .nav .has-expand").click(function () {
     var subName = $(this).data('sub-name');
@@ -67,4 +66,6 @@
     }
   })
 
+  var Elevator = require('./elevator');
+  new Elevator($('.main.wrapper'));
 }));
