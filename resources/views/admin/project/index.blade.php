@@ -20,7 +20,7 @@
                                         name="visibility">
                                     <option value="0">按可见性</option>
                                     <option value="2" {!! app('request')->get('visibility') == 2 ? ' selected' : null !!}>
-                                        隐藏
+                                        已删除
                                     </option>
                                     <option value="1" {!! app('request')->get('visibility') == 1 ? ' selected' : null !!}>
                                         可见
@@ -76,7 +76,7 @@
                                                   method="post" class="inline">
                                                 {!! csrf_field()!!}
                                                 <button class="btn btn-xs btn-success inline"
-                                                        type="submit">设为可见
+                                                        type="submit">恢复
                                                 </button>
                                             </form>
                                         @else
@@ -87,7 +87,7 @@
                                                 <input type="hidden" name="_method" value="delete">
                                                 {!! csrf_field() !!}
                                                 <button class="btn btn-xs btn-danger inline"
-                                                        type="submit">设为隐藏
+                                                        type="submit">删除
                                                 </button>
                                             </form>
                                         @endif
