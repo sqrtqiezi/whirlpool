@@ -4313,15 +4313,17 @@ nav.nav-list {
     padding: 0 5vh; }
   .detail.brand-honour .detail-body {
     padding: 0 0;
-    width: 100vh;
+    width: 100%;
     font-size: .8em; }
+    .detail.brand-honour .detail-body > div {
+      width: 100%; }
     .detail.brand-honour .detail-body .line-wrapper {
       width: 85em;
       padding-right: 15em; }
     .detail.brand-honour .detail-body .detail-item .item-body .item span {
       font-size: .8em; }
       .detail.brand-honour .detail-body .detail-item .item-body .item span.title {
-        font-size: 1em; }
+        font-size: .5em; }
   .detail.brand-responsibility {
     padding: 0 0; }
     .detail.brand-responsibility .detail-heading .sub-titles {

@@ -559,8 +559,12 @@
     }
     .detail-body {
       padding: 0 0;
-      width: 100vh;
+      width: 100%;
       font-size: .8em;
+
+      &>div {
+        width: 100%;
+      }
 
       .line-wrapper {
         width: 85em;
@@ -569,7 +573,7 @@
       .detail-item .item-body .item span {
         font-size: .8em;
         &.title {
-          font-size: 1em;
+          font-size: .5em;
         }
       ;
       }
