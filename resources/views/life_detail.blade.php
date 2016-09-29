@@ -22,7 +22,7 @@
                     <h1 class="news-detail-title">
                         {{ $life->title }}
                     </h1>
-                    <span>time: {{ $life->updated_at }}</span>
+                    <span>time: {{ $life->created_at }}</span>
                 </div>
                 <div class="news-detail-body">
                     <div class="scrollbar-macosx">

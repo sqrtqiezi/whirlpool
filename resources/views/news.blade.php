@@ -25,7 +25,7 @@
                              data-image="{{ $item->thumbnail }}">
                         </div>
                         <span>{{ $item->title }}
-                            <pre>time: {{ $item->updated_at }}</pre>
+                            <pre>time: {{ $item->created_at }}</pre>
                     </span>
                     </a>
                 @endif
