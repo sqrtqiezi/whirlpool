@@ -36,7 +36,7 @@ class HomeController extends Controller
     public function productCategory($id)
     {
         $productType = ProductType::findOrFail($id);
-        $products = Product::where('type_id', $id)->paginate(6);
+        $products = Product::where('type_id', $id)->orderBy('id', 'desc')->paginate(6);
 
         return view('category', compact('productType', 'products'));
     }
