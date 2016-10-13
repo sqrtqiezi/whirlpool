@@ -22,7 +22,7 @@ class Product extends Model implements HasPresenter
     protected $fillable = [
         'main_heading', 'sub_heading', 'type_id', 'background',
         'feature', 'spec_img_one', 'spec_img_two', 'specification', 'core_tech_title',
-        'core_tech_detail', 'detail',
+        'core_tech_detail', 'detail','sort'
     ];
 
     protected $casts = [

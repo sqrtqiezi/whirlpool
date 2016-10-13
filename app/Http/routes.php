@@ -47,6 +47,8 @@ $router->group([
             // 基本设置
             'site-config'     => 'SiteConfigController',
         ]);
+        // 产品排序
+        $router->post('product/resort', 'ProductController@resort')->name('panel.product.resort');
         // 恢复软删除
         $router->post('news/{news}/restore', 'NewsController@restore')->name('panel.news.restore');
         $router->post('life/{life}/restore', 'LifeController@restore')->name('panel.life.restore');

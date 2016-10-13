@@ -32,6 +32,10 @@ class ProductType extends Model implements HasPresenter
         return $this->hasMany(Product::class);
     }
 
+    public static function getDefaultProductType() {
+        return self::query()->first();
+    }
+
     /**
      * Get the presenter class.
      *

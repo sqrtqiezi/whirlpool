@@ -3,6 +3,7 @@
 namespace Whirlpool\Product;
 
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\DB;
 use Whirlpool\Contracts\RepositoryInterface;
 use Whirlpool\Product\Entities\Product;
 
@@ -41,7 +42,7 @@ class ProductRepository implements ProductRepositoryInterface
                     break;
             }
         }
-        return $news->orderBy('id', 'DESC')->paginate(10);
+        return $news->orderBy('sort')->orderBy('created_at', 'DESC')->get();
     }
 
     /**
@@ -52,5 +53,23 @@ class ProductRepository implements ProductRepositoryInterface
     public function total()
     {
         return Product::withTrashed()->count();
+    }
+
+    /**
+     * 更新排序
+     *
+     * @param $type
+     * @param array $sort
+     */
+    public function resort($type, array $sort)
+    {
+        DB::transaction(function () use ($type, $sort) {
+            $products = Product::query()->where('type_id', $type)->get();
+            foreach ($products as $product) {
+                $product->update([
+                    'sort' => $sort[$product->id]
+                ]);
+            }
+        });
     }
 }

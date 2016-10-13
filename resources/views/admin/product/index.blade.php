@@ -12,6 +12,12 @@
 						   href="{!! route('panel.product.create') !!}">创建产品</a>
 						<a class="btn btn-sm btn-info"
 						   href="{!! route('panel.product-type.index') !!}">产品分类管理</a>
+                        <form method="post" action="{!! route('panel.product.resort') !!}" style="display: inline-block;" class="form-inline" id="sort-form">
+                            {!! csrf_field() !!}
+                            <input type="hidden" id="product-ids" name="product-ids" value="[]">
+                            <input type="hidden" name="type" value="{!! $type !!}">
+                            <button id="btnUpdateSort" type="submit" class="btn btn-sm btn-success" disabled>更新排序</button>
+                        </form>
 
 						<div class="box-tools" style="top: 10px;">
 							{{-- 搜索 --}}
@@ -28,9 +34,8 @@
 								<div class="input-group input-group-sm">
 									<select class="form-control pull-right filter-select" title="选择分类"
 									        name="type">
-										<option value="0">按分类</option>
 										@foreach($types as $typeId => $typeName)
-											<option value="{!! $typeId !!}" {!! \Request::get('type') == $typeId ? ' selected' : '' !!}>{!! $typeName !!}</option>
+											<option value="{!! $typeId !!}" {!! $type == $typeId ? ' selected' : '' !!}>{!! $typeName !!}</option>
 											@endforeach
 									</select>
 								</div>
@@ -58,20 +63,29 @@
 							{{-- ./ 无信息 --}}
 						@else
 						<table class="table table-hover">
-							<tbody>
-							<tr>
-								<th>ID</th>
-								<th>分类</th>
-								<th>主标题</th>
-								<th>副标题</th>
-								<th>发布时间</th>
-								<th>最后编辑</th>
-								<th>操作</th>
-							</tr>
-
+                            <thead>
+                            <tr>
+                                <th style="text-align: center">排序</th>
+                                <th>ID</th>
+                                <th>分类</th>
+                                <th>主标题</th>
+                                <th>副标题</th>
+                                <th>发布时间</th>
+                                <th>最后编辑</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+							<tbody id="dnd">
 							@foreach($products as $product)
 								<tr>
-									<td>{!! $product->id !!}</td>
+                                    <td style="text-align: center">
+                                        <span class="sort-handle" style="display: inline-block;margin: 0 auto;cursor: pointer;">
+                                            <i class="fa fa-th-large" aria-hidden="true"></i>
+                                        </span>
+                                    </td>
+									<td class="js-product-id">
+                                        {!! $product->id !!}
+                                    </td>
 									<td><span class="badge bg-gray text-navy font-light">{!! $product->type->name !!}</span></td>
 									<td>{!! $product->main_heading !!}</td>
 									<td>{!! $product->sub_heading !!}</td>
@@ -110,21 +124,6 @@
 							@endif
 					</div>
 					<!-- /.box-body -->
-					{{-- box footer --}}
-					@if($total)
-					<div class="box-footer clearfix">
-						<div class="row">
-							<div class="col-md-6">
-								<span
-										style="display:inline-block;margin: 20px 0;">总数：{!! $products->total() !!}</span>
-							</div>
-							<div class="col-md-6">
-								<div class="pull-right">{!! $products->links() !!}</div>
-							</div>
-						</div>
-					</div>
-					@endif
-					{{-- /.box footer--}}
 				</div>
 				<!-- /.box -->
 		</div>
@@ -139,5 +138,19 @@
 				$('#filter-form').submit();
 			});
 		});
+
+        // var listWithHandle = document.getElementById('listWithHandle');
+        Sortable.create(dnd, {
+            animation: 150,
+            handle: '.sort-handle',
+            onUpdate: function () {
+                btnUpdateSort.disabled = false;
+                var ids = []
+                $("td.js-product-id").each(function () {
+                    ids.push($(this).text().trim())
+                })
+                $("#product-ids").val(ids)
+            }
+        })
 	</script>
 @endsection

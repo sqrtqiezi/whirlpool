@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Whirlpool\Product\Entities\Product;
 use Whirlpool\Product\Entities\ProductType;
+use Whirlpool\Product\ProductRepository;
 use Whirlpool\Product\ProductRepositoryInterface;
 use Whirlpool\Product\ProductService;
 use Whirlpool\Product\ProductTypeRepository;
@@ -27,12 +28,14 @@ class ProductController extends Controller
      */
     public function index(Request $request, ProductRepositoryInterface $repository)
     {
+        if(!isset($request['type']))
+            $request['type'] = ProductType::getDefaultProductType()->id;
         $total = $repository->total();
         $products = $repository->filter($request->all());
         $types = ProductType::pluck('name', 'id')->all();
+        $type = $request['type'];
 
-
-        return view('admin.product.index', compact('total', 'products', 'types'));
+        return view('admin.product.index', compact('total', 'products', 'types', 'type'));
     }
 
     /**
@@ -138,6 +141,29 @@ class ProductController extends Controller
         $product->restore();
 
         alert()->success('', '成功设为可见！');
+
+        return redirect()->back();
+    }
+
+    /**
+     * 设置排序
+     */
+    public function resort(Request $request, ProductRepositoryInterface $repository)
+    {
+        $ids = $request['product-ids'];
+        $type = $request['type'];
+        if(!isset($ids)) {
+            alert()->error('', '排序内容不可为空');
+        }
+        else {
+            $sort = [];
+            foreach (explode(',', $ids) as $index => $id) {
+                $sort[$id] = $index;
+            }
+
+            $repository->resort($type, $sort);
+            alert()->success('', '排序修改成功');
+        }
 
         return redirect()->back();
     }
