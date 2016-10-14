@@ -18,7 +18,7 @@
         </section>
         <section class="grid-cell grid-cell-no-3">
             <a data-pjax href="{{ route('category', 1) }}" class="product-item fadeIn animated animated-1" data-product-name="吸油烟机">
-                <img src="/images/product-akf808.png" alt="">
+                <img src="/images/product-xyyj.png" alt="">
                 <i class="fa fa-search" aria-hidden="true"></i>
             </a>
         </section>
@@ -91,8 +91,8 @@
             </a>
         </section>
         <section class="grid-cell grid-cell-no-18">
-            <a data-pjax href="{{ route('category', 11) }}" class="product-item fadeIn animated animated-11" data-product-name="干衣机">
-                <img src="/images/product-gyj.png" alt="">
+            <a data-pjax href="{{ route('category', 11) }}" class="product-item fadeIn animated animated-11" data-product-name="咖啡机">
+                <img src="/images/product-kfj.png" alt="">
                 <i class="fa fa-search" aria-hidden="true"></i>
             </a>
         </section>
