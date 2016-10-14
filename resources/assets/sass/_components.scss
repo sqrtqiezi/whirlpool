@@ -365,6 +365,7 @@ nav.nav-list {
   .nav-sub-list {
     display: inline-block;
     position: absolute;
+    left:0;
     width: 100%;
     text-align: center;
     bottom: $footer-height + 5px;

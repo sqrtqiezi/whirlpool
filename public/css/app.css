@@ -3078,9 +3078,9 @@ a.product-item {
     content: attr(data-product-name);
     display: inline-block;
     position: absolute;
-    width: 5em;
+    width: 6em;
     left: 50%;
-    margin-left: -2.5em;
+    margin-left: -3em;
     bottom: 10%;
     text-align: center;
     color: black;
@@ -3316,7 +3316,7 @@ a.product-item {
     .main .content.content-projects .project-item:hover > .project-content {
       display: inline-block; }
     .main .content.content-projects .project-item .project-content {
-      display: inline-block;
+      display: none;
       position: absolute;
       left: 0;
       top: 0;
@@ -3764,6 +3764,7 @@ nav.nav-list {
   nav.nav-list .nav-sub-list {
     display: inline-block;
     position: absolute;
+    left: 0;
     width: 100%;
     text-align: center;
     bottom: 55px;
