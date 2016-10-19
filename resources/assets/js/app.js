@@ -212,7 +212,7 @@ function refreshAll() {
   }
 
   //关于我们页面,为滚动条设置菜单
-  if ($('.details-content.content-about')[0] !== undefined) {
+  if ($('.details-content.content-about')[0] !== undefined && !$.browser.mobile) {
     setProductDetailSize();
     $(window).resize(setProductDetailSize);
 
@@ -260,7 +260,7 @@ function refreshAll() {
         scrollbar.scrollTop(height4);
       }
 
-      $('.scrollbar-macosx.scroll-content').scroll(function () {
+      $('.scrollbar-macosx').scroll(function () {
         var current = $(this).scrollTop();
         if (current < height1) {
           changeActive('brand-info');

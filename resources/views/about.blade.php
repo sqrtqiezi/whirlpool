@@ -10,7 +10,7 @@
             </section>
         </div>
         <div class="detail product-detail bounceInLeft animated">
-            <div class="scrollbar-macosx no-scrollbar-inmobile">
+            <div class="scrollbar-macosx">
                 <div id="brand-info" class="detail product-detail-item brand-info pull-left">
                     <div class="detail-hero"></div>
                     <div class="detail-body">
