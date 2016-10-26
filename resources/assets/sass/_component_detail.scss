@@ -913,7 +913,7 @@
   @media only screen and ( max-width: $mobile-width ) {
     .product-show {
       position: relative;
-      height: 50vh;
+      height: auto;
 
       .hero-image {
         width: 100%;

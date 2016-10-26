@@ -92,20 +92,20 @@
                             <span data-hover="新闻中心">新闻中心</span>
                         </a>
                         <div class="nav-sub-list">
-                        <ul class="menuIn animated">
-                            <li><a data-pjax
-                                   href="{{ route('news') }}?type={{ \Whirlpool\News\Entities\News::TYPE_COMPANY }}"
-                                   class="nav-sub-link nav-sub-text">企业内讯</a>
-                            </li>
-                            <li><a data-pjax
-                                   href="{{ route('news') }}?type={{ \Whirlpool\News\Entities\News::TYPE_MEDIA }}"
-                                   class="nav-sub-link nav-sub-text">媒体报道</a>
-                            </li>
-                            <li><a data-pjax
-                                   href="{{ route('news') }}?type={{ \Whirlpool\News\Entities\News::TYPE_PROMOTION }}"
-                                   class="nav-sub-link nav-sub-text">促销活动</a>
-                            </li>
-                        </ul>
+                            <ul class="menuIn animated">
+                                <li><a data-pjax
+                                       href="{{ route('news') }}?type={{ \Whirlpool\News\Entities\News::TYPE_COMPANY }}"
+                                       class="nav-sub-link nav-sub-text">企业内讯</a>
+                                </li>
+                                <li><a data-pjax
+                                       href="{{ route('news') }}?type={{ \Whirlpool\News\Entities\News::TYPE_MEDIA }}"
+                                       class="nav-sub-link nav-sub-text">媒体报道</a>
+                                </li>
+                                <li><a data-pjax
+                                       href="{{ route('news') }}?type={{ \Whirlpool\News\Entities\News::TYPE_PROMOTION }}"
+                                       class="nav-sub-link nav-sub-text">促销活动</a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </li>
@@ -177,12 +177,17 @@
 
 <div id="mobile-navigation">
     <nav class="nav">
+        <div class="mobile-top">
+            <div class="logo">
+                <img src="/images/logo.png" alt="">
+            </div>
+        </div>
         <ul>
             <li><a href="{{ route('home') }}">首页</a></li>
             <li><a href="{{ route('about') }}">关于我们</a></li>
             <li class="has-expand" data-sub-name="product-list">
-                <i class="fa fa-plus"></i>
                 <a href="javascript:;">厨房电器</a>
+                <i class="fa fa-plus"></i>
                 <ul id="product-sub-nav" class="nav-sub-list product-list">
                     <li><a href="{{ route('products') }}"><span>全部</span></a></li>
                     @foreach($productTypes as $type)
@@ -191,8 +196,8 @@
                 </ul>
             </li>
             <li class="has-expand" data-sub-name="news-list">
-                <i class="fa fa-plus"></i>
                 <a href="javascript:;">新闻中心</a>
+                <i class="fa fa-plus"></i>
                 <ul id="news-sub-nav" class="nav-sub-list news-list">
                     <li><a href="{{ route('news') }}"><span>全部</span></a></li>
                     <li>
@@ -208,8 +213,8 @@
             <li><a href="{{ route('projects') }}">工程案例</a></li>
             <li><a href="{{ route('stores') }}">终端形象</a></li>
             <li class="has-expand" data-sub-name="life-list">
-                <i class="fa fa-plus"></i>
                 <a href='javascript:;'>“会” 生活</a>
+                <i class="fa fa-plus"></i>
                 <ul id="life-sub-nav" class="nav-sub-list life-list">
                     <li><a href="{{ route('life') }}"><span>全部</span></a></li>
                     <li>

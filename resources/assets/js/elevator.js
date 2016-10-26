@@ -22,10 +22,8 @@
     this.target = $(target[0]);
 
     var body = $('body');
-    body.append("<div class='elevator' style='display: none;" +
-      "position: fixed; bottom: 3em; right: 1em; " +
-      "z-index: 99999; cursor: pointer;'>" +
-      "<i class='fa fa-caret-up' style='font-size: 2em;'></i>" +
+    body.append("<div class='elevator'>" +
+      "<i class='fa fa-angle-up'></i>" +
       "</div>");
 
     var elevator = this;
@@ -34,15 +32,15 @@
 
     this.elElevator = $($('.elevator'));
     this.elElevator.click(function () {
-      elevator.target.animate({ scrollTop: 0 }, '1500', 'swing');
+      elevator.target.animate({scrollTop: 0}, '1500', 'swing');
     })
 
     this.target.scroll(function (event) {
       var currentHeight = elevator.target.scrollTop();
-      if(currentHeight > elevator.maxHeight && !elevator.isShow) {
+      if (currentHeight > elevator.maxHeight && !elevator.isShow) {
         elevator.show();
       }
-      else if(currentHeight <= elevator.maxHeight && elevator.isShow) {
+      else if (currentHeight <= elevator.maxHeight && elevator.isShow) {
         elevator.hide();
       }
     });

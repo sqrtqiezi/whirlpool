@@ -15,9 +15,25 @@ a {
   text-decoration: none;
 }
 
-i.fa {
-  color: $brand-primary;
-  width: 1em;
+.elevator {
+  display: none;
+  position: fixed;
+  bottom: 2em;
+  right: 2em;
+  z-index: 99999;
+  cursor: pointer;
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  background-color: $brand-primary;
+
+  i.fa {
+    position: absolute;
+    left: .2em;
+    top: -.1em;
+    font-size: 2em;
+    color: white;
+  }
 }
 
 #pjax-container {
@@ -29,8 +45,7 @@ i.fa {
   padding-bottom: $footer-height;
 }
 
-
-@media only screen and ( max-width: $mobile-width ) {
+@media only screen and (max-width: $mobile-width) {
   //#pjax-container,
   //.main article{
   //  position: relative;
@@ -58,11 +73,10 @@ i.fa {
 @font-face {
   font-family: 'source-han-sans-cn';
   src: url('../fonts/KaiGenGothicSC-Normal.eot');
-  src:
-        url('../fonts/KaiGenGothicSC-Normal.eot?#font-spider') format('embedded-opentype'),
-        url('../fonts/KaiGenGothicSC-Normal.woff') format('woff'),
-        url('../fonts/KaiGenGothicSC-Normal.ttf') format('truetype'),
-        url('../fonts/KaiGenGothicSC-Normal.svg') format('svg');
+  src: url('../fonts/KaiGenGothicSC-Normal.eot?#font-spider') format('embedded-opentype'),
+  url('../fonts/KaiGenGothicSC-Normal.woff') format('woff'),
+  url('../fonts/KaiGenGothicSC-Normal.ttf') format('truetype'),
+  url('../fonts/KaiGenGothicSC-Normal.svg') format('svg');
   font-weight: normal;
   font-style: normal;
 }

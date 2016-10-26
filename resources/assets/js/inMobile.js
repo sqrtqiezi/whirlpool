@@ -26,6 +26,9 @@
     var $mainEl = $($('.main')[0]);
     $mainEl.css('position', 'fixed');
     $mainEl.css('overflow-y', 'hidden');
+
+    var $logoEl = $($('.grid-cell.mobile-top > .logo')[0]);
+    $logoEl.hide();
   }
 
   function closeMenu() {
@@ -35,6 +38,9 @@
     var $mainEl = $($('.main')[0]);
     $mainEl.css('overflow-y', 'visible');
     $mainEl.css('position', 'relative');
+
+    var $logoEl = $($('.grid-cell.mobile-top > .logo')[0]);
+    $logoEl.show();
   }
 
   $('#responsive-menu-button').click(expandMenu);
@@ -59,10 +65,17 @@
       faEl = $(this).find('.fa.fa-minus')[0];
       $(faEl).removeClass('fa-minus').addClass('fa-plus');
       $(subEl).hide();
+
+      $(this).nextAll().each(function () {
+        $(this).show()
+      })
     }
     else {
       $(faEl).removeClass('fa-plus').addClass('fa-minus');
       $(subEl).show();
+      $(this).nextAll().each(function () {
+        $(this).hide()
+      })
     }
   })
 
