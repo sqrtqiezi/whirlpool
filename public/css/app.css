@@ -3661,10 +3661,18 @@ a.life-item {
   position: absolute;
   left: 0;
   top: 0;
-  z-index: 200;
-  overflow-y: visible; }
+  z-index: 200; }
+  #mobile-navigation .mobile-top {
+    position: fixed;
+    z-index: 400;
+    opacity: .9;
+    height: 5em;
+    background-color: black; }
   #mobile-navigation nav {
     background-color: black;
+    position: absolute;
+    overflow-y: visible;
+    top: 5em;
     opacity: .8;
     display: inline-block;
     padding-bottom: 10em;
@@ -3689,9 +3697,10 @@ a.life-item {
         line-height: 2em;
         color: white; }
       #mobile-navigation ul li.has-expand {
-        margin-left: .75em; }
+        margin-left: 1.25em; }
         #mobile-navigation ul li.has-expand .fa {
-          font-size: 1.5em;
+          margin-left: 1em;
+          font-size: 1em;
           color: white; }
   #mobile-navigation .nav-close {
     width: 1.5em;
@@ -3703,10 +3712,10 @@ a.life-item {
     display: none;
     position: relative;
     margin-bottom: .5em;
+    left: -1.25em;
     top: 0; }
     #mobile-navigation .nav-sub-list > li {
-      text-align: left;
-      padding-left: 38%;
+      text-align: center;
       font-size: .8em;
       height: 1em;
       line-height: 1.2em; }

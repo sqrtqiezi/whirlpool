@@ -205,10 +205,20 @@
   left: 0;
   top: 0;
   z-index: $zindex-popover;
-  overflow-y: visible;
+
+  .mobile-top {
+    position: fixed;
+    z-index: $zindex-popover3;
+    opacity: .9;
+    height: 5em;
+    background-color: black;
+  }
 
   nav {
     background-color: black;
+    position: absolute;
+    overflow-y: visible;
+    top: 5em;
     opacity: .8;
     display: inline-block;
     padding-bottom: 10em;
@@ -241,9 +251,10 @@
       }
 
       &.has-expand {
-        margin-left: .75em;
+        margin-left: 1.25em;
         .fa {
-          font-size: 1.5em;
+          margin-left: 1em;
+          font-size: 1em;
           color: white;
         }
       }
@@ -262,11 +273,11 @@
     display: none;
     position: relative;
     margin-bottom: .5em;
+    left: -1.25em;
     top: 0;
 
     & > li {
-      text-align: left;
-      padding-left: 38%;
+      text-align: center;
       font-size: .8em;
       height: 1em;
       line-height: 1.2em;

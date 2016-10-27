@@ -176,12 +176,13 @@
 </div>
 
 <div id="mobile-navigation">
-    <nav class="nav">
-        <div class="mobile-top">
-            <div class="logo">
-                <img src="/images/logo.png" alt="">
-            </div>
+    <div class="mobile-top">
+        <div id="responsive-menu-close" class="nav-close"></div>
+        <div class="logo">
+            <img src="/images/logo.png" alt="">
         </div>
+    </div>
+    <nav class="nav">
         <ul>
             <li><a href="{{ route('home') }}">首页</a></li>
             <li><a href="{{ route('about') }}">关于我们</a></li>
@@ -190,7 +191,7 @@
                 <i class="fa fa-plus"></i>
                 <ul id="product-sub-nav" class="nav-sub-list product-list">
                     <li><a href="{{ route('products') }}"><span>全部</span></a></li>
-                    @foreach($productTypes as $type)
+                    @foreach($productTypes->reverse() as $type)
                         <li><a href="{{ route('category', $type->id) }}"><span>{{ $type->name }}</span></a></li>
                     @endforeach
                 </ul>
@@ -232,7 +233,6 @@
             <li><a href="{{ route('contact') }}">联系我们</a></li>
         </ul>
     </nav>
-    <div id="responsive-menu-close" class="nav-close"></div>
 </div>
 
 </body>
