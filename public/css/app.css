@@ -3050,11 +3050,15 @@ div#bg-video-wrap {
     .footer-info.only-mobile > .content-info {
       width: 100%;
       padding-top: 0;
+      font-size: 20px;
       padding-bottom: .6em; }
       .footer-info.only-mobile > .content-info > span {
+        font-size: 3vh;
         width: 100%;
         padding-left: 1em;
-        text-align: center; } }
+        text-align: center; }
+      .footer-info.only-mobile > .content-info span.company-right {
+        font-size: 2vh; } }
 
 .main .content.content-products {
   padding-right: 0;

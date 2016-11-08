@@ -160,11 +160,17 @@
     & > .content-info {
       width: 100%;
       padding-top: 0;
+      font-size: 20px;
       padding-bottom: .6em;
       & > span {
+        font-size: 3vh;
         width: 100%;
         padding-left: 1em;
         text-align: center;
+      }
+
+      span.company-right {
+        font-size: 2vh;
       }
     }
   }
