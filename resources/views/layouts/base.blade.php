@@ -177,62 +177,110 @@
 
 <div id="mobile-navigation">
     <div class="mobile-top">
-        <div id="responsive-menu-close" class="nav-close"></div>
+        <i class="fa fa-close btn-menu js-btn-menu-close animated bounceInDown"></i>
+        <i class="fa fa-chevron-left btn-menu js-btn-menu-back animated bounceInDown" style="display: none"></i>
         <div class="logo">
             <img src="/images/logo.png" alt="">
         </div>
     </div>
-    <nav class="nav">
+    <nav class="nav animated bounceInDown">
         <ul>
-            <li><a href="{{ route('home') }}">首页</a></li>
-            <li><a href="{{ route('about') }}">关于我们</a></li>
+            <li>
+                <i class="fa fa-home link-icon" aria-hidden="true"></i>
+                <a href="{{ route('home') }}">首页</a>
+            </li>
+            <li>
+                <i class="fa fa-question link-icon" aria-hidden="true"></i>
+                <a href="{{ route('about') }}">关于我们</a>
+            </li>
             <li class="has-expand" data-sub-name="product-list">
+                <i class="fa fa-beer link-icon" aria-hidden="true"></i>
                 <a href="javascript:;">厨房电器</a>
-                <i class="fa fa-plus"></i>
-                <ul id="product-sub-nav" class="nav-sub-list product-list">
-                    <li><a href="{{ route('products') }}"><span>全部</span></a></li>
-                    @foreach($productTypes->reverse() as $type)
-                        <li><a href="{{ route('category', $type->id) }}"><span>{{ $type->name }}</span></a></li>
-                    @endforeach
-                </ul>
+                <i class="fa fa-chevron-right link-expand"></i>
             </li>
             <li class="has-expand" data-sub-name="news-list">
+                <i class="fa fa-newspaper-o link-icon" aria-hidden="true"></i>
                 <a href="javascript:;">新闻中心</a>
-                <i class="fa fa-plus"></i>
-                <ul id="news-sub-nav" class="nav-sub-list news-list">
-                    <li><a href="{{ route('news') }}"><span>全部</span></a></li>
-                    <li>
-                        <a href="{{ route('news') }}?type={{ \Whirlpool\News\Entities\News::TYPE_COMPANY }}"><span>企业内讯</span></a>
-                    </li>
-                    <li>
-                        <a href="{{ route('news') }}?type={{ \Whirlpool\News\Entities\News::TYPE_MEDIA }}"><span>媒体报道</span></a>
-                    </li>
-                    <li><a href="{{ route('news') }}?type={{ \Whirlpool\News\Entities\News::TYPE_PROMOTION }}"><span>促销活动</span></a>
-                    </li>
-                </ul>
+                <i class="fa fa-chevron-right link-expand"></i>
             </li>
-            <li><a href="{{ route('projects') }}">工程案例</a></li>
-            <li><a href="{{ route('stores') }}">终端形象</a></li>
+            <li>
+                <i class="fa fa-truck link-icon" aria-hidden="true"></i>
+                <a href="{{ route('projects') }}">工程案例</a>
+            </li>
+            <li>
+                <i class="fa fa-stack-overflow link-icon" aria-hidden="true"></i>
+                <a href="{{ route('stores') }}">终端形象</a>
+            </li>
             <li class="has-expand" data-sub-name="life-list">
+                <i class="fa fa-home link-icon" aria-hidden="true"></i>
                 <a href='javascript:;'>“会” 生活</a>
-                <i class="fa fa-plus"></i>
-                <ul id="life-sub-nav" class="nav-sub-list life-list">
-                    <li><a href="{{ route('life') }}"><span>全部</span></a></li>
-                    <li>
-                        <a href="{{ route('life') }}?type={{ \Whirlpool\Life\Entities\Life::TYPE_PEOPLE }}"><span>厨电创想人</span></a>
-                    </li>
-                    <li><a href="{{ route('life') }}?type={{ \Whirlpool\Life\Entities\Life::TYPE_APPLIANCE }}"><span>"懂"厨电</span></a>
-                    </li>
-                    <li><a href="{{ route('life') }}?type={{ \Whirlpool\Life\Entities\Life::TYPE_DELICIOUS }}"><span>"品"美味</span></a>
-                    </li>
-                    <li>
-                        <a href="{{ route('life') }}?type={{ \Whirlpool\Life\Entities\Life::TYPE_KITCHEN }}"><span>"绘"厨房</span></a>
-                    </li>
-                </ul>
+                <i class="fa fa-chevron-right link-expand"></i>
             </li>
-            <li><a href="{{ route('contact') }}">联系我们</a></li>
+            <li>
+                <i class="fa fa-phone link-icon" aria-hidden="true"></i>
+                <a href="{{ route('contact') }}">联系我们</a>
+            </li>
         </ul>
     </nav>
+    <div>
+        {{--"会生活"的子菜单--}}
+        <ul id="life-sub-nav" class="nav-sub-list life-list animated bounceInRight">
+            <li>
+                <i class="fa fa-home link-icon" aria-hidden="true"></i>
+                <a href="{{ route('life') }}"><span>全部</span></a>
+            </li>
+            <li>
+                <i class="fa fa-user link-icon" aria-hidden="true"></i>
+                <a href="{{ route('life') }}?type={{ \Whirlpool\Life\Entities\Life::TYPE_PEOPLE }}"><span>厨电创想人</span></a>
+            </li>
+            <li>
+                <i class="fa fa-tachometer link-icon" aria-hidden="true"></i>
+                <a href="{{ route('life') }}?type={{ \Whirlpool\Life\Entities\Life::TYPE_APPLIANCE }}"><span>"懂"厨电</span></a>
+            </li>
+            <li>
+                <i class="fa fa-spoon link-icon" aria-hidden="true"></i>
+                <a href="{{ route('life') }}?type={{ \Whirlpool\Life\Entities\Life::TYPE_DELICIOUS }}"><span>"品"美味</span></a>
+            </li>
+            <li>
+                <i class="fa fa-pencil-square-o link-icon" aria-hidden="true"></i>
+                <a href="{{ route('life') }}?type={{ \Whirlpool\Life\Entities\Life::TYPE_KITCHEN }}"><span>"绘"厨房</span></a>
+            </li>
+        </ul>
+
+        {{--厨房电器的子菜单--}}
+        <ul id="product-sub-nav" class="nav-sub-list nav-list-col-2 product-list animated bounceInRight">
+            <li>
+                <i class="fa fa-beer link-icon" aria-hidden="true"></i>
+                <a href="{{ route('products') }}"><span>全部</span></a>
+            </li>
+            @foreach($productTypes->reverse() as $type)
+                <li>
+                    <span class="link-icon sub-link-icon category-{{ $type->id }}"></span>
+                    <a href="{{ route('category', $type->id) }}"><span>{{ $type->name }}</span></a>
+                </li>
+            @endforeach
+        </ul>
+
+        {{--新闻中心的子菜单--}}
+        <ul id="news-sub-nav" class="nav-sub-list news-list animated bounceInRight">
+            <li>
+                <i class="fa fa-newspaper-o link-icon" aria-hidden="true"></i>
+                <a href="{{ route('news') }}"><span>全部</span></a>
+            </li>
+            <li>
+                <i class="fa fa-users link-icon" aria-hidden="true"></i>
+                <a href="{{ route('news') }}?type={{ \Whirlpool\News\Entities\News::TYPE_COMPANY }}"><span>企业内讯</span></a>
+            </li>
+            <li>
+                <i class="fa fa-camera link-icon" aria-hidden="true"></i>
+                <a href="{{ route('news') }}?type={{ \Whirlpool\News\Entities\News::TYPE_MEDIA }}"><span>媒体报道</span></a>
+            </li>
+            <li>
+                <i class="fa fa-bullhorn link-icon" aria-hidden="true"></i>
+                <a href="{{ route('news') }}?type={{ \Whirlpool\News\Entities\News::TYPE_PROMOTION }}"><span>促销活动</span></a>
+            </li>
+        </ul>
+    </div>
 </div>
 
 </body>

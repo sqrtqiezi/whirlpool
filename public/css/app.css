@@ -1106,45 +1106,19 @@ a {
   animation-name: bounceInLeft; }
 
 @-webkit-keyframes bounceInRight {
-  from, 60%, 75%, 90%, to {
-    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
   from {
     opacity: 0;
     -webkit-transform: translate3d(3000px, 0, 0);
     transform: translate3d(3000px, 0, 0); }
-  60% {
-    opacity: 1;
-    -webkit-transform: translate3d(-25px, 0, 0);
-    transform: translate3d(-25px, 0, 0); }
-  75% {
-    -webkit-transform: translate3d(10px, 0, 0);
-    transform: translate3d(10px, 0, 0); }
-  90% {
-    -webkit-transform: translate3d(-5px, 0, 0);
-    transform: translate3d(-5px, 0, 0); }
   to {
     -webkit-transform: none;
     transform: none; } }
 
 @keyframes bounceInRight {
-  from, 60%, 75%, 90%, to {
-    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
   from {
     opacity: 0;
     -webkit-transform: translate3d(3000px, 0, 0);
     transform: translate3d(3000px, 0, 0); }
-  60% {
-    opacity: 1;
-    -webkit-transform: translate3d(-25px, 0, 0);
-    transform: translate3d(-25px, 0, 0); }
-  75% {
-    -webkit-transform: translate3d(10px, 0, 0);
-    transform: translate3d(10px, 0, 0); }
-  90% {
-    -webkit-transform: translate3d(-5px, 0, 0);
-    transform: translate3d(-5px, 0, 0); }
   to {
     -webkit-transform: none;
     transform: none; } }
@@ -1262,20 +1236,12 @@ a {
   animation-name: bounceOutDown; }
 
 @-webkit-keyframes bounceOutLeft {
-  20% {
-    opacity: 1;
-    -webkit-transform: translate3d(20px, 0, 0);
-    transform: translate3d(20px, 0, 0); }
   to {
     opacity: 0;
     -webkit-transform: translate3d(-2000px, 0, 0);
     transform: translate3d(-2000px, 0, 0); } }
 
 @keyframes bounceOutLeft {
-  20% {
-    opacity: 1;
-    -webkit-transform: translate3d(20px, 0, 0);
-    transform: translate3d(20px, 0, 0); }
   to {
     opacity: 0;
     -webkit-transform: translate3d(-2000px, 0, 0);
@@ -1286,20 +1252,12 @@ a {
   animation-name: bounceOutLeft; }
 
 @-webkit-keyframes bounceOutRight {
-  20% {
-    opacity: 1;
-    -webkit-transform: translate3d(-20px, 0, 0);
-    transform: translate3d(-20px, 0, 0); }
   to {
     opacity: 0;
     -webkit-transform: translate3d(2000px, 0, 0);
     transform: translate3d(2000px, 0, 0); } }
 
 @keyframes bounceOutRight {
-  20% {
-    opacity: 1;
-    -webkit-transform: translate3d(-20px, 0, 0);
-    transform: translate3d(-20px, 0, 0); }
   to {
     opacity: 0;
     -webkit-transform: translate3d(2000px, 0, 0);
@@ -1310,30 +1268,16 @@ a {
   animation-name: bounceOutRight; }
 
 @-webkit-keyframes bounceOutUp {
-  20% {
-    -webkit-transform: translate3d(0, -10px, 0);
-    transform: translate3d(0, -10px, 0); }
-  40%, 45% {
-    opacity: 1;
-    -webkit-transform: translate3d(0, 20px, 0);
-    transform: translate3d(0, 20px, 0); }
   to {
     opacity: 0;
-    -webkit-transform: translate3d(0, -2000px, 0);
-    transform: translate3d(0, -2000px, 0); } }
+    -webkit-transform: translate3d(0, -100px, 0);
+    transform: translate3d(0, -100px, 0); } }
 
 @keyframes bounceOutUp {
-  20% {
-    -webkit-transform: translate3d(0, -10px, 0);
-    transform: translate3d(0, -10px, 0); }
-  40%, 45% {
-    opacity: 1;
-    -webkit-transform: translate3d(0, 20px, 0);
-    transform: translate3d(0, 20px, 0); }
   to {
     opacity: 0;
-    -webkit-transform: translate3d(0, -2000px, 0);
-    transform: translate3d(0, -2000px, 0); } }
+    -webkit-transform: translate3d(0, -100px, 0);
+    transform: translate3d(0, -100px, 0); } }
 
 .bounceOutUp {
   -webkit-animation-name: bounceOutUp;
@@ -3019,9 +2963,11 @@ div#bg-video-wrap {
       position: absolute;
       display: inline-block;
       width: 8em;
+      height: auto;
       top: 1em;
       left: 50%;
-      margin-left: -4em; }
+      margin-left: -4em;
+      z-index: 400; }
       .mobile-top .logo img {
         width: 8em; }
   .mobile-detail {
@@ -3662,6 +3608,8 @@ a.life-item {
   display: none;
   width: 100%;
   height: 100%;
+  background-color: black;
+  opacity: .9;
   position: absolute;
   left: 0;
   top: 0;
@@ -3672,14 +3620,32 @@ a.life-item {
     opacity: .9;
     height: 5em;
     background-color: black; }
-  #mobile-navigation nav {
+  #mobile-navigation .link-icon, #mobile-navigation .btn-menu {
+    display: inline-block;
+    width: 1.6em;
+    height: 1.6em;
+    border-radius: 0.8em;
+    background-color: #ECB02E;
+    font-size: 1em;
+    color: black;
+    line-height: 1.6em;
+    text-align: center; }
+  #mobile-navigation .link-expand {
+    color: white;
+    margin-left: .5em; }
+  #mobile-navigation .btn-menu {
     background-color: black;
+    position: fixed;
+    color: white;
+    top: 1em;
+    left: 1em;
+    font-size: 1.5em; }
+  #mobile-navigation nav, #mobile-navigation .nav-sub-list {
     position: absolute;
     overflow-y: visible;
     top: 5em;
-    opacity: .8;
     display: inline-block;
-    padding-bottom: 10em;
+    padding-left: 2em;
     width: 100%;
     height: auto;
     min-height: 100%; }
@@ -3695,17 +3661,13 @@ a.life-item {
     #mobile-navigation ul li {
       display: inline-block;
       width: 100%;
-      text-align: center; }
+      height: 3em;
+      line-height: 3em;
+      text-align: left; }
       #mobile-navigation ul li a {
-        font-size: 1.5em;
-        line-height: 2em;
-        color: white; }
-      #mobile-navigation ul li.has-expand {
-        margin-left: 1.25em; }
-        #mobile-navigation ul li.has-expand .fa {
-          margin-left: 1em;
-          font-size: 1em;
-          color: white; }
+        font-size: 1em;
+        color: white;
+        margin-left: .5em; }
   #mobile-navigation .nav-close {
     width: 1.5em;
     height: 1.5em;
@@ -3714,15 +3676,57 @@ a.life-item {
     left: 3em; }
   #mobile-navigation .nav-sub-list {
     display: none;
-    position: relative;
-    margin-bottom: .5em;
-    left: -1.25em;
-    top: 0; }
+    position: absolute;
+    padding-top: 1em; }
     #mobile-navigation .nav-sub-list > li {
-      text-align: center;
-      font-size: .8em;
-      height: 1em;
-      line-height: 1.2em; }
+      display: inline-block; }
+      #mobile-navigation .nav-sub-list > li .sub-link-icon {
+        display: inline-block;
+        background-size: cover; }
+        #mobile-navigation .nav-sub-list > li .sub-link-icon:before {
+          content: '\015'; }
+        #mobile-navigation .nav-sub-list > li .sub-link-icon.category-1 {
+          background-image: url(/images/category-1-black.png); }
+        #mobile-navigation .nav-sub-list > li .sub-link-icon.category-2 {
+          background-image: url(/images/category-2-black.png); }
+        #mobile-navigation .nav-sub-list > li .sub-link-icon.category-3 {
+          background-image: url(/images/category-3-black.png); }
+        #mobile-navigation .nav-sub-list > li .sub-link-icon.category-4 {
+          background-image: url(/images/category-4-black.png); }
+        #mobile-navigation .nav-sub-list > li .sub-link-icon.category-5 {
+          background-image: url(/images/category-5-black.png); }
+        #mobile-navigation .nav-sub-list > li .sub-link-icon.category-6 {
+          background-image: url(/images/category-6-black.png); }
+        #mobile-navigation .nav-sub-list > li .sub-link-icon.category-7 {
+          background-image: url(/images/category-7-black.png); }
+        #mobile-navigation .nav-sub-list > li .sub-link-icon.category-8 {
+          background-image: url(/images/category-8-black.png); }
+        #mobile-navigation .nav-sub-list > li .sub-link-icon.category-9 {
+          background-image: url(/images/category-9-black.png); }
+        #mobile-navigation .nav-sub-list > li .sub-link-icon.category-10 {
+          background-image: url(/images/category-10-black.png); }
+        #mobile-navigation .nav-sub-list > li .sub-link-icon.category-11 {
+          background-image: url(/images/category-11-black.png); }
+        #mobile-navigation .nav-sub-list > li .sub-link-icon.category-12 {
+          background-image: url(/images/category-12-black.png); }
+        #mobile-navigation .nav-sub-list > li .sub-link-icon.category-13 {
+          background-image: url(/images/category-13-black.png); }
+        #mobile-navigation .nav-sub-list > li .sub-link-icon.category-14 {
+          background-image: url(/images/category-14-black.png); }
+        #mobile-navigation .nav-sub-list > li .sub-link-icon.category-15 {
+          background-image: url(/images/category-15-black.png); }
+        #mobile-navigation .nav-sub-list > li .sub-link-icon.category-16 {
+          background-image: url(/images/category-16-black.png); }
+        #mobile-navigation .nav-sub-list > li .sub-link-icon.category-17 {
+          background-image: url(/images/category-17-black.png); }
+        #mobile-navigation .nav-sub-list > li .sub-link-icon.category-18 {
+          background-image: url(/images/category-18-black.png); }
+        #mobile-navigation .nav-sub-list > li .sub-link-icon.category-19 {
+          background-image: url(/images/category-19-black.png); }
+        #mobile-navigation .nav-sub-list > li .sub-link-icon.category-20 {
+          background-image: url(/images/category-20-black.png); }
+    #mobile-navigation .nav-sub-list.nav-list-col-2 > li {
+      width: 40%; }
 
 .only-mobile .widget-navbar {
   width: auto;
