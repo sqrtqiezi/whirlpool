@@ -103,10 +103,23 @@
   $('.js-btn-menu-close').click(closeMenu);
   $('.js-btn-menu-back').click(backMenu);
 
+
+
+  var slider = $('.brand-honour-slider').unslider();
+  console.log(slider);
+
+  /**
+   * 返回页面头部
+   */
   var Elevator = require('./elevator');
   new Elevator($('.main.wrapper'));
 
 
+  /**
+   * 页面需要设置滚动条的部分
+   *
+   * @type {string[]}
+   */
   var pages = [".content.content-projects",
     ".detail.product-detail",
     ".content.content-news-detail"];

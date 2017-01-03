@@ -1,4 +1,5 @@
 require('./bootstrap');
+require('./components/HorizontalTimeline');
 var NewsWidget = require('./NewsWidget');
 var cloneDeep = require('lodash.clonedeep');
 
@@ -71,8 +72,18 @@ $(document).on("pjax:complete", function (event) {
 })
 //endregion
 
+/**
+ * 首页新闻小窗口
+ */
+var newsWidget = new NewsWidget();
+$(window).resize(newsWidget.setNewsImageSize);
+setTimeout(newsWidget.autoChangeSlider.bind(newsWidget), newsWidget.interval);
+newsWidget.setNewsImageSize()
+newsWidget.refresh();
 
-//手机端的逻辑代码
+/**
+ * 手机端的逻辑代码
+ */
 if ($.browser.mobile) {
   require('./inMobile');
 }
@@ -80,11 +91,10 @@ else {
   initVideoBG();
 }
 
-var newsWidget = new NewsWidget();
-$(window).resize(newsWidget.setNewsImageSize);
-setTimeout(newsWidget.autoChangeSlider.bind(newsWidget), newsWidget.interval);
-newsWidget.setNewsImageSize()
-newsWidget.refresh();
+
+/**
+ * 刷新页面
+ */
 refreshAll();
 
 

@@ -1,0 +1,287 @@
+// colors
+
+$color-1: #383838; // Mine Shaft
+$color-2: grey; // Highland
+$color-3: #ffffff; // White
+$color-4: #f8f8f8; // Alabaster
+
+// breakpoints
+
+$S: 480px;
+$M: 768px;
+$L: 1100px;
+
+// media queries
+
+@mixin MQ($canvas) {
+  @if $canvas == S {
+    @media only screen and (min-width: $S) {
+      @content;
+    }
+  } @else if $canvas == M {
+    @media only screen and (min-width: $M) {
+      @content;
+    }
+  } @else if $canvas == L {
+    @media only screen and (min-width: $L) {
+      @content;
+    }
+  }
+}
+
+// center vertically and/or horizontally an absolute positioned element
+
+@mixin center($xy:xy) {
+  @if $xy == xy {
+    left: 50%;
+    top: 50%;
+    bottom: auto;
+    right: auto;
+    @include transform(translateX(-50%) translateY(-50%));
+  } @else if $xy == x {
+    left: 50%;
+    right: auto;
+    @include transform(translateX(-50%));
+  } @else if $xy == y {
+    top: 50%;
+    bottom: auto;
+    @include transform(translateY(-50%));
+  }
+}
+
+#brand-honour .detail-body {
+  text-align: center;
+}
+
+// Component Style
+.cd-horizontal-timeline {
+  opacity: 1;
+  margin: auto;
+  width: 90%;
+  display: inline-block;
+  position: relative;
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  -webkit-transition: opacity 0.2s;
+  -moz-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+
+  &::before {
+    /* never visible - this is used in jQuery to check the current MQ */
+    content: 'mobile';
+    display: none;
+  }
+
+  &.loaded {
+    /* show the timeline after events position has been set (using JavaScript) */
+    opacity: 1;
+  }
+
+  .timeline {
+    position: absolute;
+    display: inline-block;
+    min-width: 80%;
+    margin-top: 10em;
+    border: solid $brand-grey 1px;
+  }
+
+  @include MQ(L) {
+    margin: 5em auto;
+
+    &::before {
+      /* never visible - this is used in jQuery to check the current MQ */
+      content: 'desktop';
+    }
+  }
+}
+
+.cd-horizontal-timeline .events-content {
+  $event-width: 20em;
+  $event-height: 10em;
+
+  position: relative;
+  height: 100%;
+  display: inline-block;
+  @include clearfix;
+
+  ol {
+    width: 100%;
+  }
+
+  li {
+    width: $event-width;
+    position: relative;
+    border: solid $brand-grey 1px;
+    border-radius: 1em;
+    padding-bottom: 1em;
+    margin: 0 10px;
+    float: left;
+
+    // 三角箭头
+    &::before {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      left: 50%;
+      margin-left: -8px;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+    }
+
+    &:nth-child(even)::before {
+      border-bottom: 10px solid $brand-grey;
+      top: -10px;
+    }
+
+    &:hover:nth-child(even)::before {
+      border-bottom-color: $brand-primary;
+    }
+
+    &:nth-child(odd)::before {
+      border-top: 10px solid $brand-grey;
+      bottom: -10px;
+    }
+
+    &:hover:nth-child(odd)::before {
+      border-top-color: $brand-primary;
+    }
+
+    // timeline 上的圆圈
+    $cycleWidth: 8px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: $cycleWidth;
+      height: $cycleWidth;
+      left: 50%;
+      margin-left: -$cycleWidth/2;
+      background-color: $brand-grey;
+      border-radius: $cycleWidth/2;
+    }
+
+    &:nth-child(even)::after {
+      top: -30px;
+    }
+
+    &:nth-child(odd)::after {
+      bottom: -30px;
+    }
+
+    &:hover {
+      &:nth-child(even)::after,
+      &:nth-child(odd)::after {
+        background-color: $brand-primary;
+      }
+    }
+
+
+    &:hover {
+      border-color: $brand-primary;
+    }
+
+    h2 {
+      font-size: 1em;
+      margin: 0 0;
+      line-height: 2em;
+      width: 100%;
+      height: 2em;
+      background-color: $brand-grey;
+    }
+
+    &:nth-child(even) {
+      h2 {
+        border-top-right-radius: 1em;
+        border-top-left-radius: 1em;
+      }
+    }
+
+    &:nth-child(odd) {
+      margin-bottom: 0;
+      padding-bottom: 3em;
+
+      h2 {
+        position: absolute;
+        bottom: 0;
+        border-bottom-right-radius: 1em;
+        border-bottom-left-radius: 1em;
+      }
+    }
+
+    &:not(:first-child) {
+      margin-left: -($event-width / 2);
+    }
+
+    em, p {
+      font-size: .8em;
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+    }
+
+    em {
+      margin-top: .8em;
+    }
+
+    p {
+      font-weight: 300;
+      margin: 0 0;
+    }
+  }
+}
+
+.cd-timeline-navigation a {
+  /* these are the left/right arrows to navigate the timeline */
+  position: absolute;
+  display: none;
+  z-index: 1;
+  @include center(y);
+  height: 34px;
+  width: 34px;
+  border-radius: 50%;
+  border: 2px solid darken($color-4, 10%);
+  /* replace text with an icon */
+  overflow: hidden;
+  color: transparent;
+  text-indent: 100%;
+  white-space: nowrap;
+  @include transition(border-color .3s);
+
+  &::after {
+    /* arrow icon */
+    content: '';
+    display: none;
+    position: absolute;
+    height: 16px;
+    width: 16px;
+    @include center;
+    background: url(../images/cd-arrow.svg) no-repeat 0 0;
+  }
+
+  &.prev {
+    left: 0;
+    @include transform(translateY(-50%) rotate(180deg));
+  }
+
+  &.next {
+    right: 0;
+  }
+
+  .no-touch &:hover {
+    border-color: $color-2;
+  }
+
+  &.inactive {
+    cursor: not-allowed;
+
+    &::after {
+      background-position: 0 -16px;
+    }
+
+    .no-touch &:hover {
+      border-color: darken($color-4, 10%);
+    }
+  }
+}

@@ -10,3 +10,4 @@ Homestead.json
 /public/uploads
 .DS_Store
 npm-debug.log
+.sass-cache/

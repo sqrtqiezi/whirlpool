@@ -62,76 +62,49 @@
                         <h5>身为家电行业领导者的惠而浦，以化繁为简的生活理念不断地创新科技，为百年来无数家庭带来简约而又高品质的生活，获得了无数来自社会的认可和荣誉</h5>
                     </div>
                     <div class="detail-body">
-                        <div class="scrollbar-macosx">
-                            <div class="line-wrapper">
-                                <div class="detail-line line-1">
-                                    <div class="line-inner">
-                                        <div class="detail-item">
-                                            <div class="item-heading">2013</div>
-                                            <div class="item-body">
-                                                <div class="item">
-                                                    <span class="title">《福布斯》，世界最负盛名公司</span>
-                                                    <span>World’s Most Reputable Companies - Forbes</span>
-                                                </div>
-                                                <div class="item">
-                                                    <span class="title">《财富》，全球最受赞赏公司</span>
-                                                    <span>World’s Most Admired Companies - Fortune</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="detail-item">
-                                            <div class="item-heading">2010</div>
-                                            <div class="item-body">
-                                                <div class="item">
-                                                    <span class="title">《福布斯》，百强最值得信任公司</span>
-                                                    <span>100 Most Trustworthy Companies - Forbes</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="detail-item">
-                                            <div class="item-heading">2008</div>
-                                            <div class="item-body">
-                                                <div class="item">
-                                    <span class="title">《商务周杂志》，顶级平台事业
-</span>
-                                                    <span>Best Places To Launch A Career - Businessweek</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="detail-line line-2">
-                                    <div class="detail-item">
-                                        <div class="item-heading">2011</div>
-                                        <div class="item-body">
-                                            <div class="item">
-                                                <span class="title">《财富》，国际顶级领导公司</span>
-                                                <span>Global Top Companies For leaders - Fortune</span>
-                                            </div>
-                                            <div class="item">
-                                                <span class="title">《福布斯》，美国Top25最受尊敬公司</span>
-                                                <span>Top 25 US Most Respected Companies - Forbes</span>
-                                            </div>
-                                            <div class="item">
-                                <span class="title">《CRM杂志》，百强合作体
-</span>
-                                                <span>Global Top Companies For leaders - Fortune</span>
-                                            </div>
-                                        </div>
-                                    </div>
+                        <div class="cd-horizontal-timeline">
+                            <div class="timeline"></div><!-- .timeline -->
 
-                                    <div class="detail-item">
-                                        <div class="item-heading">2009</div>
-                                        <div class="item-body">
-                                            <div class="item">
-                                                <span class="title">《CRO》，美国百强</span>
-                                                <span>Top 100 US Best Citizens - CRO</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="events-content">
+                                <ol>
+                                    <li>
+                                        <h2>2008</h2>
+                                        <em>《商务周杂志》，顶级平台事业</em>
+                                        <p>
+                                            Best Places To Launch A Career - Businessweek
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <h2>2009</h2>
+                                        <em>《CRO》，美国百强</em>
+                                        <p>
+                                            Top 100 US Best Citizens - CRO
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <h2>2010</h2>
+                                        <em>《福布斯》，百强最值得信任公司</em>
+                                        <p>100 Most Trustworthy Companies - Forbes</p>
+                                    </li>
+                                    <li>
+                                        <h2>2011</h2>
+                                        <em>《财富》，国际顶级领导公司</em>
+                                        <p>Global Top Companies For leaders - Fortune</p>
+                                        <em>《福布斯》，美国Top25最受尊敬公司</em>
+                                        <p>Top 25 US Most Respected Companies - Forbes</p>
+                                        <em>《CRM杂志》，百强合作体</em>
+                                        <p>Global Top Companies For leaders - Fortune</p>
+                                    </li>
+                                    <li>
+                                        <h2>2013</h2>
+                                        <em>《福布斯》，世界最负盛名公司</em>
+                                        <p>World’s Most Reputable Companies - Forbes</p>
+                                        <em>《财富》，全球最受赞赏公司</em>
+                                        <p>World’s Most Admired Companies - Fortune</p>
+                                    </li>
+                                </ol>
                             </div>
-                        </div>
+                        </div><!-- .cd-horizontal-timeline -->
                     </div>
                 </div>
                 <div id="brand-responsibility" class="detail product-detail-item brand-responsibility pull-left">

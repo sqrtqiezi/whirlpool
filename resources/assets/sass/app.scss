@@ -1,11 +1,14 @@
-@import "variables";
-@import "mixins";
+@charset "utf-8";
 
-@import "normalize";
-@import "reboot";
-@import "utilities";
-@import "animate";
+@import "./abstracts/variables";
+@import "./abstracts/mixins";
 
-@import "video-background";
-@import "layouts";
-@import "components";
+@import "./base/normalize";
+@import "./base/typography";
+@import "./base/utilities";
+@import "./base/animate";
+
+@import "./layout/video-background";
+@import "./layout/layouts";
+
+@import "./components/components";

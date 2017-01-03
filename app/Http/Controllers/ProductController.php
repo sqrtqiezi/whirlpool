@@ -147,6 +147,10 @@ class ProductController extends Controller
 
     /**
      * 设置排序
+     *
+     * @param Request $request
+     * @param ProductRepositoryInterface $repository
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function resort(Request $request, ProductRepositoryInterface $repository)
     {
