@@ -55,7 +55,7 @@ $L: 1100px;
 
 // Component Style
 .cd-horizontal-timeline {
-  opacity: 1;
+  opacity: 0;
   margin: auto;
   width: 90%;
   display: inline-block;
@@ -97,7 +97,7 @@ $L: 1100px;
 }
 
 .cd-horizontal-timeline .events-content {
-  $event-width: 20em;
+  $event-width: 22em;
   $event-height: 10em;
 
   position: relative;
@@ -107,6 +107,7 @@ $L: 1100px;
 
   ol {
     width: 100%;
+    padding-left: 0;
   }
 
   li {
@@ -170,6 +171,7 @@ $L: 1100px;
       bottom: -30px;
     }
 
+
     &:hover {
       &:nth-child(even)::after,
       &:nth-child(odd)::after {
@@ -216,9 +218,10 @@ $L: 1100px;
 
     em, p {
       font-size: .8em;
-      display: inline-block;
+      display: block;
       width: 100%;
       text-align: center;
+      padding: 0 1em;
     }
 
     em {
@@ -232,56 +235,91 @@ $L: 1100px;
   }
 }
 
-.cd-timeline-navigation a {
-  /* these are the left/right arrows to navigate the timeline */
-  position: absolute;
-  display: none;
-  z-index: 1;
-  @include center(y);
-  height: 34px;
-  width: 34px;
-  border-radius: 50%;
-  border: 2px solid darken($color-4, 10%);
-  /* replace text with an icon */
-  overflow: hidden;
-  color: transparent;
-  text-indent: 100%;
-  white-space: nowrap;
-  @include transition(border-color .3s);
+@media only screen and (max-width: $mobile-width){
 
-  &::after {
-    /* arrow icon */
-    content: '';
-    display: none;
-    position: absolute;
-    height: 16px;
-    width: 16px;
-    @include center;
-    background: url(../images/cd-arrow.svg) no-repeat 0 0;
-  }
+  // 手机端下的时间线内容显示
+  .cd-horizontal-timeline .events-content {
+    width: 100%;
+    height: auto;
+    display: inline-block;
 
-  &.prev {
-    left: 0;
-    @include transform(translateY(-50%) rotate(180deg));
-  }
+    ol {
+      height: auto;
+      text-align: left;
+      @include clearfix;
 
-  &.next {
-    right: 0;
-  }
-
-  .no-touch &:hover {
-    border-color: $color-2;
-  }
-
-  &.inactive {
-    cursor: not-allowed;
-
-    &::after {
-      background-position: 0 -16px;
+      -webkit-transition: 1s ease-in-out;
+      -moz-transition: 1s ease-in-out;
+      -o-transition: 1s ease-in-out;
+      transition: 1s ease-in-out;
     }
 
-    .no-touch &:hover {
-      border-color: darken($color-4, 10%);
+    li {
+      position: relative;
+      display: block;
+      margin-top: 24px;
+
+      &:not(:first-child) {
+        margin-left: 0;
+      }
+
+      &:nth-child(odd) {
+        &::after {
+          bottom: auto;
+          top: -30px;
+        }
+
+        &::before {
+          border-top-style: none;
+          border-bottom: 10px solid $brand-grey;
+          top: -10px;
+        }
+
+        &:hover::before {
+          border-bottom-color: $brand-primary;
+        }
+        h2 {
+          position: relative;
+          bottom: auto;
+          border-radius: 1em 1em 0 0;
+        }
+      }
+    }
+  }
+
+  // 导航样式
+  .cd-timeline-navigation a{
+    position: absolute;
+    z-index: 1;
+    top: 30%;
+    bottom: auto;
+    @include transform(translateY(-70%));
+    height: 34px;
+    width: 34px;
+    /* replace text with an icon */
+    overflow: hidden;
+    color: transparent;
+    text-indent: 100%;
+    white-space: nowrap;
+    @include transition(border-color .3s);
+
+    &::after {
+      /* arrow icon */
+      content: '';
+      position: absolute;
+      height: 16px;
+      width: 16px;
+      @include center;
+      background: url(../images/cd-arrow.svg) no-repeat 0 0;
+    }
+
+    &.prev {
+      left: 0;
+      @include transform(translateY(-50%) rotate(180deg));
+    }
+
+    &.next {
+      right: 0;
     }
   }
 }

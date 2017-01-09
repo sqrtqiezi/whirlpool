@@ -65,28 +65,33 @@
                         <div class="cd-horizontal-timeline">
                             <div class="timeline"></div><!-- .timeline -->
 
+                            <div class="cd-timeline-navigation">
+                                <div><a href="javascript:;" class="prev"></a></div>
+                                <div><a href="javascript:;" class="next"></a></div>
+                            </div> <!-- .cd-timeline-navigation -->
+
                             <div class="events-content">
-                                <ol>
-                                    <li>
+                                <ol class="animated">
+                                    <li >
                                         <h2>2008</h2>
                                         <em>《商务周杂志》，顶级平台事业</em>
                                         <p>
                                             Best Places To Launch A Career - Businessweek
                                         </p>
                                     </li>
-                                    <li>
+                                    <li >
                                         <h2>2009</h2>
                                         <em>《CRO》，美国百强</em>
                                         <p>
                                             Top 100 US Best Citizens - CRO
                                         </p>
                                     </li>
-                                    <li>
+                                    <li >
                                         <h2>2010</h2>
                                         <em>《福布斯》，百强最值得信任公司</em>
                                         <p>100 Most Trustworthy Companies - Forbes</p>
                                     </li>
-                                    <li>
+                                    <li >
                                         <h2>2011</h2>
                                         <em>《财富》，国际顶级领导公司</em>
                                         <p>Global Top Companies For leaders - Fortune</p>
@@ -95,7 +100,7 @@
                                         <em>《CRM杂志》，百强合作体</em>
                                         <p>Global Top Companies For leaders - Fortune</p>
                                     </li>
-                                    <li>
+                                    <li >
                                         <h2>2013</h2>
                                         <em>《福布斯》，世界最负盛名公司</em>
                                         <p>World’s Most Reputable Companies - Forbes</p>

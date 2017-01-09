@@ -103,10 +103,7 @@
   $('.js-btn-menu-close').click(closeMenu);
   $('.js-btn-menu-back').click(backMenu);
 
-
-
   var slider = $('.brand-honour-slider').unslider();
-  console.log(slider);
 
   /**
    * 返回页面头部
