@@ -5322,6 +5322,7 @@ select::-ms-expand {
     display: inline-block;
     min-width: 80%;
     margin-top: 10em;
+    left: 0;
     border: solid #E9E9E9 1px; }
   @media only screen and (min-width: 1100px) {
     .cd-horizontal-timeline {
@@ -5333,7 +5334,8 @@ select::-ms-expand {
 .cd-horizontal-timeline .events-content {
   position: relative;
   height: 100%;
-  display: inline-block; }
+  display: inline-block;
+  overflow: hidden; }
   .cd-horizontal-timeline .events-content:before, .cd-horizontal-timeline .events-content:after {
     content: " ";
     display: table; }
