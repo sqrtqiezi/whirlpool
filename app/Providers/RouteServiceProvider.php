@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\User;
 use Illuminate\Routing\Router;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Whirlpool\Life\Entities\Life;
@@ -31,6 +32,10 @@ class RouteServiceProvider extends ServiceProvider
     public function boot(Router $router)
     {
         // 兼容软删除的路由模型绑定
+        $router->bind('user', function($id) {
+            return User::withTrashed()->where('id', $id)->firstOrFail();
+        });
+
         $router->bind('news', function($id){
             return News::withTrashed()->where('id', $id)->firstOrFail();
         });

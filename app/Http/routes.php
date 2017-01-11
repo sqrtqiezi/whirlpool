@@ -1,16 +1,5 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the controller to call when that URI is requested.
-|
-*/
-
 /** @var $router \Illuminate\Routing\Router */
 
 // 后台
@@ -31,21 +20,32 @@ $router->group([
 
         // 首页
         $router->get('/', 'HomeController@panel')->name('panel.index');
+
+        // 权限管理
+        $router->resources([
+            'user' => 'UserController'
+        ]);
+        // 初始化密码
+        $router->patch('/user/{user}/init-password', 'UserController@initPassword')->name('panel.user.init-password');
+        // 启用被禁用的用户
+        $router->post('user/{user}/restore', 'UserController@restore')->name('panel.user.restore');
+
+        // 内容编辑
         $router->resources([
             // 厨房电器
-            'product'  => 'ProductController',
+            'product' => 'ProductController',
             // 电器分类
             'product-type' => 'ProductTypeController',
             // 新闻
-            'news'     => 'NewsController',
+            'news' => 'NewsController',
             // 终端
             'terminal' => 'TerminalController',
             // '会' 生活
-            'life'     => 'LifeController',
+            'life' => 'LifeController',
             // 工程案例
             'project' => 'ProjectController',
             // 基本设置
-            'site-config'     => 'SiteConfigController',
+            'site-config' => 'SiteConfigController',
         ]);
         // 产品排序
         $router->post('product/resort', 'ProductController@resort')->name('panel.product.resort');
@@ -59,7 +59,7 @@ $router->group([
         $router->post('news/{news}/stick', 'NewsController@stick')->name('panel.news.stick');
         $router->post('news/{news}/cancel-stick', 'NewsController@cancelStick')->name('panel.news.cancel-stick');
         // 文件上传
-        $router->match(['put','patch', 'post'], 'api/upload', 'AjaxController@upload')->name('panel.api.upload');
+        $router->match(['put', 'patch', 'post'], 'api/upload', 'AjaxController@upload')->name('panel.api.upload');
     });
     // ./ 登录后
 });

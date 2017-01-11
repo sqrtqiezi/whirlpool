@@ -140,3 +140,21 @@ $b->register('panel.reset-password', function ($breadcrumbs) {
     $breadcrumbs->push('修改密码', route('panel.reset-password'));
 });
 
+$b->register('panel.user.index', function ($breadcrumbs) {
+    /** @var \DaveJamesMiller\Breadcrumbs\Generator $breadcrumbs */
+    $breadcrumbs->parent('panel.index');
+    $breadcrumbs->push('用户管理', route('panel.user.index'));
+});
+
+$b->register('panel.user.create', function ($breadcrumbs) {
+    /** @var \DaveJamesMiller\Breadcrumbs\Generator $breadcrumbs */
+    $breadcrumbs->parent('panel.user.index');
+    $breadcrumbs->push('新建', route('panel.user.create'));
+});
+
+
+$b->register('panel.user.edit', function ($breadcrumbs, $id) {
+    /** @var \DaveJamesMiller\Breadcrumbs\Generator $breadcrumbs */
+    $breadcrumbs->parent('panel.user.index');
+    $breadcrumbs->push('编辑', route('panel.user.edit', ['id' => $id]));
+});

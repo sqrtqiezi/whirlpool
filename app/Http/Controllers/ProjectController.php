@@ -13,6 +13,11 @@ use Whirlpool\Project\Requests\ProjectRequest;
 
 class ProjectController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['role:project']);
+    }
+
     /**
      * 后台列表
      *

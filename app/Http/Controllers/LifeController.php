@@ -9,6 +9,11 @@ use Whirlpool\Life\Requests\LifeRequest;
 
 class LifeController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['role:life']);
+    }
+
     /**
      * 后台列表
      *

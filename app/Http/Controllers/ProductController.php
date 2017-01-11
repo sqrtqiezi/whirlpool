@@ -15,6 +15,10 @@ use Whirlpool\Product\Requests\ProductRequest;
 class ProductController extends Controller
 {
 
+    public function __construct()
+    {
+        $this->middleware(['role:product']);
+    }
 
     /**
      * 后台列表

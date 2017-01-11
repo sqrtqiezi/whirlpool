@@ -171,6 +171,8 @@ return [
         \Orangehill\Iseed\IseedServiceProvider::class,
         // breadcrumbs @see https://github.com/davejamesmiller/laravel-breadcrumbs/
         \App\Providers\BreadcrumbsServiceProvider::class,
+        // laratrust @see http://laratrust.readthedocs.io
+        Laratrust\LaratrustServiceProvider::class,
     ],
 
     /*
@@ -215,8 +217,9 @@ return [
         'URL'         => Illuminate\Support\Facades\URL::class,
         'Validator'   => Illuminate\Support\Facades\Validator::class,
         'View'        => Illuminate\Support\Facades\View::class,
-        'Form'        => \Collective\Html\FormFacade::class,
+        'Form'        => Collective\Html\FormFacade::class,
         'Breadcrumbs' => DaveJamesMiller\Breadcrumbs\Facade::class,
+        'Laratrust'   => Laratrust\LaratrustFacade::class,
     ],
 
 ];

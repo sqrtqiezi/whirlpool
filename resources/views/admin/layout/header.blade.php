@@ -85,7 +85,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 							<img src="{!! asset('adminlte/img/user2-160x160.jpg') !!}"
 							     class="user-image" alt="User Image">
 							<!-- hidden-xs hides the username on small devices so only the image appears. -->
-							<span class="hidden-xs">{{ app('auth')->user()->name }}</span>
+							<span class="hidden-xs">{{ app('auth')->user()->user_name }}</span>
 						</a>
 						<ul class="dropdown-menu">
 							<!-- The user image in the menu -->
@@ -94,7 +94,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 								     class="img-circle" alt="User Image">
 
 								<p>
-									{{ app('auth')->user()->name }}
+									{{ app('auth')->user()->user_name }}
 									<small>{{ app('auth')->user()->updated_at }}</small>
 								</p>
 							</li>
@@ -129,7 +129,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 					     class="img-circle" alt="User Image">
 				</div>
 				<div class="pull-left info">
-					<p style="padding: 10px 0;">{{ app('auth')->user()->name }}</p>
+					<p style="padding: 10px 0;">{{ app('auth')->user()->user_name }}</p>
 				</div>
 			</div>
         @include('admin.layout.sidebar')

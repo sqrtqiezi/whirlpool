@@ -9,6 +9,11 @@ use Whirlpool\News\Requests\NewsRequest;
 
 class NewsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['role:news']);
+    }
+
     /**
      * 后台列表
      *

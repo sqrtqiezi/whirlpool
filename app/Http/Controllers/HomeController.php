@@ -107,6 +107,6 @@ class HomeController extends Controller
      */
     public function panel()
     {
-        return redirect('panel/news ');
+        return view('admin.index');
     }
 }

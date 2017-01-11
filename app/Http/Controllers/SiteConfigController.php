@@ -21,6 +21,7 @@ class SiteConfigController extends Controller
     public function __construct()
     {
         $this->config = Config::first();
+        $this->middleware(['role:webconfig']);
     }
 
     public function index()
