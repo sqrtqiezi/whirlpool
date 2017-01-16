@@ -5459,8 +5459,6 @@ select::-ms-expand {
     z-index: 1;
     top: 30%;
     bottom: auto;
-    -webkit-transform: translateY(-70%);
-    transform: translateY(-70%);
     height: 34px;
     width: 34px;
     /* replace text with an icon */
@@ -5485,8 +5483,8 @@ select::-ms-expand {
       background: url(../images/cd-arrow.svg) no-repeat 0 0; }
     .cd-timeline-navigation a.prev {
       left: 0;
-      -webkit-transform: translateY(-50%) rotate(180deg);
-      transform: translateY(-50%) rotate(180deg); }
+      -webkit-transform: rotate(180deg);
+      transform: rotate(180deg); }
     .cd-timeline-navigation a.next {
       right: 0; } }
 

@@ -295,7 +295,6 @@ $L: 1100px;
     z-index: 1;
     top: 30%;
     bottom: auto;
-    @include transform(translateY(-70%));
     height: 34px;
     width: 34px;
     /* replace text with an icon */
@@ -317,7 +316,7 @@ $L: 1100px;
 
     &.prev {
       left: 0;
-      @include transform(translateY(-50%) rotate(180deg));
+      @include transform(rotate(180deg));
     }
 
     &.next {
