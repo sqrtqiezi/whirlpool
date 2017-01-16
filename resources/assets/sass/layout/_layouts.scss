@@ -81,6 +81,7 @@
 @media screen and (max-width: $mobile-width) {
   .main {
     overflow-y: scroll;
+    padding-top: 4em;
 
     .grid {
       display: none;
@@ -109,17 +110,23 @@
     }
   }
 
-  .mobile-top {
+  .mobile-header, .mobile-top {
     display: inline-block;
     width: 100%;
-    position: relative;
     height: 4em;
+    min-height: 4em !important;
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    z-index: $zindex-popover;
+    background-color: rgba(0,0,0, .5);
+
     .logo {
       position: absolute;
       display: inline-block;
       width: $mobile-logo-width;
       height: auto;
-      top: 1em;
+      top: .8em;
       left: 50%;
       margin-left: -$mobile-logo-width/2;
       z-index: $zindex-popover3;

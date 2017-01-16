@@ -1,4 +1,4 @@
-<div class="mobile-top only-mobile">
+<div class="mobile-header only-mobile">
     <a href="#sidr-main" id="responsive-menu-button">
         <i class="fa fa-bars"></i>
     </a>

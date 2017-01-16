@@ -2,8 +2,8 @@
 
 @section('content')
     <div class="content content-home">
-        <section class="grid-cell mobile-top">
-            <a href="#sidr-main" id="responsive-menu-button">
+        <section class="grid-cell mobile-header">
+            <a href="javascript:;" id="responsive-menu-button">
                 <i class="fa fa-bars"></i>
             </a>
             <div class="logo">
