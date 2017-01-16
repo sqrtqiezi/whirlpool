@@ -58,6 +58,11 @@ class ConfigPresenter extends BasePresenter
         return $this->content['icp'];
     }
 
+    public function categories()
+    {
+        return $this->content['categories'];
+    }
+
     /**
      * 新闻真实发布日期
      *

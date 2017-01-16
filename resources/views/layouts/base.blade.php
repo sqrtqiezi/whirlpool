@@ -46,117 +46,9 @@
     <div class="footer clearfix only-desktop">
         <nav class="nav-list pull-left">
             <ul class="nav-top-list">
-                <li>
-                    <div class="top-nav">
-                        <a data-pjax href="{{ route('about') }}" class="js-top-nav" data-sub-nav="about-sub-nav">
-                            <span data-hover="关于我们">关于我们</span>
-                        </a>
-                        <div class="nav-sub-list">
-                            <ul class="menuIn animated">
-                                <li><a data-pjax href="{{ route('about') }}#brand-info"
-                                       class="nav-sub-link nav-sub-text">品牌简介</a></li>
-                                <li><a data-pjax href="{{ route('about') }}#brand-course"
-                                       class="nav-sub-link nav-sub-text">发展历程</a></li>
-                                <li><a data-pjax href="{{ route('about') }}#brand-worth"
-                                       class="nav-sub-link nav-sub-text">品牌价值观</a></li>
-                                <li><a data-pjax href="{{ route('about') }}#brand-honour"
-                                       class="nav-sub-link nav-sub-text">企业荣誉</a></li>
-                                <li><a data-pjax href="{{ route('about') }}#brand-responsibility"
-                                       class="nav-sub-link nav-sub-text">社会责任</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="top-nav">
-                        <a data-pjax href="{{ route('products') }}" class="js-top-nav" data-sub-nav="product-sub-nav">
-                            <span data-hover="厨房电器">厨房电器</span>
-                        </a>
-                        <div class="nav-sub-list">
-                            <ul class="menuIn animated animated-slowly">
-                                @foreach($productTypes as $type)
-                                    <li><a data-pjax
-                                           href="{{ route('category', $type->id) }}"
-                                           class="nav-sub-link nav-sub-image">
-                                            {!! $type->name !!}
-                                        </a></li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="top-nav">
-                        <a data-pjax href="{{ route('news') }}" class="js-top-nav" data-sub-nav="news-sub-nav">
-                            <span data-hover="新闻中心">新闻中心</span>
-                        </a>
-                        <div class="nav-sub-list">
-                            <ul class="menuIn animated">
-                                <li><a data-pjax
-                                       href="{{ route('news') }}?type={{ \Whirlpool\News\Entities\News::TYPE_COMPANY }}"
-                                       class="nav-sub-link nav-sub-text">企业内讯</a>
-                                </li>
-                                <li><a data-pjax
-                                       href="{{ route('news') }}?type={{ \Whirlpool\News\Entities\News::TYPE_MEDIA }}"
-                                       class="nav-sub-link nav-sub-text">媒体报道</a>
-                                </li>
-                                <li><a data-pjax
-                                       href="{{ route('news') }}?type={{ \Whirlpool\News\Entities\News::TYPE_PROMOTION }}"
-                                       class="nav-sub-link nav-sub-text">促销活动</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="top-nav">
-                        <a data-pjax href="{{ route('projects') }}">
-                            <span data-hover="工程案例">工程案例</span>
-                        </a>
-                    </div>
-                </li>
-                <li>
-                    <div class="top-nav">
-                        <a data-pjax href="{{ route('stores') }}">
-                            <span data-hover="终端形象">终端形象</span>
-                        </a>
-                    </div>
-                </li>
-                <li>
-                    <div class="top-nav">
-                        <a data-pjax href="{{ route('life') }}" class="js-top-nav" data-sub-nav="life-sub-nav">
-                            <span data-hover="“会”生活">“会”生活</span>
-                        </a>
-                        <div class="nav-sub-list">
-                            <ul class="menuIn animated">
-                                <li><a data-pjax
-                                       href="{{ route('life') }}?type={{ \Whirlpool\Life\Entities\Life::TYPE_PEOPLE }}"
-                                       class="nav-sub-link nav-sub-text">厨电创想人</a>
-                                </li>
-                                <li><a data-pjax
-                                       href="{{ route('life') }}?type={{ \Whirlpool\Life\Entities\Life::TYPE_APPLIANCE }}"
-                                       class="nav-sub-link nav-sub-text">“懂”厨电</a>
-                                </li>
-                                <li><a data-pjax
-                                       href="{{ route('life') }}?type={{ \Whirlpool\Life\Entities\Life::TYPE_DELICIOUS }}"
-                                       class="nav-sub-link nav-sub-text">“品”美味</a>
-                                </li>
-                                <li><a data-pjax
-                                       href="{{ route('life') }}?type={{ \Whirlpool\Life\Entities\Life::TYPE_KITCHEN }}"
-                                       class="nav-sub-link nav-sub-text">“绘”厨房</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="top-nav">
-                        <a data-pjax href="{{ route('contact') }}">
-                            <span data-hover="联系我们">联系我们</span>
-                        </a>
-                    </div>
-                </li>
+                @foreach($siteConfig->categories as $key => $name)
+                    @include('layouts.menu.' . $key)
+                @endforeach
             </ul>
         </nav>
         <div class="footer-info pull-right">
@@ -188,37 +80,10 @@
             <li>
                 <i class="fa fa-home link-icon" aria-hidden="true"></i>
                 <a href="{{ route('home') }}">首页</a>
-            </li>
-            <li>
-                <i class="fa fa-question link-icon" aria-hidden="true"></i>
-                <a href="{{ route('about') }}">关于我们</a>
-            </li>
-            <li class="has-expand" data-sub-name="product-list">
-                <i class="fa fa-beer link-icon" aria-hidden="true"></i>
-                <a href="javascript:;">厨房电器</a>
-                <i class="fa fa-chevron-right link-expand"></i>
-            </li>
-            <li class="has-expand" data-sub-name="news-list">
-                <i class="fa fa-newspaper-o link-icon" aria-hidden="true"></i>
-                <a href="javascript:;">新闻中心</a>
-                <i class="fa fa-chevron-right link-expand"></i>
-            </li>
-            <li>
-                <i class="fa fa-truck link-icon" aria-hidden="true"></i>
-                <a href="{{ route('projects') }}">工程案例</a>
-            </li>
-            <li>
-                <i class="fa fa-stack-overflow link-icon" aria-hidden="true"></i>
-                <a href="{{ route('stores') }}">终端形象</a>
-            </li>
-            <li class="has-expand" data-sub-name="life-list">
-                <i class="fa fa-home link-icon" aria-hidden="true"></i>
-                <a href='javascript:;'>“会” 生活</a>
-                <i class="fa fa-chevron-right link-expand"></i>
-            </li>
-            <li>
-                <i class="fa fa-phone link-icon" aria-hidden="true"></i>
-                <a href="{{ route('contact') }}">联系我们</a>
+
+                @foreach($siteConfig->categories as $key => $name)
+                    @include('layouts.menu-mobile.' . $key)
+                @endforeach
             </li>
         </ul>
     </nav>

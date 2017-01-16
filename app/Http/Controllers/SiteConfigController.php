@@ -31,7 +31,17 @@ class SiteConfigController extends Controller
 
     public function store(ConfigRequest $request)
     {
-        $this->config->update(['content' => $request->get('content')]);
+        // 更新排序
+        $categories = explode(',', $request->get('categories')[0]);
+        $content = $this->config->content;
+        $newCategories = [];
+        foreach ($categories as $category) {
+            $newCategories[$category] = $content['categories'][$category];
+        }
+
+        $content = $request->get('content');
+        $content['categories'] = $newCategories;
+        $this->config->update(['content' => $content]);
 
         alert()->success('', '成功保存配置！');
 

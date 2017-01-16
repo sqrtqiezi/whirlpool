@@ -17,6 +17,7 @@ class ConfigRequest extends FormRequest
             'content.title' => 'required',
             'content.brand'   => 'required',
             'content.icp' => 'required',
+            'categories' => 'required'
         ];
     }
 }
